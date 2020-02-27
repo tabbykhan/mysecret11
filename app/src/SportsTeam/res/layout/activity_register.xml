@@ -3,274 +3,391 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/splash_new">
 
     <include
         android:id="@+id/fragment_toolbar"
-        layout="@layout/include_toolbar_fargment" />
+        layout="@layout/include_toolbar_fargment"
+        android:visibility="gone" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/fragment_toolbar"
-        android:scrollbarThumbVertical="@drawable/bg_transparent">
+        android:layout_below="@+id/fragment_toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp10"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
+            android:orientation="vertical"
+            android:background="@drawable/loginscreenbg">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardCornerRadius="@dimen/dp5"
-                app:cardElevation="@dimen/dp2"
-                app:contentPadding="@dimen/dp10">
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-
-                <LinearLayout
-                    android:id="@+id/ll_data_lay"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/dp10"
+                    app:cardUseCompatPadding="true">
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_signup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="?attr/btn_height"
+                        android:gravity="center"
+                        android:text="Register &amp; Play"
+                        android:textAllCaps="true"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:textSize="?attr/btn_text_size"
+                        app:custom_font="@string/app_font_regular" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_data_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp80"
+                    android:layout_marginStart="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginEnd="@dimen/dp10"
+                    android:background="@drawable/fb_gmail_bg"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_fb_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dp10"
+                        android:layout_weight="0.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_facebok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/facebook_logo" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.05" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_gplus_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/sp10"
+                        android:layout_weight="0.5"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_google"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/gmail_logo"
+                            android:scaleType="centerInside"/>
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="OR"
+                    android:textColor="@color/colorBlackAA"
+                    android:textSize="?attr/app_text_size_big"
+                    app:custom_font="@string/app_font_medium" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp2"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp2"
+                    android:layout_marginBottom="@dimen/dp2"
+                    app:cardBackgroundColor="#505956"
+                    app:cardCornerRadius="@dimen/dp3"
+                    app:cardElevation="@dimen/dp3">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="?attr/btn_height"
-                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        >
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/ic_phone_android_black_24dp" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:digits="0123456789"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Mobile Number"
+                            android:imeOptions="actionNext"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:maxLength="10"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                             android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:text="You will receive an OTP for verification"
+                    android:textColor="@color/colorFbBlue"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    app:custom_font="@string/app_font_regular" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp2"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp2"
+                    android:layout_marginBottom="@dimen/dp2"
+                    app:cardBackgroundColor="#505956"
+                    app:cardCornerRadius="@dimen/dp3"
+                    app:cardElevation="@dimen/dp3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <androidx.cardview.widget.CardView
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/ic_email_black_24dp" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Email Address"
+                            android:imeOptions="actionNext"
+                            android:inputType="text|textEmailAddress"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                             android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:text="No spam, We promise!"
+                    android:textColor="@color/colorFbBlue"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    app:custom_font="@string/app_font_regular" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp2"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp2"
+                    android:layout_marginBottom="@dimen/dp2"
+                    app:cardBackgroundColor="#505956"
+                    app:cardCornerRadius="@dimen/dp3"
+                    app:cardElevation="@dimen/dp3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/ic_person_black_24dp" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                             android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:text="This is your profile name"
+                    android:textColor="@color/colorFbBlue"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    app:custom_font="@string/app_font_regular" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp2"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp2"
+                    android:layout_marginBottom="@dimen/dp2"
+                    app:cardBackgroundColor="#505956"
+                    app:cardCornerRadius="@dimen/dp3"
+                    app:cardElevation="@dimen/dp3">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/ic_lock_black_24dp" />
+
+                         <com.customviews.TypefaceEditText
+                            android:id="@+id/et_password"
                             android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="@dimen/dp3"
-                            android:layout_weight="0.5"
-                            app:cardBackgroundColor="@color/colorWhite"
-                            app:cardCornerRadius="@dimen/dp5"
-                            app:cardElevation="@dimen/dp3">
+                            android:layout_height="?attr/et_height"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Password"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                             android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
 
-                            <RelativeLayout
-                                android:id="@+id/rl_fb_btn"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:id="@+id/img_facebok"
-                                    android:layout_width="@dimen/dp20"
-                                    android:layout_height="@dimen/dp20"
-                                    android:layout_centerVertical="true"
-                                    android:paddingStart="@dimen/dp3"
-                                    android:paddingTop="@dimen/dp3"
-                                    android:src="@drawable/facebook_3x" />
-
-                                <com.customviews.TypefaceTextView
-                                    android:id="@+id/txt_facebook"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginLeft="@dimen/dp5"
-                                    android:layout_toRightOf="@+id/img_facebok"
-                                    android:text="Facebook"
-                                    android:textColor="@color/colorBlack"
-                                    android:textColorHint="?attr/app_text_color"
-                                    android:textSize="?attr/app_text_size_normal"
-                                    app:custom_font="@string/app_font_regular" />
-
-                            </RelativeLayout>
-                        </androidx.cardview.widget.CardView>
-
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.05" />
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="@dimen/dp3"
-                            android:layout_weight="0.5"
-                            app:cardBackgroundColor="@color/colorWhite"
-                            app:cardCornerRadius="@dimen/dp5"
-                            app:cardElevation="@dimen/dp3">
-
-                            <RelativeLayout
-                                android:id="@+id/rl_gplus_btn"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:id="@+id/img_google"
-                                    android:layout_width="@dimen/dp20"
-                                    android:layout_height="@dimen/dp20"
-                                    android:layout_centerVertical="true"
-                                    android:src="@drawable/google_3x" />
-
-                                <com.customviews.TypefaceTextView
-                                    android:id="@+id/tv_google"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginLeft="@dimen/dp5"
-                                    android:layout_toRightOf="@+id/img_google"
-                                    android:gravity="center"
-                                    android:text="Google"
-                                    android:textColor="@color/colorBlack"
-                                    android:textColorHint="?attr/app_text_color"
-                                    android:textSize="?attr/app_text_size_normal"
-                                    app:custom_font="@string/app_font_regular" />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-
+                        <CheckBox
+                            android:id="@+id/cb_password_show_hide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp5"
+                            android:button="@drawable/selector_password_checkbox_choose"
+                            android:gravity="center" />
                     </LinearLayout>
 
 
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="@dimen/dp10"
-                        android:layout_marginBottom="@dimen/dp5"
-                        android:ems="10"
-                        android:gravity="center"
-                        android:text="OR"
-                        android:textColor="@color/colorBlackAA"
-                        android:textSize="?attr/app_text_size_big"
-                        app:custom_font="@string/app_font_medium" />
+                </androidx.cardview.widget.CardView>
 
 
-                    <androidx.cardview.widget.CardView
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_password_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:gravity="left"
+                    android:text="@string/minimum_password"
+                    android:textColor="@color/colorFbBlue"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    app:custom_font="?attr/app_font_regular" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp2"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp2"
+                    android:layout_marginBottom="@dimen/dp2"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="#505956"
+                    app:cardCornerRadius="@dimen/dp3"
+                    app:cardElevation="@dimen/dp3">
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp2"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
-                                android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/smartphone_icon" />
-
-                            <com.customviews.TypefaceEditText
-                                android:id="@+id/et_mobile"
-                                android:layout_width="match_parent"
-                                android:layout_height="?attr/et_height"
-                                android:background="@null"
-                                android:digits="0123456789"
-                                android:ems="10"
-                                android:gravity="center_vertical"
-                                android:hint="Mobile Number"
-                                android:imeOptions="actionNext"
-                                android:inputType="phone"
-                                android:lines="1"
-                                android:maxLength="10"
-                                android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
-                                android:textSize="?attr/et_text_size"
-                                app:custom_font="@string/app_font_regular" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="@dimen/dp5"
-                        android:text="You will receive an OTP for verification"
-                        android:textColor="@color/colorBlackAA"
-                        android:textSize="?attr/app_text_size_extra_small"
-                        app:custom_font="@string/app_font_regular" />
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp2"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
-                                android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/mail_icon" />
-
-                            <com.customviews.TypefaceEditText
-                                android:id="@+id/et_email"
-                                android:layout_width="match_parent"
-                                android:layout_height="?attr/et_height"
-                                android:background="@null"
-                                android:ems="10"
-                                android:gravity="center_vertical"
-                                android:hint="Email Address"
-                                android:imeOptions="actionNext"
-                                android:inputType="text|textEmailAddress"
-                                android:lines="1"
-                                android:maxLength="50"
-                                android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
-                                android:textSize="?attr/et_text_size"
-                                app:custom_font="@string/app_font_regular" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="@dimen/dp5"
-                        android:text="No spam, We promise!"
-                        android:textColor="@color/colorBlackAA"
-                        android:textSize="?attr/app_text_size_extra_small"
-                        app:custom_font="@string/app_font_regular" />
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp2"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center_vertical"
@@ -283,255 +400,124 @@
                                 android:src="@drawable/user_name" />
 
                             <com.customviews.TypefaceEditText
-                                android:id="@+id/et_name"
+                                android:id="@+id/et_team_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
                                 android:background="@null"
+                                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
                                 android:ems="10"
                                 android:gravity="center_vertical"
-                                android:hint="Name"
+                                android:hint="Team name"
                                 android:imeOptions="actionNext"
-                                android:inputType="textCapWords"
+                                android:inputType="textCapCharacters"
                                 android:lines="1"
-                                android:maxLength="50"
+                                android:maxLength="21"
                                 android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                 android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
-
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginStart="@dimen/dp5"
-                        android:text="This is your profile name"
-                        android:textColor="@color/colorBlackAA"
-                        android:textSize="?attr/app_text_size_extra_small"
-                        app:custom_font="@string/app_font_regular" />
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp2"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
-
-                        <LinearLayout
+                        <View
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorBlack10" />
 
-                            <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
-                                android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/key_icon" />
-
-                            <com.customviews.TypefaceEditText
-                                android:id="@+id/et_password"
-                                android:layout_width="0dp"
-                                android:layout_height="?attr/et_height"
-                                android:layout_weight="1"
-                                android:background="@null"
-                                android:ems="10"
-                                android:gravity="center_vertical"
-                                android:hint="Password"
-                                android:imeOptions="actionDone"
-                                android:inputType="textPassword"
-                                android:lines="1"
-                                android:maxLength="50"
-                                android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
-                                android:textSize="?attr/et_text_size"
-                                app:custom_font="@string/app_font_regular" />
-
-                            <CheckBox
-                                android:id="@+id/cb_password_show_hide"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginRight="@dimen/dp5"
-                                android:button="@drawable/selector_password_checkbox_choose"
-                                android:gravity="center" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <com.customviews.TypefaceTextView
-                        android:id="@+id/tv_password_msg"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp5"
-                        android:gravity="left"
-                        android:text="@string/minimum_password"
-                        android:textColor="@color/colorBlackAA"
-                        android:textSize="?attr/app_text_size_extra_small"
-                        app:custom_font="?attr/app_font_regular" />
-
-                    <androidx.cardview.widget.CardView
-                        android:visibility="gone"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp2"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
-
-                        <LinearLayout
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="@dimen/dp20"
-                                    android:layout_height="@dimen/dp20"
-                                    android:layout_marginStart="@dimen/dp5"
-                                    android:src="@drawable/user_name" />
-
-                                <com.customviews.TypefaceEditText
-                                    android:id="@+id/et_team_name"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="?attr/et_height"
-                                    android:background="@null"
-                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-                                    android:ems="10"
-                                    android:gravity="center_vertical"
-                                    android:hint="Team name"
-                                    android:imeOptions="actionNext"
-                                    android:inputType="textCapCharacters"
-                                    android:lines="1"
-                                    android:maxLength="21"
-                                    android:padding="@dimen/dp10"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
-                                    android:textSize="?attr/et_text_size"
-                                    app:custom_font="@string/app_font_regular" />
-                            </LinearLayout>
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="0.5dp"
-                                android:background="@color/colorBlack10"/>
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/recycler_view"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_below="@+id/ll_search_view" />
-                        </LinearLayout>
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/ll_search_view" />
+                    </LinearLayout>
 
 
-                    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp2"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
-                                android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/refer_icon" />
-
-                            <com.customviews.TypefaceEditText
-                                android:id="@+id/et_refer_code"
-                                android:layout_width="match_parent"
-                                android:layout_height="?attr/et_height"
-                                android:background="@null"
-                                android:ems="10"
-                                android:gravity="center_vertical"
-                                android:hint="Referral Code"
-                                android:imeOptions="actionNext"
-                                android:inputType="text"
-                                android:lines="1"
-                                android:maxLength="50"
-                                android:padding="@dimen/dp10"
-                                android:singleLine="true"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
-                                android:textSize="?attr/et_text_size"
-                                app:custom_font="@string/app_font_regular" />
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
-                    <com.customviews.TypefaceTextView
-                        android:id="@+id/tv_referal_msg"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp5"
-                        android:gravity="left"
-                        android:text="@string/no_referral_code"
-                        android:textColor="@color/colorBlackAA"
-                        android:textSize="?attr/app_text_size_extra_small"
-                        android:visibility="gone"
-                        app:custom_font="?attr/app_font_regular" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp2"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp2"
+                    android:layout_marginBottom="@dimen/dp2"
+                    app:cardBackgroundColor="#505956"
+                    app:cardCornerRadius="@dimen/dp3"
+                    app:cardElevation="@dimen/dp3">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp5"
-                        android:layout_marginTop="@dimen/dp30"
-                        android:layout_marginEnd="@dimen/dp5"
-                        android:layout_marginBottom="@dimen/dp10"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                        <com.customviews.TypefaceTextView
-                            android:id="@+id/tv_register"
-                            android:layout_width="0dp"
-                            android:layout_height="?attr/btn_height"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_red_5radius"
-                            android:gravity="center"
-                            android:text="REGISTER"
-                            android:textColor="?attr/btn_text_color"
-                            android:textSize="?attr/btn_text_size"
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/ic_person_black_24dp" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_refer_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Referral Code"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:singleLine="true"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
 
+                </androidx.cardview.widget.CardView>
 
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_referal_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:gravity="left"
+                    android:text="@string/no_referral_code"
+                    android:textColor="@color/colorBlackAA"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    android:visibility="gone"
+                    app:custom_font="?attr/app_font_regular" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp5"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_register"
+                        android:layout_width="0dp"
+                        android:layout_height="?attr/btn_height"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_login"
+                        android:gravity="center"
+                        android:text="REGISTER"
+                        android:textColor="?attr/btn_text_color"
+                        android:textSize="?attr/btn_text_size"
+                        app:custom_font="@string/app_font_regular" />
                 </LinearLayout>
 
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
 
             <LinearLayout
@@ -555,7 +541,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/dp10"
-                    android:text="By registering, I agree Super Baazi T&amp;Cs"
+                    android:text="By registering, I agree ST11 T&amp;Cs"
                     android:textColor="@color/colorAppBlackAA"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_regular" />
