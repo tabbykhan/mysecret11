@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp10"
             android:gravity="center_horizontal"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
             <RelativeLayout
                 android:layout_width="match_parent"

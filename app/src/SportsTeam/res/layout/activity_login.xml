@@ -77,12 +77,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:gravity="center_vertical">
+                            android:gravity="center_vertical"
+                            android:background="?attr/et_bg_drawable">
                             <ImageView
                                 android:layout_width="@dimen/dp20"
                                 android:layout_height="@dimen/dp20"
                                 android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/key_icon"/>
+                                android:src="@drawable/ic_lock_black_24dp"
+                                android:layout_marginEnd="5dp"
+                                />
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_password"
                                 android:layout_width="0dp"
@@ -94,11 +97,12 @@
                                 android:imeOptions="actionDone"
                                 android:inputType="textPassword"
                                 android:lines="1"
+
                                 android:background="@null"
                                 android:maxLength="50"
                                 android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular"/>
 
@@ -130,7 +134,7 @@
                             android:layout_width="0dp"
                             android:layout_height="?attr/btn_height"
                             android:layout_weight="0.98"
-                            android:background="@drawable/bg_red_5radius"
+                            android:background="@drawable/btn_login"
                             android:gravity="center"
                             android:text="LOGIN"
                             android:textColor="?attr/btn_text_color"
