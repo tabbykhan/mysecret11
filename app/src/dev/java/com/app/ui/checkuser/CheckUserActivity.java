@@ -175,7 +175,6 @@ public class CheckUserActivity extends AppBaseActivity {
 
     }
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
