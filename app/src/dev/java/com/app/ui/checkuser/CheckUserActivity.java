@@ -165,7 +165,7 @@ public class CheckUserActivity extends AppBaseActivity {
 
                 @Override
                 public void updateDrawState(TextPaint ds) {
-                    ds.setColor(getResources().getColor(R.color.colorRed));
+                    ds.setColor(getResources().getColor(R.color.colorYellow));
                     ds.setUnderlineText(false);//there show text below line
                 }
             };

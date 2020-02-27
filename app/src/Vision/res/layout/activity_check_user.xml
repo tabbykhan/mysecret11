@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/vision_bg">
 
     <include
         android:id="@+id/fragment_toolbar"
-        layout="@layout/include_toolbar_fargment" />
+        layout="@layout/include_toolbar_fargment"
+        android:visibility="gone" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,155 +16,197 @@
         android:layout_below="@+id/fragment_toolbar"
         android:scrollbarThumbVertical="@drawable/bg_transparent">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp10"
             android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:layout_margin="@dimen/dp10">
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dp200"
+                android:layout_height="@dimen/dp200"
+                android:src="@drawable/logo_3x" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:background="@drawable/bg_login_transparent"
+                android:orientation="vertical"
+                android:padding="@dimen/dp10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@string/app_font_bold"
+                    android:text="Login"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp30" />
+
+              <!--  <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_marginBottom="@dimen/dp5"
+
+                    app:cardBackgroundColor="@drawable/et_vistion"
+                    app:cardCornerRadius="@dimen/dp3"
+                    app:cardElevation="@dimen/dp3">-->
+                    <!-- app:cardBackgroundColor="@android:color/transparent"-->
+
+                    <com.customviews.TypefaceEditText
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/et_height"
+                        android:background="@drawable/et_vistion"
+                        android:ems="10"
+                        android:layout_marginStart="@dimen/dp30"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_marginEnd="@dimen/dp30"
+                        android:layout_marginBottom="@dimen/dp5"
+                        android:focusableInTouchMode="true"
+                        android:focusedByDefault="false"
+                        android:gravity="center_vertical"
+                        android:hint="Email or Mobile number"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:lines="1"
+                        android:maxLength="50"
+                        android:padding="@dimen/dp10"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@android:color/white"
+                        android:textSize="?attr/app_text_size_normal"
+                        app:custom_font="@string/app_font_regular" />
+
+                <!--</androidx.cardview.widget.CardView>-->
+
+
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_proceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/btn_height"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:background="@drawable/btn_login"
+                    android:gravity="center"
+                    android:text="NEXT"
+                    android:textColor="@android:color/black"
+                    android:textSize="?attr/btn_text_size"
+                    app:custom_font="@string/app_font_regular" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp30"
-                    android:orientation="vertical">
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp20"
+                    android:layout_marginEnd="@dimen/dp20"
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        android:layout_marginStart="@dimen/dp5"
-                        android:layout_marginTop="@dimen/dp5"
-                        android:layout_marginEnd="@dimen/dp5"
-                        android:layout_marginBottom="@dimen/dp5"
-                        app:cardElevation="@dimen/dp3">
-                        <com.customviews.TypefaceEditText
-                            android:id="@+id/et_username"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/et_height"
-                            android:background="@null"
-                            android:ems="10"
-                            android:focusableInTouchMode="true"
-                            android:focusedByDefault="false"
-                            android:gravity="center_vertical"
-                            android:hint="Email or Mobile number"
-                            android:imeOptions="actionNext"
-                            android:inputType="textEmailAddress"
-                            android:lines="1"
-                            android:maxLength="50"
-                            android:padding="@dimen/dp10"
-                            android:textColor="?attr/et_text_color"
-                            android:textColorHint="?attr/et_hint_text_color"
-                            android:textSize="?attr/app_text_size_normal"
-                            app:custom_font="@string/app_font_regular" />
-
-                    </androidx.cardview.widget.CardView>
-
-
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp1"
+                        android:layout_weight="1"
+                        android:background="@color/colorGray" />
 
                     <com.customviews.TypefaceTextView
-                        android:id="@+id/tv_proceed"
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/btn_height"
-                        android:layout_marginStart="@dimen/dp10"
-                        android:layout_marginTop="@dimen/dp30"
-                        android:layout_marginEnd="@dimen/dp10"
-                        android:layout_marginBottom="@dimen/dp10"
-                        android:background="@drawable/bg_red_5radius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="?attr/et_height"
+                        android:layout_gravity="center_vertical"
+                        android:ems="2"
                         android:gravity="center"
-                        android:text="NEXT"
-                        android:textColor="?attr/app_screen_bg_color"
-                        android:textSize="?attr/btn_text_size"
-                        app:custom_font="@string/app_font_regular" />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/dp20"
-                        android:layout_marginEnd="@dimen/dp20"
-                        android:gravity="center">
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="@dimen/dp1"
-                            android:background="@color/colorGray"/>
-                        <com.customviews.TypefaceTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="?attr/et_height"
-                            android:layout_gravity="center_vertical"
-                            android:ems="2"
-                            android:gravity="center"
-                            android:text=" OR "
-                            android:textColor="?attr/app_text_color_sec"
-                            android:textSize="?attr/app_text_size_normal"
-                            app:custom_font="@string/app_font_medium" />
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="@dimen/dp1"
-                            android:background="@color/colorGray"/>
+                        android:text=" OR "
+                        android:textColor="?attr/app_text_color_sec"
+                        android:textSize="?attr/app_text_size_normal"
+                        app:custom_font="@string/app_font_medium" />
 
-                    </LinearLayout>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp1"
+                        android:layout_weight="1"
+                        android:background="@color/colorGray" />
+
+                </LinearLayout>
 
 
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center_horizontal">
 
                     <RelativeLayout
                         android:id="@+id/rl_fb_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/bg_fbblue_5radius"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp30"
                         android:layout_marginTop="@dimen/dp10"
-                        android:layout_marginStart="@dimen/dp10"
-                        android:layout_marginEnd="@dimen/dp10">
+                        android:layout_marginEnd="@dimen/dp30"
+                        android:background="@drawable/bg_transparent">
 
                         <ImageView
                             android:id="@+id/img_facebok"
-                            android:layout_width="?attr/btn_height"
-                            android:layout_height="wrap_content"
+                            android:layout_width="@dimen/dp60"
+                            android:layout_height="@dimen/dp60"
                             android:layout_alignTop="@+id/txt_facebook"
                             android:layout_alignBottom="@+id/txt_facebook"
-                            android:src="@drawable/facebook_icon_3x"
-                            android:tint="@color/colorWhite"
                             android:background="@drawable/bg_fbblue_5radius_left"
-                            android:padding="@dimen/dp10"/>
+                            android:padding="@dimen/dp10"
+                            android:src="@drawable/facebook_icon_3x"
+                            android:tint="@color/colorWhite" />
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/txt_facebook"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/btn_height"
+                            android:layout_centerHorizontal="true"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="@dimen/dp5"
-                            android:text="Login with FaceBook"
-                            android:layout_centerHorizontal="true"
                             android:gravity="center"
+                            android:text="Login with FaceBook"
                             android:textAllCaps="true"
                             android:textColor="@color/colorWhite"
                             android:textColorHint="?attr/app_text_color"
                             android:textSize="?attr/app_text_size_normal"
-                            app:custom_font="@string/app_font_regular" />
+                            android:visibility="gone"
+                            app:custom_font="@string/app_font_regular" />̥
 
                     </RelativeLayout>
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@id/rl_fb_btn"
+                        android:background="@drawable/bg_gray_oval" />
+
                     <RelativeLayout
                         android:id="@+id/rl_gplus_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/dp30"
-                        android:layout_marginStart="@dimen/dp10"
-                        android:layout_marginEnd="@dimen/dp10"
-                        android:background="@drawable/bg_gplusred_5radius">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp30"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="@dimen/dp30"
+                        android:layout_toRightOf="@id/rl_fb_btn"
+                        android:background="@drawable/bg_transparent">
 
                         <ImageView
                             android:id="@+id/img_google"
-                            android:layout_width="?attr/btn_height"
-                            android:layout_height="wrap_content"
+                            android:layout_width="@dimen/dp60"
+                            android:layout_height="@dimen/dp60"
                             android:layout_alignTop="@+id/tv_google"
                             android:layout_alignBottom="@+id/tv_google"
-                            android:tint="@color/colorWhite"
-                            android:src="@drawable/google_3x"
                             android:background="@drawable/bg_gplusred_5radius_left"
-                            android:padding="@dimen/dp10"/>
+                            android:padding="@dimen/dp10"
+                            android:src="@drawable/google_3x"
+                            android:tint="@color/colorWhite" />
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_google"
@@ -171,27 +214,28 @@
                             android:layout_height="?attr/btn_height"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="@dimen/dp5"
-                            android:textAllCaps="true"
                             android:gravity="center"
                             android:text="Login with Google"
+                            android:textAllCaps="true"
                             android:textColor="@color/colorWhite"
                             android:textColorHint="?attr/app_text_color"
                             android:textSize="?attr/app_text_size_normal"
+                            android:visibility="gone"
                             app:custom_font="@string/app_font_regular" />
 
                     </RelativeLayout>
+                </RelativeLayout>
 
-                </LinearLayout>
-
+            </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp50"
+                android:layout_marginBottom="@dimen/dp30"
                 android:gravity="center"
-                android:layout_marginTop="@dimen/dp100"
-                android:layout_marginBottom="@dimen/dp30">
+                android:orientation="horizontal">
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_signup"
@@ -199,7 +243,7 @@
                     android:layout_height="?attr/btn_height"
                     android:gravity="center"
                     android:text="Not a member? Register"
-                    android:textColor="?attr/et_hint_text_color"
+                    android:textColor="#ffffff"
                     android:textSize="?attr/btn_text_size"
                     app:custom_font="@string/app_font_regular" />
 

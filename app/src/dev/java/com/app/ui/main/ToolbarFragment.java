@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -317,7 +318,11 @@ public class ToolbarFragment extends AppBaseFragment {
                     updateViewVisibitity(tv_title_center, View.GONE);
                     updateViewVisibitity(iv_back, View.GONE);
                     updateViewVisibitity(iv_menu, View.GONE);
-                    UpdateHeaderTitel(true);
+                    getActivity().getCurrentFocus();
+                    if(ConstantsFlavor.type == ConstantsFlavor.Type.vision)
+                        UpdateHeaderTitel(false);
+                    else
+                        UpdateHeaderTitel(true);
 
 
                 } else if (latestFragment instanceof MyMatchesFragment) {
@@ -673,10 +678,17 @@ public class ToolbarFragment extends AppBaseFragment {
             tv_balance.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
         } else {
             rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header));
-            ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_white_10radius));
+          //  ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_white_10radius));
 //            tv_notification_counter.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_notification_counter_white));
 //            tv_notification_counter.setTextColor(getActivity().getResources().getColor(R.color.colorPrimary));
-            iv_notification.setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_IN);
+            if(ConstantsFlavor.type != ConstantsFlavor.Type.vision) {
+                iv_notification.setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_IN);
+                ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_white_10radius));
+            }else {
+                ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_gray));
+            }
+
+
             in_wallet.setColorFilter(getResources().getColor(R.color.colorRed), PorterDuff.Mode.SRC_IN);
             tv_balance.setTextColor(getActivity().getResources().getColor(R.color.colorRed));
         }

@@ -14,7 +14,7 @@
     <string name="txt_tansction_history">Transcation Histroy</string>
     <string name="txt_verify">Verify Your Phone Number</string>
     <string name="email_spam"><![CDATA[In case you don\'t receive the email, be sure to check the spam/junk & promotions folder on your mailbox]]></string>
-
+    <string name="register_play"><![CDATA[REGISTER & PLAY]]></string>
 
 
 </resources>

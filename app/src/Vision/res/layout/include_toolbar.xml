@@ -25,7 +25,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dp7"
                 android:padding="@dimen/dp5"
-                android:src="@drawable/logo_with_text_team_preview_3x" />
+                android:src="@drawable/logo_3x" />
 
             <ImageView
                 android:id="@+id/iv_back"
@@ -34,7 +34,7 @@
                 android:layout_centerVertical="true"
                 android:padding="@dimen/dp12"
                 android:src="@drawable/back_icon_3x"
-                android:tint="@color/colorWhite" />
+                android:tint="@color/colorBlack" />
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_title_left"
@@ -45,7 +45,7 @@
                 android:ellipsize="end"
                 android:lines="1"
                 android:text="Title"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:textSize="?attr/actionBarTitleSize"
                 app:custom_font="@string/app_font_regular" />
 
@@ -57,7 +57,7 @@
                 android:ellipsize="end"
                 android:lines="1"
                 android:text="Title"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:textSize="?attr/actionBarTitleSize"
                 app:custom_font="@string/app_font_regular" />
 
@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/sp10"
-                    android:background="@drawable/bg_white_10radius"
+                    android:background="@drawable/bg_gray"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingLeft="@dimen/dp5"
@@ -115,7 +115,7 @@
                         android:layout_height="?attr/actionBarIconSize"
                         android:padding="@dimen/dp7"
                         android:src="@drawable/ic_bell_icon"
-                        android:tint="@color/colorWhite" />
+                        android:tint="#565369" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_notification_counter"
