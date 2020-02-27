@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--  shadow. -->
+    <item>
+        <shape>
+            <solid android:color="@color/color_red_shadow" />
+            <corners android:radius="@dimen/dp10" />
+        </shape>
+    </item>
+
+    <!--  foreground.  -->
+    <item
+        android:bottom="@dimen/dp4">
+        <shape>
+            <solid android:color="@color/colorRed" />
+            <corners android:radius="@dimen/dp5" />
+        </shape>
+    </item>
+
+</layer-list>

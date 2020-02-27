@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_screen_bg_color">
+    <include
+        android:id="@+id/fragment_toolbar"
+        layout="@layout/include_toolbar_fargment" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_toolbar"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/colorBlackAA">
+
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="75dp"
+                        android:layout_marginLeft="@dimen/dp20"
+                        android:layout_marginRight="@dimen/dp20"
+                        android:layout_marginBottom="@dimen/dp5"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="@dimen/dp5"
+                        android:padding="@dimen/dp8"
+                        app:cardElevation="@dimen/dp5">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/dp30"
+                            android:layout_marginBottom="@dimen/dp20">
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_user_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="hello "
+                                android:padding="@dimen/dp5"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_bold" />
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_team_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="team 11"
+                                android:padding="@dimen/dp5"
+                                android:layout_gravity="center"
+                                android:textColor="@color/colorAppBlackAA"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:background="@color/colorGrayLight">
+                                <com.customviews.TypefaceTextView
+                                    android:id="@+id/tv_match_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Icc work cope 2019"
+                                    android:layout_gravity="center"
+                                    android:padding="@dimen/dp5"
+                                    android:textColor="@color/colorAppBlackAA"
+                                    android:textSize="?attr/app_text_size_extra_small"
+                                    app:custom_font="@string/app_font_regular" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="@dimen/dp10">
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <com.customviews.TypefaceTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="PONTS"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="?attr/app_text_size_extra_small"
+                                        app:custom_font="@string/app_font_regular" />
+                                    <com.customviews.TypefaceTextView
+                                        android:id="@+id/tv_player_points"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="12"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="?attr/app_text_size_extra_small"
+                                        app:custom_font="@string/app_font_bold" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="right"
+                                    android:gravity="right"
+                                    android:orientation="vertical">
+                                    <com.customviews.TypefaceTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="RANK"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="?attr/app_text_size_extra_small"
+                                        app:custom_font="@string/app_font_regular" />
+                                    <com.customviews.TypefaceTextView
+                                        android:id="@+id/tv_player_rank"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="#12"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="?attr/app_text_size_extra_small"
+                                        app:custom_font="@string/app_font_bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </FrameLayout>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_player_image"
+                    android:layout_width="@dimen/dp60"
+                    android:layout_height="@dimen/dp60"
+                    android:layout_marginTop="@dimen/dp50"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/no_image"
+                    />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="@color/browser_actions_divider_color"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@color/colorWhite"
+                android:padding="@dimen/dp10">
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_match_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="MATCHES (5)"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:layout_weight="1"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    app:custom_font="@string/app_font_bold" />
+                <com.customviews.TypefaceTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="POINTS"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="right"
+                    android:layout_weight="1"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    app:custom_font="@string/app_font_bold" />
+
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/browser_actions_divider_color"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_user_stats_adapter" />
+
+        </LinearLayout>
+
+
+</RelativeLayout>
