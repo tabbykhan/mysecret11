@@ -38,7 +38,7 @@
     <color name="sports_tab_indicator_color">@color/colorWhite</color>
 
     <color name="tab_indication_color">@color/colorRed</color>
-    <color name="tab_seleceted_text_color">@color/colorWhite</color>
+    <color name="tab_seleceted_text_color">@color/colorBlack</color>
     <color name="tab_text_color">@color/colorBlack</color>
     <color name="colorWhite_50">#F7F3F3</color>
     <color name="color_sky_blue">#ECF4FC</color>

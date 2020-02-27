@@ -4,14 +4,15 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    android:fitsSystemWindows="false">
+    android:background="@drawable/vision_bg"
+    android:fitsSystemWindows="false"
+    >
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp200"
-        android:background="@color/colorWhite"
+        android:background="@color/transparent_color"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -53,7 +54,7 @@
                 android:id="@+id/home_tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
+                android:background="@drawable/vision_bg"
                 app:tabGravity="fill"
                 app:tabIndicatorColor="@color/tab_indication_color"
                 app:tabIndicatorHeight="0dp"
@@ -61,13 +62,14 @@
                 app:tabRippleColor="@null"
                 android:layout_marginTop="@dimen/dp7"
                 app:tabBackground="@drawable/tab_selecation_match"
-                app:tabSelectedTextColor="@color/tab_seleceted_text_color"
-                app:tabTextColor="@color/tab_text_color" />
+                app:tabSelectedTextColor="@color/tab_text_color"
+                app:tabTextColor="#8F8F8F" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager_match"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
