@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_data_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp10"
+        android:paddingBottom="@dimen/dp10">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp20">
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_match_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MS-W VS As-W"
+                android:textColor="?attr/app_text_color"
+                android:textSize="?attr/app_text_size_small"
+                app:custom_font="@string/app_font_medium" />
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_match_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dec, 21 2018"
+                android:textColor="@color/colorAppBlackAA"
+                android:textSize="?attr/app_text_size_extra_small"
+                app:custom_font="@string/app_font_regular" />
+
+        </LinearLayout>
+
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/tv_points"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="?attr/app_text_color"
+            android:textSize="?attr/app_text_size_small"
+            app:custom_font="@string/app_font_regular" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/tv_selected_by"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="74.00 %"
+            android:textColor="?attr/app_text_color"
+            android:textSize="?attr/app_text_size_small"
+            app:custom_font="@string/app_font_regular" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view_seprator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp1"
+        android:layout_below="@+id/ll_data_lay"
+        android:background="?attr/app_divider_color" />
+
+</RelativeLayout>

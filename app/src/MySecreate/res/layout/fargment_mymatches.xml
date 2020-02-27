@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="?attr/app_screen_bg_color"
+    android:clickable="true"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp1"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mymatches_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/tab_indication_color"
+            app:tabIndicatorHeight="0dp"
+            app:tabPadding="@dimen/dp5"
+            app:tabRippleColor="@null"
+            app:tabBackground="@drawable/tab_selecation_match"
+            app:tabSelectedTextColor="@color/tab_seleceted_text_color"
+            app:tabTextColor="@color/tab_text_color"  />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager_match"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

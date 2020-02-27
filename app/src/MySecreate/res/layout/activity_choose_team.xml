@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_screen_bg_color">
+
+    <include
+        android:id="@+id/fragment_toolbar"
+        layout="@layout/include_toolbar_fargment" />
+
+
+    <include
+        android:id="@+id/ll_top"
+        layout="@layout/include_match_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_toolbar" />
+
+    <com.customviews.TypefaceTextView
+        android:id="@+id/tv_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_top"
+        android:layout_marginTop="@dimen/dp10"
+        android:gravity="center"
+        android:text="CHOOSE TEAMS TO JOIN THIS CONTEST WITH "
+        android:textColor="?attr/app_text_color"
+        android:textSize="?attr/app_text_size_normal"
+        app:custom_font="@string/app_font_medium" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_heading"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/dp10"
+            android:paddingTop="@dimen/dp5"
+            android:paddingBottom="@dimen/dp5">
+
+            <CheckBox
+                android:id="@+id/cb_select_all"
+                android:layout_width="@dimen/dp20"
+                android:layout_height="@dimen/dp20"
+                android:layout_marginStart="@dimen/dp10"
+                android:button="@drawable/selector_team_checkbox_choose" />
+
+            <com.customviews.TypefaceTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp5"
+                android:text="Select All"
+                android:textColor="?attr/app_text_color"
+                android:textSize="?attr/app_text_size_normal"
+                app:custom_font="@string/app_font_regular" />
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_choose_team_adapter" />
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/pb_data"
+        android:layout_width="@dimen/dp30"
+        android:layout_height="@dimen/dp30"
+        android:layout_centerInParent="true" />
+
+    <LinearLayout
+        android:id="@+id/rl_bottom_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/ll_new_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_primary"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp5"
+            android:paddingBottom="@dimen/dp5"
+            android:weightSum="1">
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_create_new_team"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/et_height"
+                android:gravity="center"
+                android:text="CREATE TEAM 1"
+                android:textColor="@color/colorWhite"
+                android:textSize="?attr/app_text_size_normal"
+                app:custom_font="@string/app_font_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_join_contest"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/color_yellow_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp5"
+            android:paddingBottom="@dimen/dp5"
+            android:weightSum="1">
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_join_contest"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/et_height"
+                android:gravity="center"
+                android:text="JOIN CONTEST"
+                android:textColor="@color/colorBlack"
+                android:textSize="?attr/app_text_size_normal"
+                app:custom_font="@string/app_font_regular" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

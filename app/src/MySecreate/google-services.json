@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "217351101863",
+    "firebase_url": "https://mysecreate11.firebaseio.com",
+    "project_id": "mysecreate11",
+    "storage_bucket": "mysecreate11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217351101863:android:16f84bce941b087525ea82",
+        "android_client_info": {
+          "package_name": "com.imuons.mysecreate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217351101863-0v1dlm24h4ls17p0sa13ea2nmvlq91fc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_SINQh4CkrFYil-NfDqMa1rKbiJv-CMo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217351101863-0v1dlm24h4ls17p0sa13ea2nmvlq91fc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
