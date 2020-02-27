@@ -19,7 +19,7 @@
             <solid android:color="@color/colorWhite" />
             <stroke
                 android:width="@dimen/dp1"
-                android:color="@color/colorGray50" />
+                android:color="#e0e0dd" />
         </shape>
     </item>
 

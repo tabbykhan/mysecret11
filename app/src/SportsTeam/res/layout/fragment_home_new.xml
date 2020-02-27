@@ -61,8 +61,8 @@
                 app:tabRippleColor="@null"
                 android:layout_marginTop="@dimen/dp7"
                 app:tabBackground="@drawable/tab_selecation_match"
-                app:tabSelectedTextColor="@color/tab_seleceted_text_color"
-                app:tabTextColor="@color/tab_text_color" />
+                app:tabSelectedTextColor="@color/colorBlack"
+                app:tabTextColor="#cbcac8" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager_match"
