@@ -1,0 +1,201 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.firebase-perf'
+
+android {
+    flavorDimensions "server", "client"
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.imuons"
+        minSdkVersion 19
+        targetSdkVersion 28
+
+        multiDexEnabled true
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+                abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
+    }
+
+    signingConfigs {
+
+        liveConfig {
+            Properties keystore_properties = new Properties();
+            keystore_properties.load(project.rootProject.file('keystore/keystore.properties')
+                    .newDataInputStream())
+
+            keyAlias keystore_properties.getProperty("KEY_ALIAS")
+            keyPassword keystore_properties.getProperty("KEY_PASSWORD")
+            storeFile new File(rootDir, keystore_properties.getProperty("STORE_PATH"))
+            storePassword keystore_properties.getProperty("STORE_PASSWORD")
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.liveConfig
+        }
+
+        debug {
+            signingConfig signingConfigs.liveConfig
+            debuggable true
+        }
+
+
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def buildDate = new Date().format("dd_MM_yyyy")
+            def buildType = variant.getBuildType().name
+            def flavorName = variant.flavorName
+            def versionCode = variant.getVersionCode()
+            def appName = "${flavorName}_v${versionCode}_${buildDate}-${buildType}.apk"
+
+            outputFileName = appName
+        }
+    }
+
+    productFlavors {
+        dev {
+            dimension "client"
+        }
+
+        imuons {
+            applicationId "com.imuons"
+            dimension "server"
+            versionCode 1
+            versionName "1.0.1"
+
+        }
+        Vision {
+            dimension "server"
+            versionCode 1
+            versionName "1.0.1"
+            applicationId "com.imuons.vision"
+        }
+        SportsTeam {
+            dimension "server"
+            versionCode 1
+            versionName "1.0.1"
+            applicationId "com.imuons.sportteam"
+        }
+        MySecreate {
+            dimension "server"
+            versionCode 1
+            versionName "1.0.1"
+            applicationId "com.imuons.mysecreate"
+        }
+
+
+    }
+
+    externalNativeBuild {
+        def currentFlavour = getCurrentFlavor()
+        cmake {
+            if (currentFlavour == 'imuonsDev') {
+                path "src/imuons/CMakeLists.txt"
+            } else {
+                path "src/imuons/CMakeLists.txt"
+                //path "CMakeLists.txt"
+            }
+
+        }
+    }
+
+}
+
+
+def getCurrentFlavor() {
+    Gradle gradle = getGradle()
+    String taskReqStr = gradle.getStartParameter().getTaskRequests().toString()
+    Pattern pattern
+    if (taskReqStr.contains("assemble")) {
+        pattern = Pattern.compile("assemble(\\w+)(Release|Debug)")
+    } else {
+        pattern = Pattern.compile("generate(\\w+)(Release|Debug)")
+    }
+    Matcher matcher = pattern.matcher(taskReqStr)
+    if (matcher.find()) {
+        String flavor = matcher.group(1)
+        // This makes first character to lowercase.
+        char[] c = flavor.toCharArray()
+        c[0] = Character.toLowerCase(c[0])
+        flavor = new String(c)
+        println "getCurrentFlavor:" + flavor
+        return flavor
+    } else {
+        println "getCurrentFlavor:cannot_find_current_flavor"
+        return ""
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    ANDROID LIBS
+    //noinspection GradleCompatible
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+//  FACEBOOK LIB
+    implementation 'com.facebook.android:facebook-login:5.1.1'
+
+//  GPLUS LIB
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+//    FIREBASE LIBS
+    implementation 'com.google.firebase:firebase-messaging:20.0.1'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    implementation 'com.google.firebase:firebase-perf:19.0.2'
+
+//   AWS LIBS
+    implementation 'com.amazonaws:aws-android-sdk-core:2.6.31'
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.6.31'
+    implementation 'com.amazonaws:aws-android-sdk-ddb:2.6.31'
+
+//    WEBSERVICE LIB
+    implementation 'com.medy:retrofitwrapper:1.5.1'
+
+//    IMAGE LOAD LIB
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+//    OTHER LIBS
+    implementation 'com.github.jineshfrancs:CaptchaImageView:1.0'
+    implementation 'com.github.Ibotta:Supported-Picker-Dialogs:1.0.0'
+    implementation 'com.tuyenmonkey:mkloader:1.4.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.github.vihtarb:tooltip:0.2.0'
+    implementation('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
+        transitive = true;
+    }
+
+//    AUTO SCROLL VIEW PAGER
+    implementation('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
+        exclude module: 'support-v4'
+    }
+}
+apply plugin: 'com.google.gms.google-services'

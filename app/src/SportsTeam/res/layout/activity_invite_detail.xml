@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_screen_bg_color">
+
+    <include
+        android:id="@+id/fragment_toolbar"
+        layout="@layout/include_toolbar_fargment" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fragment_toolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?attr/app_divider_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Earnings through Friends"
+                    android:textColor="?attr/app_text_color"
+                    android:textSize="?attr/app_text_size_small"
+                    app:custom_font="?attr/app_font_regular" />
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_earn_by_friend"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="20"
+                    android:textColor="?attr/app_text_color"
+                    android:textSize="?attr/app_text_size_normal"
+                    app:custom_font="?attr/app_font_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="?attr/app_divider_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To be earned"
+                    android:textColor="?attr/app_text_color"
+                    android:textSize="?attr/app_text_size_small"
+                    app:custom_font="?attr/app_font_regular" />
+
+                <ImageView
+                    android:id="@+id/iv_info"
+                    android:layout_width="@dimen/dp25"
+                    android:layout_height="@dimen/dp25"
+                    android:background="@drawable/bg_primary_oval"
+                    android:padding="@dimen/dp5"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:src="@drawable/info_3x"
+                    android:tint="@color/colorWhite" />
+
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_team_earn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="20"
+                    android:textColor="?attr/app_text_color"
+                    android:textSize="?attr/app_text_size_normal"
+                    app:custom_font="?attr/app_font_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="?attr/app_divider_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp15"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp20"
+                android:orientation="vertical">
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_total_joined_friends"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 Friends joined!"
+                    android:textColor="?attr/app_text_color"
+                    android:textSize="?attr/app_text_size_normal"
+                    app:custom_font="?attr/app_font_medium" />
+
+                <ProgressBar
+                    android:id="@+id/pb_earn"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/dp5"
+                    android:layout_marginTop="@dimen/dp7"
+                    android:max="100"
+                    android:progress="45"
+                    android:progressDrawable="@drawable/progressbar_custom_progress" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp5">
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_rec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Received:"
+                        android:textColor="?attr/app_text_color_sec"
+                        android:textSize="?attr/app_text_size_more_normal"
+                        app:custom_font="?attr/app_font_regular" />
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_received_earn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_toEndOf="@+id/tv_rec"
+                        android:text="10"
+                        android:textColor="?attr/app_text_color"
+                        android:textSize="?attr/app_text_size_more_normal"
+                        app:custom_font="?attr/app_font_regular" />
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_total_earn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:text="100"
+                        android:textColor="?attr/app_text_color"
+                        android:textSize="?attr/app_text_size_more_normal"
+                        app:custom_font="?attr/app_font_regular" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:background="?attr/app_divider_color" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_invite_detail_adapter" />
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_invite_more"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp40"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/dp50"
+                android:layout_marginEnd="@dimen/dp50"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="?attr/btn_bg_drawable"
+                android:gravity="center"
+                android:text="INVITE MORE FRIENDS"
+                android:textColor="?attr/btn_text_color_sec"
+                android:textSize="?attr/btn_text_size"
+                app:custom_font="?attr/app_font_regular" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

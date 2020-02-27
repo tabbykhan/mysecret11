@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_screen_bg_color"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/fragment_toolbar"
+        layout="@layout/include_toolbar_fargment" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fragment_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_invite_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp20"
+                android:background="@drawable/bg_white_5radius_stroke1gray"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_gray_top5radius"
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp7">
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_invite_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:gravity="center"
+                        android:text="Enter your details here"
+                        android:textColor="@color/sport_textcolor_selector_green_black"
+                        android:textSize="?attr/app_text_size_more_normal"
+                        app:custom_font="?attr/app_font_medium" />
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp1"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/dp10"
+                    app:cardElevation="@dimen/dp2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp15"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp15"
+                        android:orientation="vertical">
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email address *"
+                            android:paddingStart="@dimen/dp5"
+                            android:textColor="?attr/et_text_color"
+                            android:textSize="?attr/app_text_size_normal"
+                            app:custom_font="@string/app_font_regular" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:layout_marginEnd="@dimen/dp5"
+                            android:layout_marginBottom="@dimen/dp2"
+                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardCornerRadius="@dimen/dp3"
+                            app:cardElevation="@dimen/dp1">
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/et_height"
+                                android:focusableInTouchMode="true"
+                                android:hint="Update email address"
+                                android:paddingStart="@dimen/dp5"
+                                android:paddingEnd="@dimen/dp5"
+                                android:paddingTop="@dimen/dp10"
+                                android:paddingBottom="@dimen/dp10"
+                                android:singleLine="true"
+                                android:textColor="@color/colorAppBlackAA"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_update_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Click here to update your email address."
+                            android:paddingStart="@dimen/dp5"
+                            android:textColor="@color/colorAppBlackAA"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="@string/app_font_regular" />
+
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:text="Name *"
+                            android:paddingStart="@dimen/dp5"
+                            android:textColor="?attr/et_text_color"
+                            android:textSize="?attr/app_text_size_normal"
+                            app:custom_font="@string/app_font_regular" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:layout_marginEnd="@dimen/dp5"
+                            android:layout_marginBottom="@dimen/dp5"
+                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardCornerRadius="@dimen/dp3"
+                            app:cardElevation="@dimen/dp1">
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/et_height"
+                                android:focusableInTouchMode="true"
+                                android:hint="Update name"
+                                android:paddingTop="@dimen/dp10"
+                                android:paddingStart="@dimen/dp5"
+                                android:paddingEnd="@dimen/dp5"
+                                android:paddingBottom="@dimen/dp10"
+                                android:singleLine="true"
+                                android:textColor="@color/colorAppBlackAA"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:text="Query *"
+                            android:paddingStart="@dimen/dp5"
+                            android:textColor="?attr/et_text_color"
+                            android:textSize="?attr/app_text_size_normal"
+                            app:custom_font="@string/app_font_regular" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:layout_marginEnd="@dimen/dp5"
+                            android:layout_marginBottom="@dimen/dp5"
+                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardCornerRadius="@dimen/dp3"
+                            app:cardElevation="@dimen/dp1">
+
+                            <Spinner
+                                android:id="@+id/sp_query"
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/et_height"
+                                android:entries="@array/query_array"/>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:text="Message *"
+                            android:paddingStart="@dimen/dp5"
+                            android:textColor="?attr/et_text_color"
+                            android:textSize="?attr/app_text_size_normal"
+                            app:custom_font="@string/app_font_regular" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:layout_marginEnd="@dimen/dp5"
+                            android:layout_marginBottom="@dimen/dp5"
+                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardCornerRadius="@dimen/dp3"
+                            app:cardElevation="@dimen/dp2">
+
+                            <com.customviews.TypefaceEditText
+                                android:id="@+id/et_message"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusableInTouchMode="true"
+                                android:gravity="left|top"
+                                android:background="@null"
+                                android:hint=""
+                                android:minHeight="@dimen/dp100"
+                                android:paddingStart="@dimen/dp5"
+                                android:paddingEnd="@dimen/dp5"
+                                android:paddingTop="@dimen/dp10"
+                                android:paddingBottom="@dimen/dp10"
+                                android:textColor="?attr/et_text_color"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:text="Human Verification *"
+                            android:paddingStart="@dimen/dp5"
+                            android:textColor="?attr/et_text_color"
+                            android:textSize="?attr/app_text_size_normal"
+                            app:custom_font="@string/app_font_regular" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp5"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:layout_marginEnd="@dimen/dp5"
+                                android:layout_marginBottom="@dimen/dp5"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="@color/colorWhite"
+                                app:cardCornerRadius="@dimen/dp3"
+                                app:cardElevation="@dimen/dp2">
+
+                                <com.customviews.TypefaceEditText
+                                    android:id="@+id/et_captcha"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="?attr/et_height"
+                                    android:focusableInTouchMode="true"
+                                    android:hint=""
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:paddingTop="@dimen/dp10"
+                                    android:paddingBottom="@dimen/dp10"
+                                    android:paddingStart="@dimen/dp5"
+                                    android:paddingEnd="@dimen/dp5"
+                                    android:textColor="?attr/et_text_color"
+                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:textSize="?attr/app_text_size_normal"
+                                    app:custom_font="@string/app_font_regular" />
+
+                            </androidx.cardview.widget.CardView>
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.1"/>
+
+
+                            <test.jinesh.captchaimageviewlib.CaptchaImageView
+                                android:id="@+id/iv_captcha"
+                                android:layout_width="0dp"
+                                android:layout_height="?attr/et_height"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/iv_captcha_refresh"
+                                android:layout_width="@dimen/dp25"
+                                android:layout_height="@dimen/dp25"
+                                android:padding="@dimen/dp2"
+                                android:tint="@color/colorAppBlack"
+                                android:src="@android:drawable/ic_popup_sync"/>
+
+                        </LinearLayout>
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_submit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="?attr/et_height"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:background="@drawable/bg_red_5radius"
+                            android:gravity="center"
+                            android:minWidth="@dimen/dp120"
+                            android:text="Submit"
+                            android:textColor="?attr/app_screen_bg_color"
+                            android:textSize="?attr/btn_text_size"
+                            app:custom_font="@string/app_font_regular" />
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

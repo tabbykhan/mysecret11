@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_screen_bg_color">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_footer">
+
+        <include
+            android:id="@+id/fragment_toolbar"
+            layout="@layout/include_toolbar_fargment" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_sports"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSizeSmall"
+            android:layout_below="@+id/fragment_toolbar"
+            android:background="@drawable/bg_tab_80radius_stroke2read"
+            app:tabGravity="fill"
+            app:tabMinWidth="@dimen/dp10"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="fixed"
+            app:tabRippleColor="@null"
+            android:layout_margin="@dimen/dp10"
+            app:tabPaddingStart="0dp"
+            app:tabPaddingEnd="0dp"
+            app:tabSelectedTextColor="@color/sports_tab_text_color"
+            app:tabTextColor="@color/sports_tab_text_color" />
+
+         <!--<com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_sports"
+
+             app:tabBackground="@drawable/tab_selecation_left"
+
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSizeSmall"
+            android:layout_below="@+id/fragment_toolbar"
+            android:background="@color/sports_tab_bg_color"
+            app:tabGravity="fill"
+            app:tabMinWidth="@dimen/dp10"
+            app:tabPadding="0dp"
+            app:tabIndicatorColor="@color/sports_tab_indicator_color"
+            android:paddingBottom="@dimen/dp3"
+            app:tabIndicatorHeight="@dimen/dp3"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/sports_tab_selected_text_color"
+            app:tabTextColor="@color/sports_tab_text_color" />-->
+
+
+        <RelativeLayout
+            android:id="@+id/rl_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tab_sports"
+            android:background="?attr/app_screen_bg_color"
+            android:clickable="true" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="?attr/app_divider_color" />
+
+        <include layout="@layout/include_dashboard_bottom" />
+    </LinearLayout>
+</RelativeLayout>

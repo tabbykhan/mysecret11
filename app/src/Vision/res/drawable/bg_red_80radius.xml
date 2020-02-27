@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    &lt;!&ndash;  shadow. &ndash;&gt;
+    <item
+        android:left="1dp"
+        android:top="5dp">
+        <shape>
+            <solid android:color="@color/color_red_shadow" />
+            <corners android:radius="80dp" />
+        </shape>
+    </item>
+
+    &lt;!&ndash;  foreground.  &ndash;&gt;
+    <item
+        android:bottom="3dp">
+        <shape>
+            <solid android:color="@color/colorRed" />
+            <corners android:radius="80dp" />
+        </shape>
+    </item>
+
+</layer-list>-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="@dimen/dp80" />
+            <solid android:color="@color/colorRed" />
+        </shape>
+    </item>
+
+</layer-list>

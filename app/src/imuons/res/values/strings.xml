@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sms_sender">PERFOR</string>
+    <string name="app_name">Imuons</string>
+    <string name="default_notification_channel_id">Imuons</string>
+</resources>

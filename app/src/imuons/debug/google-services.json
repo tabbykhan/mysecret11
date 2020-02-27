@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "872764050773",
+    "firebase_url": "https://imuons-cae15.firebaseio.com",
+    "project_id": "imuons-cae15",
+    "storage_bucket": "imuons-cae15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:872764050773:android:afc6ce3f13ad199a3eb3dc",
+        "android_client_info": {
+          "package_name": "com.imuons"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "872764050773-sltu7r8o14uh7v0n29nr56hjt0kg1hg5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.imuons",
+            "certificate_hash": "493c6357ced2fce99402b02816b9e23d764bd5ba"
+          }
+        },
+        {
+          "client_id": "872764050773-ggdsimdhhhdu2dtr2c43en533228upcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvIqq1nN8Mygmlp6Gu2nXhRQFbg6GIyKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "872764050773-ggdsimdhhhdu2dtr2c43en533228upcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

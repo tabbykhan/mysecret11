@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "500884600472",
+    "firebase_url": "https://vision11-5f874.firebaseio.com",
+    "project_id": "vision11-5f874",
+    "storage_bucket": "vision11-5f874.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500884600472:android:4ab422603b13f00df102ed",
+        "android_client_info": {
+          "package_name": "com.imuons.vision"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500884600472-qdrd7af08abfive5sm2ednuapkm6bk8e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY-tJ-9nbMdn8JyEzvgw-73IH6cVjzceI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500884600472-qdrd7af08abfive5sm2ednuapkm6bk8e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

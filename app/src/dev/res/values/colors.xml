@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#27Acc2</color>
+    <color name="colorPrimary20">#208B161C</color>
+    <color name="colorPrimary10">#108B161C</color>
+    <color name="colorPrimaryDark">#278494</color>
+    <color name="colorAccent">#36D2EE</color>
+    <color name="colorblue">#D6EBFC</color>
+
+
+    <color name="colorFbBlue">#4a64ae</color>
+    <color name="colorFbBlueDark">#3F5492</color>
+    <color name="colorFbBlueDarkMore">#2F3F6F</color>
+    <color name="colorGlpusRed">#c5252A</color>
+    <color name="colorGlpusRedDark">#BB352E</color>
+    <color name="colorGlpusRedDarkMore">#7C241F</color>
+
+    <color name="splashStatusBarColor">@color/colorGrayLight</color>
+    <color name="colorScreenBg">@color/colorWhite</color>
+    <color name="colorActivateGreen">#24b937</color>
+
+    <color name="colorScreenBgDark50">#50105c42</color>
+
+    <color name="colorAppBlack">#2a2a2a</color>
+    <color name="colorAppBlackLight">#c9c7c7</color>
+    <color name="colorAppBlack50">#502a2a2a</color>
+    <color name="colorAppBlackAA">#AA2a2a2a</color>
+    <color name="colorAppBlackBB">#BB2a2a2a</color>
+    <color name="colorRed">#27Acc2</color>
+    <color name="color_red_shadow">#AF0101</color>
+    <color name="colorYellow">#f3ff79</color>
+    <color name="colorOrange">#ea9a21</color>
+    <color name="transparent_color">#00ffffff</color>
+
+    <color name="sports_tab_bg_color">@color/colorPrimary</color>
+    <color name="sports_tab_text_color">@color/colorBlack</color>
+    <color name="sports_tab_selected_text_color">@color/colorWhite</color>
+    <color name="sports_tab_indicator_color">@color/colorWhite</color>
+
+    <color name="tab_indication_color">@color/colorRed</color>
+    <color name="tab_seleceted_text_color">@color/colorWhite</color>
+    <color name="tab_text_color">@color/colorBlack</color>
+    <color name="colorWhite_50">#F7F3F3</color>
+    <color name="color_sky_blue">#ECF4FC</color>
+    <color name="color_yellow_btn">#ffcc00</color>
+    <color name="color_yellow_shadow">#e69138</color>
+    <color name="colorActivateGreen_shadow">#29A239</color>
+    <color name="colorRedLight">#ef7061</color>
+    <color name="colorWhite_60">#70F7F3F3</color>
+</resources>

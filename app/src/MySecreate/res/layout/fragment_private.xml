@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/app_screen_bg_color"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scrollbarThumbVertical="@drawable/bg_transparent"
+        android:overScrollMode="always">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp10"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_ticketing"
+                android:background="@drawable/bg_white_5radius_stroke1gray"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp5">
+
+                    <com.customviews.TintImageView
+                        android:id="@+id/iv_add"
+                        android:layout_height="@dimen/dp15"
+                        android:layout_margin="@dimen/dp5"
+                        android:layout_width="@dimen/dp15"
+                        android:src="@drawable/add_icon"
+                        app:tintColorStateList="@color/sport_textcolor_selector_green_black" />
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_create_contest"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:layout_width="wrap_content"
+                        android:text="Create a contest"
+                        android:textColor="@color/sport_textcolor_selector_green_black"
+                        android:textSize="?attr/app_text_size_more_normal"
+                        app:custom_font="?attr/app_font_medium" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_create_contest"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <View
+                        android:background="@color/browser_actions_divider_color"
+                        android:layout_height="@dimen/dp1"
+                        android:layout_width="match_parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp10"
+                        android:layout_width="match_parent"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="@dimen/dp5"
+                        app:cardElevation="@dimen/dp3">
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_data_contest"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical">
+
+                            <com.customviews.TypefaceTextView
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:text="Give you contest a name"
+                                android:textColor="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_small"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <com.customviews.TypefaceEditText
+                                android:id="@+id/et_contest_name"
+                                android:background="@drawable/bg_white_5radius_stroke1gray"
+                                android:focusableInTouchMode="true"
+                                android:focusedByDefault="false"
+                                android:gravity="center_vertical"
+                                android:hint="hello kitti"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                android:layout_height="?attr/et_height"
+                                android:layout_marginEnd="@dimen/dp5"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:layout_width="match_parent"
+                                android:lines="1"
+                                android:padding="@dimen/dp10"
+                                android:textColor="?attr/et_text_color"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular" />
+
+
+                            <com.customviews.TypefaceTextView
+                                android:gravity="left"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:lines="1"
+                                android:text="Give Your Contest a Cool Name(optional)"
+                                android:textColor="?attr/app_text_color_sec"
+                                android:textSize="?attr/app_text_size_extra_small"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <com.customviews.TypefaceTextView
+                                android:gravity="right"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:lines="1"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:text="Total winning amount"
+                                android:textColor="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_small"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <com.customviews.TypefaceEditText
+                                android:id="@+id/et_total_winning_amount"
+                                android:background="@drawable/bg_white_5radius_stroke1gray"
+                                android:focusableInTouchMode="true"
+                                android:focusedByDefault="false"
+                                android:gravity="center_vertical"
+                                android:hint="0"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:layout_height="?attr/et_height"
+                                android:layout_marginEnd="@dimen/dp5"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:layout_width="match_parent"
+                                android:lines="1"
+                                android:padding="@dimen/dp10"
+                                android:ems="6"
+                                android:textColor="?attr/et_text_color"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_max_pool_amount"
+                                android:gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:lines="1"
+                                android:text="Min 0"
+                                android:textColor="?attr/app_text_color_sec"
+                                android:textSize="?attr/app_text_size_extra_small"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <com.customviews.TypefaceTextView
+                                android:gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:lines="1"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:text="Contest size"
+                                android:textColor="?attr/app_text_color"
+                                android:textSize="?attr/et_text_size"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <com.customviews.TypefaceEditText
+                                android:id="@+id/et_contest_size"
+                                android:background="@drawable/bg_white_5radius_stroke1gray"
+                                android:focusableInTouchMode="true"
+                                android:focusedByDefault="false"
+                                android:gravity="center_vertical"
+                                android:hint="0"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:layout_height="?attr/et_height"
+                                android:layout_marginEnd="@dimen/dp5"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:layout_width="match_parent"
+                                android:lines="1"
+                                android:padding="@dimen/dp10"
+                                android:textColor="?attr/et_text_color"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_min_contest"
+                                android:gravity="center_vertical"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:lines="1"
+                                android:text="Min 2"
+                                android:textColor="?attr/app_text_color_sec"
+                                android:textSize="?attr/app_text_size_extra_small"
+                                app:custom_font="@string/app_font_regular" />
+
+                            <RelativeLayout
+                                android:layout_gravity="center_horizontal"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="@dimen/dp10"
+                                android:orientation="horizontal">
+
+                                <com.customviews.TypefaceTextView
+                                    android:gravity="left"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:layout_toLeftOf="@+id/switch_btn"
+                                    android:layout_centerVertical="true"
+                                    android:paddingEnd="@dimen/dp5"
+                                    android:text="Allow friends to join with multiple teams "
+                                    android:textColor="?attr/app_text_color"
+                                    android:textSize="?attr/app_text_size_small"
+                                    app:custom_font="@string/app_font_regular" />
+
+                                <Switch
+                                    android:id="@+id/switch_btn"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textOff="Off"
+                                    android:textOn="On" />
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dp10"
+                        android:layout_width="match_parent"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="@dimen/dp5"
+                        app:cardElevation="@dimen/dp3">
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_data_lay"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:orientation="horizontal">
+
+                                <com.customviews.TypefaceTextView
+                                    android:gravity="center_vertical"
+                                    android:layout_height="?attr/et_height"
+                                    android:layout_width="wrap_content"
+                                    android:lines="1"
+                                    android:text="Entry Per Team : - "
+                                    android:textColor="?attr/app_text_color"
+                                    android:textSize="?attr/et_text_size"
+                                    app:custom_font="@string/app_font_bold" />
+
+
+                                <ProgressBar
+                                    android:id="@+id/pb_playing"
+                                    android:layout_width="@dimen/dp20"
+                                    android:layout_height="@dimen/dp20" />
+
+                                <com.customviews.TypefaceTextView
+                                    android:id="@+id/tv_per_team_amount"
+                                    android:gravity="center_vertical"
+                                    android:layout_height="?attr/et_height"
+                                    android:layout_width="wrap_content"
+                                    android:lines="1"
+                                    android:text=""
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="?attr/et_big_text_size"
+                                    app:custom_font="@string/app_font_bold" />
+                            </LinearLayout>
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_email"
+                                android:gravity="center_horizontal"
+                                android:layout_height="?attr/et_height"
+                                android:layout_width="match_parent"
+                                android:lines="2"
+                                android:layout_marginBottom="@dimen/dp5"
+                                android:text="Entry is calculated based on total prize \n amount &amp; contest size"
+                                android:textColor="@color/colorBlackAA"
+                                android:textSize="?attr/et_text_size"
+                                app:custom_font="@string/app_font_regular" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_choose_wining_breakup"
+                        android:background="@drawable/bg_red_5radius"
+                        android:paddingBottom="@dimen/dp4"
+                        android:gravity="center"
+                        android:layout_height="?attr/btn_height"
+                        android:layout_marginStart="@dimen/dp25"
+                        android:layout_marginEnd="@dimen/dp25"
+                        android:layout_marginBottom="@dimen/dp25"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_width="match_parent"
+                        android:text="CHOOSE WINING BREAKUP"
+                        android:textColor="?attr/btn_text_color"
+                        android:textSize="?attr/btn_text_size"
+                        app:custom_font="?attr/app_font_medium" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_invite_code"
+                android:background="@drawable/bg_white_5radius_stroke1gray"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                android:layout_marginRight="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp20"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp5">
+
+                    <com.customviews.TintImageView
+                        android:id="@+id/iv_invite"
+                        android:layout_height="@dimen/dp15"
+                        android:layout_margin="@dimen/dp5"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:layout_width="@dimen/dp15"
+                        android:src="@drawable/tickets_icon"
+                        app:tintColorStateList="@color/sport_textcolor_selector_green_black" />
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_invite_code"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:layout_width="wrap_content"
+                        android:text="Enter invite code"
+                        android:textColor="@color/sport_textcolor_selector_green_black"
+                        android:textSize="?attr/app_text_size_more_normal"
+                        app:custom_font="?attr/app_font_medium" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_enter_invite_code"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+
+                    <View
+                        android:background="@color/browser_actions_divider_color"
+                        android:layout_height="@dimen/dp1"
+                        android:layout_width="match_parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_my_teams"
+                        android:layout_below="@+id/fragment_toolbar"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp20"
+                        android:layout_marginEnd="@dimen/dp5"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:layout_width="match_parent"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="@dimen/dp5"
+                        app:cardElevation="@dimen/dp3">
+
+                        <LinearLayout
+                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:orientation="vertical">
+
+                            <com.customviews.TypefaceTextView
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:padding="@dimen/dp10"
+                                android:text="IF YOU HAVE A CONTEST INVITE CODE, ENTER IT AND JOIN"
+                                android:textColor="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_more_normal"
+                                app:custom_font="?attr/app_font_medium" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp5"
+                                android:layout_marginEnd="@dimen/dp5"
+                                android:layout_marginStart="@dimen/dp5"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:layout_width="match_parent"
+                                app:cardBackgroundColor="@color/colorWhite"
+                                app:cardCornerRadius="@dimen/dp3"
+                                app:cardElevation="@dimen/dp3">
+
+                                <com.customviews.TypefaceEditText
+                                    android:id="@+id/et_invite_code"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:focusableInTouchMode="true"
+                                    android:focusedByDefault="false"
+                                    android:gravity="center_vertical"
+                                    android:hint="Invite code"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textEmailAddress"
+                                    android:layout_height="?attr/et_height"
+                                    android:layout_width="match_parent"
+                                    android:lines="1"
+                                    android:maxLength="50"
+                                    android:padding="@dimen/dp10"
+                                    android:textColor="?attr/et_text_color"
+                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:textSize="?attr/app_text_size_normal"
+                                    app:custom_font="@string/app_font_regular" />
+
+                            </androidx.cardview.widget.CardView>
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_join_contest"
+                                android:background="@drawable/bg_red_5radius"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_height="?attr/btn_height"
+                                android:layout_margin="@dimen/dp20"
+                                android:layout_width="match_parent"
+                                android:paddingBottom="@dimen/dp4"
+                                android:text="JOIN THIS CONTEST"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="?attr/btn_text_size"
+                                app:custom_font="?attr/app_font_medium" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

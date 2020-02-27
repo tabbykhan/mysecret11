@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_appblack_5radius_20_5" android:state_activated="true" />
+    <item android:drawable="@drawable/bg_appblack50_5radius_20_5" android:state_activated="false" />
+    <item android:drawable="@drawable/bg_appblack50_5radius_20_5" />
+</selector>

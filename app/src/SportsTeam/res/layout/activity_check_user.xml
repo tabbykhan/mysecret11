@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_new">
+
+    <include
+        android:id="@+id/fragment_toolbar"
+        layout="@layout/include_toolbar_fargment"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fragment_toolbar"
+        android:scrollbarThumbVertical="@drawable/bg_transparent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp10">
+            <ImageView
+                android:layout_width="@dimen/dp200"
+                android:layout_height="@dimen/dp150"
+                android:src="@drawable/logo_3x"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp30"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#505956"
+                    app:cardCornerRadius="@dimen/dp3"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_marginBottom="@dimen/dp5"
+                    app:cardElevation="@dimen/dp3">
+                    <com.customviews.TypefaceEditText
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/et_height"
+                        android:background="@null"
+                        android:ems="10"
+                        android:focusableInTouchMode="true"
+                        android:focusedByDefault="false"
+                        android:gravity="center_vertical"
+                        android:hint="Email or Mobile number"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:lines="1"
+                        android:maxLength="50"
+                        android:padding="@dimen/dp10"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@android:color/white"
+                        android:textSize="?attr/app_text_size_normal"
+
+                        app:custom_font="@string/app_font_regular" />
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_proceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/btn_height"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_marginBottom="@dimen/dp10"
+                    android:background="@drawable/btn_login"
+                    android:gravity="center"
+                    android:text="NEXT"
+                    android:textColor="?attr/app_screen_bg_color"
+                    android:textSize="?attr/btn_text_size"
+                    app:custom_font="@string/app_font_regular" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp20"
+                    android:layout_marginEnd="@dimen/dp20"
+                    android:gravity="center">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/dp1"
+                        android:background="@color/colorGray"/>
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="?attr/et_height"
+                        android:layout_gravity="center_vertical"
+                        android:ems="2"
+                        android:gravity="center"
+                        android:text=" OR "
+                        android:textColor="?attr/app_text_color_sec"
+                        android:textSize="?attr/app_text_size_normal"
+                        app:custom_font="@string/app_font_medium" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/dp1"
+                        android:background="@color/colorGray"/>
+
+                </LinearLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_fb_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_fbblue_5radius"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30">
+
+                    <ImageView
+                        android:id="@+id/img_facebok"
+                        android:layout_width="?attr/btn_height"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/txt_facebook"
+                        android:layout_alignBottom="@+id/txt_facebook"
+                        android:src="@drawable/facebook_icon_3x"
+                        android:tint="@color/colorWhite"
+                        android:background="@drawable/bg_fbblue_5radius_left"
+                        android:padding="@dimen/dp10"/>
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/txt_facebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/btn_height"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:text="Login with FaceBook"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorWhite"
+                        android:textColorHint="?attr/app_text_color"
+                        android:textSize="?attr/app_text_size_normal"
+                        app:custom_font="@string/app_font_regular" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rl_gplus_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:background="@drawable/bg_gplusred_5radius">
+
+                    <ImageView
+                        android:id="@+id/img_google"
+                        android:layout_width="?attr/btn_height"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/tv_google"
+                        android:layout_alignBottom="@+id/tv_google"
+                        android:tint="@color/colorWhite"
+                        android:src="@drawable/google_3x"
+                        android:background="@drawable/bg_gplusred_5radius_left"
+                        android:padding="@dimen/dp10"/>
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_google"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/btn_height"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp5"
+                        android:textAllCaps="true"
+                        android:gravity="center"
+                        android:text="Login with Google"
+                        android:textColor="@color/colorWhite"
+                        android:textColorHint="?attr/app_text_color"
+                        android:textSize="?attr/app_text_size_normal"
+                        app:custom_font="@string/app_font_regular" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dp50"
+                android:layout_marginBottom="@dimen/dp30">
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_signup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/btn_height"
+                    android:gravity="center"
+                    android:text="Not a member? Register"
+                    android:textColor="#ffffff"
+                    android:textSize="?attr/btn_text_size"
+                    app:custom_font="@string/app_font_regular" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_player_stats"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_stroke1gray"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/dp10"
+    android:paddingBottom="@dimen/dp10">
+
+    <ImageView
+        android:layout_width="@dimen/dp20"
+        android:layout_height="@dimen/dp20"
+        android:layout_marginStart="@dimen/dp20"
+        android:src="@drawable/file_icon_3x"
+        android:tint="?attr/app_text_color" />
+
+    <com.customviews.TypefaceTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_weight="1"
+        android:text="View Player Stats"
+        android:textColor="?attr/app_text_color"
+        android:textSize="?attr/app_text_size_small"
+        app:custom_font="@string/app_font_medium" />
+
+    <ImageView
+        android:layout_width="@dimen/dp15"
+        android:layout_height="@dimen/dp15"
+        android:layout_marginEnd="@dimen/dp20"
+        android:src="@drawable/right_arrow_3x"
+        android:tint="?attr/app_text_color" />
+</LinearLayout>

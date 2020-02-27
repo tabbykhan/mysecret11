@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="image_path_tag" type="id"/>
+    <item name="image_path_thumb_tag" type="id"/>
+    <item name="image_position" type="id"/>
+</resources>

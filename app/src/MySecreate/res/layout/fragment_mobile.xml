@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorScreenBg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp20"
+        android:scrollbarThumbVertical="@drawable/bg_transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                app:cardBackgroundColor="@color/colorActivateGreen"
+                app:cardCornerRadius="@dimen/dp5"
+                app:cardElevation="@dimen/dp3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp1"
+                    android:background="@drawable/bg_white_5radius"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingBottom="@dimen/dp10">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp25"
+                        android:layout_height="@dimen/dp25"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:src="@drawable/cellphone_3x"
+                        android:tint="@color/colorActivateGreen" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your mobile number is verified"
+                            android:textColor="?attr/app_text_color"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_mobile_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:text="8561887456"
+                            android:textColor="@color/colorActivateGreen"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_mobile_unverify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="@dimen/dp5"
+                app:cardElevation="@dimen/dp3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/dp10">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp25"
+                            android:layout_height="@dimen/dp25"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:src="@drawable/cellphone_3x"
+                            android:tint="@color/colorAppBlack" />
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:layout_weight="1"
+                            android:text="Verify your mobile"
+                            android:textColor="?attr/app_text_color"
+                            android:textSize="?attr/app_text_size_normal"
+                            app:custom_font="?attr/app_font_regular" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_already_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginRight="@dimen/dp20"
+                            android:text="Enter your OTP code send on mobile +91-8561887456"
+                            android:textColor="?attr/app_text_color"
+                            android:textSize="?attr/app_text_size_extra_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <com.customviews.OtpView
+                            android:id="@+id/otpView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@null"
+                            android:inputType="number"
+                            android:textColor="?attr/app_text_color"
+                            android:textSize="?attr/app_text_size_big"
+                            app:custom_font="?attr/app_font_medium"
+                            app:length="4" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_send_again_otp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:text="Not received OTP yet? Send Again"
+                            android:textColor="?attr/app_text_color_sec"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_mobile_verify"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/btn_height"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:background="@drawable/bg_red_5radius"
+                            android:paddingBottom="@dimen/dp4"
+                            android:gravity="center"
+                            android:text="VERIFY"
+                            android:textColor="?attr/btn_text_color"
+                            android:textSize="?attr/btn_text_size"
+                            app:custom_font="@string/app_font_regular" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_mobile_enter_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:theme="@style/TextInputTheme">
+
+                            <com.customviews.TypefaceEditText
+                                android:id="@+id/et_mobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp35"
+                                android:layout_marginStart="@dimen/dp20"
+                                android:layout_marginEnd="@dimen/dp20"
+                                android:background="?attr/et_bg_drawable"
+                                android:digits="0123456789"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:hint="Mobile number"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:lines="1"
+                                android:maxLength="10"
+                                android:textColor="?attr/et_text_color"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/et_text_size"
+                                app:custom_font="@string/app_font_regular" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp2"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:gravity="center"
+                            android:text="you will receive an OTP to this mobile number"
+                            android:textColor="?attr/app_text_color_sec"
+                            android:textSize="?attr/app_text_size_extra_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_mobile_proceed"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/btn_height"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:background="@drawable/bg_red_5radius"
+                            android:paddingBottom="@dimen/dp4"
+                            android:gravity="center"
+                            android:text="SEND OTP"
+                            android:textColor="?attr/btn_text_color"
+                            android:textSize="?attr/btn_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                app:cardBackgroundColor="@color/colorActivateGreen"
+                app:cardCornerRadius="@dimen/dp5"
+                app:cardElevation="@dimen/dp3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp1"
+                    android:background="@drawable/bg_white_5radius"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dp10"
+                    android:paddingBottom="@dimen/dp10">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp25"
+                        android:layout_height="@dimen/dp25"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:src="@drawable/envelope_3x"
+                        android:tint="@color/colorActivateGreen" />
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Your email address is verified"
+                            android:textColor="?attr/app_text_color"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:text="test@gmail.com"
+                            android:textColor="@color/colorActivateGreen"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_email_unverify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardCornerRadius="@dimen/dp5"
+                app:cardElevation="@dimen/dp3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/dp10">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp25"
+                            android:layout_height="@dimen/dp25"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:src="@drawable/envelope_3x"
+                            android:tint="@color/colorAppBlack" />
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:layout_weight="1"
+                            android:text="Verify your email"
+                            android:textColor="?attr/app_text_color"
+                            android:textSize="?attr/app_text_size_normal"
+                            app:custom_font="?attr/app_font_regular" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_already_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingTop="@dimen/dp10">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp25"
+                                android:layout_height="@dimen/dp25"
+                                android:src="@drawable/warning"
+                                android:tint="@color/colorOrange" />
+
+                            <com.customviews.TypefaceTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:layout_weight="1"
+                                android:text="click on the verification link in the mail we sent you to verify your email"
+                                android:textColor="@color/colorRed"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="?attr/app_font_regular" />
+                        </LinearLayout>
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:text="@string/email_spam"
+                            android:textColor="?attr/app_text_color_sec"
+                            android:textSize="?attr/app_text_size_extra_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_send_again"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:text="Not received verification email yet? Send Again"
+                            android:textColor="?attr/app_text_color_sec"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="?attr/app_font_regular" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_email_enter_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_social"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/dp30"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/btn_height"
+                                android:orientation="horizontal">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.5"
+                                    android:layout_margin="@dimen/dp3"
+                                    app:cardBackgroundColor="@color/colorWhite"
+                                    app:cardCornerRadius="@dimen/dp5"
+                                    app:cardElevation="@dimen/dp3">
+
+                                    <RelativeLayout
+                                        android:id="@+id/rl_fb_btn"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:id="@+id/img_facebok"
+                                            android:layout_width="@dimen/dp20"
+                                            android:layout_height="@dimen/dp20"
+                                            android:paddingTop="@dimen/dp3"
+                                            android:paddingStart="@dimen/dp3"
+                                            android:layout_centerVertical="true"
+                                            android:src="@drawable/facebook_3x" />
+
+                                        <com.customviews.TypefaceTextView
+                                            android:id="@+id/txt_facebook"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/dp5"
+                                            android:layout_toRightOf="@+id/img_facebok"
+                                            android:text="Facebook"
+                                            android:textColor="@color/colorBlack"
+                                            android:textColorHint="?attr/app_text_color"
+                                            android:textSize="?attr/app_text_size_normal"
+                                            app:custom_font="@string/app_font_regular" />
+
+                                    </RelativeLayout>
+                                </androidx.cardview.widget.CardView>
+
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.05" />
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.5"
+                                    android:layout_margin="@dimen/dp3"
+                                    app:cardBackgroundColor="@color/colorWhite"
+                                    app:cardCornerRadius="@dimen/dp5"
+                                    app:cardElevation="@dimen/dp3">
+
+                                    <RelativeLayout
+                                        android:id="@+id/rl_gplus_btn"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:id="@+id/img_google"
+                                            android:layout_width="@dimen/dp20"
+                                            android:layout_height="@dimen/dp20"
+                                            android:layout_centerVertical="true"
+                                            android:src="@drawable/google_3x" />
+
+                                        <com.customviews.TypefaceTextView
+                                            android:id="@+id/tv_google"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginLeft="@dimen/dp5"
+                                            android:layout_toRightOf="@+id/img_google"
+                                            android:gravity="center"
+                                            android:text="Google"
+                                            android:textColor="@color/colorBlack"
+                                            android:textColorHint="?attr/app_text_color"
+                                            android:textSize="?attr/app_text_size_normal"
+                                            app:custom_font="@string/app_font_regular" />
+
+                                    </RelativeLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:gravity="center"
+                            android:text="We won't post anything without your permission"
+                            android:textColor="?attr/app_text_color_sec"
+                            android:textSize="?attr/app_text_size_extra_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp1"
+                                android:layout_weight="1"
+                                android:background="@color/colorWhite70" />
+
+                            <com.customviews.TypefaceTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:layout_marginEnd="@dimen/dp10"
+                                android:gravity="center"
+                                android:text="OR"
+                                android:textColor="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="?attr/app_font_medium" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp1"
+                                android:layout_weight="1"
+                                android:background="@color/colorWhite70" />
+                        </LinearLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:theme="@style/TextInputTheme">
+
+
+                            <com.customviews.TypefaceEditText
+                                android:id="@+id/et_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp35"
+                                android:layout_marginStart="@dimen/dp20"
+                                android:layout_marginTop="@dimen/dp5"
+                                android:layout_marginEnd="@dimen/dp20"
+                                android:background="?attr/et_bg_drawable"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:hint="Email Address"
+                                android:imeOptions="actionNext"
+                                android:inputType="text|textEmailAddress"
+                                android:lines="1"
+                                android:maxLength="50"
+                                android:paddingStart="@dimen/dp10"
+                                android:paddingEnd="@dimen/dp10"
+                                android:textColor="?attr/et_text_color"
+                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textSize="?attr/et_text_size"
+                                app:custom_font="@string/app_font_regular" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp2"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:gravity="center"
+                            android:text="We will send you a verification link on this email"
+                            android:textColor="?attr/app_text_color_sec"
+                            android:textSize="?attr/app_text_size_extra_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_proceed"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/btn_height"
+                            android:layout_marginStart="@dimen/dp20"
+                            android:layout_marginTop="@dimen/dp20"
+                            android:layout_marginEnd="@dimen/dp20"
+                            android:layout_marginBottom="@dimen/dp20"
+                            android:paddingBottom="@dimen/dp4"
+                            android:background="@drawable/bg_red_5radius"
+                            android:gravity="center"
+                            android:text="VERIFY"
+                            android:textColor="?attr/btn_text_color"
+                            android:textSize="?attr/btn_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

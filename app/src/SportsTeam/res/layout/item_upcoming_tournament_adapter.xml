@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/fl_card_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp5"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp5"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="@dimen/dp5"
+            app:cardElevation="@dimen/dp3">
+
+            <include
+                android:id="@+id/ll_view"
+                layout="@layout/include_match_view" />
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/view_disable_layer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fl_card_data"
+        android:layout_alignTop="@+id/fl_card_data"
+        android:layout_alignEnd="@+id/fl_card_data"
+        android:layout_alignBottom="@+id/fl_card_data"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp10"
+        android:background="@drawable/bg_black50_15radius" />
+
+</RelativeLayout>

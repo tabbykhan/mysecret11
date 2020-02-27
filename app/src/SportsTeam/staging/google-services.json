@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "865959242755",
+    "firebase_url": "https://sportsteam11-ae334.firebaseio.com",
+    "project_id": "sportsteam11-ae334",
+    "storage_bucket": "sportsteam11-ae334.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865959242755:android:f371c47a2b8b946363b236",
+        "android_client_info": {
+          "package_name": "com.imuons.sportteam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865959242755-3hla8eq4m48lf4vtn50rlohqo3hlvls6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKDzU2Z5FheQgNxOtwOXZ7D60I_tytWO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865959242755-3hla8eq4m48lf4vtn50rlohqo3hlvls6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
