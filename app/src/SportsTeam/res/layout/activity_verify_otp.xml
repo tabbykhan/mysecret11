@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/app_screen_bg_color"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -129,7 +130,7 @@
                         android:layout_width="0dp"
                         android:layout_height="?attr/btn_height"
                         android:layout_weight="0.85"
-                        android:background="@drawable/bg_red_5radius"
+                        android:background="@drawable/btn_login"
                         android:gravity="center"
                         android:text="VERIFY"
                         android:textColor="?attr/btn_text_color"
