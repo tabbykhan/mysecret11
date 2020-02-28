@@ -112,7 +112,7 @@
                             <com.customviews.TypefaceTextView
                                 android:layout_width="@dimen/dp17"
                                 android:layout_height="@dimen/dp17"
-                                android:layout_toLeftOf="@+id/img_captain"
+                                android:layout_toRightOf="@+id/img_captain"
                                 android:background="@drawable/bg_orange_oval"
                                 android:gravity="center"
                                 android:text="C"
@@ -261,11 +261,11 @@
                             <com.customviews.TypefaceTextView
                                 android:layout_width="@dimen/dp17"
                                 android:layout_height="@dimen/dp17"
-                                android:layout_toLeftOf="@+id/img_captain"
+                                android:layout_toRightOf="@+id/img_captain"
                                 android:background="@drawable/bg_primary_oval"
                                 android:gravity="center"
                                 android:text="VC"
-                                android:textColor="@color/colorWhite"
+                                android:textColor="@color/btn_color"
                                 android:textSize="7sp"
                                 app:custom_font="?attr/app_font_regular" />
                         </RelativeLayout>
@@ -318,6 +318,7 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:visibility="invisible"
+                    android:background="@color/vision_green"
                     android:weightSum="1">
 
                     <LinearLayout
@@ -374,7 +375,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/dp5"
                             android:text="PREVIEW"
-                            android:textColor="@color/colorBlack"
+                            android:textColor="@color/colorRed"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_medium" />
 
@@ -424,11 +425,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/fl_frame_lay"
-        android:layout_marginStart="@dimen/dp8"
-        android:layout_marginEnd="@dimen/dp1"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
         android:layout_marginBottom="@dimen/dp10"
         android:gravity="center_vertical"
         android:orientation="horizontal"
+        android:background="@color/vision_green"
         android:weightSum="1">
 
         <LinearLayout
@@ -481,14 +483,15 @@
                 android:layout_width="@dimen/dp20"
                 android:layout_height="@dimen/dp20"
                 android:src="@drawable/view_3x"
-                android:tint="?attr/app_text_color" />
+                android:tint="@color/colorRed"
+                />
 
             <com.customviews.TypefaceTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp5"
                 android:text="PREVIEW"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorRed"
                 android:textSize="?attr/app_text_size_extra_small"
                 app:custom_font="@string/app_font_medium" />
 

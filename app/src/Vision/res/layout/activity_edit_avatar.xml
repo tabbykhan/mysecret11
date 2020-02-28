@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/vision_bg">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -57,21 +57,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="@dimen/dp10"
-        android:layout_marginBottom="@dimen/dp10"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="1">
 
         <com.customviews.TypefaceTextView
             android:id="@+id/tv_update"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="?attr/btn_height"
             android:layout_weight="0.5"
             android:background="@drawable/bg_red_5radius"
-            android:paddingBottom="@dimen/dp4"
             android:gravity="center"
             android:text="UPDATE"
-            android:textColor="?attr/btn_text_color"
+            android:textColor="@color/btn_color"
             android:textSize="?attr/btn_text_size"
             app:custom_font="@string/app_font_regular" />
     </LinearLayout>

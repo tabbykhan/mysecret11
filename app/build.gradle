@@ -197,5 +197,8 @@ dependencies {
     implementation('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
         exclude module: 'support-v4'
     }
+
+    // fresco
+    implementation 'com.facebook.fresco:fresco:2.1.0'
 }
 apply plugin: 'com.google.gms.google-services'

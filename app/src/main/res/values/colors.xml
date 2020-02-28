@@ -14,6 +14,8 @@
     <color name="colorBlack50">#50000000</color>
     <color name="colorBlack30">#30000000</color>
     <color name="colorBlack10">#10000000</color>
+    <color name="btn_color">#434722</color>
+    <color name="vision_green">#2F6517</color>
 
 
 </resources>

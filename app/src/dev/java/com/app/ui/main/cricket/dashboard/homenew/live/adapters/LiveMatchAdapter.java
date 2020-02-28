@@ -2,7 +2,6 @@ package com.app.ui.main.cricket.dashboard.homenew.live.adapters;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -14,6 +13,7 @@ import com.app.model.GameTypeModel;
 import com.app.model.MatchModel;
 import com.app.model.SeriesModel;
 import com.app.model.TeamModel;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -47,7 +47,7 @@ public class LiveMatchAdapter extends AppBaseRecycleAdapter {
 
         View view_disable_layer;
         LinearLayout ll_view;
-        ImageView iv_team1;
+        SimpleDraweeView iv_team1;
         ProgressBar pb_image1;
         TextView tv_match_name;
         TextView tv_match_name_sec;
@@ -57,7 +57,7 @@ public class LiveMatchAdapter extends AppBaseRecycleAdapter {
         TextView tv_timer_time;
         LinearLayout ll_match_status;
         TextView tv_status;
-        ImageView iv_team2;
+        SimpleDraweeView iv_team2;
         ProgressBar pb_image2;
 
         View view_seprator;
