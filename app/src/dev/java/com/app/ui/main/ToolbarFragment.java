@@ -669,7 +669,7 @@ public class ToolbarFragment extends AppBaseFragment {
 
     private void UpdateHeaderTitel(Boolean aBoolean) {
         if (aBoolean) {
-            rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header_white));
+            rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header));
             ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_red_10radius));
 //            tv_notification_counter.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_notification_counter));
 //            tv_notification_counter.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
@@ -687,7 +687,13 @@ public class ToolbarFragment extends AppBaseFragment {
             }else {
                 ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_gray));
             }
-
+            //_______________***********Sports Team 11**************_____________________
+            if (ConstantsFlavor.type == ConstantsFlavor.Type.sportteam){
+               // iv_notification.setColorFilter(getResources().getColor(R.color.colorOrange), PorterDuff.Mode.SRC_IN);
+                rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_headerorange));
+            }else {
+                rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header));
+            }
 
             in_wallet.setColorFilter(getResources().getColor(R.color.colorRed), PorterDuff.Mode.SRC_IN);
             tv_balance.setTextColor(getActivity().getResources().getColor(R.color.colorRed));
