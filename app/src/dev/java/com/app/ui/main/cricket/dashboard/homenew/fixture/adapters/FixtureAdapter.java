@@ -146,7 +146,7 @@ public class FixtureAdapter extends AppBaseRecycleAdapter {
                         R.mipmap.ic_launcher_round);
             } else {
                 updateViewVisibitity(pb_image1, View.INVISIBLE);
-                iv_team1.setImageResource(R.mipmap.ic_launcher_round);
+                iv_team1.setImageResource(R.mipmap.ic_launcher);
                 tv_team1_name.setText("");
             }
 
@@ -157,7 +157,7 @@ public class FixtureAdapter extends AppBaseRecycleAdapter {
                         R.mipmap.ic_launcher_round);
             } else {
                 updateViewVisibitity(pb_image2, View.INVISIBLE);
-                iv_team2.setImageResource(R.mipmap.ic_launcher_round);
+                iv_team2.setImageResource(R.mipmap.ic_launcher);
                 tv_team2_name.setText("");
             }
 
