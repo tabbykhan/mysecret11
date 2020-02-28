@@ -45,7 +45,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Email Address"
-                        android:textColor="?attr/app_link_text_color"
+                        android:textColor="@color/com_facebook_blue"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_regular" />
 
@@ -56,10 +56,14 @@
                         android:layout_height="?attr/et_height"
                         android:gravity="center_vertical"
                         android:lines="1"
+                        android:background="#505956"
                         android:text="vishnu@gmail.com"
-                        android:textColor="@color/colorAppBlack"
+                        android:textColor="@color/colorWhite"
+                        android:drawableStart="@drawable/ic_email_black_24dp"
                         android:textSize="?attr/et_text_size"
-                        app:custom_font="@string/app_font_regular" />
+                        app:custom_font="@string/app_font_regular"
+                        android:padding="@dimen/dp5"
+                        android:textAlignment="center"/>
 
 
                     <androidx.cardview.widget.CardView
@@ -78,7 +82,8 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:gravity="center_vertical"
-                            android:background="?attr/et_bg_drawable">
+                            android:background="#505956"
+                            >
                             <ImageView
                                 android:layout_width="@dimen/dp20"
                                 android:layout_height="@dimen/dp20"
@@ -97,7 +102,7 @@
                                 android:imeOptions="actionDone"
                                 android:inputType="textPassword"
                                 android:lines="1"
-
+                                android:textAlignment="center"
                                 android:background="@null"
                                 android:maxLength="50"
                                 android:padding="@dimen/dp10"
