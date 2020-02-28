@@ -53,8 +53,7 @@
 
 
     </style>
-
-
+    
     <style name="TextInputTheme" parent="AppTheme">
         <item name="colorControlActivated">@color/colorOrange</item>
         <item name="android:textColorHint">@color/colorWhite</item>
