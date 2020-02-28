@@ -107,7 +107,7 @@
                             android:layout_width="@dimen/dp17"
                             android:layout_height="@dimen/dp17"
                             android:layout_toLeftOf="@+id/img_captain"
-                            android:background="@drawable/bg_orange_oval"
+                            android:background="@drawable/round_skyblue"
                             android:gravity="center"
                             android:text="C"
                             android:textColor="@color/colorWhite"
@@ -139,7 +139,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="200"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="#C84E00"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
@@ -185,7 +185,7 @@
                             android:layout_width="@dimen/dp17"
                             android:layout_height="@dimen/dp17"
                             android:layout_toLeftOf="@+id/img_captain"
-                            android:background="@drawable/bg_red_oval"
+                            android:background="@drawable/bg_confirm_win_single_orange"
                             android:gravity="center"
                             android:text="VC"
                             android:textColor="@color/colorWhite"
@@ -216,7 +216,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="200"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="#C84E00"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
@@ -239,7 +239,8 @@
                 android:layout_marginBottom="@dimen/dp1"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1"
+                android:background="#24372D">
 
                 <LinearLayout
                     android:id="@+id/ll_edit"
@@ -263,7 +264,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp5"
                         android:text="EDIT"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -291,14 +292,15 @@
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
                         android:src="@drawable/view_3x"
-                        android:tint="?attr/app_text_color" />
+                        android:tint="#00D4ED"
+                        />
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp5"
                         android:text="PREVIEW"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 

@@ -276,7 +276,7 @@
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_entry"
-                    android:background="@drawable/bg_red_5radius"
+                    android:background="@drawable/bg_skyblue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="@dimen/dp45"
@@ -285,7 +285,7 @@
                     android:gravity="center"
                     android:layout_marginStart="@dimen/dp7"
                     android:text="75"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorBlack"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_regular" />
 

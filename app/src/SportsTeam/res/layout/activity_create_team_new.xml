@@ -16,9 +16,7 @@
         android:layout_height="wrap_content"
         android:background="#f6f6f6"
         android:orientation="vertical">
-
-
-
+        
 
         <LinearLayout
             android:id="@+id/ll_team_detail"
