@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/vision_bg"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -27,44 +27,43 @@
                 android:visibility="gone" />
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp10"
-                android:layout_marginTop="@dimen/dp20"
-                android:layout_marginEnd="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardCornerRadius="@dimen/dp5"
-                app:cardElevation="@dimen/dp2"
-                app:contentPadding="@dimen/dp10">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp10"
-                        android:text="Email Address *"
-                        android:textColor="?attr/app_text_color_sec"
-                        android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
-
+                    android:orientation="vertical"
+                    android:paddingRight="@dimen/dp20"
+                    android:paddingLeft="@dimen/dp20"
+                    >
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_email"
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:src="@drawable/ic_email_black_24dp"
+                            android:layout_centerVertical="true"
+                            android:tint="#ffffff" />
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/et_email"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
+                            android:background="@null"
                             android:ems="10"
+                            android:layout_toEndOf="@id/img_email"
                             android:gravity="center_vertical"
                             android:hint=""
                             android:imeOptions="actionNext"
@@ -73,8 +72,8 @@
                             android:maxLength="50"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/app_text_color_sec"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
 
@@ -93,37 +92,43 @@
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="?attr/app_font_medium" />
                     </RelativeLayout>
-
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:text="Mobile Number *"
-                        android:textColor="?attr/app_text_color_sec"
-                        android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
-
-
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_mobile"
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:src="@drawable/ic_phone_android_black_24dp"
+                            android:tint="#ffffff"
+                            android:layout_centerVertical="true"/>
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/et_mobile"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
+                            android:background="@null"
                             android:ems="10"
                             android:gravity="center_vertical"
                             android:hint=""
+                            android:layout_toEndOf="@id/img_mobile"
                             android:imeOptions="actionNext"
                             android:inputType="none"
                             android:lines="1"
                             android:maxLength="10"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/app_text_color_sec"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
 
@@ -143,6 +148,7 @@
                             app:custom_font="?attr/app_font_medium" />
                     </RelativeLayout>
 
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -150,22 +156,28 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
 
-                            <com.google.android.material.textfield.TextInputLayout
-                                android:layout_width="match_parent"
+                            <LinearLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:theme="@style/TextInputTheme">
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:background="@drawable/et_vistion"
+                                android:gravity="center_vertical"
+                               >
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp20"
+                                    android:layout_height="@dimen/dp20"
+                                    android:layout_marginStart="@dimen/dp10"
+                                    android:src="@drawable/user_name"
+                                    android:tint="#ffffff" />
 
                                 <com.customviews.TypefaceEditText
                                     android:id="@+id/et_f_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="?attr/et_height"
-                                    android:background="?attr/et_bg_drawable"
+                                    android:background="@null"
                                     android:ems="10"
                                     android:gravity="center_vertical"
                                     android:hint="First Name *"
@@ -173,83 +185,104 @@
                                     android:inputType="textCapWords"
                                     android:lines="1"
                                     android:maxLength="50"
+                                    android:paddingLeft="@dimen/dp10"
                                     android:nextFocusRight="@+id/et_l_name"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:textColor="@color/colorWhite"
+                                    android:textColorHint="@color/colorWhite"
                                     android:textSize="?attr/et_text_size"
                                     app:custom_font="@string/app_font_regular" />
-                            </com.google.android.material.textfield.TextInputLayout>
-
-                        </LinearLayout>
+                            </LinearLayout>
 
                         <View
                             android:id="@+id/view_last_name"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.2" />
-
                         <LinearLayout
                             android:id="@+id/ll_lastname"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="horizontal"
+                            android:background="@drawable/et_vistion"
+                            android:gravity="center_vertical"
+                            >
 
-                            <com.google.android.material.textfield.TextInputLayout
+                            <ImageView
+                                android:layout_width="@dimen/dp20"
+                                android:layout_height="@dimen/dp20"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:src="@drawable/user_name"
+                                android:tint="#ffffff" />
+
+                            <com.customviews.TypefaceEditText
+                                android:id="@+id/et_l_name"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:theme="@style/TextInputTheme">
+                                android:layout_height="?attr/et_height"
+                                android:background="@null"
+                                android:ems="10"
+                                android:gravity="center_vertical"
+                                android:hint="Last Name"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapWords"
+                                android:lines="1"
+                                android:maxLength="50"
+                                android:nextFocusRight="@+id/et_l_name"
+                                android:paddingLeft="@dimen/dp10"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
+                                android:textSize="?attr/et_text_size"
+                                app:custom_font="@string/app_font_regular" />
+                        </LinearLayout>
 
-                                <com.customviews.TypefaceEditText
-                                    android:id="@+id/et_l_name"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="?attr/et_height"
-                                    android:background="?attr/et_bg_drawable"
-                                    android:ems="10"
-                                    android:gravity="center_vertical"
-                                    android:hint="Last Name"
-                                    android:imeOptions="actionNext"
-                                    android:inputType="textCapWords"
-                                    android:lines="1"
-                                    android:maxLength="50"
-                                    android:nextFocusRight="@+id/et_l_name"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
-                                    android:textSize="?attr/et_text_size"
-                                    app:custom_font="@string/app_font_regular" />
-                            </com.google.android.material.textfield.TextInputLayout>
+
 
                         </LinearLayout>
 
 
-                    </LinearLayout>
 
-                    <com.customviews.TypefaceTextView
+
+
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
                         android:layout_marginTop="@dimen/dp15"
-                        android:text="Date Of Birth *"
-                        android:textColor="?attr/app_text_color_sec"
-                        android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
-
-
-                    <com.customviews.TypefaceTextView
-                        android:id="@+id/et_dob"
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/et_height"
-                        android:background="?attr/et_bg_drawable"
-                        android:ems="10"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
                         android:gravity="center_vertical"
-                        android:hint=""
-                        android:imeOptions="actionNext"
-                        android:inputType="none"
-                        android:lines="1"
-                        android:maxLength="50"
-                        android:textColor="?attr/et_text_color"
-                        android:textColorHint="?attr/et_hint_text_color"
-                        android:textSize="?attr/et_text_size"
-                        app:custom_font="@string/app_font_regular" />
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:src="@drawable/ic_insert_invitation"
+                            android:tint="#ffffff" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_dob"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Date Of Birth *"
+                            android:imeOptions="actionNext"
+                            android:inputType="none"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+
+
 
 
                     <LinearLayout
@@ -258,17 +291,29 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <com.google.android.material.textfield.TextInputLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp2"
                             android:layout_marginTop="@dimen/dp15"
-                            android:theme="@style/TextInputTheme">
+                            android:layout_marginEnd="@dimen/dp2"
+                            android:layout_marginBottom="@dimen/dp2"
+                            android:background="@drawable/et_vistion"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp20"
+                                android:layout_height="@dimen/dp20"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:src="@drawable/tab_icon_home"
+                                android:tint="#ffffff" />
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_address_line_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Address line 1"
@@ -276,24 +321,37 @@
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:paddingLeft="10dp"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
 
 
-                        <com.google.android.material.textfield.TextInputLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp2"
                             android:layout_marginTop="@dimen/dp15"
-                            android:theme="@style/TextInputTheme">
+                            android:layout_marginEnd="@dimen/dp2"
+                            android:layout_marginBottom="@dimen/dp2"
+                            android:background="@drawable/et_vistion"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp20"
+                                android:layout_height="@dimen/dp20"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:src="@drawable/tab_icon_home"
+                                android:tint="#ffffff" />
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_address_line_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Address line 2"
@@ -301,11 +359,14 @@
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:paddingLeft="10dp"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                        </LinearLayout>
+
+
 
                     </LinearLayout>
 
@@ -314,116 +375,130 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp15"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        >
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:background="@drawable/et_vistion"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
-                            <com.customviews.TypefaceTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="State *"
-                                android:textColor="?attr/app_text_color_sec"
-                                android:textSize="?attr/app_text_size_normal"
-                                app:custom_font="@string/app_font_regular" />
+                            <ImageView
+                                android:layout_width="@dimen/dp20"
+                                android:layout_height="@dimen/dp20"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:src="@drawable/ic_add_location_black_24dp"
+                                android:tint="#ffffff" />
 
-
-                            <com.customviews.TypefaceTextView
+                            <com.customviews.TypefaceEditText
                                 android:id="@+id/et_state"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
-                                android:hint=""
+                                android:hint="State *"
                                 android:imeOptions="actionNext"
                                 android:inputType="none"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:paddingLeft="10dp"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
+
+
 
                         <View
                             android:id="@+id/view_city"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="0.2" />
-
                         <LinearLayout
                             android:id="@+id/ll_city"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:background="@drawable/et_vistion"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
-                            <com.customviews.TypefaceTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="City"
-                                android:textColor="?attr/app_text_color_sec"
-                                android:textSize="?attr/app_text_size_normal"
-                                app:custom_font="@string/app_font_regular" />
-
+                            <ImageView
+                                android:layout_width="@dimen/dp20"
+                                android:layout_height="@dimen/dp20"
+                                android:layout_marginStart="@dimen/dp10"
+                                android:src="@drawable/ic_city"
+                                android:tint="#ffffff" />
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_city"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
-                                android:hint=""
+                                android:hint="City"
                                 android:imeOptions="actionNext"
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:paddingLeft="10dp"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
 
 
+
                     </LinearLayout>
+
 
 
                     <LinearLayout
                         android:id="@+id/ll_pincode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                        <com.google.android.material.textfield.TextInputLayout
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:src="@drawable/ic_pin"
+                            android:tint="#ffffff" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_pincode"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dp15"
-                            android:theme="@style/TextInputTheme">
-
-                            <com.customviews.TypefaceEditText
-                                android:id="@+id/et_pincode"
-                                android:layout_width="match_parent"
-                                android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
-                                android:digits="0123456789"
-                                android:ems="10"
-                                android:gravity="center_vertical"
-                                android:hint="Pin Code"
-                                android:imeOptions="actionDone"
-                                android:inputType="number"
-                                android:lines="1"
-                                android:maxLength="6"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
-                                android:textSize="?attr/et_text_size"
-                                app:custom_font="@string/app_font_regular" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:digits="0123456789"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Pin Code"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:lines="1"
+                            android:maxLength="6"
+                            android:paddingLeft="10dp"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -442,14 +517,14 @@
                             android:background="?attr/btn_bg_drawable"
                             android:gravity="center"
                             android:text="UPDATE"
-                            android:textColor="?attr/btn_text_color"
+                            android:textColor="@color/btn_color"
                             android:textSize="?attr/btn_text_size"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
 
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
 

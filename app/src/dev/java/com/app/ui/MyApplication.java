@@ -12,6 +12,7 @@ import com.app.model.GameModel;
 import com.app.model.MatchModel;
 import com.app.model.webrequestmodel.UpdateDeviceTokenRequestModel;
 import com.app.ui.checkuser.CheckUserActivity;
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.fcm.NotificationPrefs;
 import com.google.gson.Gson;
 import com.medy.retrofitwrapper.WebRequest;
@@ -159,6 +160,7 @@ public class MyApplication extends AppBaseApplication {
     public void onCreate() {
         super.onCreate();
         setupTimer();
+        Fresco.initialize(this);
         facebookLoginHandler = new FacebookLoginHandler(this);
         gplusLoginHandler = new GplusLoginHandler(this);
 

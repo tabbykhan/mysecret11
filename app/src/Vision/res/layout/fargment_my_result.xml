@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/vision_bg">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_layout"
@@ -30,7 +30,7 @@
             android:layout_width="@dimen/dp80"
             android:layout_height="@dimen/dp80"
             android:src="@drawable/leaderboard_icon"
-            android:tint="@color/colorGray"/>
+            android:tint="@color/colorWhite"/>
         <com.customviews.TypefaceTextView
             android:id="@+id/tv_no_item"
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dp20"
             android:text="You haven\'t joined any upcoming contest"
-            android:textColor="?attr/app_text_color_sec"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_normal"
             app:custom_font="@string/app_font_regular" />
         <LinearLayout
@@ -58,7 +58,7 @@
                 android:background="@drawable/bg_red_5radius"
                 android:gravity="center"
                 android:text="JOIN CONTESTS"
-                android:textColor="?attr/btn_text_color"
+                android:textColor="@color/btn_color"
                 android:textSize="?attr/btn_text_size"
                 app:custom_font="@string/app_font_regular" />
         </LinearLayout>

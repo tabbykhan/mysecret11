@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/vision_bg">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -136,7 +136,7 @@
                         android:background="@drawable/bg_red_oval"
                         android:padding="@dimen/dp5"
                         android:src="@drawable/info_3x"
-                        android:tint="@color/colorWhite" />
+                        android:tint="@color/vision_green" />
 
 
                     <com.customviews.TypefaceTextView
@@ -169,10 +169,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp20"
-                    android:gravity="center"
+                    android:gravity="start"
+                    android:paddingLeft="10dp"
                     android:text="ADD CASH TO YOUR ACCOUNT"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
+                    android:background="@color/vision_green"
+
                     app:custom_font="@string/app_font_medium" />
 
 
@@ -197,7 +200,6 @@
                             android:id="@+id/et_amount"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
                             android:ems="10"
                             android:gravity="center_vertical"
                             android:hint="Amount to add"
@@ -207,7 +209,7 @@
                             android:maxLength="15"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/et_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textColorHint="?attr/et_hint_text_color"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
@@ -291,7 +293,6 @@
                                 android:id="@+id/et_promo_code"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Promocode"
@@ -301,7 +302,7 @@
                                 android:maxLength="15"
                                 android:paddingStart="@dimen/dp10"
                                 android:paddingEnd="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
+                                android:textColor="@color/colorWhite"
                                 android:textColorHint="?attr/et_hint_text_color"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
@@ -311,7 +312,7 @@
                             android:id="@+id/tv_apply_code"
                             android:layout_width="0dp"
                             android:layout_height="@dimen/dp25"
-                            android:background="@drawable/bg_red_5radius"
+                            android:background="@color/btn_color"
                             android:gravity="center"
                             android:lines="1"
                             android:layout_weight=".2"
@@ -332,7 +333,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp30"
                         android:text="Payment Option"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_medium" />
 
@@ -437,7 +438,7 @@
                             android:background="@drawable/bg_red_5radius"
                             android:gravity="center"
                             android:text="PROCEED"
-                            android:textColor="?attr/btn_text_color"
+                            android:textColor="@color/btn_color"
                             android:textSize="?attr/btn_text_size"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>

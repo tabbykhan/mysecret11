@@ -37,9 +37,10 @@
                         android:layout_marginStart="@dimen/dp20"
                         android:layout_weight="1"
                         android:text="CONFIRMATION"
-                        android:textColor="?attr/btn_text_color"
+                        android:gravity="center"
+                        android:textColor="@color/vision_green"
                         android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
+                        app:custom_font="@string/app_font_bold" />
 
                     <ImageView
                         android:id="@+id/iv_close"
@@ -49,6 +50,7 @@
                         android:background="@drawable/bg_white_oval"
                         android:padding="@dimen/dp7"
                         android:src="@drawable/close_3x"
+                        android:visibility="gone"
                         android:tint="?attr/colorPrimary" />
 
                 </LinearLayout>
@@ -120,7 +122,7 @@
                         android:layout_height="@dimen/dp25"
                         android:padding="@dimen/dp5"
                         android:src="@drawable/gift_3x"
-                        android:tint="?attr/app_link_text_color" />
+                        android:tint="@color/vision_green" />
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
@@ -135,7 +137,7 @@
                         android:layout_width="@dimen/dp25"
                         android:layout_height="@dimen/dp25"
                         android:layout_marginStart="@dimen/dp5"
-                        android:background="@drawable/bg_red_oval"
+                        android:background="@drawable/bg_primary_green_oval"
                         android:padding="@dimen/dp5"
                         android:src="@drawable/info_3x"
                         android:tint="@color/colorWhite" />
@@ -172,7 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="To Pay"
-                        android:textColor="@color/colorActivateGreen"
+                        android:textColor="@color/vision_green"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_medium" />
 
@@ -183,7 +185,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="20"
-                        android:textColor="@color/colorActivateGreen"
+                        android:textColor="@color/vision_green"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_medium" />
                 </LinearLayout>
@@ -218,7 +220,7 @@
                         android:background="@drawable/bg_red_5radius"
                         android:gravity="center"
                         android:text="JOIN CONTEST"
-                        android:textColor="?attr/btn_text_color"
+                        android:textColor="@color/btn_color"
                         android:textSize="?attr/btn_text_size"
                         android:paddingBottom="@dimen/dp4"
                         app:custom_font="@string/app_font_regular" />

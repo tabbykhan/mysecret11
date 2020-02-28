@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/vision_bg"
+   >
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -23,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/tv_join"
-        android:layout_below="@+id/ll_top">
+        android:layout_below="@+id/ll_top"
+        android:background="@drawable/vision_bg">
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/view_nested_scroll"
@@ -217,7 +219,7 @@
                                         android:paddingEnd="@dimen/dp3"
                                         android:paddingBottom="@dimen/dp2"
                                         android:text="75"
-                                        android:textColor="@color/colorWhite"
+                                        android:textColor="@color/btn_color"
                                         android:textSize="?attr/app_text_size_small"
                                         app:custom_font="@string/app_font_medium" />
 
@@ -242,7 +244,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/dp10"
                                 android:layout_marginEnd="@dimen/dp10"
-                                android:background="@color/colorGray50"
+                                android:background="@color/vision_green"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal">
 
@@ -252,7 +254,7 @@
                                     android:layout_weight="1"
                                     android:paddingStart="@dimen/dp10"
                                     android:text="Share this contest with your friends!"
-                                    android:textColor="@color/colorAppBlackAA"
+                                    android:textColor="@color/colorWhite"
                                     android:textSize="?attr/app_text_size_extra_small"
                                     app:custom_font="@string/app_font_regular" />
 
@@ -262,7 +264,8 @@
                                     android:layout_height="@dimen/dp30"
                                     android:layout_marginEnd="@dimen/dp5"
                                     android:padding="@dimen/dp5"
-                                    android:src="@drawable/icon_share" />
+                                    android:src="@drawable/icon_share"
+                                    android:tint="@color/colorWhite"/>
                             </LinearLayout>
 
                             <View
@@ -325,7 +328,7 @@
                                         android:gravity="center"
                                         android:paddingBottom="@dimen/dp2"
                                         android:text="SWITCH TEAM"
-                                        android:textColor="@color/colorWhite"
+                                        android:textColor="@color/btn_color"
                                         android:textSize="?attr/app_text_size_extra_small"
                                         app:custom_font="@string/app_font_regular" />
                                 </LinearLayout>
@@ -383,7 +386,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="@string/txt_only_remaing"
-                                            android:textColor="@color/color_yellow_btn"
+                                            android:textColor="@color/vision_green"
                                             android:textSize="?attr/app_text_size_extra_small"
                                             app:custom_font="@string/app_font_regular" />
 
@@ -432,7 +435,7 @@
                                     android:layout_width="@dimen/dp17"
                                     android:layout_height="@dimen/dp17"
                                     android:layout_marginStart="@dimen/dp10"
-                                    android:background="@drawable/bg_white_3radius_stroke1red"
+                                    android:background="@drawable/bg_cofirm_win_green"
                                     android:gravity="center"
                                     android:text="C"
                                     android:textColor="?attr/app_text_color"
@@ -464,7 +467,7 @@
                                     android:layout_width="@dimen/dp17"
                                     android:layout_height="@dimen/dp17"
                                     android:layout_marginStart="@dimen/dp10"
-                                    android:background="@drawable/bg_white_3radius_stroke1red"
+                                    android:background="@drawable/bg_cofirm_win_green"
                                     android:gravity="center"
                                     android:text="M"
                                     android:textColor="?attr/app_text_color"
@@ -527,7 +530,7 @@
                         android:paddingEnd="@dimen/dp10"
                         android:paddingBottom="@dimen/dp2"
                         android:text="VIEW TEAMS"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/btn_color"
                         android:textSize="?attr/app_text_size_extra_more_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -535,8 +538,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:layout_marginLeft="10dp">
                     <include layout="@layout/include_bet_the_expert_leaderboed_layout" />
                 </LinearLayout>
 
@@ -547,7 +551,10 @@
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/dp7"
-                    android:paddingBottom="@dimen/dp7">
+                    android:paddingBottom="@dimen/dp7"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    >
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="0dp"
@@ -555,7 +562,7 @@
                         android:layout_weight="1"
                         android:paddingStart="@dimen/dp10"
                         android:text="Teams"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/btn_color"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -565,7 +572,7 @@
                         android:layout_weight="0.5"
                         android:gravity="center"
                         android:text="Points"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/btn_color"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -577,7 +584,7 @@
                         android:gravity="end"
                         android:paddingEnd="@dimen/dp10"
                         android:text="RANK"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/btn_color"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -588,6 +595,8 @@
                     android:id="@+id/recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
                     tools:listitem="@layout/item_contest_detail_adapter" />
             </LinearLayout>
 
@@ -615,7 +624,7 @@
         android:paddingTop="@dimen/dp10"
         android:paddingBottom="@dimen/dp10"
         android:text="JOIN NOW"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/btn_color"
         android:textSize="?attr/app_text_size_small"
         app:custom_font="@string/app_font_regular" />
 

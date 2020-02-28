@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/vision_bg"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.app.ui.main.cricket.contest.fragments.CashFragment">
 
@@ -27,7 +27,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dp50"
         android:text="There is no practice contest"
-        android:textColor="?attr/app_text_color_sec"
+        android:textColor="@color/colorWhite"
         android:textSize="?attr/app_text_size_normal"
         app:custom_font="@string/app_font_regular" />
 </RelativeLayout>
