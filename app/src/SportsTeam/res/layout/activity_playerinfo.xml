@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/bgforall"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -22,37 +22,41 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include
-                layout="@layout/include_profile_view"
-                android:visibility="gone" />
-
-
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp10"
-                android:layout_marginTop="@dimen/dp20"
-                android:layout_marginEnd="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardCornerRadius="@dimen/dp5"
-                app:cardElevation="@dimen/dp2"
-                app:contentPadding="@dimen/dp10">
+                android:layout_gravity="center_horizontal">
 
-                <LinearLayout
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="650dp"
+                    android:background="@drawable/loginscreenbg" />
+
+                <include
+                    layout="@layout/include_profile_view"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/heading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp27"
+                    android:gravity="center"
+                    android:text="EDIT PROFILE"
+                    android:textColor="@color/tab_text_color"
+                    android:textSize="@dimen/dp24" />
+
+                <LinearLayout
+                    android:id="@+id/main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/heading"
+                    android:layout_marginStart="@dimen/dp24"
+                    android:layout_marginTop="@dimen/dp15"
+                    android:layout_marginEnd="@dimen/dp24"
+                    android:layout_marginBottom="@dimen/dp10"
                     android:orientation="vertical">
-
-
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp10"
-                        android:text="Email Address *"
-                        android:textColor="?attr/app_text_color_sec"
-                        android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
 
 
                     <RelativeLayout
@@ -63,18 +67,21 @@
                             android:id="@+id/et_email"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
+                            android:background="@drawable/rounded_edittext"
+                            android:drawableStart="@drawable/ic_email_black_24dp"
+                            android:drawablePadding="@dimen/dp5"
                             android:ems="10"
                             android:gravity="center_vertical"
-                            android:hint=""
+                            android:hint="Email Address *"
                             android:imeOptions="actionNext"
                             android:inputType="none"
                             android:lines="1"
                             android:maxLength="50"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/app_text_color_sec"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:paddingRight="@dimen/dp5"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
 
@@ -89,41 +96,34 @@
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
                             android:text="Update"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="?attr/app_font_medium" />
                     </RelativeLayout>
 
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:text="Mobile Number *"
-                        android:textColor="?attr/app_text_color_sec"
-                        android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
-
-
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp15">
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/et_mobile"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
+                            android:background="@drawable/rounded_edittext"
+                            android:drawableStart="@drawable/cellphone_3x"
+                            android:drawablePadding="@dimen/dp5"
                             android:ems="10"
                             android:gravity="center_vertical"
-                            android:hint=""
+                            android:hint="Mobile Number *"
                             android:imeOptions="actionNext"
                             android:inputType="none"
                             android:lines="1"
                             android:maxLength="10"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/app_text_color_sec"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
 
@@ -138,7 +138,7 @@
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
                             android:text="Update"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="?attr/app_font_medium" />
                     </RelativeLayout>
@@ -159,13 +159,16 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_edittext"
                                 android:theme="@style/TextInputTheme">
 
                                 <com.customviews.TypefaceEditText
                                     android:id="@+id/et_f_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="?attr/et_height"
-                                    android:background="?attr/et_bg_drawable"
+                                    android:background="@drawable/rounded_edittext"
+                                    android:drawableStart="@drawable/ic_person_black_24dp"
+                                    android:drawablePadding="@dimen/dp5"
                                     android:ems="10"
                                     android:gravity="center_vertical"
                                     android:hint="First Name *"
@@ -174,8 +177,9 @@
                                     android:lines="1"
                                     android:maxLength="50"
                                     android:nextFocusRight="@+id/et_l_name"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:paddingStart="@dimen/dp10"
+                                    android:textColor="@color/colorWhite"
+                                    android:textColorHint="@color/colorWhite"
                                     android:textSize="?attr/et_text_size"
                                     app:custom_font="@string/app_font_regular" />
                             </com.google.android.material.textfield.TextInputLayout>
@@ -198,13 +202,14 @@
                             <com.google.android.material.textfield.TextInputLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_edittext"
                                 android:theme="@style/TextInputTheme">
 
                                 <com.customviews.TypefaceEditText
                                     android:id="@+id/et_l_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="?attr/et_height"
-                                    android:background="?attr/et_bg_drawable"
+                                    android:background="@drawable/rounded_edittext"
                                     android:ems="10"
                                     android:gravity="center_vertical"
                                     android:hint="Last Name"
@@ -213,8 +218,9 @@
                                     android:lines="1"
                                     android:maxLength="50"
                                     android:nextFocusRight="@+id/et_l_name"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:paddingStart="@dimen/dp10"
+                                    android:textColor="@color/colorWhite"
+                                    android:textColorHint="@color/colorWhite"
                                     android:textSize="?attr/et_text_size"
                                     app:custom_font="@string/app_font_regular" />
                             </com.google.android.material.textfield.TextInputLayout>
@@ -225,29 +231,23 @@
                     </LinearLayout>
 
                     <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:text="Date Of Birth *"
-                        android:textColor="?attr/app_text_color_sec"
-                        android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
-
-
-                    <com.customviews.TypefaceTextView
                         android:id="@+id/et_dob"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/et_height"
-                        android:background="?attr/et_bg_drawable"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:background="@drawable/rounded_edittext"
+                        android:drawableStart="@drawable/calenders"
+                        android:drawablePadding="@dimen/dp5"
                         android:ems="10"
                         android:gravity="center_vertical"
-                        android:hint=""
+                        android:hint="Date Of Birth *"
                         android:imeOptions="actionNext"
                         android:inputType="none"
                         android:lines="1"
                         android:maxLength="50"
-                        android:textColor="?attr/et_text_color"
-                        android:textColorHint="?attr/et_hint_text_color"
+                        android:paddingStart="@dimen/dp10"
+                        android:textColor="@color/colorWhite"
+                        android:textColorHint="@color/colorWhite"
                         android:textSize="?attr/et_text_size"
                         app:custom_font="@string/app_font_regular" />
 
@@ -262,13 +262,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp15"
+                            android:background="@drawable/rounded_edittext"
+                            android:paddingStart="@dimen/dp10"
                             android:theme="@style/TextInputTheme">
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_address_line_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@drawable/rounded_edittext"
+                                android:drawableStart="@drawable/homes"
+                                android:drawablePadding="@dimen/dp5"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Address line 1"
@@ -276,8 +280,8 @@
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -287,13 +291,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp15"
+                            android:background="@drawable/rounded_edittext"
+                            android:paddingStart="@dimen/dp10"
                             android:theme="@style/TextInputTheme">
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_address_line_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@drawable/rounded_edittext"
+                                android:drawableStart="@drawable/homes"
+                                android:drawablePadding="@dimen/dp5"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Address line 2"
@@ -301,8 +309,8 @@
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -320,31 +328,26 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:background="@drawable/rounded_edittext"
                             android:orientation="vertical">
-
-                            <com.customviews.TypefaceTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="State *"
-                                android:textColor="?attr/app_text_color_sec"
-                                android:textSize="?attr/app_text_size_normal"
-                                app:custom_font="@string/app_font_regular" />
-
 
                             <com.customviews.TypefaceTextView
                                 android:id="@+id/et_state"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@drawable/rounded_edittext"
+                                android:drawableStart="@drawable/states"
+                                android:drawablePadding="@dimen/dp5"
                                 android:ems="10"
                                 android:gravity="center_vertical"
-                                android:hint=""
+                                android:hint="State *"
                                 android:imeOptions="actionNext"
                                 android:inputType="none"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:paddingStart="@dimen/dp10"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
@@ -360,31 +363,27 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:background="@drawable/rounded_edittext"
                             android:orientation="vertical">
-
-                            <com.customviews.TypefaceTextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="City"
-                                android:textColor="?attr/app_text_color_sec"
-                                android:textSize="?attr/app_text_size_normal"
-                                app:custom_font="@string/app_font_regular" />
 
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_city"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@drawable/rounded_edittext"
+                                android:drawableStart="@drawable/cities"
+                                android:drawablePadding="@dimen/dp5"
                                 android:ems="10"
                                 android:gravity="center_vertical"
-                                android:hint=""
+                                android:hint="City"
                                 android:imeOptions="actionNext"
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:paddingStart="@dimen/dp10"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
@@ -403,14 +402,17 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp15"
+                            android:background="@drawable/rounded_edittext"
                             android:theme="@style/TextInputTheme">
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_pincode"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@drawable/rounded_edittext"
                                 android:digits="0123456789"
+                                android:drawableStart="@drawable/pins"
+                                android:drawablePadding="@dimen/dp5"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Pin Code"
@@ -418,38 +420,44 @@
                                 android:inputType="number"
                                 android:lines="1"
                                 android:maxLength="6"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:paddingStart="@dimen/dp10"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp25"
-                        android:layout_marginBottom="@dimen/dp15"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
-
-                        <com.customviews.TypefaceTextView
-                            android:id="@+id/tv_update"
-                            android:layout_width="0dp"
-                            android:layout_height="?attr/et_height"
-                            android:layout_weight="01"
-                            android:background="?attr/btn_bg_drawable"
-                            android:gravity="center"
-                            android:text="UPDATE"
-                            android:textColor="?attr/btn_text_color"
-                            android:textSize="?attr/btn_text_size"
-                            app:custom_font="@string/app_font_regular" />
-                    </LinearLayout>
-
-
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp70"
+                    android:layout_below="@+id/main"
+                    android:layout_marginStart="@dimen/dp20"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="@dimen/dp20"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_update"
+                        android:layout_width="0dp"
+                        android:layout_height="?attr/et_height"
+                        android:layout_marginStart="@dimen/dp27"
+                        android:layout_marginEnd="@dimen/dp27"
+                        android:layout_weight="01"
+                        android:background="@drawable/btn_login"
+                        android:gravity="center"
+                        android:text="UPDATE"
+                        android:textColor="?attr/btn_text_color"
+                        android:textSize="?attr/btn_text_size"
+                        app:custom_font="@string/app_font_regular" />
+                </LinearLayout>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
