@@ -687,7 +687,12 @@ public class ToolbarFragment extends AppBaseFragment {
             }else {
                 ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_gray));
             }
-
+            if (ConstantsFlavor.type == ConstantsFlavor.Type.sportteam){
+                iv_notification.setColorFilter(getResources().getColor(R.color.colorOrange), PorterDuff.Mode.SRC_IN);
+                rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_headerorange));
+            }else {
+                rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header));
+            }
 
             in_wallet.setColorFilter(getResources().getColor(R.color.colorRed), PorterDuff.Mode.SRC_IN);
             tv_balance.setTextColor(getActivity().getResources().getColor(R.color.colorRed));
