@@ -29,9 +29,10 @@
                     android:id="@+id/ll_contest_share"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorGray50"
+                    android:background="@color/colorBlack"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    >
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="0dp"
@@ -39,7 +40,7 @@
                         android:layout_weight="1"
                         android:paddingStart="@dimen/dp10"
                         android:text="Share this contest with your friends!"
-                        android:textColor="@color/colorAppBlackAA"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -49,7 +50,8 @@
                         android:layout_height="@dimen/dp30"
                         android:padding="@dimen/dp5"
                         android:layout_marginEnd="@dimen/dp5"
-                        android:src="@drawable/icon_share" />
+                        android:src="@drawable/icon_share"
+                        android:tint="@color/colorWhite"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -78,6 +80,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/txt_prices_pool"
+                            android:textStyle="bold"
                             android:textColor="?attr/app_text_color"
                             android:textSize="?attr/app_text_size_small"
                             app:custom_font="?attr/app_font_medium" />

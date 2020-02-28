@@ -669,7 +669,7 @@ public class ToolbarFragment extends AppBaseFragment {
 
     private void UpdateHeaderTitel(Boolean aBoolean) {
         if (aBoolean) {
-            rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header_white));
+            rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header));
             ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_red_10radius));
 //            tv_notification_counter.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_notification_counter));
 //            tv_notification_counter.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));

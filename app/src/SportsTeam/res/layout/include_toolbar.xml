@@ -16,7 +16,7 @@
             android:id="@+id/rl_bg_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange">
+      >
 
             <ImageView
                 android:id="@+id/iv_image_left"
@@ -89,9 +89,10 @@
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
                         android:padding="@dimen/dp2"
+                        android:tint="#52DCE9"
                         android:src="@drawable/wallet"
-                        android:tint="@color/colorRed" />
-
+                 />
+<!--                    android:tint="@color/colorRed"-->
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_balance"
                         android:layout_width="wrap_content"
