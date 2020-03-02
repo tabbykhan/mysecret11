@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:background="#f6f6f6"
         android:orientation="vertical">
-        
+
 
         <LinearLayout
             android:id="@+id/ll_team_detail"
@@ -366,7 +366,8 @@
         android:id="@+id/ll_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/bottomnavigationcolor">
 
         <View
             android:layout_width="match_parent"
@@ -387,7 +388,7 @@
                 android:padding="@dimen/dp15"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="@color/colorRed">
+               >
 
                 <ImageView
                     android:visibility="gone"
