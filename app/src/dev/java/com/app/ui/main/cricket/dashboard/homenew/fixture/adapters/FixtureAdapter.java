@@ -137,7 +137,7 @@ public class FixtureAdapter extends AppBaseRecycleAdapter {
             }
             if (matchModel.getRemainTimeText().isEmpty()) {
                 tv_timer_time.setVisibility(View.GONE);
-                
+
             } else
                 tv_timer_time.setText(matchModel.getRemainTimeText());
            /* tv_timer_time.setTextColor(context.getResources().getColor(matchModel
