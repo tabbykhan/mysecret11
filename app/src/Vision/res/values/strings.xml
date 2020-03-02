@@ -1,6 +1,6 @@
 <resources>
     <string name="sms_sender">PERFOR</string>
-    <string name="currency_symbol">\u20B9</string>
+    <string name="currency_symbol">\u0024</string>
 
     <string name="app_name">Vision11</string>
     <string name="facebook_app_id">513373502893268</string>
@@ -12,7 +12,7 @@
 
 
 
-    <string name="withdraw_min_max"><![CDATA[min \u20B9200 & max \u20B92000 allowed per day]]></string>
+    <string name="withdraw_min_max"><![CDATA[min \u0024200 & max \u00242000 allowed per day]]></string>
     <string name="transition_logo_move">transition_logo_move</string>
     <string name="transition_mobile_move">transition_mobile_move</string>
     <string name="transition_btn_move">transition_btn_move</string>
@@ -74,8 +74,8 @@
     <string name="txt_password">Password</string>
     <string name="txt_login">Login</string>
     <string name="txt_preview">PreView</string>
-    <string name="txt_prices_pool">\u20B9 3lacs</string>
-    <string name="txt_entry_prices">\u20B9 100</string>
+    <string name="txt_prices_pool">\u0024 3lacs</string>
+    <string name="txt_entry_prices">\u0024 100</string>
     <string name="txt_multiple">&#215;</string>
     <string name="txt_join">Join</string>
     <string name="txt_teams">5,333 Teams</string>
@@ -100,7 +100,7 @@
     <string name="txt_notifiction">Notifiction</string>
     <string name="this_player_is_not_in_the_starting_lineup">This player is not in the\nstarting lineup</string>
 
-    <string name="no_referral_code">No referral code!! Don\'t worry still you get \u20B9 %s cash bonus</string>
+    <string name="no_referral_code">No referral code!! Don\'t worry still you get \u0024 %s cash bonus</string>
     <string name="minimum_password">Minimum 8 characters width 1 number/symbol</string>
 
     <!-- TODO: Remove or change this placeholder text -->

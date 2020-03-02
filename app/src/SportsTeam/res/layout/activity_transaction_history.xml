@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/bgforall"
     android:orientation="vertical">
 
     <include
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fragment_toolbar"
-        android:background="@drawable/bg_white_5radius_stroke1gray"
+        android:background="#40000000"
         android:layout_margin="@dimen/dp10">
         <Spinner
             android:id="@+id/sp_transaction_type"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text=""
-        android:textColor="?attr/app_text_color_sec"
+        android:textColor="#01B2A8"
         android:textSize="?attr/app_text_size_normal"
         app:custom_font="@string/app_font_regular" />
 </RelativeLayout>

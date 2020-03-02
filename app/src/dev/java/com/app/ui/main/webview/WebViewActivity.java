@@ -86,6 +86,7 @@ public class WebViewActivity extends AppBaseActivity {
         wv_terms_conditions.getSettings().setDomStorageEnabled(true);
         wv_terms_conditions.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
         wv_terms_conditions.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        wv_terms_conditions.setBackground(getResources().getDrawable(R.drawable.bgforall));
 
         wv_terms_conditions.setWebViewClient(new WebViewClient() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
