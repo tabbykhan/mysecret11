@@ -144,9 +144,13 @@ public class FixtureAdapter extends AppBaseRecycleAdapter {
                 tv_team1_name.setText(team1.getName(1));
                 ((AppBaseActivity) context).loadImage(context, iv_team1, pb_image1, team1.getImage(),
                         R.mipmap.ic_launcher_round);
+                iv_team1.setImageURI("https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1024px-Flag_of_India.svg.png");
+
             } else {
                 updateViewVisibitity(pb_image1, View.INVISIBLE);
-                iv_team1.setImageResource(R.mipmap.ic_launcher);
+               // iv_team1.setImageResource(R.mipmap.ic_launcher);
+                iv_team1.setImageURI("https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1024px-Flag_of_India.svg.png");
+
                 tv_team1_name.setText("");
             }
 
@@ -155,9 +159,12 @@ public class FixtureAdapter extends AppBaseRecycleAdapter {
                 tv_team2_name.setText(team2.getName(1));
                 ((AppBaseActivity) context).loadImage(context, iv_team2, pb_image2, team2.getImage(),
                         R.mipmap.ic_launcher_round);
+                iv_team2.setImageURI("https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1024px-Flag_of_India.svg.png");
+
             } else {
                 updateViewVisibitity(pb_image2, View.INVISIBLE);
-                iv_team2.setImageResource(R.mipmap.ic_launcher);
+              //  iv_team2.setImageResource(R.mipmap.ic_launcher);
+                iv_team2.setImageURI("https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1024px-Flag_of_India.svg.png");
                 tv_team2_name.setText("");
             }
 

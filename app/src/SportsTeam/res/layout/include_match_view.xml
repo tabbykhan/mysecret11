@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+
     android:gravity="center_vertical"
     android:orientation="vertical">
 
@@ -12,92 +13,52 @@
         android:gravity="center_vertical">
 
         <LinearLayout
-            android:weightSum="2"
             android:id="@+id/ll_match_data_lay"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dp25"
+            android:paddingBottom="@dimen/dp25"
             android:orientation="horizontal">
 
-
-<!--      firstlayout      -->
-
-            <LinearLayout
-                android:background="#dce1dd"
-                android:weightSum="3"
-
-                android:orientation="vertical"
-                android:layout_weight="1"
+            <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.50">
 
-
-                <com.customviews.TypefaceTextView
-                    android:id="@+id/tv_match_name"
+                <LinearLayout
+                    android:id="@+id/ll_team_one_image_lay"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                  android:layout_weight="0.5"
-                    android:ellipsize="end"
-                    android:gravity="center"
-
+                    android:layout_height="@dimen/dp45"
+                    android:layout_marginEnd="@dimen/dp3"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="center"
-                    android:maxLines="1"
-                    android:text="IND T20 Super league"
-                    android:textColor="#b0b0af"
-                    android:textSize="?attr/app_text_size_extra_more_small"
-                    app:custom_font="@string/app_font_medium" />
-
-<LinearLayout
-
-    android:layout_weight="2.5"
-
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="0dp">
+                    android:background="@drawable/match_bg_left"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="vertical">
 
 
-            <LinearLayout
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                </LinearLayout>
 
 
-
-<!--            <RelativeLayout-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="center_vertical"-->
-<!--               >-->
-
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/ll_team_one_image_lay"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="@dimen/dp45"-->
-<!--                    android:layout_marginEnd="@dimen/dp3"-->
-<!--                    android:layout_centerVertical="true"-->
-<!--                    android:layout_gravity="center"-->
-<!--                    android:background="@drawable/match_bg_left"-->
-<!--                    android:gravity="center"-->
-<!--                    android:orientation="vertical">-->
-
-
-<!--                </LinearLayout>-->
 
                 <RelativeLayout
-
+                    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/rl_team1"
                     android:layout_width="@dimen/dp55"
                     android:layout_height="@dimen/dp55"
-
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:gravity="center">
 
-                    <ImageView
+                    <com.facebook.drawee.view.SimpleDraweeView
                         android:id="@+id/iv_team1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@mipmap/ic_launcher_round" />
+                        fresco:placeholderImage="@mipmap/ic_launcher"
+                        fresco:roundAsCircle="true"
+                        fresco:progressBarAutoRotateInterval="1000"/>
 
                     <ProgressBar
                         android:id="@+id/pb_image1"
@@ -105,65 +66,69 @@
                         android:layout_height="@dimen/dp15"
                         android:layout_centerInParent="true" />
 
+
                 </RelativeLayout>
-<!--            </RelativeLayout>-->
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_team1_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                  android:gravity="center"
-                    android:layout_gravity="center"
+                    android:ellipsize="end"
                     android:maxLength="5"
                     android:minEms="2"
                     android:singleLine="true"
                     android:text="AUS"
+                    android:gravity="center"
+                    android:layout_below="@id/rl_team1"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
                     android:textColor="?attr/app_text_color"
                     android:textSize="?attr/app_text_size_more_normal"
-                    app:custom_font="?attr/app_font_bold" />
-            </LinearLayout>
-    <ImageView
-        android:layout_gravity="center"
-        android:src="@drawable/vs"
-        android:layout_weight="0.3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content">
-
-    </ImageView>
-            <LinearLayout
-                android:layout_gravity="center"
-                android:gravity="center"
+                    app:custom_font="?attr/app_font_bold"
+                    />
+            </RelativeLayout>
+            <ImageView
+                android:layout_width="@dimen/dp40"
+                android:layout_height="@dimen/dp40"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/vs"/>
+            <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_weight="0.5"
-                android:orientation="vertical"
                 android:layout_height="wrap_content"
-                >
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.50">
 
-                <!--                <LinearLayout-->
-                <!--                    android:id="@+id/ll_team_two_image_lay"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="@dimen/dp45"-->
-                <!--                    android:layout_centerVertical="true"-->
-                <!--                    android:layout_marginStart="@dimen/dp3"-->
-                <!--                    android:layout_gravity="center"-->
-                <!--                    android:background="@drawable/match_bg_right"-->
-                <!--                    android:gravity="center"-->
-                <!--                    android:orientation="vertical">-->
+                <LinearLayout
+                    android:id="@+id/ll_team_two_image_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp45"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp3"
+                    android:layout_gravity="center"
+                    android:background="@drawable/match_bg_right"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="vertical">
 
 
-                <!--                </LinearLayout>-->
+                </LinearLayout>
 
                 <RelativeLayout
-
+                    android:id="@+id/rl_team2"
+                    xmlns:fresco="http://schemas.android.com/apk/res-auto"
                     android:layout_width="@dimen/dp55"
                     android:layout_height="@dimen/dp55"
                     android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
                     android:gravity="center">
 
-                    <ImageView
+                    <com.facebook.drawee.view.SimpleDraweeView
                         android:id="@+id/iv_team2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@mipmap/ic_launcher_round" />
+                        fresco:placeholderImage="@mipmap/ic_launcher"
+
+                        fresco:progressBarAutoRotateInterval="1000"
+                        fresco:roundAsCircle="true"/>
 
                     <ProgressBar
                         android:id="@+id/pb_image2"
@@ -177,51 +142,47 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:maxLength="5"
                     android:minEms="2"
                     android:singleLine="true"
                     android:text="AUS"
+                    android:layout_below="@id/rl_team2"
+                    android:layout_marginTop="20dp"
+                    android:layout_centerHorizontal="true"
                     android:textColor="?attr/app_text_color"
                     android:textSize="?attr/app_text_size_more_normal"
                     app:custom_font="?attr/app_font_bold" />
-            </LinearLayout>
+            </RelativeLayout>
 
-
-        </LinearLayout>
-
-
-            </LinearLayout>
-
-
-
-
-
-<!--            anotherlayout-->
-
-            <LinearLayout
-                android:background="#ecebe9"
-                android:layout_weight="1"
-                android:orientation="horizontal"
+            <View
                 android:layout_width="0dp"
-                android:layout_height="@dimen/dp90">
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="0.35"
+                android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="#EBEAE8">
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:minHeight="50dp"
                     android:gravity="center"
                     android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
                     android:paddingLeft="@dimen/dp7"
-                    android:paddingRight="@dimen/dp7">
+                    android:paddingRight="@dimen/dp7"
+                    android:layout_marginRight="10dp"
+                   >
+
+
 
 
                     <LinearLayout
@@ -230,21 +191,9 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="5dp">
 
-                        <com.customviews.TypefaceTextView
-
-                            android:id="@+id/tv_match_squad"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:ellipsize="end"
-                            android:gravity="right"
-                            android:maxLines="1"
-                            android:text="Line Up Out"
-                            android:textColor="@color/sport_textcolor_selector_green_black"
-                            android:textSize="?attr/app_text_size_extra_more_small"
-                            app:custom_font="@string/app_font_medium" />
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_match_name_sec"
                             android:layout_width="match_parent"
@@ -253,7 +202,7 @@
                             android:gravity="center"
                             android:text="ODI"
                             android:background="@drawable/rounded_corner_txt"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorBlack"
                             android:textSize="?attr/app_text_size_more_normal"
                             app:custom_font="@string/app_font_medium" />
 
@@ -263,29 +212,19 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp5"
                             android:gravity="center"
+                            android:layout_gravity="center"
                             android:orientation="vertical">
 
                             <ImageView
-                                android:layout_width="@dimen/dp15"
-                                android:layout_height="@dimen/dp15"
-                                android:src="@drawable/clock_icon_3x"
-                                android:tint="#01d5e9" />
+                                android:layout_width="@dimen/dp20"
+                                android:layout_height="@dimen/dp20"
+                                android:src="@drawable/time"
+                                android:tint="#01d5e9"/>
 
-                            <com.customviews.TypefaceTextView
-                                android:id="@+id/tv_timer_time"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/dp3"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:text="05h 11m 10s"
-                                android:textColor="#b0b0af"
-                                android:textSize="?attr/app_text_size_more_normal"
-                                app:custom_font="@string/app_font_medium"/>
+
                         </LinearLayout>
 
                         <LinearLayout
-                            android:visibility="invisible"
                             android:id="@+id/ll_match_status"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -295,11 +234,10 @@
 
                             <com.customviews.TypefaceTextView
                                 android:id="@+id/tv_status"
-                                android:visibility="invisible"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="In Progress"
-                                android:textColor="@color/colorAppBlack"
+                                android:textColor="#404040"
                                 android:textSize="?attr/app_text_size_small"
                                 app:custom_font="@string/app_font_bold" />
 
@@ -308,30 +246,62 @@
 
 
                 </LinearLayout>
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_timer_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp3"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="05h 11m 10s"
+                    android:textColor="#404040"
+                    android:textSize="?attr/app_text_size_more_normal"
+                    app:custom_font="@string/app_font_medium"/>
 
 
             </LinearLayout>
 
+
+
+
         </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp5"
+            android:paddingStart="@dimen/dp10"
+            android:paddingEnd="@dimen/dp10">
 
-        </LinearLayout>
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_match_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/tv_match_squad"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="1"
+                android:text="IND T20 Super league"
+                android:textColor="@color/colorAppBlackAA"
+                android:textSize="?attr/app_text_size_extra_more_small"
+                app:custom_font="@string/app_font_medium" />
 
-<!--        <RelativeLayout-->
-<!--        -->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/dp5"-->
-<!--            android:paddingStart="@dimen/dp10"-->
-<!--            android:paddingEnd="@dimen/dp10">-->
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_match_squad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="Line Up Out"
+                android:textColor="@color/sport_textcolor_selector_green_black"
+                android:textSize="?attr/app_text_size_extra_more_small"
+                app:custom_font="@string/app_font_medium" />
+        </RelativeLayout>
 
-<!--           -->
 
-<!--        </RelativeLayout>-->
-
-    </RelativeLayout>
         <LinearLayout
-
             android:id="@+id/ll_joined_contest"
             android:layout_width="match_parent"
             android:orientation="horizontal"
@@ -362,7 +332,6 @@
         </LinearLayout>
 
 
-
+    </RelativeLayout>
 
 </LinearLayout>
-
