@@ -20,8 +20,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/dp55"
-    android:layout_marginBottom="@dimen/dp55">
+    android:paddingBottom="@dimen/dp60"
+    android:layout_marginBottom="@dimen/dp60">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,8 +29,7 @@
             android:background="@drawable/bg_transparents"
             android:orientation="vertical"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:paddingBottom="@dimen/dp10">
+            android:layout_marginEnd="16dp">
 
 
             <LinearLayout
@@ -38,13 +37,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="@dimen/dp10"
+                android:paddingBottom="@dimen/dp10">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp50"
 
-                    android:background="#E0D8D6"
+                    android:background="@drawable/bg_headwhite"
                     android:gravity="start"
                     android:orientation="horizontal">
 
@@ -175,6 +176,7 @@
                             android:layout_marginTop="@dimen/dp10"
                             android:paddingStart="@dimen/dp5"
                             android:text="Query *"
+
                             android:textColor="?attr/et_text_color"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
@@ -187,13 +189,15 @@
                             android:layout_marginEnd="@dimen/dp5"
                             android:layout_marginBottom="@dimen/dp5"
                             app:cardCornerRadius="@dimen/dp3"
-                            app:cardElevation="@dimen/dp1">
+                            app:cardElevation="@dimen/dp1"
+                            app:cardBackgroundColor="#444444">
 
                             <Spinner
                                 android:id="@+id/sp_query"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:entries="@array/query_array" />
+                                android:entries="@array/query_array"
+                                />
 
                         </androidx.cardview.widget.CardView>
 
