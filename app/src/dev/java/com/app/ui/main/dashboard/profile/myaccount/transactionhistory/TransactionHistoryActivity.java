@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -79,10 +80,17 @@ public class TransactionHistoryActivity extends AppBaseActivity implements Adapt
     }
 
     private void setTransactionAdapter() {
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.transaction_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp_transaction_type.setAdapter(adapter);
+        if(ConstantsFlavor.type == ConstantsFlavor.Type.sportteam) {
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                    R.array.transaction_array, R.layout.simple_spinner_item);
+            adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown);
+            sp_transaction_type.setAdapter(adapter);
+        }else {
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                    R.array.transaction_array, android.R.layout.simple_spinner_item);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            sp_transaction_type.setAdapter(adapter);
+        }
     }
     private void setupSwipeLayout() {
         swipe_layout = findViewById(R.id.swipe_layout);

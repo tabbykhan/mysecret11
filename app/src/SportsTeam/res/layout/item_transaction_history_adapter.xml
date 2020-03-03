@@ -21,11 +21,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/dp40"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
                 android:paddingStart="@dimen/dp10"
                 android:paddingTop="@dimen/dp10"
                 android:paddingEnd="@dimen/dp10"
@@ -34,7 +33,7 @@
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_amount"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
@@ -45,20 +44,20 @@
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_transaction_type"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
                     android:gravity="center"
+                    android:layout_centerInParent="true"
                     android:text="Depositied Cash"
                     android:textColor="?attr/app_text_color"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_regular" />
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.8"
                     android:gravity="right|center_vertical"
+                    android:layout_alignParentRight="true"
                     android:orientation="horizontal"
                     android:background="#7B798F"
                     android:paddingRight="3dp">
@@ -68,6 +67,7 @@
                         android:background="@drawable/bg_primary_yello_oval"
                         android:src="@drawable/info_3x"
                         android:layout_marginLeft="5dp"
+                        android:layout_marginRight="3dp"
                         android:padding="@dimen/dp1"
                         android:tint="@color/colorWhite"
                         />
@@ -93,7 +93,7 @@
                 </LinearLayout>
 
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/ll_transaction_detail"

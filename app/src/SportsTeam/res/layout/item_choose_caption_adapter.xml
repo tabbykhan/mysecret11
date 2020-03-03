@@ -2,7 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+   >
 
     <LinearLayout
         android:id="@+id/ll_layout"
@@ -34,20 +36,22 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp10"
                         app:cardBackgroundColor="@color/colorGray"
-                        app:cardCornerRadius="2dp"
+                        app:cardCornerRadius="5dp"
                         app:cardElevation="2dp">
 
                         <RelativeLayout
                             android:id="@+id/rl_player_image"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            xmlns:fresco="http://schemas.android.com/tools">
 
-                            <ImageView
+                            <com.facebook.drawee.view.SimpleDraweeView
                                 android:id="@+id/iv_player_image"
                                 android:layout_width="@dimen/dp50"
                                 android:layout_height="@dimen/dp50"
                                 android:gravity="center_vertical"
-                                android:src="@drawable/no_image" />
+                                fresco:roundedCornerRadius="@dimen/dp5"
+                                fresco:placeholderImage="@drawable/no_image" />
 
                             <ProgressBar
                                 android:id="@+id/pb_image"
@@ -79,6 +83,7 @@
                         android:maxLines="1"
                         android:maxLength="3"
                         android:minWidth="@dimen/dp20"
+                        android:textColor="@color/colorWhite"
                         android:text="PP"
                         android:textSize="7sp"
                         app:custom_font="@string/app_font_regular" />
