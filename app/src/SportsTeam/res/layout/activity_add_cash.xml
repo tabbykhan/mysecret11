@@ -164,24 +164,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.customviews.TypefaceTextView
-                    android:id="@+id/tv_heading"
+                <LinearLayout
+                    android:id="@+id/tv_headings"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp45"
+                    android:background="#C84F00"
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-                    android:gravity="center"
-                    android:text="ADD CASH TO YOUR ACCOUNT"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="?attr/app_text_size_normal"
-                    app:custom_font="@string/app_font_medium"
-                    android:background="@drawable/bottomnavigationcolor"/>
-
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_heading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/dp5"
+                        android:background="@drawable/bg_heading"
+                        android:text="ADD CASH TO YOUR ACCOUNT"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/sp12"
+                        app:custom_font="@string/app_font_medium" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_data_lay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_heading"
+                    android:layout_below="@+id/tv_headings"
                     android:layout_marginStart="@dimen/dp20"
                     android:layout_marginTop="@dimen/dp30"
                     android:layout_marginEnd="@dimen/dp20"
@@ -198,13 +207,13 @@
                             android:id="@+id/et_amount"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
+                            android:background="#DDD9D6"
                             android:ems="10"
                             android:gravity="center_vertical"
                             android:hint="Amount to add"
                             android:imeOptions="actionDone"
                             android:inputType="number"
                             android:lines="1"
-                            android:background="#DDD9D6"
                             android:maxLength="15"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
@@ -277,10 +286,11 @@
                         android:id="@+id/ll_promo_code"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
                         android:layout_gravity="start"
                         android:layout_marginTop="@dimen/dp20"
+                        android:orientation="horizontal"
                         android:weightSum="1">
+
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -310,18 +320,18 @@
                             android:id="@+id/tv_apply_code"
                             android:layout_width="0dp"
                             android:layout_height="@dimen/dp25"
+                            android:layout_gravity="center|right"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="@dimen/dp5"
+                            android:layout_weight=".2"
                             android:background="@drawable/round_corner_orange"
+
                             android:gravity="center"
                             android:lines="1"
-                            android:layout_weight=".2"
-                            android:layout_marginStart="5dp"
-
-                            android:text="Apply"
-                            android:layout_gravity="center|right"
                             android:paddingLeft="@dimen/dp5"
                             android:paddingRight="@dimen/dp5"
-                            android:layout_marginTop="@dimen/dp5"
                             android:paddingBottom="@dimen/dp4"
+                            android:text="Apply"
                             android:textColor="?attr/btn_text_color"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
@@ -338,18 +348,18 @@
                         app:custom_font="@string/app_font_medium" />
 
                     <LinearLayout
-                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp10"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cv_paytm"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_margin="@dimen/dp5"
                             android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dp5"
+                            android:layout_weight="1"
                             app:cardBackgroundColor="@color/colorWhite"
                             app:cardCornerRadius="@dimen/dp3"
                             app:cardElevation="@dimen/dp2">
@@ -357,15 +367,15 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:layout_margin="@dimen/dp5"
-                                android:gravity="center_vertical">
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
 
                                 <ImageView
                                     android:layout_width="0dp"
+                                    android:layout_height="@dimen/dp50"
                                     android:layout_weight="1"
                                     android:padding="@dimen/dp10"
-                                    android:layout_height="@dimen/dp50"
                                     android:src="@drawable/payment_paytm_icon" />
 
                                 <ImageView
@@ -382,9 +392,9 @@
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cv_razorpay"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/dp5"
+                            android:layout_weight="1"
                             app:cardBackgroundColor="@color/colorWhite"
                             app:cardCornerRadius="@dimen/dp3"
                             app:cardElevation="@dimen/dp2">
@@ -392,14 +402,14 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
                                 android:layout_margin="@dimen/dp5"
-                                android:gravity="center">
+                                android:gravity="center"
+                                android:orientation="horizontal">
 
                                 <ImageView
                                     android:layout_width="0dp"
-                                    android:layout_weight="1"
                                     android:layout_height="@dimen/dp50"
+                                    android:layout_weight="1"
                                     android:padding="@dimen/dp5"
                                     android:src="@drawable/payment_razorpay_icon" />
 
@@ -416,10 +426,7 @@
                         </androidx.cardview.widget.CardView>
 
 
-
                     </LinearLayout>
-
-
 
 
                 </LinearLayout>
@@ -434,23 +441,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp45"
-        android:layout_marginTop="@dimen/dp40"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/dp40"
+        android:background="@drawable/bottomnavigationcolor"
         android:gravity="center"
         android:orientation="horizontal"
-        android:weightSum="1"
-        android:background="@drawable/bottomnavigationcolor">
+        android:weightSum="1">
 
         <com.customviews.TypefaceTextView
             android:id="@+id/tv_proceed"
             android:layout_width="0dp"
             android:layout_height="@dimen/dp35"
-            android:paddingBottom="@dimen/dp4"
-            android:layout_weight="0.5"
-            android:gravity="center"
             android:layout_gravity="center_vertical"
-            android:text="PROCEED"
+            android:layout_weight="0.5"
             android:background="@drawable/btn_cream"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp4"
+            android:text="PROCEED"
             android:textColor="@color/colorBlack"
             android:textSize="?attr/btn_text_size"
             app:custom_font="@string/app_font_regular" />
