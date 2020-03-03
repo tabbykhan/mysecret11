@@ -673,6 +673,9 @@ public class ToolbarFragment extends AppBaseFragment {
             ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_red_10radius));
 //            tv_notification_counter.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_notification_counter));
 //            tv_notification_counter.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));
+            if(ConstantsFlavor.type == ConstantsFlavor.Type.sportteam)
+            iv_notification.setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_IN);
+            else
             iv_notification.setColorFilter(getResources().getColor(R.color.colorRed), PorterDuff.Mode.SRC_IN);
             in_wallet.setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_IN);
             tv_balance.setTextColor(getActivity().getResources().getColor(R.color.colorWhite));

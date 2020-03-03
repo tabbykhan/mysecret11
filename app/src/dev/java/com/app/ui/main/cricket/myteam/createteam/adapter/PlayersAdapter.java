@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseRecycleAdapter;
@@ -123,12 +124,24 @@ public class PlayersAdapter extends AppBaseRecycleAdapter implements Filterable 
 
             //tv_team_type.setText(Html.fromHtml(getPlayerTypeName(playerModel.getTeam_id())));
 
-            if (getPlayerTeamType(playerModel.getTeam_id()) == 1) {
-                tv_team_type.setBackground(context.getResources().getDrawable(R.drawable.bg_white_top2radius));
-                tv_team_type.setTextColor(context.getResources().getColor(R.color.colorBlack));
-            } else {
-                tv_team_type.setBackground(context.getResources().getDrawable(R.drawable.bg_black_top2radius));
-                tv_team_type.setTextColor(context.getResources().getColor(R.color.colorWhite));
+            if(ConstantsFlavor.type == ConstantsFlavor.Type.sportteam){
+                if (getPlayerTeamType(playerModel.getTeam_id()) == 1) {
+                    tv_team_type.setBackgroundColor(context.getResources().getColor(R.color.color_sky));
+                    tv_team_type.setTextColor(context.getResources().getColor(R.color.colorWhite));
+                } else {
+
+                    tv_team_type.setBackgroundColor(context.getResources().getColor(R.color.colorOrange));
+                    tv_team_type.setTextColor(context.getResources().getColor(R.color.colorWhite));
+                }
+            }else {
+
+                if (getPlayerTeamType(playerModel.getTeam_id()) == 1) {
+                    tv_team_type.setBackground(context.getResources().getDrawable(R.drawable.bg_white_top2radius));
+                    tv_team_type.setTextColor(context.getResources().getColor(R.color.colorBlack));
+                } else {
+                    tv_team_type.setBackground(context.getResources().getDrawable(R.drawable.bg_black_top2radius));
+                    tv_team_type.setTextColor(context.getResources().getColor(R.color.colorWhite));
+                }
             }
 
             tv_player_points.setText(playerModel.getTotalPointsText());

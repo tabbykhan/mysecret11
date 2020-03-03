@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/bgforall"
     android:orientation="vertical">
 
     <include
@@ -22,9 +22,9 @@
             android:id="@+id/ll_team_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp8"
             android:layout_marginBottom="@dimen/dp8"
             android:gravity="center_vertical|center"
+            android:background="#616161"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="0/11"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_big"
                         app:custom_font="@string/app_font_medium" />
 
@@ -72,6 +72,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:background="@color/colorOrange"
                 android:gravity="center">
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -86,11 +87,11 @@
                         android:layout_height="@dimen/dp20"
                         android:gravity="center"
                         android:text="0"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/colorBlack"
                         android:layout_marginBottom="@dimen/dp10"
                         android:textSize="?attr/app_text_size_more_normal"
                         app:custom_font="@string/app_font_regular"
-                        android:background="@drawable/bg_green_oval"
+                        android:background="@drawable/bg_white"
                         android:layout_marginRight="@dimen/dp5"/>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -107,7 +108,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Team1"
-                            android:textColor="@color/colorGray"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="?attr/app_font_regular" />
                     </LinearLayout>
@@ -139,7 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Team2"
-                            android:textColor="@color/colorGray"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="?attr/app_font_regular" />
                     </LinearLayout>
@@ -153,9 +154,9 @@
                         android:text="0"
                         android:layout_marginLeft="@dimen/dp5"
                         android:layout_marginBottom="@dimen/dp10"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/colorBlack"
                         android:textSize="?attr/app_text_size_more_normal"
-                        android:background="@drawable/bg_green_oval"
+                        android:background="@drawable/bg_white"
                         app:custom_font="@string/app_font_regular" />
 
                 </LinearLayout>
@@ -263,7 +264,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="100"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_big"
                         app:custom_font="@string/app_font_medium" />
 
@@ -358,7 +359,8 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@color/transparent_color"/>
     </LinearLayout>
 
 
