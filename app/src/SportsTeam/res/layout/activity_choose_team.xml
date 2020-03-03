@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/bgforall">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -24,9 +24,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_top"
         android:layout_marginTop="@dimen/dp10"
+        android:background="@drawable/bg_with_whiteborder"
         android:gravity="center"
+        android:padding="@dimen/dp10"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
         android:text="CHOOSE TEAMS TO JOIN THIS CONTEST WITH "
-        android:textColor="?attr/app_text_color"
+        android:textColor="@color/colorWhite"
         android:textSize="?attr/app_text_size_normal"
         app:custom_font="@string/app_font_medium" />
 
@@ -50,14 +54,16 @@
                 android:layout_width="@dimen/dp20"
                 android:layout_height="@dimen/dp20"
                 android:layout_marginStart="@dimen/dp10"
-                android:button="@drawable/selector_team_checkbox_choose" />
+                android:backgroundTint="@color/colorWhite"
+                android:button="@drawable/selector_team_checkbox_choose"
+                android:buttonTint="@color/colorWhite" />
 
             <com.customviews.TypefaceTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp5"
                 android:text="Select All"
-                android:textColor="?attr/app_text_color"
+                android:textColor="#ffffff"
                 android:textSize="?attr/app_text_size_normal"
                 app:custom_font="@string/app_font_regular" />
         </LinearLayout>
@@ -81,14 +87,15 @@
         android:id="@+id/rl_bottom_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottomnavigationcolor">
 
         <LinearLayout
             android:id="@+id/ll_new_team"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/bg_primary"
+
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingTop="@dimen/dp5"
@@ -97,11 +104,14 @@
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_create_new_team"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="?attr/et_height"
+                android:background="@drawable/btn_cream"
                 android:gravity="center"
+                android:paddingStart="@dimen/dp10"
+                android:paddingEnd="@dimen/dp10"
                 android:text="CREATE TEAM 1"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/colorBlack"
                 android:textSize="?attr/app_text_size_normal"
                 app:custom_font="@string/app_font_regular" />
         </LinearLayout>
@@ -111,7 +121,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/color_yellow_btn"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingTop="@dimen/dp5"
@@ -120,9 +129,12 @@
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_join_contest"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="?attr/et_height"
                 android:gravity="center"
+                android:paddingEnd="@dimen/dp10"
+                android:paddingStart="@dimen/dp10"
+                android:background="@drawable/btn_cream"
                 android:text="JOIN CONTEST"
                 android:textColor="@color/colorBlack"
                 android:textSize="?attr/app_text_size_normal"
