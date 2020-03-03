@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="#DDD9D6">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -167,13 +167,14 @@
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_heading"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp20"
+                    android:layout_height="@dimen/dp45"
+
                     android:gravity="center"
                     android:text="ADD CASH TO YOUR ACCOUNT"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
-                    app:custom_font="@string/app_font_medium" />
+                    app:custom_font="@string/app_font_medium"
+                    android:background="@drawable/bottomnavigationcolor"/>
 
 
                 <LinearLayout
@@ -191,24 +192,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp5"
-                        android:theme="@style/TextInputTheme">
+                        android:background="#DDD9D6">
 
                         <com.customviews.TypefaceEditText
                             android:id="@+id/et_amount"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
                             android:ems="10"
                             android:gravity="center_vertical"
                             android:hint="Amount to add"
                             android:imeOptions="actionDone"
                             android:inputType="number"
                             android:lines="1"
+                            android:background="#DDD9D6"
                             android:maxLength="15"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/et_text_color"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:textColor="@color/colorBlack"
+                            android:textColorHint="@color/colorBlack"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -284,14 +285,12 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp5"
-                            android:theme="@style/TextInputTheme"
                             android:layout_weight="0.8">
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_promo_code"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Promocode"
@@ -301,8 +300,8 @@
                                 android:maxLength="15"
                                 android:paddingStart="@dimen/dp10"
                                 android:paddingEnd="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorBlack"
+                                android:textColorHint="@color/colorBlack"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -311,10 +310,12 @@
                             android:id="@+id/tv_apply_code"
                             android:layout_width="0dp"
                             android:layout_height="@dimen/dp25"
-                            android:background="@drawable/bg_red_5radius"
+                            android:background="@drawable/round_corner_orange"
                             android:gravity="center"
                             android:lines="1"
                             android:layout_weight=".2"
+                            android:layout_marginStart="5dp"
+
                             android:text="Apply"
                             android:layout_gravity="center|right"
                             android:paddingLeft="@dimen/dp5"
@@ -337,7 +338,7 @@
                         app:custom_font="@string/app_font_medium" />
 
                     <LinearLayout
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp10"
@@ -419,28 +420,7 @@
                     </LinearLayout>
 
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp40"
-                        android:layout_marginBottom="@dimen/dp20"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:weightSum="1">
 
-                        <com.customviews.TypefaceTextView
-                            android:id="@+id/tv_proceed"
-                            android:layout_width="0dp"
-                            android:layout_height="?attr/btn_height"
-                            android:paddingBottom="@dimen/dp4"
-                            android:layout_weight="0.98"
-                            android:background="@drawable/bg_red_5radius"
-                            android:gravity="center"
-                            android:text="PROCEED"
-                            android:textColor="?attr/btn_text_color"
-                            android:textSize="?attr/btn_text_size"
-                            app:custom_font="@string/app_font_regular" />
-                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -450,4 +430,29 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp45"
+        android:layout_marginTop="@dimen/dp40"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:background="@drawable/bottomnavigationcolor">
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/tv_proceed"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp35"
+            android:paddingBottom="@dimen/dp4"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:layout_gravity="center_vertical"
+            android:text="PROCEED"
+            android:background="@drawable/btn_cream"
+            android:textColor="@color/colorBlack"
+            android:textSize="?attr/btn_text_size"
+            app:custom_font="@string/app_font_regular" />
+    </LinearLayout>
 </RelativeLayout>

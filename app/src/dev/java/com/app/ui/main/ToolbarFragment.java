@@ -689,8 +689,9 @@ public class ToolbarFragment extends AppBaseFragment {
             }
             //_______________***********Sports Team 11**************_____________________
             if (ConstantsFlavor.type == ConstantsFlavor.Type.sportteam){
-               // iv_notification.setColorFilter(getResources().getColor(R.color.colorOrange), PorterDuff.Mode.SRC_IN);
+               iv_notification.setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_IN);
                 rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_headerorange));
+                ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_white_10radius));
             }else {
                 rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header));
             }

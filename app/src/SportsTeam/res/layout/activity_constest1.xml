@@ -64,15 +64,14 @@
             android:orientation="horizontal"
             android:paddingTop="@dimen/dp10"
             android:paddingBottom="@dimen/dp10"
-            android:weightSum="1"
-            android:background="@drawable/bottomnavigationcolor">
+            android:weightSum="1">
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_create_new_team"
                 android:layout_width="0dp"
                 android:layout_height="?attr/et_height"
                 android:layout_weight="0.5"
-                android:background="@drawable/bg_white_10radius"
+                android:background="@drawable/btn_cream"
                 android:gravity="center"
                 android:text="CREATE TEAM 1"
                 android:textColor="?attr/app_text_color"
@@ -86,6 +85,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
             android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp5"
             android:orientation="vertical">
 
 
@@ -101,26 +101,37 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingTop="@dimen/dp10"
-                android:paddingBottom="@dimen/dp10"
-                >
+                android:paddingBottom="@dimen/dp10">
 
                 <LinearLayout
                     android:id="@+id/ll_my_teams"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_white"
                     android:layout_marginStart="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp15"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_cream"
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:padding="@dimen/dp2">
 
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:gravity="center"
+                        android:text="MY TEAMS"
+                        android:textColor="?attr/app_text_color"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_regular" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_my_teams_count"
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
+                        android:layout_marginStart="@dimen/dp10"
                         android:background="@drawable/bg_black_oval"
                         android:gravity="center"
                         android:text="0"
@@ -128,15 +139,6 @@
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        android:text="MY TEAMS"
-                        android:textColor="?attr/app_text_color"
-                        android:textSize="?attr/app_text_size_small"
-                        app:custom_font="@string/app_font_regular" />
 
                 </LinearLayout>
 
@@ -152,19 +154,31 @@
                     android:id="@+id/ll_my_contest"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_white"
                     android:layout_marginStart="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp15"
-                    android:padding="@dimen/dp2" >
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_white"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp2">
 
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:gravity="center"
+                        android:text="JOINED CONTESTS"
+                        android:textColor="?attr/app_text_color"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_regular" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_my_contest_count"
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
+                        android:layout_marginStart="@dimen/dp10"
                         android:background="@drawable/bg_black_oval"
                         android:gravity="center"
                         android:text="0"
@@ -172,15 +186,6 @@
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp2"
-                        android:text="JOINED CONTESTS"
-                        android:layout_marginBottom="@dimen/dp2"
-                        android:textColor="?attr/app_text_color"
-                        android:textSize="?attr/app_text_size_small"
-                        app:custom_font="@string/app_font_regular" />
 
                 </LinearLayout>
             </LinearLayout>

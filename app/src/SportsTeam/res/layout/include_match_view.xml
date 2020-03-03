@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="@dimen/dp25"
+            android:paddingTop="@dimen/dp12"
             android:paddingBottom="@dimen/dp25"
             android:weightSum="2">
 
@@ -278,15 +278,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:background="#DCE0DF">
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_match_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp10"
+                android:background="#DCE0DF"
                 android:layout_weight="1"
-                android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
                 android:text="IND T20 Super league"
@@ -298,12 +298,12 @@
                 android:id="@+id/tv_match_squad"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/dp10"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
                 android:text="Line Up Out"
+                android:background="#EBEAE8"
                 android:textColor="@color/colorBlack"
                 android:textSize="?attr/app_text_size_extra_more_small"
                 app:custom_font="@string/app_font_medium" />

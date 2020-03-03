@@ -17,65 +17,72 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fragment_toolbar" />
+
     <LinearLayout
         android:id="@+id/ll_ticketing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_below="@+id/ll_top"
         android:layout_marginLeft="@dimen/dp25"
-        android:layout_marginRight="@dimen/dp25"
         android:layout_marginTop="@dimen/dp10"
-        android:layout_below="@+id/ll_top">
+        android:layout_marginRight="@dimen/dp25"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <LinearLayout
             android:id="@+id/ll_enter_invite_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/dp5"
             android:layout_margin="@dimen/dp5"
             android:layout_weight="1"
+            android:background="@drawable/bg_white_5radius_stroke1gray"
             android:gravity="center"
-            android:background="@drawable/bg_white_5radius_stroke1gray">
+            android:orientation="horizontal"
+            android:padding="@dimen/dp5">
+
             <com.customviews.TypefaceTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter invite code"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Enter invite code"
                 android:textColor="?attr/app_text_color"
                 android:textSize="?attr/app_text_size_more_normal"
                 app:custom_font="?attr/app_font_medium" />
+
             <ImageView
                 android:layout_width="@dimen/dp15"
                 android:layout_height="@dimen/dp15"
-                android:src="@drawable/tickets_icon"
-                android:layout_marginLeft="@dimen/dp5"/>
+                android:layout_marginLeft="@dimen/dp5"
+                android:src="@drawable/tickets_icon" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/ll_create_contest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/dp5"
             android:layout_marginLeft="@dimen/dp5"
             android:layout_weight="1"
+            android:background="@drawable/bg_transparent_5radius_stroke1green"
             android:gravity="center"
-            android:background="@drawable/bg_transparent_5radius_stroke1green">
+            android:orientation="horizontal"
+            android:padding="@dimen/dp5">
+
             <com.customviews.TypefaceTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create a contest"
-                android:gravity="center"
                 android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Create a contest"
                 android:textColor="@color/colorActivateGreen"
                 android:textSize="?attr/app_text_size_more_normal"
                 app:custom_font="?attr/app_font_medium" />
+
             <ImageView
                 android:layout_width="@dimen/dp15"
                 android:layout_height="@dimen/dp15"
-                android:src="@drawable/add_icon"
-                android:layout_marginLeft="@dimen/dp5"/>
+                android:layout_marginLeft="@dimen/dp5"
+                android:src="@drawable/add_icon" />
         </LinearLayout>
     </LinearLayout>
 
@@ -113,11 +120,11 @@
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_create_new_team"
-                android:background="@drawable/bg_white_10radius"
-                android:gravity="center"
+                android:layout_width="208dp"
                 android:layout_height="34dp"
                 android:layout_weight="0.5"
-                android:layout_width="208dp"
+                android:background="@drawable/bg_white_10radius"
+                android:gravity="center"
                 android:text="CREATE TEAM 1"
                 android:textColor="?attr/app_text_color"
                 android:textSize="?attr/btn_text_size"
@@ -151,36 +158,35 @@
                     android:id="@+id/ll_my_teams"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_white"
                     android:layout_marginStart="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp15"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_white"
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:padding="@dimen/dp4">
-
-
-                    <com.customviews.TypefaceTextView
-                        android:id="@+id/tv_my_teams_count"
-                        android:layout_width="@dimen/dp20"
-                        android:layout_height="@dimen/dp20"
-                        android:background="@drawable/bg_black_oval"
-                        android:gravity="center"
-                        android:text="0"
-
-                        android:textColor="@color/colorWhite"
-                        android:textSize="?attr/app_text_size_extra_small"
-                        app:custom_font="@string/app_font_regular" />
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:text="MY TEAMS"
                         android:textColor="?attr/app_text_color"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_my_teams_count"
+                        android:layout_width="@dimen/dp20"
+                        android:layout_height="@dimen/dp20"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:background="@drawable/bg_black_oval"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
                 </LinearLayout>
 
                 <View
@@ -195,19 +201,29 @@
                     android:id="@+id/ll_my_contest"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/bg_white"
                     android:layout_marginStart="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp15"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_white"
+                    android:gravity="center"
+                    android:orientation="horizontal"
                     android:padding="@dimen/dp4">
 
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="JOINED CONTESTS"
+                        android:textColor="?attr/app_text_color"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_regular" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_my_contest_count"
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
+                        android:layout_marginStart="@dimen/dp10"
                         android:background="@drawable/bg_black_oval"
                         android:gravity="center"
                         android:text="0"
@@ -215,14 +231,6 @@
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp5"
-                        android:text="JOINED CONTESTS"
-                        android:textColor="?attr/app_text_color"
-                        android:textSize="?attr/app_text_size_small"
-                        app:custom_font="@string/app_font_regular" />
 
                 </LinearLayout>
             </LinearLayout>

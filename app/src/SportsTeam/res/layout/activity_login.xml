@@ -7,124 +7,113 @@
 
     <include
         android:id="@+id/fragment_toolbar"
-        layout="@layout/include_toolbar_fargment" />
+        layout="@layout/include_toolbar_fargment"
+        android:visibility="gone"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/fragment_toolbar"
-        android:scrollbarThumbVertical="@drawable/bg_transparent">
+        android:layout_below="@+id/fragment_toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp15"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_gravity="center">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardCornerRadius="@dimen/dp5"
+                android:layout_height="350dp"
                 android:layout_margin="@dimen/dp15"
-                app:cardElevation="@dimen/dp3">
+                android:background="@drawable/loginscreenbg">
 
 
                 <LinearLayout
                     android:id="@+id/ll_data_lay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:paddingStart="@dimen/dp15"
+                    android:layout_gravity="center"
                     android:paddingEnd="@dimen/dp15"
-                    android:paddingTop="@dimen/dp10"
-                    android:paddingBottom="@dimen/dp10"
-                    android:orientation="vertical">
+                    android:paddingBottom="@dimen/dp10">
 
 
-                    <com.customviews.TypefaceTextView
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Email Address"
-                        android:textColor="@color/com_facebook_blue"
-                        android:textSize="?attr/app_text_size_normal"
-                        app:custom_font="@string/app_font_regular" />
-
-
+                        android:layout_marginTop="@dimen/dp5"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="LOGIN"
+                        android:textSize="@dimen/sp24"
+                        android:textStyle="bold" />
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_email"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/et_height"
-                        android:gravity="center_vertical"
-                        android:lines="1"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_marginEnd="@dimen/dp10"
+                        android:layout_marginTop="@dimen/dp10"
                         android:background="#505956"
-                        android:text="vishnu@gmail.com"
-                        android:textColor="@color/colorWhite"
                         android:drawableStart="@drawable/ic_email_black_24dp"
-                        android:textSize="?attr/et_text_size"
-                        app:custom_font="@string/app_font_regular"
+                        android:gravity="center"
+                        android:lines="1"
                         android:padding="@dimen/dp5"
-                        android:textAlignment="center"/>
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        android:layout_marginStart="@dimen/dp2"
-                        android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp2"
-                        android:layout_marginBottom="@dimen/dp2"
-                        app:cardElevation="@dimen/dp3">
+                        android:text="tabby@gmail.com"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/et_text_size"
+                        app:custom_font="@string/app_font_regular" />
 
                         <LinearLayout
+                            android:layout_marginTop="@dimen/dp15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
                             android:background="#505956"
-                            >
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_marginEnd="@dimen/dp10">
+
                             <ImageView
                                 android:layout_width="@dimen/dp20"
                                 android:layout_height="@dimen/dp20"
                                 android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/ic_lock_black_24dp"
                                 android:layout_marginEnd="5dp"
-                                />
+                                android:src="@drawable/ic_lock_black_24dp" />
+
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_password"
                                 android:layout_width="0dp"
-                                android:layout_weight="1"
                                 android:layout_height="?attr/et_height"
+                                android:layout_weight="1"
+                                android:background="@null"
                                 android:ems="10"
-                                android:gravity="center_vertical"
+                                android:gravity="center"
                                 android:hint="Password"
+
                                 android:imeOptions="actionDone"
                                 android:inputType="textPassword"
                                 android:lines="1"
-                                android:textAlignment="center"
-                                android:background="@null"
                                 android:maxLength="50"
                                 android:padding="@dimen/dp10"
                                 android:textColor="@color/colorWhite"
                                 android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
-                                app:custom_font="@string/app_font_regular"/>
+                                app:custom_font="@string/app_font_regular" />
 
                             <CheckBox
                                 android:id="@+id/cb_password_show_hide"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentRight="true"
-                                android:gravity="center"
                                 android:layout_centerVertical="true"
                                 android:layout_marginRight="@dimen/dp5"
-                                android:button="@drawable/selector_password_checkbox_choose"/>
+                                android:button="@drawable/selector_password_checkbox_choose"
+                                android:gravity="center" />
                         </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-
-
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,39 +130,43 @@
                             android:layout_weight="0.98"
                             android:background="@drawable/btn_login"
                             android:gravity="center"
-                            android:text="LOGIN"
+                            android:layout_marginStart="@dimen/dp27"
+                            android:layout_marginEnd="@dimen/dp27"
+                           android:text="next"
+                            android:textAllCaps="true"
                             android:textColor="?attr/btn_text_color"
                             android:textSize="?attr/btn_text_size"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
 
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_forgot_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+
+                        android:padding="@dimen/dp5"
+                        android:text="Forgot Password ?"
+                        android:textColor="?attr/app_link_text_color"
+                        android:textSize="?attr/app_text_size_normal"
+                        app:custom_font="@string/app_font_regular" />
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_login_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/dp5"
+                        android:text="Log in using mobile number?"
+                        android:textColor="?attr/et_text_color"
+                        android:textSize="?attr/app_text_size_normal"
+                        app:custom_font="@string/app_font_regular" />
                 </LinearLayout>
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
 
-            <com.customviews.TypefaceTextView
-                android:id="@+id/tv_forgot_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp20"
-                android:padding="@dimen/dp5"
-                android:text="Forgot Password ?"
-                android:textColor="?attr/app_link_text_color"
-                android:textSize="?attr/app_text_size_normal"
-                app:custom_font="@string/app_font_regular" />
-            <com.customviews.TypefaceTextView
-                android:id="@+id/tv_login_mobile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="@dimen/dp20"
-                android:padding="@dimen/dp5"
-                android:text="Log in using mobile number?"
-                android:textColor="?attr/et_text_color"
-                android:textSize="?attr/app_text_size_normal"
-                app:custom_font="@string/app_font_regular" />
+
 
         </LinearLayout>
     </ScrollView>
