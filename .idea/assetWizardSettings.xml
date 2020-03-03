@@ -127,24 +127,12 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
-                                      <entry key="text">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="color" value="000000" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\imuons\Downloads\Untitled-1.png" />
-                                      <entry key="outputName" value="logodash" />
+                                      <entry key="imageAsset" value="C:\Users\iMuonsAndroid01\Downloads\facebook_logo.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -180,7 +168,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_account_balance_wallet_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_fiber_pin_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -191,8 +179,8 @@
                         <option name="values">
                           <map>
                             <entry key="autoMirrored" value="true" />
-                            <entry key="color" value="52dce9" />
-                            <entry key="outputName" value="wallet" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="ic_pin" />
                             <entry key="sourceFile" value="C:\Users\iMuonsAndroid01" />
                           </map>
                         </option>
