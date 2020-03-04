@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/bgforallimage"
     android:orientation="vertical">
 
     <LinearLayout
@@ -36,14 +36,14 @@
                 android:layout_marginStart="@dimen/dp2"
                 android:layout_marginTop="@dimen/dp20"
                 android:layout_marginEnd="@dimen/dp2"
-                android:layout_marginBottom="@dimen/dp5"
                 app:cardBackgroundColor="@color/colorWhite"
                 app:cardCornerRadius="@dimen/dp10"
                 app:cardElevation="@dimen/dp5">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="#ECEBE9">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -64,6 +64,18 @@
                                 android:src="@drawable/no_image"
                                 app:civ_border_color="@color/colorWhite70"
                                 app:civ_border_width="@dimen/dp1" />
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/iv_player"
+                                android:text="Vishnu Gupta"
+                                android:layout_marginStart="@dimen/dp2"
+                                android:layout_marginBottom="@dimen/dp5"
+                                android:textColor="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_big"
+                                app:custom_font="@string/app_font_regular" />
 
                             <ProgressBar
                                 android:id="@+id/pb_image"
@@ -90,22 +102,35 @@
                             android:layout_marginEnd="@dimen/dp15"
                             android:layout_weight="1"
                             android:orientation="vertical">
-
-                            <com.customviews.TypefaceTextView
-                                android:id="@+id/tv_name"
+                            <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Vishnu Gupta"
-                                android:textColor="?attr/app_text_color"
-                                android:textSize="?attr/app_text_size_big"
-                                app:custom_font="@string/app_font_regular" />
 
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
 
+                                <ImageView
+                                    android:layout_width="@dimen/dp15"
+                                    android:layout_height="@dimen/dp15"
+                                    android:src="@drawable/mail_icon_profile" />
+
+                                <com.customviews.TypefaceTextView
+                                    android:id="@+id/tv_email"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:drawablePadding="@dimen/dp5"
+                                    android:paddingStart="@dimen/dp3"
+                                    android:text="my@rmail.com"
+                                    android:textColor="?attr/app_text_color"
+                                    android:textSize="?attr/app_text_size_small"
+                                    app:custom_font="@string/app_font_regular" />
+
+                            </LinearLayout>
                             <LinearLayout
                                 android:id="@+id/ll_phone"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/dp2"
+                                android:layout_marginTop="@dimen/dp8"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal">
 
@@ -129,30 +154,7 @@
                             </LinearLayout>
 
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/dp5"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
 
-                                <ImageView
-                                    android:layout_width="@dimen/dp15"
-                                    android:layout_height="@dimen/dp15"
-                                    android:src="@drawable/mail_icon_profile" />
-
-                                <com.customviews.TypefaceTextView
-                                    android:id="@+id/tv_email"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:drawablePadding="@dimen/dp5"
-                                    android:paddingStart="@dimen/dp3"
-                                    android:text="my@rmail.com"
-                                    android:textColor="?attr/app_text_color"
-                                    android:textSize="?attr/app_text_size_small"
-                                    app:custom_font="@string/app_font_regular" />
-
-                            </LinearLayout>
 
 
                         </LinearLayout>
@@ -175,12 +177,13 @@
 
             <RelativeLayout
                 android:id="@+id/rl_change_passowrd"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="@dimen/dp15"
+                android:gravity="end"
                 android:orientation="horizontal"
-                android:padding="@dimen/dp5">
+                android:layout_marginEnd="@dimen/dp2"
+                android:layout_marginStart="@dimen/dp2"
+                android:background="#342E23">
 
                 <ImageView
                     android:id="@+id/iv_pass"
@@ -188,7 +191,8 @@
                     android:layout_height="@dimen/dp17"
                     android:layout_centerVertical="true"
                     android:src="@drawable/change_password_icon"
-                    android:tint="@color/colorRed" />
+                    android:tint="@color/colorRed"
+                    android:visibility="gone"/>
 
                 <com.customviews.TypefaceTextView
                     android:layout_width="wrap_content"
@@ -199,7 +203,9 @@
                     android:layout_toRightOf="@+id/iv_pass"
                     android:gravity="left|center"
                     android:text="Change Password"
-                    android:textColor="@color/colorRed"
+                    android:drawablePadding="@dimen/dp10"
+                    android:drawableEnd="@drawable/ic_lock_black_24dp"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
 
@@ -266,6 +272,35 @@
 
 
             </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center"
+                android:background="#C84F00"
+                android:layout_marginBottom="@dimen/dp10">
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp10"
+                    android:text="My Account"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="?attr/app_text_size_big"
+                    app:custom_font="@string/app_font_medium"
+                    android:textAllCaps="true"/>
+
+                <ProgressBar
+                    android:id="@+id/pb_myaccount"
+                    android:layout_width="@dimen/dp20"
+                    android:layout_height="@dimen/dp20"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp10"/>
+            </RelativeLayout>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -280,69 +315,51 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <com.customviews.TypefaceTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/dp10"
-                            android:text="My Account"
-                            android:textColor="?attr/app_text_color"
-                            android:textSize="?attr/app_text_size_big"
-                            app:custom_font="@string/app_font_medium" />
-
-                        <ProgressBar
-                            android:id="@+id/pb_myaccount"
-                            android:layout_width="@dimen/dp20"
-                            android:layout_height="@dimen/dp20" />
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:background="#F0F0EE">
 
-                        <LinearLayout
+                        <RelativeLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp25"
                             android:layout_marginBottom="@dimen/dp25"
                             android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                            android:gravity="end"
+                            android:orientation="vertical"
+                            android:layout_marginStart="@dimen/dp30">
 
 
                             <com.customviews.TypefaceTextView
-                                android:id="@+id/tv_deposit_balance"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textColor="@color/colorAppBlack"
-                                android:textSize="?attr/app_text_size_normal"
-                                app:custom_font="@string/app_font_medium" />
-
-                            <com.customviews.TypefaceTextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/deposit"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Deposited"
+                                android:background="@drawable/bg_skyblue_right"
+                                android:padding="@dimen/dp5"
+                                android:textAllCaps="true"
                                 android:textColor="?attr/app_text_color"
                                 android:textSize="?attr/app_text_size_normal"
                                 app:custom_font="@string/app_font_regular" />
 
+                            <com.customviews.TypefaceTextView
+                                android:layout_below="@+id/deposit"
+                                android:id="@+id/tv_deposit_balance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:gravity="center"
+                                android:textColor="@color/colorAppBlack"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_medium" />
+                        </RelativeLayout>
 
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="0.5dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorGray" />
-
-                        <LinearLayout
+                    
+                        <RelativeLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp25"
@@ -352,58 +369,68 @@
                             android:orientation="vertical">
 
 
-                            <com.customviews.TypefaceTextView
-                                android:id="@+id/tv_bonus_balance"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="0"
-                                android:textColor="@color/colorAppBlack"
-                                android:textSize="?attr/app_text_size_normal"
-                                app:custom_font="@string/app_font_medium" />
 
                             <com.customviews.TypefaceTextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/bonus"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Bonus"
+                                android:gravity="center"
+                                android:background="#00D4EC"
+                                android:textAllCaps="true"
+                                android:padding="@dimen/dp5"
                                 android:textColor="?attr/app_text_color"
                                 android:textSize="?attr/app_text_size_normal"
                                 app:custom_font="@string/app_font_regular" />
 
+                            <com.customviews.TypefaceTextView
+                                android:layout_below="@+id/bonus"
+                                android:id="@+id/tv_bonus_balance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:gravity="center"
+                                android:textColor="@color/colorAppBlack"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_medium" />
 
-                        </LinearLayout>
 
-                        <View
-                            android:layout_width="0.5dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorGray" />
+                        </RelativeLayout>
 
-                        <LinearLayout
+
+                        <RelativeLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                            android:gravity="start"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="@dimen/dp30">
 
+
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/winner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Winnings"
+                                android:textAllCaps="true"
+                                android:background="@drawable/bg_skyblue_left"
+                                android:textColor="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                app:custom_font="@string/app_font_regular"
+                                android:padding="@dimen/dp5"/>
 
                             <com.customviews.TypefaceTextView
                                 android:id="@+id/tv_winning_balance"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_below="@+id/winner"
                                 android:layout_height="wrap_content"
                                 android:text="0"
                                 android:textColor="@color/colorAppBlack"
                                 android:textSize="?attr/app_text_size_normal"
                                 app:custom_font="@string/app_font_medium" />
 
-                            <com.customviews.TypefaceTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Winnings"
-                                android:textColor="?attr/app_text_color"
-                                android:textSize="?attr/app_text_size_normal"
-                                app:custom_font="@string/app_font_regular" />
-
-
-                        </LinearLayout>
+                        </RelativeLayout>
 
                     </LinearLayout>
 
