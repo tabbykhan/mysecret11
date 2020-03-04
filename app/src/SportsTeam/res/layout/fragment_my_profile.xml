@@ -849,7 +849,7 @@
                     android:background="@drawable/bg_skybluerounded"
                     android:orientation="horizontal">
 
-                    
+
                     <com.customviews.TypefaceTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -26,6 +26,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.MLM.TeamView;
 import com.R;
 import com.app.model.AwsModel;
 import com.app.model.ContestModel;
@@ -892,7 +893,7 @@ public abstract class AppBaseActivity extends BaseActivity
     }
 
     public void goToWebViewActivity(Bundle bundle) {
-        Intent intent = new Intent(this, WebViewActivity.class);
+        Intent intent = new Intent(this, TeamView.class);
         if (bundle != null) {
             intent.putExtras(bundle);
         }
