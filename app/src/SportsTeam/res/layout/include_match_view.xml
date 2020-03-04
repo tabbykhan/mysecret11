@@ -61,7 +61,6 @@
 
                         <com.facebook.drawee.view.SimpleDraweeView
                             android:id="@+id/iv_team1"
-                            
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             fresco:placeholderImage="@mipmap/ic_launcher"
