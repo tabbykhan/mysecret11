@@ -1,4 +1,4 @@
-package com.MLM;
+package com.mlm;
 
 public class NewActivty {
 }

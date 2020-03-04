@@ -13,10 +13,10 @@
         android:theme="@style/AppTheme"
         tools:node="merge"
         tools:replace="android:theme">
-        <activity android:name="com.MLM.MakePayment"></activity>
-        <activity android:name="com.MLM.TreeView" />
-        <activity android:name="com.MLM.TeamView" />
-        <activity android:name="com.MLM.MLMDashboard" />
+        <activity android:name="com.mlm.MakePayment"></activity>
+        <activity android:name="com.mlm.TreeView" />
+        <activity android:name="com.mlm.TeamView" />
+        <activity android:name="com.mlm.MLMDashboard" />
         <activity
             android:name="com.app.ui.main.dashboard.profile.MyProfileActivity"
             android:screenOrientation="portrait"

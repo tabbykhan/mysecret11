@@ -1,4 +1,4 @@
-package com.MLM;
+package com.mlm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.R;
 
-public class TeamView extends AppCompatActivity {
+public class MLMDashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_team_view);
+        setContentView(R.layout.activity_m_l_m_dashboard);
     }
 }

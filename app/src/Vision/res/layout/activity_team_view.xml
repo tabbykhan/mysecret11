@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/vision_bg"
-    tools:context="com.MLM.TeamView">
+    tools:context="com.mlm.TeamView">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,13 +16,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/dp20">
+            android:paddingBottom="@dimen/dp20"
+            android:layout_marginTop="@dimen/dp20">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="@dimen/dp45"
+
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/bg_whiteborder"
                 android:orientation="vertical">
@@ -30,7 +31,7 @@
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_fromdate"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/et_height"
+                    android:layout_height="@dimen/dp45"
                     android:layout_marginStart="@dimen/dp10"
                     android:layout_marginTop="@dimen/dp10"
                     android:layout_marginEnd="@dimen/dp10"
@@ -53,7 +54,7 @@
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_todate"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/et_height"
+                    android:layout_height="@dimen/dp45"
                     android:layout_marginStart="@dimen/dp10"
                     android:layout_marginTop="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp10"
@@ -76,13 +77,12 @@
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_userid"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/et_height"
+                    android:layout_height="@dimen/dp45"
                     android:layout_marginStart="@dimen/dp10"
                     android:layout_marginTop="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp10"
                     android:background="@drawable/et_vistion"
                     android:drawablePadding="@dimen/dp10"
-                    android:editable="false"
                     android:focusableInTouchMode="true"
                     android:hint="User Id"
                     android:paddingStart="@dimen/dp15"
@@ -98,7 +98,7 @@
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_searchTeam"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/et_height"
+                    android:layout_height="@dimen/dp45"
                     android:layout_marginStart="@dimen/dp10"
                     android:layout_marginTop="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp10"
@@ -141,7 +141,7 @@
                         android:text="Search"
                         android:textAllCaps="true"
                         android:textColor="@color/btn_color"
-                        android:textSize="?attr/btn_text_size"
+                        android:textSize="@dimen/sp12"
                         app:custom_font="@string/app_font_regular" />
 
                     <com.customviews.TypefaceTextView
@@ -159,7 +159,7 @@
                         android:text="Reset"
                         android:textAllCaps="true"
                         android:textColor="@color/btn_color"
-                        android:textSize="?attr/btn_text_size"
+                        android:textSize="@dimen/sp12"
                         app:custom_font="@string/app_font_regular" />
                 </LinearLayout>
             </LinearLayout>
@@ -185,7 +185,7 @@
                     android:padding="2dp"
                     android:text="Left ID :"
                     android:textColor="#f5fe11"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/sp12"
                     app:custom_font="@string/app_font_regular" />
 
                 <com.customviews.TypefaceTextView
@@ -195,7 +195,7 @@
                     android:gravity="center"
                     android:text="6"
                     android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     app:custom_font="@string/app_font_regular" />
 
                 <com.customviews.TypefaceTextView
@@ -207,7 +207,7 @@
                     android:padding="2dp"
                     android:text="Right ID:"
                     android:textColor="#f5fe11"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     app:custom_font="@string/app_font_regular" />
 
                 <com.customviews.TypefaceTextView
@@ -217,7 +217,7 @@
                     android:gravity="center"
                     android:text="6"
                     android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:layout_marginEnd="@dimen/dp2"
                     app:custom_font="@string/app_font_regular" />
 
@@ -244,7 +244,7 @@
                     android:padding="2dp"
                     android:text="Left BV :"
                     android:textColor="#F5FE11"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     app:custom_font="@string/app_font_regular" />
 
                 <com.customviews.TypefaceTextView
@@ -254,7 +254,7 @@
                     android:gravity="center"
                     android:text="220000"
                     android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     app:custom_font="@string/app_font_regular" />
 
                 <com.customviews.TypefaceTextView
@@ -266,7 +266,7 @@
                     android:padding="2dp"
                     android:text="Right BV :"
                     android:textColor="#F5FE11"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     app:custom_font="@string/app_font_regular" />
 
                 <com.customviews.TypefaceTextView
@@ -276,7 +276,7 @@
                     android:gravity="center"
                     android:text="440000"
                     android:textColor="@color/colorBlack"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:layout_marginEnd="@dimen/dp2"
                     app:custom_font="@string/app_font_regular" />
 
@@ -343,18 +343,17 @@
                 android:id="@+id/searchbyid"
                 android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/bg_search"
-                android:drawableLeft="@drawable/search"
+                android:drawableLeft="@drawable/searchyellow_icon"
                 android:drawablePadding="10dp"
                 android:hint="Search.."
                 android:imeOptions="actionSearch"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="16sp" />
 
