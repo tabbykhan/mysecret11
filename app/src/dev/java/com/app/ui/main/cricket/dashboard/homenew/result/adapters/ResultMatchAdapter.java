@@ -91,6 +91,7 @@ public class ResultMatchAdapter extends AppBaseRecycleAdapter {
         @Override
         public void setData(int position) {
             updateViewVisibitity(ll_timer_lay, View.GONE);
+            updateViewVisibitity(tv_timer_time, View.GONE);
             updateViewVisibitity(view_seprator, View.GONE);
             updateViewVisibitity(ll_joined_contest, View.GONE);
             updateViewVisibitity(view_disable_layer, View.GONE);

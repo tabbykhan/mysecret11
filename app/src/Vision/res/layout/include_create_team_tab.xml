@@ -2,23 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    >
 
-    <com.customviews.TypefaceTextView
-        android:id="@+id/tv_player_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:singleLine="true"
-        android:text="A"
-        android:textColor="@color/create_team_tab_selector"
-        android:textSize="@dimen/sp14"
-        app:custom_font="?attr/app_font_medium" />
+
     <LinearLayout
         android:id="@+id/ll_tab_data_lay"
         android:layout_width="@dimen/dp50"
         android:layout_height="@dimen/dp50"
-        android:layout_below="@+id/tv_player_type"
         android:layout_marginTop="@dimen/dp5"
         android:background="@drawable/create_team_tab_bg_selector"
         android:gravity="center"
@@ -49,4 +40,15 @@
         android:textColor="@color/create_team_tab_counter_text_color_selector"
         android:textSize="@dimen/sp10"
         app:custom_font="?attr/app_font_bold" />
+    <com.customviews.TypefaceTextView
+        android:id="@+id/tv_player_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:singleLine="true"
+        android:text="A"
+        android:textColor="@color/create_team_tab_selector"
+        android:textSize="@dimen/sp14"
+        android:layout_below="@id/ll_tab_data_lay"
+        app:custom_font="?attr/app_font_medium" />
 </RelativeLayout>

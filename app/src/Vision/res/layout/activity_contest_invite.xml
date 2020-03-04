@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/vision_bg"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -44,7 +44,8 @@
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:orientation="horizontal"
-                        android:padding="@dimen/dp5">
+                        android:padding="@dimen/dp5"
+                        android:background="#1D340A">
 
                         <com.customviews.TintImageView
                             android:id="@+id/iv_invite"
@@ -53,7 +54,7 @@
                             android:layout_marginLeft="@dimen/dp5"
                             android:layout_width="@dimen/dp15"
                             android:src="@drawable/tickets_icon"
-                            app:tintColorStateList="@color/sport_textcolor_selector_green_black" />
+                            android:tint="@color/colorWhite" />
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_invite_code"
@@ -63,7 +64,7 @@
                             android:layout_marginLeft="@dimen/dp5"
                             android:layout_width="wrap_content"
                             android:text="Enter invite code"
-                            android:textColor="@color/sport_textcolor_selector_green_black"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_more_normal"
                             app:custom_font="?attr/app_font_medium" />
 
@@ -74,6 +75,7 @@
                         android:id="@+id/ll_enter_invite_code"
                         android:layout_height="wrap_content"
                         android:layout_width="match_parent"
+                        android:background="@color/vision_green"
                         android:orientation="vertical">
 
                         <View
@@ -85,11 +87,11 @@
                             android:id="@+id/cv_my_teams"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/dp20"
-                            android:layout_marginEnd="@dimen/dp5"
-                            android:layout_marginStart="@dimen/dp5"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:layout_marginStart="@dimen/dp10"
                             android:layout_marginTop="@dimen/dp20"
                             android:layout_width="match_parent"
-                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardBackgroundColor="#EFEFEF"
                             app:cardCornerRadius="@dimen/dp5"
                             app:cardElevation="@dimen/dp3">
 
@@ -116,7 +118,7 @@
                                     android:layout_marginStart="@dimen/dp5"
                                     android:layout_marginTop="@dimen/dp5"
                                     android:layout_width="match_parent"
-                                    app:cardBackgroundColor="@color/colorWhite"
+                                    app:cardBackgroundColor="#D9D9D9"
                                     app:cardCornerRadius="@dimen/dp3"
                                     app:cardElevation="@dimen/dp3">
 
@@ -126,7 +128,7 @@
                                         android:ems="10"
                                         android:focusableInTouchMode="true"
                                         android:focusedByDefault="false"
-                                        android:gravity="center_vertical"
+                                        android:gravity="center"
                                         android:hint="Invite code"
                                         android:imeOptions="actionNext"
                                         android:inputType="textEmailAddress"
@@ -144,7 +146,7 @@
 
                                 <com.customviews.TypefaceTextView
                                     android:id="@+id/tv_join_contest"
-                                    android:background="@drawable/bg_green_5radius_stroke1gray"
+                                    android:background="@drawable/btn_login"
                                     android:gravity="center"
                                     android:layout_gravity="center"
                                     android:layout_height="wrap_content"
@@ -152,7 +154,7 @@
                                     android:layout_width="match_parent"
                                     android:padding="@dimen/dp10"
                                     android:text="JOIN THIS CONTEST"
-                                    android:textColor="@color/colorWhite"
+                                    android:textColor="@color/btn_color"
                                     android:textSize="?attr/app_text_size_more_normal"
                                     app:custom_font="?attr/app_font_medium" />
 

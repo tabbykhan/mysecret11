@@ -499,7 +499,7 @@
                     android:layout_marginTop="@dimen/dp10"
                     android:layout_marginEnd="-2dp"
                     android:layout_marginBottom="@dimen/dp5"
-                    android:background="@drawable/bg_white_stroke1gray"
+                    android:background="@color/vision_green"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingStart="@dimen/dp10"

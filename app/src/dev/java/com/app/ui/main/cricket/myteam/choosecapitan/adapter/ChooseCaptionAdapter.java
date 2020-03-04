@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseRecycleAdapter;
@@ -207,9 +208,13 @@ public class ChooseCaptionAdapter extends AppBaseRecycleAdapter implements Filte
 
             if (getPlayerTeamType(playerModel.getTeam_id()) == 1) {
                 tv_team_type.setBackground(tv_team_type.getContext().getResources().getDrawable(R.drawable.bg_white_left2radius));
+
                 tv_team_type.setTextColor(Color.parseColor("#000000"));
             } else {
                 tv_team_type.setBackground(tv_team_type.getContext().getResources().getDrawable(R.drawable.bg_black_left2radius));
+                if(ConstantsFlavor.type == ConstantsFlavor.Type.vision)
+                tv_team_type.setTextColor(Color.parseColor("#000000"));
+                else
                 tv_team_type.setTextColor(Color.parseColor("#ffffff"));
             }
 

@@ -8,7 +8,7 @@
                 android:topRightRadius="0dp"
                 android:bottomLeftRadius="@dimen/dp2"
                 android:bottomRightRadius="0dp"/>
-            <solid android:color="@color/colorBlack" />
+            <solid android:color="#EFF63D" />
         </shape>
     </item>
 
