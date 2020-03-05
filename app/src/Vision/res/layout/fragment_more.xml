@@ -23,7 +23,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/rl_invite"
+                android:id="@+id/rl_tree_vew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent_color">
@@ -108,7 +108,7 @@
                 android:id="@+id/rl_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/down_green">
+                >
 
                 <ImageView
                     android:id="@+id/img_account"

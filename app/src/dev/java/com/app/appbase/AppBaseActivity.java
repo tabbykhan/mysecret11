@@ -26,6 +26,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.MLM.MLMDashboard;
 import com.R;
 import com.app.model.AwsModel;
 import com.app.model.ContestModel;
@@ -79,6 +80,12 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.crashlytics.android.Crashlytics;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.common.ResizeOptions;
+import com.facebook.imagepipeline.request.ImageRequest;
+import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.medy.retrofitwrapper.WebRequest;
 import com.medy.retrofitwrapper.WebRequestErrorDialog;
 import com.medy.retrofitwrapper.WebServiceException;
@@ -447,6 +454,10 @@ public abstract class AppBaseActivity extends BaseActivity
                           final ProgressBar pb_image, String imageUrl, int placeHolder) {
         this.loadImage(mContext, imageView, pb_image, imageUrl, placeHolder, placeHolder, placeHolder, 200);
     }
+    public void loadImageSDV(Object mContext, SimpleDraweeView imageView,
+                          final ProgressBar pb_image, String imageUrl, int placeHolder) {
+        this.loadImageSDV(mContext, imageView, pb_image, imageUrl, placeHolder, placeHolder, placeHolder, 200);
+    }
 
     public void loadImage(Object mContext, ImageView imageView,
                           final ProgressBar pb_image, String imageUrl, int placeHolder, int requireWidth) {
@@ -513,6 +524,41 @@ public abstract class AppBaseActivity extends BaseActivity
 
         }
 
+    }
+
+  public void loadImageSDV(Object mContext, SimpleDraweeView imageView,
+                          final ProgressBar pb_image, String imageUrl,
+                          int placeHolder, int error, int fallBack, int requireWidth) {
+        if (imageUrl == null || imageUrl.trim().isEmpty()) {
+            if (pb_image != null && pb_image.getVisibility() != View.INVISIBLE) {
+                pb_image.setVisibility(View.INVISIBLE);
+            }
+            imageView.setImageResource(fallBack);
+            return;
+        }
+        if (mContext == null) return;
+
+        try {
+           imageView.setController(getDraveenController(imageView , imageUrl , requireWidth));
+
+        } catch (Exception e) {
+
+        }
+
+    }
+
+    private DraweeController getDraveenController(SimpleDraweeView mImageView, String vendorImg, int requireWidth) {
+        Uri uri = Uri.parse(vendorImg);
+
+        ImageRequest request = ImageRequestBuilder.newBuilderWithSource(uri)
+                .setResizeOptions(new ResizeOptions(requireWidth, requireWidth))
+                .setProgressiveRenderingEnabled(false)
+                .build();
+
+        return Fresco.newDraweeControllerBuilder()
+                .setOldController(mImageView.getController())
+                .setImageRequest(request)
+                .build();
     }
 
 
@@ -875,6 +921,14 @@ public abstract class AppBaseActivity extends BaseActivity
 
     public void goToContestInviteActivity(Bundle bundle) {
         Intent intent = new Intent(this, ContestInviteActivity.class);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+        overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
+    }
+    public void goToMyAccountMLMActivity(Bundle bundle) {
+        Intent intent = new Intent(this, MLMDashboard.class);
         if (bundle != null) {
             intent.putExtras(bundle);
         }

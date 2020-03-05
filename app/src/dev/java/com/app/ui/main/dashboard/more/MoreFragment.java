@@ -22,7 +22,7 @@ public class MoreFragment extends AppBaseFragment {
 
     RelativeLayout rl_invite, rl_contest_invite_code, rl_point_system,
             rl_how_to_play, rl_helpdesk, rl_about_us, rl_legality, rl_withdraw_policy, rl_terms_services,
-            rl_contact, rl_faq;
+            rl_contact, rl_faq, rl_account;
 
     TextView tv_app_version;
 
@@ -83,7 +83,7 @@ public class MoreFragment extends AppBaseFragment {
         tv_faq = getView().findViewById(R.id.tv_faq);
 
 
-        rl_invite = getView().findViewById(R.id.rl_invite);
+        rl_invite = getView().findViewById(R.id.rl_tree_vew);
         rl_contest_invite_code = getView().findViewById(R.id.rl_contest_invite_code);
         rl_point_system = getView().findViewById(R.id.rl_point_system);
         rl_how_to_play = getView().findViewById(R.id.rl_how_to_play);
@@ -94,6 +94,7 @@ public class MoreFragment extends AppBaseFragment {
         rl_terms_services = getView().findViewById(R.id.rl_terms_services);
         rl_contact = getView().findViewById(R.id.rl_contact);
         rl_faq = getView().findViewById(R.id.rl_faq);
+        rl_account = getView().findViewById(R.id.rl_account);
         tv_app_version = getView().findViewById(R.id.tv_app_version);
 
         tv_app_version.setText("Version " + AppUpdateUtils.getAppInstalledVersionName(getActivity()));
@@ -110,6 +111,7 @@ public class MoreFragment extends AppBaseFragment {
         rl_terms_services.setOnClickListener(this);
         rl_contact.setOnClickListener(this);
         rl_faq.setOnClickListener(this);
+        rl_account.setOnClickListener(this);
 
         setupCustomIcons();
 
@@ -280,7 +282,7 @@ public class MoreFragment extends AppBaseFragment {
         Bundle bundle = new Bundle();
         switch (v.getId()) {
 
-            case R.id.rl_invite:
+            case R.id.rl_tree_vew:
                 if (getActivity() == null) return;
                 ((AppBaseActivity) getActivity()).goToInviteActivity(null);
                 break;
@@ -288,6 +290,11 @@ public class MoreFragment extends AppBaseFragment {
             case R.id.rl_contest_invite_code:
                 if (getActivity() == null) return;
                 ((AppBaseActivity) getActivity()).goToContestInviteActivity(null);
+                break;
+
+            case R.id.rl_account:
+                if (getActivity() == null) return;
+                ((AppBaseActivity) getActivity()).goToMyAccountMLMActivity(null);
                 break;
             case R.id.rl_point_system:
                 bundle.putString(DATA1, tv_graph.getText().toString());

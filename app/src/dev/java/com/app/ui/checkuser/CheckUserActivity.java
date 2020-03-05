@@ -63,7 +63,7 @@ public class CheckUserActivity extends AppBaseActivity {
     RelativeLayout rl_fb_btn;
     RelativeLayout rl_gplus_btn;
     TextView tv_signup;
-
+    TextView tv_signupMLM;
     SocialLoginListener fbLoginListener = new SocialLoginListener() {
         @Override
         public void socialLoginSuccess(SocialData socialData) {
@@ -121,8 +121,11 @@ public class CheckUserActivity extends AppBaseActivity {
         rl_fb_btn.setOnClickListener(this);
         rl_gplus_btn.setOnClickListener(this);
         tv_signup.setOnClickListener(this);
+        tv_signupMLM = findViewById(R.id.tv_signupMLM);
 
         setupSignUpButton();
+        if(ConstantsFlavor.type == ConstantsFlavor.Type.vision)
+         setupSignUpMLMButton();
         showUnAuth();
     }
 
@@ -177,6 +180,37 @@ public class CheckUserActivity extends AppBaseActivity {
                 }
             };
             SpannableString string = SpannableString.valueOf(tv_signup.getText());
+            string.setSpan(urlSpan, m1.start(), m1.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+
+    }
+    private void setupSignUpMLMButton() {
+        String signUp = "MLM Register";   //MLM Register
+
+        tv_signupMLM.setMovementMethod(LinkMovementMethod.getInstance());
+        Pattern termsAndConditionsMatcher = Pattern.compile(signUp);
+        Matcher m1 = termsAndConditionsMatcher.matcher(tv_signupMLM.getText().toString());
+        if (m1.find()) {
+            URLSpan urlSpan = new URLSpan(m1.group(0)) {
+                @Override
+                public void onClick(View widget) {
+                    showConfirmationDialog();
+                    //goToRegisterActivity(null);
+                }
+
+                @Override
+                public void updateDrawState(TextPaint ds) {
+                    if (ConstantsFlavor.type == ConstantsFlavor.Type.sportteam){
+                        ds.setColor(getResources().getColor(R.color.colorFbBlue));
+                        ds.setUnderlineText(false);//there show text below line
+                    }else {
+                        ds.setColor(getResources().getColor(R.color.colorYellow));
+                        ds.setUnderlineText(false);//there show text below line
+                    }
+
+                }
+            };
+            SpannableString string = SpannableString.valueOf(tv_signupMLM.getText());
             string.setSpan(urlSpan, m1.start(), m1.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
 
