@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/vision_bg">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -25,6 +25,7 @@
         android:layout_below="@+id/ll_top"
         android:layout_marginTop="@dimen/dp10"
         android:gravity="center"
+        android:background="@color/vision_green"
         android:orientation="horizontal">
 
         <com.customviews.TypefaceTextView
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="CHOOSE TEAM TO SWITCH WITH"
-            android:textColor="?attr/app_text_color"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_normal"
             app:custom_font="@string/app_font_regular" />
 
@@ -93,7 +94,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/colorRed"
+            android:background="@drawable/bottomnavigationcolor"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingTop="@dimen/dp5"
@@ -106,7 +107,7 @@
                 android:layout_height="?attr/et_height"
                 android:gravity="center"
                 android:text="CREATE TEAM 1"
-                android:textColor="@color/colorWhite"
+                android:textColor="@color/btn_color"
                 android:textSize="?attr/app_text_size_normal"
                 app:custom_font="@string/app_font_regular" />
         </LinearLayout>
@@ -116,7 +117,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/color_yellow_btn"
+            android:background="#62BF28"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingTop="@dimen/dp5"
@@ -129,7 +130,7 @@
                 android:layout_height="?attr/et_height"
                 android:gravity="center"
                 android:text="SWITCH TEAM"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_normal"
                 app:custom_font="@string/app_font_regular" />
         </LinearLayout>

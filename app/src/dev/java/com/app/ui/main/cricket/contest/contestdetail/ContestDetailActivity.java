@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -227,7 +228,6 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
             iv_discount_image = findViewById(R.id.iv_discount_image);
 
 
-
             setupSwipeLayout();
             setMatchData();
             setupScoreBoard();
@@ -290,10 +290,10 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
 
                         updateViewVisibitity(ll_score_data, View.VISIBLE);
 
-                        if(scoreModel.isValidString(scoreModel.getScore_board_notes())){
+                        if (scoreModel.isValidString(scoreModel.getScore_board_notes())) {
                             tv_win.setText(scoreModel.getScore_board_notes());
                             updateViewVisibitity(tv_win, View.VISIBLE);
-                        }else{
+                        } else {
                             updateViewVisibitity(tv_win, View.GONE);
                         }
 
@@ -375,22 +375,22 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
 
 
             String moreEntryFeesText = contestModel.getMoreEntryFeesText();
-            if(isValidString(moreEntryFeesText)) {
+            if (isValidString(moreEntryFeesText)) {
                 tv_more_entry.setText(currency_symbol + moreEntryFeesText);
 
                 int[] discountImageSizeForCategory = contestModel.getDiscountImageSizeForContestSmall();
                 LinearLayout.LayoutParams layoutParams1 = (LinearLayout.LayoutParams) iv_discount_image.getLayoutParams();
-                layoutParams1.width=discountImageSizeForCategory[0];
-                layoutParams1.height=discountImageSizeForCategory[1];
+                layoutParams1.width = discountImageSizeForCategory[0];
+                layoutParams1.height = discountImageSizeForCategory[1];
                 iv_discount_image.setLayoutParams(layoutParams1);
 
                 loadImage(this, iv_discount_image, null,
                         contestModel.getDiscount_image(),
                         R.mipmap.ic_launcher_notification);
-                updateViewVisibitity(iv_discount_image,View.VISIBLE);
-            }else {
+                updateViewVisibitity(iv_discount_image, View.VISIBLE);
+            } else {
                 tv_more_entry.setText("");
-                updateViewVisibitity(iv_discount_image,View.GONE);
+                updateViewVisibitity(iv_discount_image, View.GONE);
             }
 
             if (getMatchModel().isFixtureMatch()) {
@@ -427,6 +427,8 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
                     tv_joined_teams.setText(contestModel.getJoinedWithText());
                 } else {
                     updateViewVisibitity(ll_joined_teams, View.GONE);
+                    if (ConstantsFlavor.type == ConstantsFlavor.Type.vision)
+                        updateViewVisibitity(ll_normal_bet, View.GONE);
                 }
 
                 updateViewVisibitity(ll_contest_info, View.VISIBLE);
@@ -454,10 +456,10 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
                 }
             }
 
-            if(adapter!=null){
-                try{
+            if (adapter != null) {
+                try {
                     adapter.notifyDataSetChanged();
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
 
@@ -500,7 +502,7 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
 
             @Override
             public boolean isBeatExpertContest() {
-               return contestModel!=null && contestModel.isBetTheExpert();
+                return contestModel != null && contestModel.isBetTheExpert();
             }
         };
         recycler_view.setLayoutManager(getVerticalLinearLayoutManager());
@@ -630,8 +632,7 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
                 }
             }
             break;
-            case R.id.tv_switch_team:
-            {
+            case R.id.tv_switch_team: {
                 Bundle bundle = new Bundle();
                 bundle.putString(DATA, getMatchModel().getMatch_id());
                 bundle.putLong(DATA1, contestModel.getMatch_contest_id());
@@ -751,7 +752,6 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
         startActivityForResult(intent, ContestActivity.REQUEST_SWITCH_TEAM);
         overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
     }
-
 
 
     private void openConfirmJoinContest(final String entryFee, final long matchContestId, final long teamId) {
@@ -1035,7 +1035,7 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
 
     private void startFileDownload(String serverFileUrl) {
         if (!new ConnectionDetector(this).isConnectingToInternet()) {
-           showNetWorkErrorMessage();
+            showNetWorkErrorMessage();
             return;
         }
         showCustomToast("Contest pdf downloading...");

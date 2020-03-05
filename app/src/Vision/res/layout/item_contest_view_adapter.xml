@@ -17,7 +17,7 @@
             android:id="@+id/cv_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/colorWhite"
+            app:cardBackgroundColor="#EFEFEF"
             app:cardCornerRadius="@dimen/dp5"
             app:cardElevation="@dimen/dp1">
 
@@ -30,8 +30,9 @@
                     android:id="@+id/ll_contest_share"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#f2386716"
+                    android:background="@drawable/vision_5radius"
                     android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/dp8"
                     android:orientation="horizontal">
 
                     <com.customviews.TypefaceTextView
@@ -59,7 +60,9 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="@dimen/dp8">
+                    android:background="#EFEFEF"
+                    android:layout_marginTop="-8dp"
+                    android:padding="@dimen/dp10">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -154,13 +157,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:padding="5dp"
+                            android:background="@drawable/bg_dralgray_5radius">
 
                             <com.customviews.TypefaceTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="WINNERS"
-                                android:textColor="@color/colorAppBlackAA"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="?attr/app_text_size_extra_small"
                                 app:custom_font="@string/app_font_regular" />
 
@@ -314,10 +319,10 @@
                 android:layout_weight="0.20"
                 android:minHeight="@dimen/dp25"
                 android:paddingBottom="@dimen/dp2"
-                android:background="@drawable/bg_red_5radius"
+                android:background="#19320A"
                 android:gravity="center"
                 android:text="JOIN"
-                android:textColor="@color/btn_color"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_extra_small"
                 app:custom_font="@string/app_font_regular" />
             <!-- android:background="@drawable/bg_transparent_5radius_stroke1primary"-->

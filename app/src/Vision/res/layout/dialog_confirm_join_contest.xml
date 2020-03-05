@@ -20,7 +20,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -39,7 +40,7 @@
                         android:text="CONFIRMATION"
                         android:gravity="center"
                         android:textColor="@color/vision_green"
-                        android:textSize="?attr/app_text_size_normal"
+                        android:textSize="20sp"
                         app:custom_font="@string/app_font_bold" />
 
                     <ImageView
