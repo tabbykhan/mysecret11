@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vision_bg"
+    android:orientation="vertical"
+    tools:context="com.MLM.MLMDashboard">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_tollbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_bg_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_header">
+
+
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="?attr/actionBarIconSize"
+                android:layout_height="?attr/actionBarIconSize"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/dp12"
+                android:onClick="backBtn"
+                android:src="@drawable/back_icon_3x"
+                android:tint="@color/btn_color" />
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_back"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="MLM HOME"
+                android:textColor="@color/btn_color"
+                android:textSize="?attr/actionBarTitleSize"
+                app:custom_font="@string/app_font_regular" />
+
+
+
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_teamView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="teamView">
+
+        <ImageView
+            android:id="@+id/img_team"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_team"
+            android:text="Team View"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_team"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_tree_vew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="treeView">
+
+        <ImageView
+            android:id="@+id/img_tree_vew"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_tree_vew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_tree_vew"
+            android:text="Tree View"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_tree_vew"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_make_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="makePayment">
+
+        <ImageView
+            android:id="@+id/img_make_payment"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_make_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_make_payment"
+            android:text="Make Payment"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_make_payment"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_tree_ve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/img_invite"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_invite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_invite"
+            android:text="Invite Friends"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_invite"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+
+</LinearLayout>
