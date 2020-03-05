@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="@drawable/vision_bg"
         android:weightSum="1">
 
         <LinearLayout

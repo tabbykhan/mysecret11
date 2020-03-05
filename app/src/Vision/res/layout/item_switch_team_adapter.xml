@@ -9,21 +9,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp10"
-        app:cardBackgroundColor="@color/colorWhite"
+        app:cardBackgroundColor="#BFFFFFFF"
         app:cardCornerRadius="@dimen/dp10"
         app:cardElevation="@dimen/dp3">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/selector_team_bg_choose"
             android:orientation="vertical">
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingTop="@dimen/dp10"
+                android:background="@color/transparent_color"
                 android:paddingBottom="@dimen/dp10">
 
                 <CheckBox
@@ -73,6 +73,7 @@
                 android:layout_marginStart="@dimen/dp1"
                 android:layout_marginEnd="@dimen/dp1"
                 android:gravity="center_vertical"
+                android:background="@drawable/selector_team_bg_choose"
                 android:orientation="horizontal">
 
                 <RelativeLayout
@@ -139,7 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="200"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="@color/vision_green"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
@@ -216,7 +217,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="200"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="@color/vision_green"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>
@@ -239,6 +240,7 @@
                 android:layout_marginBottom="@dimen/dp1"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:background="@color/vision_green"
                 android:weightSum="1">
 
                 <LinearLayout
@@ -291,14 +293,14 @@
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
                         android:src="@drawable/view_3x"
-                        android:tint="?attr/app_text_color" />
+                        android:tint="@color/colorRed" />
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp5"
                         android:text="PREVIEW"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorRed"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 

@@ -19,7 +19,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#EFEFEF">
 
             <RelativeLayout
                 android:id="@+id/rl_image"
@@ -57,7 +58,7 @@
                 android:ellipsize="end"
                 android:singleLine="true"
                 android:text="Test Message"
-                android:textColor="?attr/app_link_text_color"
+                android:textColor="@color/vision_green"
                 android:textSize="?attr/app_text_size_normal"
                 app:custom_font="?attr/app_font_medium" />
 
@@ -80,36 +81,39 @@
                 app:trimMode="trimModeLength" />
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/ll_date"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_message"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/dp5"
-                android:layout_marginEnd="@dimen/dp5"
-                android:layout_marginBottom="@dimen/dp5"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
+                android:paddingRight="5dp"
+                android:orientation="horizontal"
+                android:background="@color/vision_green">
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="19 Feb 2018"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="?attr/app_text_size_small"
+                    app:custom_font="?attr/app_font_regular" />
                 <ImageView
                     android:layout_width="@dimen/dp20"
                     android:layout_height="@dimen/dp20"
                     android:padding="@dimen/dp3"
                     android:src="@drawable/clock_icon_3x"
-                    android:tint="?attr/app_text_color_sec" />
+                    android:tint="@color/colorWhite"
+                    android:layout_toLeftOf="@id/tv_date"
+                    android:layout_marginRight="5dp"
+                    />
 
-                <com.customviews.TypefaceTextView
-                    android:id="@+id/tv_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:text="19 Feb 2018"
-                    android:textColor="?attr/app_text_color_sec"
-                    android:textSize="?attr/app_text_size_small"
-                    app:custom_font="?attr/app_font_regular" />
 
-            </LinearLayout>
+
+
+            </RelativeLayout>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
