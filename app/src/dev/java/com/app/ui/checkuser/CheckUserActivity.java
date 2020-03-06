@@ -29,6 +29,7 @@ import com.app.model.webrequestmodel.CheckUserRequestModel;
 import com.app.model.webrequestmodel.SocialLoginRequestModel;
 import com.app.model.webresponsemodel.CheckUserResponseModel;
 import com.app.model.webresponsemodel.VerifyOtpResponseModel;
+import com.app.ui.MLMRegistration.RegisterMLMActivity;
 import com.app.ui.MyApplication;
 import com.app.ui.dialogs.ConfirmationLocationDialog;
 import com.app.ui.login.LoginActivity;
@@ -163,7 +164,7 @@ public class CheckUserActivity extends AppBaseActivity {
             URLSpan urlSpan = new URLSpan(m1.group(0)) {
                 @Override
                 public void onClick(View widget) {
-                    showConfirmationDialog();
+                    showConfirmationDialog(true);
                     //goToRegisterActivity(null);
                 }
 
@@ -194,7 +195,7 @@ public class CheckUserActivity extends AppBaseActivity {
             URLSpan urlSpan = new URLSpan(m1.group(0)) {
                 @Override
                 public void onClick(View widget) {
-                    showConfirmationDialog();
+                    showConfirmationDialog(false);
                     //goToRegisterActivity(null);
                 }
 
@@ -287,8 +288,12 @@ public class CheckUserActivity extends AppBaseActivity {
     }
 
 
-    private void goToRegisterActivity(Bundle bundle) {
-        Intent intent = new Intent(this, RegisterActivity.class);
+    private void goToRegisterActivity(Bundle bundle , boolean isNormalUser) {
+        Intent intent;
+        if(isNormalUser)
+         intent = new Intent(this, RegisterActivity.class);
+        else
+             intent = new Intent(this, RegisterMLMActivity.class);
         if (bundle != null) {
             intent.putExtras(bundle);
         }
@@ -445,7 +450,7 @@ public class CheckUserActivity extends AppBaseActivity {
     }
 
 
-    private void showConfirmationDialog() {
+    private void showConfirmationDialog(final boolean isNormalUser) {
         Bundle bundle = new Bundle();
         bundle.putString(MESSAGE, "By joining this contest, you accept "+ getString(R.string.app_name) +" T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim.");
         bundle.putString(POS_BTN, "OK");
@@ -457,7 +462,7 @@ public class CheckUserActivity extends AppBaseActivity {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
                         dialog.dismiss();
-                        goToRegisterActivity(null);
+                        goToRegisterActivity(null , isNormalUser);
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
                         dialog.dismiss();

@@ -135,7 +135,9 @@ public class MyLiveAdapter extends AppBaseRecycleAdapter {
             TeamModel team1 = matchModel.getTeam1();
             if (team1 != null) {
                 tv_team1_name.setText(team1.getName(1));
-                ((AppBaseActivity) context).loadImage(context, iv_team1, pb_image1, team1.getImage(),
+               /* ((AppBaseActivity) context).loadImage(context, iv_team1, pb_image1, team1.getImage(),
+                        R.mipmap.ic_launcher_round);*/
+                ((AppBaseActivity) context).loadImageSDV(context, iv_team1, pb_image1, team1.getImage(),
                         R.mipmap.ic_launcher_round);
             } else {
                 updateViewVisibitity(pb_image1, View.INVISIBLE);

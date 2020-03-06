@@ -46,4 +46,8 @@ public class MLMDashboard  extends AppBaseActivity {
     public void backBtn(View view) {
         onBackPressed();
     }
+
+    public void leadBoard(View view) {
+        startActivity(new Intent(this , SeriesLeaderBoard.class));
+    }
 }

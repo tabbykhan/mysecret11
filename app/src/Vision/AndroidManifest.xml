@@ -202,6 +202,12 @@
         <activity android:name="com.MLM.MLMDashboard"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name="com.app.ui.MLMRegistration.RegisterMLMActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+ <activity android:name="com.MLM.SeriesLeaderBoard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

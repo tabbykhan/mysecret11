@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/app_screen_bg_color">
+
+    <include
+        android:id="@+id/fragment_toolbar"
+        layout="@layout/include_toolbar_fargment" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fragment_toolbar"
+        android:scrollbarThumbVertical="@drawable/bg_transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/vision_bg"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
+                app:cardBackgroundColor="@color/transparent_color"
+                app:cardCornerRadius="@dimen/dp5"
+                app:cardElevation="@dimen/dp2"
+                app:contentPadding="@dimen/dp10">
+
+
+                <LinearLayout
+                    android:id="@+id/ll_data_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_login_transparent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@string/app_font_bold"
+                        android:text="Register &amp; Play"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/sp30" />
+
+
+                    <!-- <androidx.cardview.widget.CardView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/dp2"
+                         android:layout_marginTop="@dimen/dp15"
+                         android:layout_marginEnd="@dimen/dp2"
+                         android:layout_marginBottom="@dimen/dp2"
+
+                         app:cardElevation="@dimen/dp3">-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/smartphone_icon"
+                            android:tint="#ffffff" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_mobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:digits="0123456789"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Mobile Number"
+                            android:imeOptions="actionNext"
+                            android:inputType="phone"
+                            android:lines="1"
+                            android:maxLength="10"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+                    <!--  </androidx.cardview.widget.CardView>-->
+
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:text="You will receive an OTP for verification"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/mail_icon"
+                            android:tint="@color/colorWhite" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Email Address"
+                            android:imeOptions="actionNext"
+                            android:inputType="text|textEmailAddress"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:text="No spam, We promise!"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/user_name"
+                            android:tint="@color/colorWhite" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Name"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:text="This is your profile name"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/key_icon"
+                            android:tint="@color/colorWhite" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_password"
+                            android:layout_width="0dp"
+                            android:layout_height="?attr/et_height"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="Password"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+
+                        <CheckBox
+                            android:id="@+id/cb_password_show_hide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp5"
+                            android:button="@drawable/selector_password_checkbox_choose"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_password_msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:gravity="left"
+                        android:text="@string/minimum_password"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="?attr/app_font_regular" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/colorWhite"
+                        app:cardCornerRadius="@dimen/dp3"
+                        app:cardElevation="@dimen/dp3">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp20"
+                                    android:layout_height="@dimen/dp20"
+                                    android:layout_marginStart="@dimen/dp5"
+                                    android:src="@drawable/user_name" />
+
+                                <com.customviews.TypefaceEditText
+                                    android:id="@+id/et_team_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="?attr/et_height"
+                                    android:background="@null"
+                                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                                    android:ems="10"
+                                    android:gravity="center_vertical"
+                                    android:hint="Team name"
+                                    android:imeOptions="actionNext"
+                                    android:inputType="textCapCharacters"
+                                    android:lines="1"
+                                    android:maxLength="21"
+                                    android:padding="@dimen/dp10"
+                                    android:textColor="?attr/et_text_color"
+                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:textSize="?attr/et_text_size"
+                                    app:custom_font="@string/app_font_regular" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorBlack10" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/ll_search_view" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/key_icon"
+                            android:tint="@color/colorWhite" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_userId"
+                            android:layout_width="0dp"
+                            android:layout_height="?attr/et_height"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="UserID"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/sponsorIdtxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:gravity="left"
+                            android:text="Do you have sponsor?"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="?attr/app_text_size_extra_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <RadioGroup
+                            android:id="@+id/sponsorGroup"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/sponsorIdtxt"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <RadioButton
+                                android:id="@+id/yesBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:buttonTint="@color/colorWhite"
+                                android:checked="false"
+                                android:text="No"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/sp18" />
+
+                            <RadioButton
+                                android:id="@+id/noBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:buttonTint="@color/colorWhite"
+                                android:checked="false"
+                                android:layout_marginLeft="@dimen/dp10"
+                                android:text="Yes"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/sp18" />
+                        </RadioGroup>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/spLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/refer_icon"
+                            android:tint="@color/colorWhite" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_SponsorId"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="SponsorId"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:singleLine="true"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/positionTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:gravity="left"
+                            android:text="Position ?"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="?attr/app_text_size_extra_small"
+                            app:custom_font="?attr/app_font_regular" />
+
+                        <RadioGroup
+                            android:id="@+id/positionTxtGroup"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/positionTxt"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <RadioButton
+                                android:id="@+id/left"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:buttonTint="@color/colorWhite"
+                                android:checked="false"
+                                android:text="Left"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/sp18" />
+
+                            <RadioButton
+                                android:id="@+id/rightBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:buttonTint="@color/colorWhite"
+                                android:checked="false"
+                                android:layout_marginLeft="@dimen/dp10"
+                                android:text="Right"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/sp18" />
+                        </RadioGroup>
+                    </RelativeLayout>
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_referal_msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:gravity="left"
+                        android:text="@string/no_referral_code"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        android:visibility="gone"
+                        app:custom_font="?attr/app_font_regular" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:layout_marginTop="@dimen/dp30"
+                        android:layout_marginEnd="@dimen/dp5"
+                        android:layout_marginBottom="@dimen/dp10"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_register"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/btn_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_red_5radius"
+                            android:gravity="center"
+                            android:text="Proceed"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="?attr/btn_text_size"
+                            app:custom_font="@string/app_font_regular" />
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/dp110"
+                            android:src="@drawable/ic_near_me"
+                            android:tint="@color/colorBlack"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginBottom="@dimen/dp5"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:text="OR"
+                        android:visibility="gone"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_big"
+                        app:custom_font="@string/app_font_medium" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+
+                        <RelativeLayout
+                            android:id="@+id/rl_fb_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/img_facebok"
+                                android:layout_width="50dp"
+                                android:layout_height="@dimen/dp50"
+                                android:layout_alignTop="@+id/txt_facebook"
+                                android:layout_alignBottom="@+id/txt_facebook"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/bg_fbblue_5radius_left"
+                                android:padding="@dimen/dp10"
+                                android:src="@drawable/facebook_icon_3x"
+                                android:tint="@color/colorWhite" />
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/txt_facebook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp5"
+                                android:layout_toRightOf="@+id/img_facebok"
+                                android:text="Facebook"
+                                android:textColor="@color/colorBlack"
+                                android:textColorHint="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                android:visibility="gone"
+                                app:custom_font="@string/app_font_regular" />
+
+                        </RelativeLayout>
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.05" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/rl_gplus_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/img_google"
+                                android:layout_width="@dimen/dp50"
+                                android:layout_height="@dimen/dp50"
+                                android:layout_alignTop="@+id/tv_google"
+                                android:layout_alignBottom="@+id/tv_google"
+                                android:background="@drawable/bg_gplusred_5radius_left"
+                                android:padding="@dimen/dp10"
+                                android:src="@drawable/google_3x"
+                                android:tint="@color/colorWhite" />
+
+                            <com.customviews.TypefaceTextView
+                                android:id="@+id/tv_google"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/dp5"
+                                android:layout_toRightOf="@+id/img_google"
+                                android:gravity="center"
+                                android:text="Google"
+                                android:textColor="@color/colorBlack"
+                                android:textColorHint="?attr/app_text_color"
+                                android:textSize="?attr/app_text_size_normal"
+                                android:visibility="gone"
+                                app:custom_font="@string/app_font_regular" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.customviews.TypefaceCheckBox
+                    android:id="@+id/cb_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:visibility="gone" />
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp10"
+                    android:text="By registering, I agree Super Baazi T&amp;Cs"
+                    android:textColor="@color/colorAppBlackAA"
+                    android:textSize="?attr/app_text_size_small"
+                    app:custom_font="@string/app_font_regular" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Already a user?"
+                    android:textColor="@color/colorAppBlackAA"
+                    android:textSize="?attr/app_text_size_normal"
+                    app:custom_font="@string/app_font_regular" />
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/dp50"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/dp10"
+                    android:paddingEnd="@dimen/dp10"
+                    android:text="Log In"
+                    android:textColor="@color/colorAppBlackAA"
+                    android:textSize="?attr/app_text_size_normal"
+                    app:custom_font="@string/app_font_regular" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

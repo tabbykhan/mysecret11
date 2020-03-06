@@ -204,6 +204,26 @@
                     app:custom_font="@string/app_font_regular" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp30"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_signupMLM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/btn_height"
+                    android:gravity="center"
+                    android:text="Not a member? MLM Register"
+                    android:textColor="#ffffff"
+                    android:textSize="?attr/btn_text_size"
+                    app:custom_font="@string/app_font_regular" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
