@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp1"
-        android:background="@color/colorWhite"
+        android:background="#EFEFEF"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/dp10"
@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:singleLine="true"
                     android:text="Rohit"
-                    android:textColor="?attr/app_link_text_color"
+                    android:textColor="#8A8A8A"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -98,17 +98,16 @@
 
                     <ImageView
                         android:id="@+id/iv_your_player"
-                        android:layout_width="@dimen/dp10"
-                        android:layout_height="@dimen/dp10"
-                        android:tint="@color/iv_green_red_tint_color"
-                        android:src="@drawable/tick_3x" />
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
+                        android:src="@drawable/rights" />
 
                     <ImageView
                         android:id="@+id/iv_top_player"
-                        android:layout_width="@dimen/dp10"
-                        android:layout_height="@dimen/dp10"
+                        android:layout_width="@dimen/dp15"
+                        android:layout_height="@dimen/dp15"
                         android:layout_marginStart="@dimen/dp5"
-                        android:src="@drawable/top_3x" />
+                        android:src="@drawable/ic_stars_black_24dp" />
                 </LinearLayout>
 
             </LinearLayout>
