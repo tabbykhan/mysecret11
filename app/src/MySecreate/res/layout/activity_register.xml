@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@drawable/bg_for_secret">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -18,17 +18,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp10"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardCornerRadius="@dimen/dp5"
-                app:cardElevation="@dimen/dp2"
-                app:contentPadding="@dimen/dp10">
+                android:orientation="vertical"
+                android:padding="@dimen/dp10">
 
 
                 <LinearLayout
@@ -39,123 +36,12 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="?attr/btn_height"
-                        android:layout_marginTop="@dimen/dp10"
-                        android:orientation="horizontal">
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="@dimen/dp3"
-                            android:layout_weight="0.5"
-                            app:cardBackgroundColor="@color/colorWhite"
-                            app:cardCornerRadius="@dimen/dp5"
-                            app:cardElevation="@dimen/dp3">
-
-                            <RelativeLayout
-                                android:id="@+id/rl_fb_btn"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:id="@+id/img_facebok"
-                                    android:layout_width="@dimen/dp20"
-                                    android:layout_height="@dimen/dp20"
-                                    android:layout_centerVertical="true"
-                                    android:paddingStart="@dimen/dp3"
-                                    android:paddingTop="@dimen/dp3"
-                                    android:src="@drawable/facebook_3x" />
-
-                                <com.customviews.TypefaceTextView
-                                    android:id="@+id/txt_facebook"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginLeft="@dimen/dp5"
-                                    android:layout_toRightOf="@+id/img_facebok"
-                                    android:text="Facebook"
-                                    android:textColor="@color/colorBlack"
-                                    android:textColorHint="?attr/app_text_color"
-                                    android:textSize="?attr/app_text_size_normal"
-                                    app:custom_font="@string/app_font_regular" />
-
-                            </RelativeLayout>
-                        </androidx.cardview.widget.CardView>
-
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.05" />
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_margin="@dimen/dp3"
-                            android:layout_weight="0.5"
-                            app:cardBackgroundColor="@color/colorWhite"
-                            app:cardCornerRadius="@dimen/dp5"
-                            app:cardElevation="@dimen/dp3">
-
-                            <RelativeLayout
-                                android:id="@+id/rl_gplus_btn"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:id="@+id/img_google"
-                                    android:layout_width="@dimen/dp20"
-                                    android:layout_height="@dimen/dp20"
-                                    android:layout_centerVertical="true"
-                                    android:src="@drawable/google_3x" />
-
-                                <com.customviews.TypefaceTextView
-                                    android:id="@+id/tv_google"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginLeft="@dimen/dp5"
-                                    android:layout_toRightOf="@+id/img_google"
-                                    android:gravity="center"
-                                    android:text="Google"
-                                    android:textColor="@color/colorBlack"
-                                    android:textColorHint="?attr/app_text_color"
-                                    android:textSize="?attr/app_text_size_normal"
-                                    app:custom_font="@string/app_font_regular" />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                    </LinearLayout>
-
-
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="@dimen/dp10"
-                        android:layout_marginBottom="@dimen/dp5"
-                        android:ems="10"
-                        android:gravity="center"
-                        android:text="OR"
-                        android:textColor="@color/colorBlackAA"
-                        android:textSize="?attr/app_text_size_big"
-                        app:custom_font="@string/app_font_medium" />
-
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp2"
                         android:layout_marginTop="@dimen/dp15"
                         android:layout_marginEnd="@dimen/dp2"
                         android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
+                        android:background="@drawable/bg_rounded_white">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -164,10 +50,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
                                 android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/smartphone_icon" />
+                                android:src="@drawable/ic_phone_android_white_24dp"
+                               android:tint="@color/colorWhite"/>
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_mobile"
@@ -183,13 +70,13 @@
                                 android:lines="1"
                                 android:maxLength="10"
                                 android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
 
                     <com.customviews.TypefaceTextView
@@ -198,21 +85,19 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/dp5"
                         android:text="You will receive an OTP for verification"
-                        android:textColor="@color/colorBlackAA"
+                         android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp2"
                         android:layout_marginTop="@dimen/dp15"
                         android:layout_marginEnd="@dimen/dp2"
                         android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
+                        android:background="@drawable/bg_rounded_white">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -221,10 +106,10 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
                                 android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/mail_icon" />
+                                android:src="@drawable/ic_email_black_24dp" />
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_email"
@@ -239,13 +124,13 @@
                                 android:lines="1"
                                 android:maxLength="50"
                                 android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
 
                     <com.customviews.TypefaceTextView
@@ -254,21 +139,19 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/dp5"
                         android:text="No spam, We promise!"
-                        android:textColor="@color/colorBlackAA"
+                         android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp2"
                         android:layout_marginTop="@dimen/dp15"
                         android:layout_marginEnd="@dimen/dp2"
                         android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
+                        android:background="@drawable/bg_rounded_white">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -277,10 +160,10 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
                                 android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/user_name" />
+                                android:src="@drawable/ic_person_black_24dp" />
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_name"
@@ -295,13 +178,13 @@
                                 android:lines="1"
                                 android:maxLength="50"
                                 android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="match_parent"
@@ -309,21 +192,19 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="@dimen/dp5"
                         android:text="This is your profile name"
-                        android:textColor="@color/colorBlackAA"
+                         android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp2"
                         android:layout_marginTop="@dimen/dp15"
                         android:layout_marginEnd="@dimen/dp2"
                         android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
+                        android:background="@drawable/bg_rounded_white">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -332,10 +213,10 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
                                 android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/key_icon" />
+                                android:src="@drawable/ic_lock_black_24dp" />
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_password"
@@ -351,8 +232,8 @@
                                 android:lines="1"
                                 android:maxLength="50"
                                 android:padding="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
 
@@ -367,7 +248,7 @@
                                 android:gravity="center" />
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
 
                     <com.customviews.TypefaceTextView
@@ -377,18 +258,18 @@
                         android:layout_marginStart="@dimen/dp5"
                         android:gravity="left"
                         android:text="@string/minimum_password"
-                        android:textColor="@color/colorBlackAA"
+                         android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="?attr/app_font_regular" />
 
                     <androidx.cardview.widget.CardView
-                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp2"
                         android:layout_marginTop="@dimen/dp15"
                         android:layout_marginEnd="@dimen/dp2"
                         android:layout_marginBottom="@dimen/dp2"
+                        android:visibility="gone"
                         app:cardBackgroundColor="@color/colorWhite"
                         app:cardCornerRadius="@dimen/dp3"
                         app:cardElevation="@dimen/dp3">
@@ -406,8 +287,8 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
-                                    android:layout_width="@dimen/dp20"
-                                    android:layout_height="@dimen/dp20"
+                                    android:layout_width="26dp"
+                                    android:layout_height="26dp"
                                     android:layout_marginStart="@dimen/dp5"
                                     android:src="@drawable/user_name" />
 
@@ -425,15 +306,16 @@
                                     android:lines="1"
                                     android:maxLength="21"
                                     android:padding="@dimen/dp10"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:textColor="@color/colorWhite"
+                                    android:textColorHint="@color/colorWhite"
                                     android:textSize="?attr/et_text_size"
                                     app:custom_font="@string/app_font_regular" />
                             </LinearLayout>
+
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="0.5dp"
-                                android:background="@color/colorBlack10"/>
+                                android:background="@color/colorBlack10" />
 
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/recycler_view"
@@ -445,16 +327,14 @@
 
                     </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp2"
                         android:layout_marginTop="@dimen/dp15"
                         android:layout_marginEnd="@dimen/dp2"
                         android:layout_marginBottom="@dimen/dp2"
-                        app:cardBackgroundColor="@color/colorWhite"
-                        app:cardCornerRadius="@dimen/dp3"
-                        app:cardElevation="@dimen/dp3">
+                        android:background="@drawable/bg_rounded_white">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -463,10 +343,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:layout_width="@dimen/dp20"
-                                android:layout_height="@dimen/dp20"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
                                 android:layout_marginStart="@dimen/dp5"
-                                android:src="@drawable/refer_icon" />
+                                android:src="@drawable/ic_referalcode_24dp"
+                               />
 
                             <com.customviews.TypefaceEditText
                                 android:id="@+id/et_refer_code"
@@ -482,13 +363,13 @@
                                 android:maxLength="50"
                                 android:padding="@dimen/dp10"
                                 android:singleLine="true"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </LinearLayout>
 
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
 
                     <com.customviews.TypefaceTextView
@@ -498,7 +379,7 @@
                         android:layout_marginStart="@dimen/dp5"
                         android:gravity="left"
                         android:text="@string/no_referral_code"
-                        android:textColor="@color/colorBlackAA"
+                         android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         android:visibility="gone"
                         app:custom_font="?attr/app_font_regular" />
@@ -519,7 +400,7 @@
                             android:layout_width="0dp"
                             android:layout_height="?attr/btn_height"
                             android:layout_weight="1"
-                            android:background="@drawable/bg_red_5radius"
+                            android:background="@drawable/bg_btn_rounded_orange"
                             android:gravity="center"
                             android:text="REGISTER"
                             android:textColor="?attr/btn_text_color"
@@ -528,10 +409,119 @@
                     </LinearLayout>
 
 
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:layout_marginBottom="@dimen/dp5"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:text="OR"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_big"
+                        app:custom_font="@string/app_font_medium" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/btn_height"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp3"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/bg_facebook">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_fb_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                              >
+
+                                <ImageView
+                                    android:id="@+id/img_facebok"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:paddingStart="@dimen/dp3"
+                                    android:tint="@color/colorWhite"
+                                    android:padding="@dimen/dp10"
+                                    android:src="@drawable/facebook_icon_3x" />
+
+                                <com.customviews.TypefaceTextView
+                                    android:id="@+id/txt_facebook"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/dp5"
+                                    android:layout_toRightOf="@+id/img_facebok"
+                                    android:text="Facebook"
+                                    android:visibility="gone"
+                                    android:textColor="@color/colorBlack"
+                                    android:textColorHint="?attr/app_text_color"
+                                    android:textSize="?attr/app_text_size_normal"
+                                    app:custom_font="@string/app_font_regular" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.05" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/dp3"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/bg_gmail">
+
+                            <RelativeLayout
+                                android:id="@+id/rl_gplus_btn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:id="@+id/img_google"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:paddingStart="@dimen/dp3"
+                                    android:tint="@color/colorWhite"
+                                    android:padding="@dimen/dp10"
+                                    android:src="@drawable/google_3x" />
+
+                                <com.customviews.TypefaceTextView
+                                    android:id="@+id/tv_google"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/dp5"
+                                    android:layout_toRightOf="@+id/img_google"
+                                    android:gravity="center"
+                                    android:text="Google"
+                                    android:visibility="gone"
+                                    android:textColor="@color/colorBlack"
+                                    android:textColorHint="?attr/app_text_color"
+                                    android:textSize="?attr/app_text_size_normal"
+                                    app:custom_font="@string/app_font_regular" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
 
-            </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
 
             <LinearLayout
@@ -556,7 +546,7 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/dp10"
                     android:text="By registering, I agree Super Baazi T&amp;Cs"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_regular" />
             </LinearLayout>
@@ -572,7 +562,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Already a user?"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
 
@@ -586,7 +576,7 @@
                     android:paddingStart="@dimen/dp10"
                     android:paddingEnd="@dimen/dp10"
                     android:text="Log In"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
             </LinearLayout>
