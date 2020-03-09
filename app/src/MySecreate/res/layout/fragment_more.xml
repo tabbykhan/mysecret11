@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@color/colorRed"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -18,14 +18,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp20"
+            android:background="@drawable/round_corner_white">
 
 
             <RelativeLayout
                 android:id="@+id/rl_invite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_invite"
@@ -33,7 +37,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/invite_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/txt_invite"
@@ -42,7 +46,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_invite"
                     android:text="Invite Friends"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -53,7 +57,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_invite"
@@ -67,7 +71,7 @@
                 android:id="@+id/rl_contest_invite_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_contest"
@@ -75,7 +79,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/invite_code_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/txt_invite_code"
@@ -84,7 +88,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_contest"
                     android:text="Contest Invite Code"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -95,7 +99,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_width="match_parent"
@@ -109,7 +113,7 @@
                 android:id="@+id/rl_point_system"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_graph"
@@ -117,7 +121,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/analysis"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_graph"
@@ -126,7 +130,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_graph"
                     android:text="Fantasy Points System"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -137,7 +141,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_graph"
@@ -151,7 +155,7 @@
                 android:id="@+id/rl_how_to_play"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_play"
@@ -159,7 +163,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/howplay"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_play"
@@ -168,7 +172,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_play"
                     android:text="How to Play"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -179,7 +183,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_play"
@@ -194,7 +198,7 @@
                 android:id="@+id/rl_helpdesk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_helpdesk"
@@ -202,7 +206,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/question"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_helpdesk"
@@ -211,7 +215,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_helpdesk"
                     android:text="Helpdesk"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -222,7 +226,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_helpdesk"
@@ -236,14 +240,15 @@
                 android:id="@+id/rl_about_us"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_about"
                     android:layout_width="@dimen/dp25"
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
-                    android:src="@drawable/about_us_3x" />
+                    android:src="@drawable/about_us_3x"
+                    android:tint="@color/colorWhite"/>
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_about"
@@ -252,7 +257,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_about"
                     android:text="About Us"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -263,7 +268,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_about"
@@ -278,7 +283,7 @@
                 android:id="@+id/rl_legality"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_ligality"
@@ -286,7 +291,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/legality_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_ligality"
@@ -295,7 +300,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_ligality"
                     android:text="Legality"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -306,7 +311,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_ligality"
@@ -347,7 +352,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_account"
@@ -360,7 +365,7 @@
                 android:id="@+id/rl_withdraw_policy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_withdraw_policy"
@@ -368,7 +373,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/withdraw_icon"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_withdraw_policy"
@@ -377,7 +382,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_withdraw_policy"
                     android:text="Withdraw Policy"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -388,7 +393,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_withdraw_policy"
@@ -403,7 +408,7 @@
                 android:id="@+id/rl_terms_services"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_terms_services"
@@ -411,7 +416,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/terms"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_terms_services"
@@ -420,7 +425,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_terms_services"
                     android:text="Terms of Services"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -431,7 +436,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_terms_services"
@@ -445,7 +450,7 @@
                 android:id="@+id/rl_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_contect"
@@ -453,7 +458,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/contact_icon"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_contect"
@@ -462,7 +467,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_contect"
                     android:text="Contact"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -473,7 +478,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <View
                     android:layout_below="@+id/img_contect"
@@ -487,7 +492,7 @@
                 android:id="@+id/rl_faq"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+                android:background="@color/transparent_color">
 
                 <ImageView
                     android:id="@+id/img_faq"
@@ -495,7 +500,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/faq_icon"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_faq"
@@ -504,7 +509,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toEndOf="@+id/img_faq"
                     android:text="Faq"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -532,7 +537,7 @@
                 android:layout_marginBottom="@dimen/dp20"
                 android:padding="@dimen/dp15"
                 android:text="Version 1.0"
-                android:textColor="@color/colorAppBlackAA"
+                android:textColor="#0573D5"
                 android:textSize="?attr/app_text_size_normal"
                 app:custom_font="?attr/app_font_medium" />
 
