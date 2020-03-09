@@ -419,9 +419,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:buttonTint="@color/colorWhite"
-                                android:checked="false"
+                                android:checked="true"
                                 android:layout_marginLeft="@dimen/dp10"
                                 android:text="Yes"
+
                                 android:textColor="@color/colorWhite"
                                 android:textSize="@dimen/sp18" />
                         </RadioGroup>
@@ -464,6 +465,7 @@
                     </LinearLayout>
 
                     <RelativeLayout
+                        android:id="@+id/rl_position"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp15"
@@ -496,7 +498,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:buttonTint="@color/colorWhite"
-                                android:checked="false"
+                                android:checked="true"
                                 android:text="Left"
                                 android:textColor="@color/colorWhite"
                                 android:textSize="@dimen/sp18" />

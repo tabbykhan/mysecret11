@@ -315,40 +315,64 @@ public class CheckUserActivity extends AppBaseActivity {
 
 
     private void callCheckUser() {
-        String username = et_username.getText().toString().trim();
-        if (username.isEmpty()) {
-            showErrorMsg("Please enter Email / Mobile number.");
-            return;
-        }
-        final CheckUserRequestModel requestModel = new CheckUserRequestModel();
-        requestModel.username = username;
-
-        if (Pattern.matches("[0-9]{10}", username)) {
-            requestModel.type = "M";
-        }
-        if (Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
-            requestModel.type = "E";
-        }
-        if (requestModel.type == null) {
-            showErrorMsg("Please enter valid Email / Mobile number.");
-            return;
-        }
-        if (requestModel.type.equals("M")) {
-            requestModel.username = COUNTRY_MOBILE_CODE_VALUE + username;
-        }
-        if (requestModel.type.equals("M")) {
-            if (PermissionHelperNew.needSMSPermission(this, new PermissionHelperNew.OnSpecificPermissionGranted() {
-                @Override
-                public void onPermissionGranted(boolean isGranted, boolean withNeverAsk, String permission, int requestCode) {
-                    displayProgressBar(false, "Wait...");
-                    getWebRequestHelper().checkUser(requestModel, CheckUserActivity.this);
-                }
-            })) {
+        if(ConstantsFlavor.type == ConstantsFlavor.Type.vision){
+            String username = et_username.getText().toString().trim();
+            if (username.isEmpty()) {
+                showErrorMsg("Please enter Email");
                 return;
             }
+            final CheckUserRequestModel requestModel = new CheckUserRequestModel();
+            requestModel.username = username;
+
+
+            if (Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
+                requestModel.type = "E";
+            }else {
+                showErrorMsg("Please enter valid Email.");
+            }
+            if (requestModel.type == null) {
+                showErrorMsg("Please enter valid Email.");
+                return;
+            }
+
+            displayProgressBar(false, "Wait...");
+            getWebRequestHelper().checkUser(requestModel, this);
+        }else {
+            String username = et_username.getText().toString().trim();
+            if (username.isEmpty()) {
+                showErrorMsg("Please enter Email / Mobile number.");
+                return;
+            }
+            final CheckUserRequestModel requestModel = new CheckUserRequestModel();
+            requestModel.username = username;
+
+            if (Pattern.matches("[0-9]{10}", username)) {
+                requestModel.type = "M";
+            }
+            if (Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
+                requestModel.type = "E";
+            }
+            if (requestModel.type == null) {
+                showErrorMsg("Please enter valid Email / Mobile number.");
+                return;
+            }
+            if (requestModel.type.equals("M")) {
+                requestModel.username = COUNTRY_MOBILE_CODE_VALUE + username;
+            }
+            if (requestModel.type.equals("M")) {
+                if (PermissionHelperNew.needSMSPermission(this, new PermissionHelperNew.OnSpecificPermissionGranted() {
+                    @Override
+                    public void onPermissionGranted(boolean isGranted, boolean withNeverAsk, String permission, int requestCode) {
+                        displayProgressBar(false, "Wait...");
+                        getWebRequestHelper().checkUser(requestModel, CheckUserActivity.this);
+                    }
+                })) {
+                    return;
+                }
+            }
+            displayProgressBar(false, "Wait...");
+            getWebRequestHelper().checkUser(requestModel, this);
         }
-        displayProgressBar(false, "Wait...");
-        getWebRequestHelper().checkUser(requestModel, this);
     }
 
     @Override

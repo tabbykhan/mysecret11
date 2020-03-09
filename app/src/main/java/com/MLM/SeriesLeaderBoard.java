@@ -2,6 +2,7 @@ package com.MLM;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -31,5 +32,8 @@ public class SeriesLeaderBoard extends Activity {
         recycler_view.setLayoutManager(mLayoutManager);
         recycler_view.setItemAnimator(new DefaultItemAnimator());
         recycler_view.setAdapter(leadBoardAdapter);
+    }
+    public void backBtn(View view) {
+        onBackPressed();
     }
 }

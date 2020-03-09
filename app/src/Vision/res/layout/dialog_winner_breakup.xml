@@ -19,7 +19,7 @@
             android:id="@+id/cv_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/colorWhite"
+            app:cardBackgroundColor="@color/vision_green"
             app:cardCornerRadius="@dimen/dp5">
 
             <LinearLayout
@@ -47,7 +47,7 @@
                             android:layout_centerVertical="true"
                             android:gravity="center"
                             android:text="WINNING BREAKUP"
-                            android:textColor="@color/colorWhite"
+                            android:textColor="@color/btn_color"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
 
@@ -60,7 +60,7 @@
                             android:layout_marginEnd="@dimen/dp15"
                             android:padding="@dimen/dp5"
                             android:src="@drawable/close_3x"
-                            android:tint="@color/colorWhite" />
+                            android:tint="@color/btn_color" />
 
                     </RelativeLayout>
 
@@ -70,7 +70,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/dp10"
                         android:text="Prize Pool"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -80,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:text="500000"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_medium" />
 
@@ -100,7 +100,7 @@
                     android:gravity="left"
                     android:padding="@dimen/dp15"
                     android:text="Note: The actual prize money may be different than the prize money mentioned above if there is a tie fro any of the winning position. Check FAQs for further details. As per government regulations, atax of 31.2% will be deducted if an individual wins more than Rs. 10000"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_regular" />
 
