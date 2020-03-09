@@ -157,6 +157,10 @@ public class CheckUserActivity extends AppBaseActivity {
 
     private void setupSignUpButton() {
         String signUp = "Register";
+        if (ConstantsFlavor.type == ConstantsFlavor.Type.MySecreate){
+            signUp = "Sign Up Now";
+        }
+
         tv_signup.setMovementMethod(LinkMovementMethod.getInstance());
         Pattern termsAndConditionsMatcher = Pattern.compile(signUp);
         Matcher m1 = termsAndConditionsMatcher.matcher(tv_signup.getText().toString());
@@ -172,6 +176,9 @@ public class CheckUserActivity extends AppBaseActivity {
                 public void updateDrawState(TextPaint ds) {
                     if (ConstantsFlavor.type == ConstantsFlavor.Type.sportteam){
                         ds.setColor(getResources().getColor(R.color.colorFbBlue));
+                        ds.setUnderlineText(false);//there show text below line
+                    }  else if (ConstantsFlavor.type == ConstantsFlavor.Type.MySecreate){
+                        ds.setColor(getResources().getColor(R.color.colorblue));
                         ds.setUnderlineText(false);//there show text below line
                     }else {
                         ds.setColor(getResources().getColor(R.color.colorYellow));

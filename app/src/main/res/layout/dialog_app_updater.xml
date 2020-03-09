@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bg_for_secret">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +28,7 @@
                 android:layout_height="@dimen/dp50"
                 android:layout_weight="0.4"
                 android:padding="@dimen/dp2"
-                android:src="?attr/app_update_dialog_image" />
+                android:src="@drawable/logo" />
         </LinearLayout>
 
         <View

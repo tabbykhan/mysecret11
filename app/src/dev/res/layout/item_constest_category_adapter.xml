@@ -37,7 +37,7 @@
                         android:id="@+id/iv_contest_cat"
                         android:layout_width="@dimen/dp30"
                         android:layout_height="@dimen/dp30"
-                        android:src="@drawable/logo_3x" />
+                        android:src="@drawable/logo" />
 
                     <ProgressBar
                         android:id="@+id/pb_iv_contest_cat"
