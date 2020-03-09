@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/bg_whiteborder_bg_app_color"
     android:gravity="center_vertical"
     android:orientation="vertical">
 
@@ -15,23 +16,24 @@
             android:id="@+id/ll_match_data_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingTop="@dimen/dp25"
             android:paddingBottom="@dimen/dp25"
-            android:orientation="horizontal">
+            android:weightSum="1">
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="0.35">
+                android:layout_weight="0.2">
 
                 <LinearLayout
                     android:id="@+id/ll_team_one_image_lay"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp45"
-                    android:layout_marginEnd="@dimen/dp3"
                     android:layout_centerVertical="true"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/dp3"
                     android:background="@drawable/match_bg_left"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -39,11 +41,10 @@
 
                 </LinearLayout>
 
-                <RelativeLayout
-                    xmlns:fresco="http://schemas.android.com/apk/res-auto"
-                    android:layout_alignParentEnd="true"
+                <RelativeLayout xmlns:fresco="http://schemas.android.com/apk/res-auto"
                     android:layout_width="@dimen/dp55"
                     android:layout_height="@dimen/dp55"
+                    android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:gravity="center">
 
@@ -52,8 +53,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         fresco:placeholderImage="@mipmap/ic_launcher"
-                        fresco:roundAsCircle="true"
-                        fresco:progressBarAutoRotateInterval="1000"/>
+                        fresco:progressBarAutoRotateInterval="1000"
+                        fresco:roundAsCircle="true" />
 
 
                     <ProgressBar
@@ -65,24 +66,57 @@
                 </RelativeLayout>
             </RelativeLayout>
 
-
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_match_name_sec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:text="ODI"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_more_normal"
+                        app:custom_font="@string/app_font_medium" />
+                </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:id="@+id/ll_match_status"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingLeft="@dimen/dp7"
-                    android:paddingRight="@dimen/dp7">
+                    android:layout_marginTop="@dimen/dp5"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="In Progress"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_bold" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp20"
+                    android:background="@drawable/ll_bg_gradient_blue"
+                    android:paddingRight="@dimen/dp20">
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_team1_name"
@@ -93,92 +127,70 @@
                         android:minEms="2"
                         android:singleLine="true"
                         android:text="AUS"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_more_normal"
                         app:custom_font="?attr/app_font_bold" />
 
-
-                    <LinearLayout
-                        android:layout_width="0dp"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ll_diamand_white"
+                        android:text="VS"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:textColor="@color/blue_darh"
+                        android:textSize="?attr/app_text_size_more_normal">
 
-                        <com.customviews.TypefaceTextView
-                            android:id="@+id/tv_match_name_sec"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:gravity="center"
-                            android:text="ODI"
-                            android:textColor="?attr/app_text_color"
-                            android:textSize="?attr/app_text_size_more_normal"
-                            app:custom_font="@string/app_font_medium" />
-
-                        <LinearLayout
-                            android:id="@+id/ll_timer_lay"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dp5"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="@dimen/dp15"
-                                android:layout_height="@dimen/dp15"
-                                android:src="@drawable/clock_icon_3x"
-                                android:tint="@color/colorActivateGreen" />
-
-                            <com.customviews.TypefaceTextView
-                                android:id="@+id/tv_timer_time"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/dp3"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:text="05h 11m 10s"
-                                android:textColor="@color/colorRed"
-                                android:textSize="?attr/app_text_size_more_normal"
-                                app:custom_font="@string/app_font_medium"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/ll_match_status"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/dp10"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <com.customviews.TypefaceTextView
-                                android:id="@+id/tv_status"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="In Progress"
-                                android:textColor="@color/colorAppBlack"
-                                android:textSize="?attr/app_text_size_small"
-                                app:custom_font="@string/app_font_bold" />
-
-                        </LinearLayout>
-                    </LinearLayout>
+                    </TextView>
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_team2_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
                         android:ellipsize="end"
                         android:gravity="right"
                         android:maxLength="5"
                         android:minEms="2"
                         android:singleLine="true"
                         android:text="AUS"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_more_normal"
                         app:custom_font="?attr/app_font_bold" />
-                </LinearLayout>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
+
+                    <LinearLayout
+                        android:id="@+id/ll_timer_lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp15"
+                            android:layout_height="@dimen/dp15"
+                            android:src="@drawable/clock_icon_3x"
+                            android:tint="@color/colorWhite" />
+
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_timer_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp3"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="05h 11m 10s"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="?attr/app_text_size_more_normal"
+                            app:custom_font="@string/app_font_medium"/>
+
+                    </LinearLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -187,15 +199,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="0.35">
+                android:layout_weight="0.2">
 
                 <LinearLayout
                     android:id="@+id/ll_team_two_image_lay"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp45"
                     android:layout_centerVertical="true"
-                    android:layout_marginStart="@dimen/dp3"
                     android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp3"
                     android:background="@drawable/match_bg_right"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -203,13 +215,12 @@
 
                 </LinearLayout>
 
-                <RelativeLayout
-                    android:layout_alignParentStart="true"
+                <RelativeLayout xmlns:fresco="http://schemas.android.com/apk/res-auto"
                     android:layout_width="@dimen/dp55"
                     android:layout_height="@dimen/dp55"
+                    android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:gravity="center"
-                    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+                    android:gravity="center">
 
                     <com.facebook.drawee.view.SimpleDraweeView
                         android:id="@+id/iv_team2"
@@ -217,7 +228,8 @@
                         android:layout_height="match_parent"
                         fresco:placeholderImage="@mipmap/ic_launcher"
                         fresco:progressBarAutoRotateInterval="1000"
-                        fresco:roundAsCircle="true"/>
+                        fresco:roundAsCircle="true" />
+
                     <ProgressBar
                         android:id="@+id/pb_image2"
                         android:layout_width="@dimen/dp15"
@@ -267,11 +279,11 @@
         <LinearLayout
             android:id="@+id/ll_joined_contest"
             android:layout_width="match_parent"
-            android:orientation="horizontal"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/dp5"
             android:layout_alignBottom="@+id/ll_match_data_lay"
+            android:layout_marginBottom="@dimen/dp5"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingStart="@dimen/dp10"
             android:paddingEnd="@dimen/dp10">
 
@@ -287,8 +299,8 @@
             <com.customviews.TypefaceTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Contest Joined"
                 android:layout_marginStart="@dimen/dp3"
+                android:text="Contest Joined"
                 android:textColor="@color/colorAppBlackAA"
                 android:textSize="?attr/app_text_size_extra_more_small"
                 app:custom_font="@string/app_font_regular" />

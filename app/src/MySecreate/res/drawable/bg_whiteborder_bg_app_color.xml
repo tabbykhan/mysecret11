@@ -3,12 +3,13 @@
 
     <stroke
         android:width="3dp"
+        android:dashWidth="2dp"
         android:color="#FFFFFF" />
     <corners android:radius="@dimen/dp15" />
-
+    <solid android:color="@color/my_secreate_bg_coot"/>
     <padding
-        android:bottom="0dp"
-        android:left="0dp"
-        android:right="0dp"
-        android:top="0dp" />
+        android:bottom="10dp"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp" />
 </shape>

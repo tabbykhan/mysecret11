@@ -4,7 +4,7 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
+    android:background="@color/my_secreate_bg_coot"
     android:fitsSystemWindows="false">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -49,30 +49,29 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:drawableLeft="@drawable/ic_keyboard_arrow_left_black_24dp"
-                android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
                 android:gravity="center"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorWhite"
                 android:text="JOIN ST11 MEGA CONTEST"
                 android:layout_gravity="center"
-                android:background="#c84f00"
                 android:layout_margin="@dimen/dp15"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp40"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/home_tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite"
+                android:background="@drawable/bg_whiteborder"
                 app:tabGravity="fill"
                 app:tabIndicatorColor="@color/tab_indication_color"
                 app:tabIndicatorHeight="0dp"
                 app:tabPadding="@dimen/dp5"
                 app:tabRippleColor="@null"
+                android:layout_marginStart="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp20"
                 android:layout_marginTop="@dimen/dp7"
                 app:tabBackground="@drawable/tab_selecation_match"
                 app:tabSelectedTextColor="@color/tab_seleceted_text_color"

@@ -38,6 +38,7 @@
         android:layout_marginStart="@dimen/dp10"
         android:layout_marginTop="@dimen/dp5"
         android:layout_marginBottom="@dimen/dp5"
+        android:visibility="visible"
         android:layout_marginEnd="@dimen/dp10"
         android:background="@drawable/bg_black50_15radius" />
 
