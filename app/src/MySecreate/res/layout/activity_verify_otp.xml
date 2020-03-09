@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@drawable/bg_for_secret"
     android:orientation="vertical">
 
     <include
@@ -26,16 +26,14 @@
             android:layout_marginTop="@dimen/dp10"
             android:layout_marginRight="@dimen/dp20"
             android:text="OTP send to +91-8561887456"
-            android:textColor="?attr/app_text_color"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_normal"
             app:custom_font="?attr/app_font_regular" />
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/colorWhite"
-            app:cardCornerRadius="@dimen/dp5"
-            app:cardElevation="@dimen/dp3"
+            android:orientation="vertical"
             android:layout_margin="@dimen/dp20">
 
             <LinearLayout
@@ -52,7 +50,7 @@
                     android:layout_marginRight="@dimen/dp20"
                     android:gravity="center"
                     android:text="Enter the OTP you received"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_medium" />
 
@@ -76,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/didn_t_get_the_otp"
                     android:layout_marginTop="@dimen/dp10"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -129,7 +127,7 @@
                         android:layout_width="0dp"
                         android:layout_height="?attr/btn_height"
                         android:layout_weight="0.85"
-                        android:background="@drawable/bg_red_5radius"
+                        android:background="@drawable/bg_btn_rounded_orange"
                         android:gravity="center"
                         android:text="VERIFY"
                         android:textColor="?attr/btn_text_color"
@@ -139,7 +137,7 @@
                 </LinearLayout>
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
 
 

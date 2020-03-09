@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:elevation="@dimen/dp2"
+        app:cardBackgroundColor="?attr/dialog_wait_card_bg_color"
+        app:cardElevation="@dimen/dp2"
+        android:layout_margin="@dimen/dp5"
+        app:cardCornerRadius="@dimen/dp20"
+        app:contentPadding="@dimen/dp10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_heading"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Enter Amount(In USD)"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sp14" />
+
+        <EditText
+            android:id="@+id/etAmount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:background="#F9FF47"
+            android:gravity="center"
+            android:hint="40000"
+            android:inputType="number"
+            android:lines="1"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp45"
+            android:layout_gravity="center"
+            android:background="#ECF8EA"
+            android:gravity="center"
+            android:text="40000"
+            android:textColor="#1F8014"
+            android:textSize="@dimen/sp14" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/tv_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/et_height"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/dp5"
+            android:layout_marginTop="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp20"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_makepayment"
+            android:gravity="center"
+            android:minWidth="@dimen/dp120"
+            android:onClick="makePaymentpopup"
+            android:text="Make Payment"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp12"
+            app:custom_font="@string/app_font_regular" />
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -8,13 +8,21 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.ConstantsFlavor;
+import com.CoustomControl.AppCommon;
+import com.CoustomControl.AppService;
+import com.CoustomControl.ResponseAndPojoClass.LoginEntityClass;
+import com.CoustomControl.ResponseAndPojoClass.LoginResponseClass;
+import com.CoustomControl.ServiceGenerator;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -29,10 +37,15 @@ import com.app.ui.forgotpassword.ForgotPasswordVerifyActivity;
 import com.app.ui.main.ToolbarFragment;
 import com.app.ui.main.dashboard.DashboardActivityNew;
 import com.customviews.TypefaceEditText;
+import com.google.gson.Gson;
 import com.medy.retrofitwrapper.WebRequest;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * @author Manish Kumar
@@ -97,9 +110,9 @@ public class LoginActivity extends AppBaseActivity {
         cb_password_show_hide.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
+                if (isChecked) {
                     et_password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                }else {
+                } else {
                     et_password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
                 }
                 et_password.setCustomFont(getString(R.string.app_font_regular));
@@ -209,7 +222,48 @@ public class LoginActivity extends AppBaseActivity {
         requestModel.password = password;
 
         displayProgressBar(false, "Wait...");
-        getWebRequestHelper().login(requestModel, this);
+        if (ConstantsFlavor.type == ConstantsFlavor.Type.vision) {
+           // callMLMLoginApi(requestModel , new LoginEntityClass(getEmail() , password));
+            getWebRequestHelper().login(requestModel, this);
+        } else
+            getWebRequestHelper().login(requestModel, this);
+    }
+
+    private void callMLMLoginApi(final LoginRequestModel requestModel , final LoginEntityClass loginEntityClass) {
+        if (AppCommon.getInstance(this).isConnectingToInternet(this)) {
+            AppCommon.getInstance(this).setNonTouchableFlags(this);
+            AppService apiService = ServiceGenerator.createService(AppService.class);
+            Call call = apiService.Login_CALL(loginEntityClass);
+            call.enqueue(new Callback() {
+                @Override
+                public void onResponse(Call call, Response response) {
+                    AppCommon.getInstance(LoginActivity.this).clearNonTouchableFlags(LoginActivity.this);
+                    dismissProgressBar();
+                    LoginResponseClass loginResponseClass = (LoginResponseClass) response.body();
+                    if (loginResponseClass != null) {
+                        Log.i("LogiMLMResponse::", new Gson().toJson(loginResponseClass));
+                        if (loginResponseClass.getCode() == 200) {
+                            displayProgressBar(false, "Wait...");
+                            getWebRequestHelper().login(requestModel, LoginActivity.this);
+                            AppCommon.getInstance(LoginActivity.this).setToken(loginResponseClass.getData().getAccessToken());
+                        } else {
+
+                            Toast.makeText(LoginActivity.this, loginResponseClass.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    } else {
+                        AppCommon.getInstance(LoginActivity.this).showDialog(LoginActivity.this, "Server Error");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call call, Throwable t) {
+                    dismissProgressBar();
+                    AppCommon.getInstance(LoginActivity.this).clearNonTouchableFlags(LoginActivity.this);
+                    Toast.makeText(LoginActivity.this, "Please check your internet", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     @Override

@@ -12,6 +12,7 @@ import android.text.TextPaint;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.CheckBox;
@@ -22,10 +23,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.CoustomControl.AppCommon;
+import com.CoustomControl.AppService;
+import com.CoustomControl.ResponseAndPojoClass.RegistrationMLMP;
+import com.CoustomControl.ResponseAndPojoClass.RegistrationMLMResponseClass;
+import com.CoustomControl.ServiceGenerator;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -61,7 +68,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegisterMLMActivity  extends AppBaseActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class RegisterMLMActivity extends AppBaseActivity {
 
 
     ToolbarFragment toolbarFragment;
@@ -73,6 +84,8 @@ public class RegisterMLMActivity  extends AppBaseActivity {
     EditText et_email;
     EditText et_mobile;
     EditText et_refer_code;
+    EditText et_userId;
+    EditText et_SponsorId;
     TypefaceEditText et_password;
     CheckBox cb_terms;
     TextView tv_terms;
@@ -90,6 +103,9 @@ public class RegisterMLMActivity  extends AppBaseActivity {
     EditText et_team_name;
     private ExploreAdapter adapter;
     boolean filte_info = false;
+    RelativeLayout rl_position;
+    boolean isSponser = true;
+    boolean isLeft = true;
 
     SocialLoginListener fbLoginListener = new SocialLoginListener() {
         @Override
@@ -136,6 +152,7 @@ public class RegisterMLMActivity  extends AppBaseActivity {
         et_email = findViewById(R.id.et_email);
         et_mobile = findViewById(R.id.et_mobile);
         et_refer_code = findViewById(R.id.et_refer_code);
+        et_SponsorId = findViewById(R.id.et_SponsorId);
         et_password = findViewById(R.id.et_password);
         cb_terms = findViewById(R.id.cb_terms);
         tv_terms = findViewById(R.id.tv_terms);
@@ -143,6 +160,8 @@ public class RegisterMLMActivity  extends AppBaseActivity {
         tv_login = findViewById(R.id.tv_login);
         tv_referal_msg = findViewById(R.id.tv_referal_msg);
         sponsorGroup = findViewById(R.id.sponsorGroup);
+        rl_position = findViewById(R.id.rl_position);
+        et_userId = findViewById(R.id.et_userId);
         positionTxtGroup = findViewById(R.id.positionTxtGroup);
         cb_password_show_hide = findViewById(R.id.cb_password_show_hide);
         spLayout = findViewById(R.id.spLayout);
@@ -186,8 +205,8 @@ public class RegisterMLMActivity  extends AppBaseActivity {
             public void afterTextChanged(final Editable s) {
                 final String s1 = s.toString().trim();
                 if (s1.length() > 0) {
-                    if(filte_info){
-                        filte_info =false;
+                    if (filte_info) {
+                        filte_info = false;
                         return;
                     }
                     autoCompleteHelper.getFilter().filter(s1);
@@ -226,15 +245,15 @@ public class RegisterMLMActivity  extends AppBaseActivity {
                     TeamSuggestedResponseModel responseModel = (TeamSuggestedResponseModel) appBaseResponseModel;
                     if (!responseModel.isError()) {
                         List<String> data = responseModel.getData();
-                        if(et_team_name.getText().toString().trim().length()==0)
+                        if (et_team_name.getText().toString().trim().length() == 0)
                             return;
                         if (data != null) {
                             if (adapter != null)
                                 adapter.updatelist(data);
-                            if(data.size()>0) {
+                            if (data.size() > 0) {
                                 updateViewVisibitity(recycler_view, View.VISIBLE);
-                            }else {
-                                updateViewVisibitity(recycler_view,View.GONE);
+                            } else {
+                                updateViewVisibitity(recycler_view, View.GONE);
                             }
                         }
                     }
@@ -242,16 +261,36 @@ public class RegisterMLMActivity  extends AppBaseActivity {
             }
         });
 
-        sponsorGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
-        {
+        sponsorGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // checkedId is the RadioButton selected
-                RadioButton rb=(RadioButton)findViewById(checkedId);
-                if(rb.getText().toString().equals("Yes"))
+                RadioButton rb = findViewById(checkedId);
+                if (rb.getText().toString().equals("Yes")) {
                     spLayout.setVisibility(View.VISIBLE);
-                else
+                    rl_position.setVisibility(View.VISIBLE);
+                    isSponser = true;
+                } else {
                     spLayout.setVisibility(View.GONE);
+                    rl_position.setVisibility(View.GONE);
+                    isSponser = false;
+                }
+
+
+            }
+        });
+        positionTxtGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                RadioButton rb = findViewById(checkedId);
+                if (rb.getText().toString().equals("Left")) {
+
+                    isLeft = true;
+                } else {
+
+                    isLeft = false;
+                }
 
 
             }
@@ -276,6 +315,7 @@ public class RegisterMLMActivity  extends AppBaseActivity {
             }
         });
     }
+
     private WebRequest callApi(String text) {
 
         if (text == null) {
@@ -447,11 +487,14 @@ public class RegisterMLMActivity  extends AppBaseActivity {
         String name = et_name.getText().toString().trim();
         String email = et_email.getText().toString().trim();
         String phone = et_mobile.getText().toString().trim();
-        String referral_code = et_refer_code.getText().toString().trim();
+        String referral_code = "";//"";
         String password = et_password.getText().toString();
         String team_name = et_team_name.getText().toString();
+        String userId = et_userId.getText().toString().trim();
+        String sponserId = et_userId.getText().toString().trim();
+        String ref_user_id = et_SponsorId.getText().toString().trim();
 
-        if(!team_name.isEmpty()){
+        if (!team_name.isEmpty()) {
             if (team_name.length() < 8 || team_name.length() > 21) {
                 showErrorMsg("Team name should be atleast 8 to 20 char.");
                 return;
@@ -498,7 +541,16 @@ public class RegisterMLMActivity  extends AppBaseActivity {
             showErrorMsg("Please Accept Terms and Privacy Policy.");
             return;
         }
-
+        if(userId.isEmpty()){
+            showErrorMsg("Please enter userId.");
+            return;
+        }
+        if(isSponser){
+            if(sponserId.isEmpty()){
+                showErrorMsg("Please enter SponsorId.");
+                return;
+            }
+        }
 
 
         NewUserRequestModel requestModel = new NewUserRequestModel();
@@ -509,9 +561,71 @@ public class RegisterMLMActivity  extends AppBaseActivity {
         requestModel.referral_code = referral_code;
         requestModel.password = password;
         requestModel.team_name = team_name;
+        RegistrationMLMP registerRequestModel = new RegistrationMLMP();
+        registerRequestModel.setConfirm_password(password);
+        registerRequestModel.setPassword(password);
+        if(isLeft)
+        registerRequestModel.setPosition("0");
+        else
+            registerRequestModel.setPosition("1");
+        registerRequestModel.setEmail(email);
+        registerRequestModel.setMobile(phone);
+        registerRequestModel.setFullname(name);
+        registerRequestModel.setRef_user_id(ref_user_id);
+        registerRequestModel.setSponsor_name("");
+        registerRequestModel.setUserId(sponserId);
 
         displayProgressBar(false, "Wait...");
-        getWebRequestHelper().newUser(requestModel, this);
+        callMLMRegistration(registerRequestModel ,requestModel);
+       // getWebRequestHelper().newUser(requestModel, this);
+    }
+
+    private void callMLMRegistration(final RegistrationMLMP registerRequestModel, final NewUserRequestModel requestModel) {
+        if (AppCommon.getInstance(this).isConnectingToInternet(this)) {
+            AppCommon.getInstance(this).setNonTouchableFlags(this);
+            //loaderView.setVisibility(View.VISIBLE);
+            AppService apiService = ServiceGenerator.createService(AppService.class);
+            Call call = apiService.REGISTRATION_RESPONSE_CLASS_CALL(registerRequestModel);
+            call.enqueue(new Callback() {
+                @Override
+                public void onResponse(Call call, Response response) {
+                    AppCommon.getInstance(RegisterMLMActivity.this).clearNonTouchableFlags(RegisterMLMActivity.this);
+                   // loaderView.setVisibility(View.GONE);
+                    dismissProgressBar();
+                    RegistrationMLMResponseClass registrationMLMResponseClass = (RegistrationMLMResponseClass) response.body();
+                    if (registerRequestModel != null) {
+                        Log.i("roiWithdrawalResponse::", new Gson().toJson(registrationMLMResponseClass));
+                        if (registrationMLMResponseClass.getCode() == 200 ) {
+                           // getCallWalletApi();
+                            displayProgressBar(false, "Wait...");
+                             getWebRequestHelper().newUser(requestModel, RegisterMLMActivity.this);
+                            AppCommon.getInstance(RegisterMLMActivity.this).setUserObject(new Gson().toJson(registerRequestModel));
+                        } else {
+
+                            Toast.makeText(RegisterMLMActivity.this, registrationMLMResponseClass.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    } else {
+                        AppCommon.getInstance(RegisterMLMActivity.this).showDialog(RegisterMLMActivity.this, "Server Error");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call call, Throwable t) {
+                    dismissProgressBar();
+                    AppCommon.getInstance(RegisterMLMActivity.this).clearNonTouchableFlags(RegisterMLMActivity.this);
+                   // loaderView.setVisibility(View.GONE);
+                    Toast.makeText(RegisterMLMActivity.this, "Please check your internet", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+
+        } else {
+            // no internet
+            dismissProgressBar();
+            Toast.makeText(this, "Please check your internet", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void callSocialLogin(SocialData socialData) {

@@ -97,7 +97,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Vishnu Gupta"
                                 android:textColor="?attr/app_text_color"
-                                android:textSize="?attr/app_text_size_big"
+                                android:textSize="12sp"
                                 app:custom_font="@string/app_font_regular" />
 
 
