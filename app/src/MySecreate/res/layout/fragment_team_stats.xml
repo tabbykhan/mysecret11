@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/my_secreate_bg_coot"
     android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -25,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorWhite"
+                app:cardBackgroundColor="@color/my_secreate_bg_coot"
                 app:cardCornerRadius="@dimen/dp10"
                 app:cardElevation="@dimen/dp5">
 
@@ -84,7 +85,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Player Name"
-                                    android:textColor="?attr/app_text_color"
+                                    android:textColor="@color/colorWhite"
                                     android:textSize="?attr/app_text_size_extra_big"
                                     app:custom_font="?attr/app_font_regular" />
 
@@ -106,7 +107,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Rohit"
-                                    android:textColor="@color/colorBlack"
+                                    android:textColor="@color/colorWhite"
                                     android:textSize="?attr/app_text_size_small"
                                     app:custom_font="?attr/app_font_regular" />
 
@@ -116,7 +117,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Rohit"
                                     android:layout_marginStart="@dimen/dp3"
-                                    android:textColor="@color/colorBlack50"
+                                    android:textColor="@color/colorWhite"
                                     android:textSize="?attr/app_text_size_small"
                                     app:custom_font="?attr/app_font_regular" />
                             </LinearLayout>
@@ -138,7 +139,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="SELECTED BY"
-                                        android:textColor="?attr/app_text_color_sec"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_small"
                                         app:custom_font="?attr/app_font_regular" />
 
@@ -147,7 +148,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="58%"
-                                        android:textColor="?attr/app_text_color"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_big"
                                         app:custom_font="@string/app_font_regular" />
                                 </LinearLayout>
@@ -163,7 +164,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="POINTS"
-                                        android:textColor="?attr/app_text_color_sec"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_small"
                                         app:custom_font="?attr/app_font_regular" />
 
@@ -172,7 +173,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="128.0"
-                                        android:textColor="?attr/app_text_color"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_big"
                                         app:custom_font="@string/app_font_regular" />
                                 </LinearLayout>
@@ -254,6 +255,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
+                android:background="@color/my_secreate_bg_coot"
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView

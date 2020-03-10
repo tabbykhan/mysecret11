@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/dp7"
         android:layout_marginEnd="@dimen/dp10"
         android:layout_marginBottom="@dimen/dp5"
-        app:cardBackgroundColor="@color/colorWhite"
+        app:cardBackgroundColor="@color/my_secreate_bg_coot"
         app:cardCornerRadius="@dimen/dp5"
         app:cardElevation="@dimen/dp3">
 
@@ -38,7 +38,7 @@
                     android:layout_weight="1"
                     android:gravity="left"
                     android:text="+ 15"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_bold" />
 
@@ -49,7 +49,7 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:text="Depositied Cash"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_regular" />
 
@@ -67,7 +67,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="Info"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
                     <ImageView
@@ -76,7 +76,7 @@
                         android:layout_height="@dimen/dp20"
                         android:padding="@dimen/dp2"
                         android:src="@drawable/arrow_down2_3x"
-                        android:tint="@color/colorAppBlackAA" />
+                        android:tint="@color/colorWhite" />
 
                 </LinearLayout>
 
@@ -87,7 +87,7 @@
                 android:id="@+id/ll_transaction_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary20"
+                android:background="@color/my_secreate_bg_coot"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/dp5"
@@ -112,7 +112,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Transaction Id : "
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -121,7 +121,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Transaction Date : "
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Team Name : "
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             android:visibility="gone"
                             app:custom_font="@string/app_font_regular" />
@@ -148,7 +148,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="123456"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -158,7 +158,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="123"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -168,7 +168,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="123"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             android:visibility="gone"
                             app:custom_font="@string/app_font_regular" />
@@ -182,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="123"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_regular" />
             </LinearLayout>
