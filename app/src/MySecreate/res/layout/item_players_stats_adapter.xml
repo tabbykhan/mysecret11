@@ -11,7 +11,8 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingTop="@dimen/dp10"
-        android:paddingBottom="@dimen/dp10">
+        android:paddingBottom="@dimen/dp10"
+        android:background="#002341">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -25,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MS-W VS As-W"
-                android:textColor="?attr/app_text_color"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_small"
                 app:custom_font="@string/app_font_medium" />
 
@@ -34,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dec, 21 2018"
-                android:textColor="@color/colorAppBlackAA"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_extra_small"
                 app:custom_font="@string/app_font_regular" />
 
@@ -48,7 +49,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="0"
-            android:textColor="?attr/app_text_color"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_small"
             app:custom_font="@string/app_font_regular" />
 
@@ -59,7 +60,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="74.00 %"
-            android:textColor="?attr/app_text_color"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_small"
             app:custom_font="@string/app_font_regular" />
 

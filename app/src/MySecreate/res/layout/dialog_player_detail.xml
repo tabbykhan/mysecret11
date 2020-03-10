@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+   >
 
     <LinearLayout
         android:id="@+id/fragment_toolbar"
@@ -426,7 +426,7 @@
                 android:id="@+id/tv_add_to_my_team"
                 android:layout_width="wrap_content"
                 android:layout_height="?attr/et_height"
-                android:background="@drawable/bg_white_10radius"
+                android:background="@drawable/bg_btn_rounded_orange"
                 android:paddingStart="@dimen/dp20"
                 android:paddingEnd="@dimen/dp20"
                 android:gravity="center"

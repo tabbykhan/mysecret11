@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@color/my_secreate_bg_coot"
     android:orientation="vertical">
 
     <include
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text=""
-        android:textColor="?attr/app_text_color_sec"
+        android:textColor="@color/colorWhite"
         android:textSize="?attr/app_text_size_normal"
         app:custom_font="@string/app_font_regular" />
 </RelativeLayout>

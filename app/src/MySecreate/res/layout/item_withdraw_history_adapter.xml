@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/dp7"
         android:layout_marginEnd="@dimen/dp10"
         android:layout_marginBottom="@dimen/dp5"
-        app:cardBackgroundColor="@color/colorWhite"
+        app:cardBackgroundColor="@color/my_secreate_bg_coot"
         app:cardCornerRadius="@dimen/dp5"
         app:cardElevation="@dimen/dp3">
 
@@ -38,7 +38,7 @@
                     android:layout_weight="1"
                     android:gravity="left"
                     android:text="15"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_bold" />
 
@@ -49,7 +49,7 @@
                     android:layout_weight="2"
                     android:gravity="center"
                     android:text="Completed"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_regular" />
 
@@ -65,10 +65,10 @@
                         android:id="@+id/iv_info"
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
-                        android:background="@drawable/bg_primary_oval"
+                        android:background="@drawable/bg_white_oval"
                         android:padding="@dimen/dp2"
                         android:src="@drawable/info_3x"
-                        android:tint="@color/colorWhite" />
+                        android:tint="@color/colorBlack" />
 
                 </LinearLayout>
 
@@ -83,7 +83,7 @@
                 android:layout_marginEnd="@dimen/dp10"
                 android:layout_marginBottom="@dimen/dp5"
                 android:text="reason"
-                android:textColor="@color/colorRed"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_extra_small"
                 app:custom_font="@string/app_font_regular" />
 
@@ -116,7 +116,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Transaction Id : "
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -134,7 +134,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Team Name : "
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             android:visibility="gone"
                             app:custom_font="@string/app_font_regular" />
@@ -162,7 +162,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="123"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -172,7 +172,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="123"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             android:visibility="gone"
                             app:custom_font="@string/app_font_regular" />
