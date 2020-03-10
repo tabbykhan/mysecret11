@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_rounded_blue">
 
     <LinearLayout
         android:id="@+id/ll_layout"
@@ -65,35 +66,37 @@
                     android:layout_alignStart="@+id/fl_image"
                     android:layout_alignEnd="@+id/fl_image"
                     android:layout_alignBottom="@+id/fl_image"
-                    android:layout_marginStart="@dimen/dp3"
+                    android:layout_marginStart="@dimen/dp15"
                     android:layout_marginBottom="@dimen/dp2"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    >
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_team_type"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/dp15"
-                        android:background="@drawable/c_vc_player_team_selected"
+                        android:background="#AB0004"
                         android:gravity="center"
                         android:maxLines="1"
                         android:maxLength="3"
                         android:minWidth="@dimen/dp20"
                         android:text="PP"
                         android:textSize="7sp"
+                        android:textColor="@color/colorWhite"
                         app:custom_font="@string/app_font_regular" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_player_type"
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/dp15"
-                        android:background="@drawable/bg_orange_right2radius"
+                        android:background="#012241"
                         android:gravity="center"
                         android:maxLines="1"
                         android:minWidth="@dimen/dp20"
                         android:maxLength="5"
                         android:text="PP"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="7sp"
                         app:custom_font="@string/app_font_regular" />
 
@@ -114,7 +117,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="Rishabh pant"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="?attr/app_font_medium" />
 
@@ -125,7 +128,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:text="Points - 25"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -140,7 +143,8 @@
             android:layout_height="match_parent"
             android:layout_weight="0.3"
             android:padding="@dimen/dp5"
-            android:src="@drawable/points2x_3x" />
+            android:src="@drawable/points2x_3x"
+            android:background="@drawable/bg_orange_ractangle"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -185,10 +189,10 @@
                     android:id="@+id/tv_captain"
                     android:layout_width="@dimen/dp30"
                     android:layout_height="@dimen/dp30"
-                    android:background="@drawable/selector_caption_bg"
+                    android:background="@drawable/bg_rounded_white_border"
                     android:gravity="center"
                     android:text="C"
-                    android:textColor="@color/c_vc_text_color_selector"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_more_small"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -197,7 +201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0%"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="9sp"
                     app:custom_font="?attr/app_font_regular" />
             </LinearLayout>
@@ -214,10 +218,10 @@
                     android:id="@+id/tv_vice_captain"
                     android:layout_width="@dimen/dp30"
                     android:layout_height="@dimen/dp30"
-                    android:background="@drawable/selector_vccaption_bg"
+                    android:background="@drawable/bg_white_roundedborder"
                     android:gravity="center"
                     android:text="VC"
-                    android:textColor="@color/c_vc_text_color_selector"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_more_small"
                     app:custom_font="?attr/app_font_regular" />
 
@@ -226,7 +230,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0%"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="9sp"
                     app:custom_font="?attr/app_font_regular" />
             </LinearLayout>
