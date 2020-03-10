@@ -58,10 +58,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="E:\mysecret11\Asset 2.png" />
-                                      <entry key="outputName" value="ic_bottmo_red" />
+                                      <entry key="imageAsset" value="C:\Users\iMuonsAndroid01\AndroidStudioProjects\sportsteam\app\src\SportsTeam\res\drawable-hdpi\add_icon.png" />
+                                      <entry key="outputName" value="ic_add_icon_new" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="f20018" />
+                                      <entry key="themeColor" value="fdfffd" />
                                     </map>
                                   </option>
                                 </PersistentState>
