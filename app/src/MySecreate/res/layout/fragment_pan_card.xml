@@ -42,7 +42,7 @@
                         android:layout_height="@dimen/dp25"
                         android:layout_marginStart="@dimen/dp10"
                         android:src="@drawable/icon_pancard"
-                        android:tint="@color/colorAppBlack" />
+                        android:tint="@color/colorWhite" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_verify_title"
@@ -52,7 +52,7 @@
                         android:layout_marginEnd="@dimen/dp10"
                         android:layout_weight="1"
                         android:text="UPLOAD YOUR PAN"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="#ffffff"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="?attr/app_font_medium" />
                 </LinearLayout>
@@ -115,7 +115,7 @@
                     android:layout_marginTop="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp10"
                     android:text="Name (As on PAN card)"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="#ffffff"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
 
@@ -149,7 +149,7 @@
                     android:layout_marginTop="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp10"
                     android:text="PAN number (10 Digit PAN no.)"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="#ffffff"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
 
@@ -183,7 +183,7 @@
                     android:layout_marginTop="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp10"
                     android:text="Date of birth"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="#ffffff"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
 
@@ -210,6 +210,7 @@
                     android:textSize="?attr/et_text_size"
                     app:custom_font="@string/app_font_regular" />
 
+
                 <com.customviews.TypefaceTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -217,10 +218,9 @@
                     android:layout_marginTop="@dimen/dp15"
                     android:layout_marginEnd="@dimen/dp10"
                     android:text="State"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="#ffffff"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
-
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_state"
