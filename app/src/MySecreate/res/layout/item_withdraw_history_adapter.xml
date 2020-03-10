@@ -65,7 +65,7 @@
                         android:id="@+id/iv_info"
                         android:layout_width="@dimen/dp20"
                         android:layout_height="@dimen/dp20"
-                        android:background="@drawable/bg_white_oval"
+                        android:background="@drawable/bg_white_10radius"
                         android:padding="@dimen/dp2"
                         android:src="@drawable/info_3x"
                         android:tint="@color/colorBlack" />
@@ -91,7 +91,7 @@
                 android:id="@+id/ll_transaction_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary20"
+                android:background="@color/my_secreate_bg_coot"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:paddingStart="@dimen/dp5"
@@ -125,7 +125,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="Transaction Date : "
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -152,7 +152,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:text="123456"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
