@@ -47,8 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:padding="@dimen/dp12"
-                    android:background="@drawable/bg_white_oval_new"
+                    android:padding="@dimen/dp5"
                     android:gravity="center">
 
                     <com.facebook.drawee.view.SimpleDraweeView
@@ -57,7 +56,9 @@
                         android:layout_height="@dimen/dp55"
                         fresco:placeholderImage="@mipmap/ic_launcher"
                         fresco:progressBarAutoRotateInterval="1000"
-                        fresco:roundAsCircle="true" />
+                        fresco:roundAsCircle="true"
+                        fresco:roundingBorderWidth="1dp"
+                        fresco:roundingBorderColor="@color/colorWhite"/>
 
 
                     <ProgressBar
@@ -233,9 +234,7 @@
                 <RelativeLayout xmlns:fresco="http://schemas.android.com/apk/res-auto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:padding="@dimen/dp12"
-                    android:background="@drawable/bg_white_oval_new"
+                    android:padding="@dimen/dp5"
                     android:gravity="center">
 
                     <com.facebook.drawee.view.SimpleDraweeView
@@ -244,7 +243,10 @@
                         android:layout_height="@dimen/dp50"
                         fresco:placeholderImage="@mipmap/ic_launcher"
                         fresco:progressBarAutoRotateInterval="1000"
-                        fresco:roundAsCircle="true" />
+                        fresco:roundAsCircle="true"
+                        fresco:roundingBorderWidth="1dp"
+                        fresco:roundingBorderColor="@color/colorWhite"
+                        />
 
                     <ProgressBar
                         android:id="@+id/pb_image2"
