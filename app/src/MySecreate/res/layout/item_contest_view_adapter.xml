@@ -146,20 +146,23 @@
                         android:layout_height="wrap_content"
                         android:layout_weight=".6"
                         android:gravity="right"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        >
 
                         <LinearLayout
                             android:id="@+id/ll_winners"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:background="@drawable/bg_blue"
+                            android:padding="@dimen/dp2">
 
                             <com.customviews.TypefaceTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="WINNERS"
-                                android:textColor="@color/colorAppBlackAA"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="?attr/app_text_size_extra_small"
                                 app:custom_font="@string/app_font_regular" />
 
@@ -174,7 +177,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="250"
-                                    android:textColor="?attr/app_link_text_color"
+                                    android:textColor="@color/colorWhite"
                                     android:textSize="?attr/app_text_size_small"
                                     app:custom_font="@string/app_font_medium" />
 
@@ -184,7 +187,7 @@
                                     android:layout_height="@dimen/dp10"
                                     android:layout_marginLeft="@dimen/dp3"
                                     android:src="@drawable/arrow_down2_3x"
-                                    android:tint="?attr/app_link_text_color" />
+                                    android:tint="@color/colorWhite" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -246,7 +249,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000C1C"
+            android:background="@drawable/buttom_bg_contest"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:padding="@dimen/dp8">
