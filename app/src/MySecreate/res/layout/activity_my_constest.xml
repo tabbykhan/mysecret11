@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@color/colorRed">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -38,7 +38,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp10"
-                    android:layout_marginBottom="@dimen/dp10" />
+                    android:layout_marginBottom="@dimen/dp10"
+                    />
 
                 <include
                     android:id="@+id/ll_player_stats"

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@color/my_secreate_bg_coot"
     android:orientation="vertical">
 
     <include
@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/fragment_toolbar"
-        android:background="@color/colorWhite" />
+        android:background="@color/my_secreate_bg_coot" />
 
     <ProgressBar
         android:id="@+id/pb_data"

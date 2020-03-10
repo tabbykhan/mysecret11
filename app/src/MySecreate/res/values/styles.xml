@@ -56,8 +56,11 @@
 
 
     <style name="TextInputTheme" parent="AppTheme">
-        <item name="colorControlActivated">@color/colorRed</item>
-        <item name="android:textColorHint">@color/colorAppBlack50</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="colorAccent">@color/colorWhite</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
     </style>
 
     <style name="DialogWait" parent="android:Theme">

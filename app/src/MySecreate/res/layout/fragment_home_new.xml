@@ -69,18 +69,19 @@
                 app:tabGravity="fill"
                 app:tabIndicatorColor="@color/tab_indication_color"
                 app:tabIndicatorHeight="0dp"
-                app:tabPadding="@dimen/dp5"
+                app:tabPadding="@dimen/dp10"
                 app:tabRippleColor="@null"
                 android:layout_marginStart="@dimen/dp20"
                 android:layout_marginEnd="@dimen/dp20"
                 android:layout_marginTop="@dimen/dp7"
                 app:tabBackground="@drawable/tab_selecation_match"
                 app:tabSelectedTextColor="@color/tab_seleceted_text_color"
-                app:tabTextColor="@color/tab_text_color" />
+                app:tabTextColor="@color/colorWhite" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewpager_match"
                 android:background="@color/my_secreate_bg_coot"
+                android:layout_marginTop="@dimen/dp10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>

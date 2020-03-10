@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@color/colorRed"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp20"
+            android:layout_margin="@dimen/dp5"
             android:orientation="vertical">
 
 
@@ -28,18 +29,14 @@
                 android:id="@+id/ll_invite_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp10"
-                android:layout_marginTop="@dimen/dp10"
-                android:layout_marginRight="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp20"
-                android:background="@drawable/bg_white_5radius_stroke1gray"
+                android:background="@drawable/round_corner_white"
+                android:padding="@dimen/dp10"
                 android:gravity="center"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_gray_top5radius"
                     android:gravity="start"
                     android:orientation="horizontal"
                     android:padding="@dimen/dp7">
@@ -53,27 +50,19 @@
                         android:layout_marginLeft="@dimen/dp5"
                         android:gravity="center"
                         android:text="Enter your details here"
-                        android:textColor="@color/sport_textcolor_selector_green_black"
-                        android:textSize="?attr/app_text_size_more_normal"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/sp22"
                         app:custom_font="?attr/app_font_medium" />
 
 
                 </LinearLayout>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp1"
-                    app:cardBackgroundColor="@color/colorWhite"
-                    app:cardCornerRadius="@dimen/dp10"
-                    app:cardElevation="@dimen/dp2">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp15"
                         android:layout_marginTop="@dimen/dp15"
-                        android:layout_marginEnd="@dimen/dp15"
                         android:orientation="vertical">
 
                         <com.customviews.TypefaceTextView
@@ -81,7 +70,7 @@
                             android:layout_height="wrap_content"
                             android:text="Email address *"
                             android:paddingStart="@dimen/dp5"
-                            android:textColor="?attr/et_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
 
@@ -92,7 +81,7 @@
                             android:layout_marginTop="@dimen/dp5"
                             android:layout_marginEnd="@dimen/dp5"
                             android:layout_marginBottom="@dimen/dp2"
-                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardBackgroundColor="@color/transparent_color"
                             app:cardCornerRadius="@dimen/dp3"
                             app:cardElevation="@dimen/dp1">
 
@@ -102,11 +91,14 @@
                                 android:layout_height="?attr/et_height"
                                 android:focusableInTouchMode="true"
                                 android:hint="Update email address"
-                                android:paddingStart="@dimen/dp5"
+                                android:paddingStart="@dimen/dp10"
                                 android:paddingEnd="@dimen/dp5"
                                 android:paddingTop="@dimen/dp10"
                                 android:paddingBottom="@dimen/dp10"
+                                android:drawablePadding="@dimen/dp10"
+                                android:drawableStart="@drawable/envelope_3x"
                                 android:singleLine="true"
+                                android:background="@drawable/bg_rounded_white_transparent"
                                 android:textColor="@color/colorAppBlackAA"
                                 android:textColorHint="?attr/et_hint_text_color"
                                 android:textSize="?attr/app_text_size_normal"
@@ -131,7 +123,7 @@
                             android:layout_marginTop="@dimen/dp10"
                             android:text="Name *"
                             android:paddingStart="@dimen/dp5"
-                            android:textColor="?attr/et_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
 
@@ -142,7 +134,7 @@
                             android:layout_marginTop="@dimen/dp5"
                             android:layout_marginEnd="@dimen/dp5"
                             android:layout_marginBottom="@dimen/dp5"
-                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardBackgroundColor="@color/transparent_color"
                             app:cardCornerRadius="@dimen/dp3"
                             app:cardElevation="@dimen/dp1">
 
@@ -157,6 +149,10 @@
                                 android:paddingEnd="@dimen/dp5"
                                 android:paddingBottom="@dimen/dp10"
                                 android:singleLine="true"
+                                android:drawableStart="@drawable/user_name"
+                                android:drawableTint="@color/colorWhite"
+                                android:drawablePadding="@dimen/dp10"
+                                android:background="@drawable/bg_rounded_white_transparent"
                                 android:textColor="@color/colorAppBlackAA"
                                 android:textColorHint="?attr/et_hint_text_color"
                                 android:textSize="?attr/app_text_size_normal"
@@ -171,7 +167,7 @@
                             android:layout_marginTop="@dimen/dp10"
                             android:text="Query *"
                             android:paddingStart="@dimen/dp5"
-                            android:textColor="?attr/et_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
 
@@ -182,7 +178,7 @@
                             android:layout_marginTop="@dimen/dp5"
                             android:layout_marginEnd="@dimen/dp5"
                             android:layout_marginBottom="@dimen/dp5"
-                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardBackgroundColor="@color/transparent_color"
                             app:cardCornerRadius="@dimen/dp3"
                             app:cardElevation="@dimen/dp1">
 
@@ -190,7 +186,9 @@
                                 android:id="@+id/sp_query"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:entries="@array/query_array"/>
+                                android:entries="@array/query_array"
+                                android:drawablePadding="@dimen/dp10"
+                                android:background="@drawable/bg_rounded_white_transparent"/>
 
                         </androidx.cardview.widget.CardView>
 
@@ -201,7 +199,7 @@
                             android:layout_marginTop="@dimen/dp10"
                             android:text="Message *"
                             android:paddingStart="@dimen/dp5"
-                            android:textColor="?attr/et_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
 
@@ -212,7 +210,7 @@
                             android:layout_marginTop="@dimen/dp5"
                             android:layout_marginEnd="@dimen/dp5"
                             android:layout_marginBottom="@dimen/dp5"
-                            app:cardBackgroundColor="@color/colorWhite"
+                            app:cardBackgroundColor="@color/transparent_color"
                             app:cardCornerRadius="@dimen/dp3"
                             app:cardElevation="@dimen/dp2">
 
@@ -222,14 +220,15 @@
                                 android:layout_height="wrap_content"
                                 android:focusableInTouchMode="true"
                                 android:gravity="left|top"
-                                android:background="@null"
                                 android:hint=""
                                 android:minHeight="@dimen/dp100"
                                 android:paddingStart="@dimen/dp5"
                                 android:paddingEnd="@dimen/dp5"
                                 android:paddingTop="@dimen/dp10"
                                 android:paddingBottom="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:drawablePadding="@dimen/dp10"
+                                android:background="@drawable/bg_rounded_white_transparent"
                                 android:textColorHint="?attr/et_hint_text_color"
                                 android:textSize="?attr/app_text_size_normal"
                                 app:custom_font="@string/app_font_regular" />
@@ -243,7 +242,7 @@
                             android:layout_marginTop="@dimen/dp10"
                             android:text="Human Verification *"
                             android:paddingStart="@dimen/dp5"
-                            android:textColor="?attr/et_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
 
@@ -261,7 +260,7 @@
                                 android:layout_marginEnd="@dimen/dp5"
                                 android:layout_marginBottom="@dimen/dp5"
                                 android:layout_weight="1"
-                                app:cardBackgroundColor="@color/colorWhite"
+                                app:cardBackgroundColor="@color/transparent_color"
                                 app:cardCornerRadius="@dimen/dp3"
                                 app:cardElevation="@dimen/dp2">
 
@@ -271,12 +270,13 @@
                                     android:layout_height="?attr/et_height"
                                     android:focusableInTouchMode="true"
                                     android:hint=""
-                                    android:background="@null"
                                     android:singleLine="true"
                                     android:paddingTop="@dimen/dp10"
                                     android:paddingBottom="@dimen/dp10"
                                     android:paddingStart="@dimen/dp5"
                                     android:paddingEnd="@dimen/dp5"
+                                    android:drawablePadding="@dimen/dp10"
+                                    android:background="@drawable/bg_rounded_white_transparent"
                                     android:textColor="?attr/et_text_color"
                                     android:textColorHint="?attr/et_hint_text_color"
                                     android:textSize="?attr/app_text_size_normal"
@@ -305,30 +305,33 @@
 
                         </LinearLayout>
 
-                        <com.customviews.TypefaceTextView
-                            android:id="@+id/tv_submit"
-                            android:layout_width="wrap_content"
-                            android:layout_height="?attr/et_height"
-                            android:layout_marginStart="@dimen/dp5"
-                            android:layout_marginTop="@dimen/dp20"
-                            android:layout_marginEnd="@dimen/dp10"
-                            android:layout_marginBottom="@dimen/dp20"
-                            android:background="@drawable/bg_red_5radius"
-                            android:gravity="center"
-                            android:minWidth="@dimen/dp120"
-                            android:text="Submit"
-                            android:textColor="?attr/app_screen_bg_color"
-                            android:textSize="?attr/btn_text_size"
-                            app:custom_font="@string/app_font_regular" />
+
 
 
                     </LinearLayout>
 
 
-                </androidx.cardview.widget.CardView>
+
 
 
             </LinearLayout>
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_submit"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/et_height"
+                android:layout_marginStart="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp20"
+                android:layout_marginEnd="@dimen/dp30"
+                android:layout_marginBottom="@dimen/dp20"
+                android:background="@drawable/bg_btn_rounded_orange"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:minWidth="@dimen/dp120"
+                android:text="Submit"
+                android:textColor="?attr/app_screen_bg_color"
+                android:textSize="?attr/btn_text_size"
+                app:custom_font="@string/app_font_regular" />
 
 
         </LinearLayout>

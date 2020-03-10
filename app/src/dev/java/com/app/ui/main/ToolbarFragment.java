@@ -319,7 +319,7 @@ public class ToolbarFragment extends AppBaseFragment {
                     updateViewVisibitity(iv_back, View.GONE);
                     updateViewVisibitity(iv_menu, View.GONE);
                     getActivity().getCurrentFocus();
-                    if(ConstantsFlavor.type == ConstantsFlavor.Type.vision)
+                    if(ConstantsFlavor.type == ConstantsFlavor.Type.vision ||ConstantsFlavor.type == ConstantsFlavor.Type.MySecreate )
                         UpdateHeaderTitel(false);
                     else
                         UpdateHeaderTitel(true);
@@ -695,6 +695,8 @@ public class ToolbarFragment extends AppBaseFragment {
                iv_notification.setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_IN);
                 rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_headerorange));
                 ll_wallet.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_white_10radius));
+            }if (ConstantsFlavor.type == ConstantsFlavor.Type.MySecreate){
+                rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.toolbar));
             }else {
                 rl_bg_toolbar.setBackground(getActivity().getResources().getDrawable(R.drawable.bg_header));
             }

@@ -5,6 +5,6 @@
     android:singleLine="true"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp45"
-    android:background="@color/color_sky"
+    android:background="@color/blue_darh"
     android:textColor="@color/colorBlack"
     android:ellipsize="marquee"/>

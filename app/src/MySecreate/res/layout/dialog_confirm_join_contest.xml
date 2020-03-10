@@ -203,7 +203,7 @@
                     android:layout_marginTop="@dimen/dp30"
                     android:layout_marginRight="@dimen/dp30"
                     android:gravity="center"
-                    android:text="By joining this contest, you accept Imuons T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim."
+                    android:text="By joining this contest, you accept My Secret's T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim."
                     android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_regular" />
