@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="#002341">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -209,7 +209,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginLeft="@dimen/dp5"
-                                        android:background="@drawable/bg_red_5radius"
+                                        android:background="@drawable/bg_rounded_blue"
                                         android:gravity="center"
                                         android:minWidth="@dimen/dp40"
                                         android:minHeight="@dimen/dp25"
@@ -321,7 +321,7 @@
                                         android:layout_height="@dimen/dp30"
                                         android:layout_marginStart="@dimen/dp20"
                                         android:layout_weight="0.5"
-                                        android:background="@drawable/bg_red_5radius"
+                                        android:background="@drawable/bg_btn_rounded_orange"
                                         android:gravity="center"
                                         android:paddingBottom="@dimen/dp2"
                                         android:text="SWITCH TEAM"
@@ -521,7 +521,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="@dimen/dp25"
                         android:layout_marginEnd="@dimen/dp5"
-                        android:background="@drawable/bg_red_5radius"
+                        android:background="@drawable/bg_btn_rounded_orange"
                         android:gravity="center"
                         android:paddingStart="@dimen/dp10"
                         android:paddingEnd="@dimen/dp10"
@@ -610,7 +610,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="@dimen/dp10"
-        android:background="?attr/app_link_text_color"
+        android:background="@drawable/bg_btn_rounded_orange"
         android:gravity="center"
         android:paddingTop="@dimen/dp10"
         android:paddingBottom="@dimen/dp10"

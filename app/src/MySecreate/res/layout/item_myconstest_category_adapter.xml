@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorRed">
+    android:background="#002341">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_data"
@@ -38,7 +38,7 @@
                         android:id="@+id/iv_contest_cat"
                         android:layout_width="@dimen/dp30"
                         android:layout_height="@dimen/dp30"
-                        android:src="@drawable/logo_3x" />
+                        android:src="@drawable/logo" />
 
                     <ProgressBar
                         android:id="@+id/pb_iv_contest_cat"
@@ -83,7 +83,8 @@
                 <ImageView
                     android:id="@+id/iv_discount_image"
                     android:layout_width="@dimen/dp80"
-                    android:layout_height="@dimen/dp30" />
+                    android:layout_height="@dimen/dp30"
+                    android:tint="@color/colorWhite"/>
 
             </LinearLayout>
 
@@ -91,6 +92,7 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#002341"
                 tools:listitem="@layout/item_mycontest_view_adapter" />
 
         </LinearLayout>
