@@ -33,7 +33,7 @@
             android:layout_marginStart="@dimen/dp10"
             android:layout_marginEnd="@dimen/dp10"
             android:layout_marginBottom="@dimen/dp5"
-            app:cardBackgroundColor="@color/colorWhite"
+            app:cardBackgroundColor="#002341"
             app:cardCornerRadius="@dimen/dp17"
             app:cardMaxElevation="@dimen/dp3">
 
@@ -52,7 +52,7 @@
                     android:layout_marginStart="@dimen/dp10"
                     android:layout_weight="1"
                     android:text="IND VS AUS"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_regular" />
 
@@ -61,7 +61,7 @@
                     android:layout_width="@dimen/dp15"
                     android:layout_height="@dimen/dp15"
                     android:src="@drawable/clock_icon_3x"
-                    android:tint="@color/colorRed" />
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_timer_time"
@@ -70,7 +70,7 @@
                     android:layout_marginStart="@dimen/dp3"
                     android:layout_marginEnd="@dimen/dp10"
                     android:text="17h 15m 13s"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="@string/app_font_medium" />
             </LinearLayout>
