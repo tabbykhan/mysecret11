@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="#012241">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_marginTop="@dimen/dp20"
             android:layout_marginEnd="@dimen/dp10"
             android:layout_marginBottom="@dimen/dp30"
-            app:cardBackgroundColor="@color/colorActivateGreen"
+            app:cardBackgroundColor="@color/colorWhite"
             app:cardCornerRadius="@dimen/dp5"
             app:cardElevation="@dimen/dp3">
 
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp1"
-                android:background="@drawable/bg_white_5radius"
+                android:background="#012241"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -253,7 +253,7 @@
                     android:layout_marginStart="@dimen/dp10"
                     android:layout_marginEnd="@dimen/dp10"
                     android:layout_marginBottom="@dimen/dp20"
-                    android:background="@drawable/bg_red_5radius"
+                    android:background="@drawable/bg_btn_rounded_orange"
                     android:paddingBottom="@dimen/dp4"
                     android:gravity="center"
                     android:text="SUBMIT FOR VERIFICATION"

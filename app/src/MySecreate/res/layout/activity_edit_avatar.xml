@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="#012241">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -25,7 +26,7 @@
         android:layout_marginStart="@dimen/dp10"
         android:layout_marginTop="@dimen/dp20"
         android:text="SELECT AVATAR"
-        android:textColor="?attr/app_link_text_color"
+        android:textColor="#ffffff"
         android:textSize="?attr/app_text_size_normal"
         app:custom_font="@string/app_font_regular" />
 
