@@ -65,7 +65,9 @@
                         android:id="@+id/pb_image1"
                         android:layout_width="@dimen/dp15"
                         android:layout_height="@dimen/dp15"
-                        android:layout_centerInParent="true" />
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        />
 
                 </RelativeLayout>
             </RelativeLayout>
@@ -252,7 +254,8 @@
                         android:id="@+id/pb_image2"
                         android:layout_width="@dimen/dp15"
                         android:layout_height="@dimen/dp15"
-                        android:layout_centerInParent="true" />
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"/>
 
                 </RelativeLayout>
             </RelativeLayout>

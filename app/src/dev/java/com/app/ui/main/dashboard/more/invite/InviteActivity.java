@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -107,15 +108,17 @@ public class InviteActivity extends AppBaseActivity {
 
 
     private void setupUi() {
-        refer_image.post(new Runnable() {
-            @Override
-            public void run() {
-                int width = refer_image.getWidth();
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) refer_image.getLayoutParams();
-                layoutParams.height = Math.round(width * 0.416f);
-                refer_image.setLayoutParams(layoutParams);
-            }
-        });
+        if(ConstantsFlavor.type != ConstantsFlavor.Type.MySecreate) {
+            refer_image.post(new Runnable() {
+                @Override
+                public void run() {
+                    int width = refer_image.getWidth();
+                    LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) refer_image.getLayoutParams();
+                    layoutParams.height = Math.round(width * 0.416f);
+                    refer_image.setLayoutParams(layoutParams);
+                }
+            });
+        }
 
     }
 
