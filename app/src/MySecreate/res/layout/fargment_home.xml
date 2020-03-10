@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@color/my_secreate_bg_coot">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_layout"
@@ -28,6 +28,7 @@
                 app:custom_font="@string/app_font_medium" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
+                android:background="@color/my_secreate_bg_coot"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
