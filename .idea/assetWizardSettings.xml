@@ -58,8 +58,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\iMuonsAndroid01\AndroidStudioProjects\sportsteam\app\src\MySecreate\res\drawable-hdpi\icon_playing_contest_3x.png" />
-                                      <entry key="outputName" value="ic_payler_contst" />
+                                      <entry key="imageAsset" value="E:\mysecret11\23.2-playing history-assets\contest.png" />
+                                      <entry key="outputName" value="ic_payler_contest" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="ffffff" />
                                     </map>

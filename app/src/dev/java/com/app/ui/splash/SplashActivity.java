@@ -139,7 +139,11 @@ public class SplashActivity extends AppBaseActivity implements PermissionHelperN
     }
 
     private void goToCheckUserActivity(Bundle bundle) {
-        Intent intent = new Intent(this, CheckUserActivity.class);
+        Intent intent = null;
+       /* if(ConstantsFlavor.type == ConstantsFlavor.Type.vision)
+         intent = new Intent(this, LoginActivity.class);
+        else*/
+         intent = new Intent(this, CheckUserActivity.class);
         if (bundle != null) {
             intent.putExtras(bundle);
         }

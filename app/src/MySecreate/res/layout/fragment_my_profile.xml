@@ -302,7 +302,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dp3"
-                        android:background="@drawable/ll_top_round_corner_blak"
+                        android:background="@drawable/ll_top_round_corner_black_new"
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
@@ -342,7 +342,7 @@
                             <com.customviews.TypefaceTextView
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
-                                android:background="@drawable/ll_top_round_corner_blue"
+                                android:background="@drawable/ll_top_roun_corner_new"
                                 android:gravity="center"
                                 android:text="Deposited"
                                 android:textColor="@color/colorWhite"
@@ -380,7 +380,7 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
-                                android:background="@drawable/ll_top_round_corner_blue"
+                                android:background="@drawable/ll_top_roun_corner_new"
                                 android:gravity="center"
                                 android:text="Bonus"
                                 android:textColor="@color/colorWhite"
@@ -415,7 +415,7 @@
 
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
-                                android:background="@drawable/ll_top_round_corner_blue"
+                                android:background="@drawable/ll_top_roun_corner_new"
                                 android:gravity="center"
                                 android:text="Winnings"
                                 android:textColor="@color/colorWhite"
@@ -549,7 +549,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp3"
-                android:background="@drawable/ll_top_round_corner_blak"
+                android:background="@drawable/ll_top_round_corner_black_new"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -581,7 +581,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:layout_margin="@dimen/dp20"
-                        android:background="@drawable/ll_red_round_corner"
+                        android:background="@drawable/ll_red_round_corner_new"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -589,8 +589,9 @@
                             android:layout_width="@dimen/dp40"
                             android:backgroundTint="@color/colorWhite"
                             android:layout_height="@dimen/dp40"
+
                             android:src="@drawable/ic_payler_contst"
-                            android:tint="@color/colorRed" />
+                            android:tint="@color/colorWhite" />
 
 
                         <com.customviews.TypefaceTextView
@@ -627,7 +628,7 @@
                             android:layout_width="@dimen/dp40"
                             android:layout_height="@dimen/dp40"
                             android:src="@drawable/ic_playing_match"
-                            android:tint="@color/colorRed" />
+                            android:tint="@color/colorWhite" />
 
 
                         <com.customviews.TypefaceTextView
@@ -673,7 +674,7 @@
                         android:layout_width="@dimen/dp40"
                         android:layout_height="@dimen/dp40"
                         android:src="@drawable/icon_playing_series_3x"
-                        android:tint="@color/colorRed" />
+                        android:tint="@color/colorWhite" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_playing_series"
@@ -703,7 +704,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:layout_margin="@dimen/dp20"
-                    android:background="@drawable/ll_red_round_corner"
+                    android:background="@drawable/ll_red_round_corner_new"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -712,7 +713,7 @@
                         android:layout_width="@dimen/dp40"
                         android:layout_height="@dimen/dp40"
                         android:src="@drawable/icon_playing_wins_3x"
-                        android:tint="@color/colorRed" />
+                        android:tint="@color/colorWhite" />
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_playing_wins"
@@ -807,7 +808,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/ll_orange_round_corner_blue"
+            android:background="@drawable/ll_orange_round_corner_new"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
             android:padding="@dimen/dp5">
@@ -818,7 +819,7 @@
                 android:layout_height="@dimen/dp25"
                 android:layout_centerVertical="true"
                 android:src="@drawable/logout_3x"
-                android:tint="@color/colorRed" />
+                android:tint="@color/colorWhite" />
 
             <com.customviews.TypefaceTextView
                 android:layout_width="wrap_content"

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vision_bg">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_tollbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_bg_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/bg_header">
+
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="?attr/actionBarIconSize"
+                android:layout_height="?attr/actionBarIconSize"
+                android:layout_centerVertical="true"
+                android:onClick="backBtn"
+                android:padding="@dimen/dp12"
+                android:src="@drawable/back_icon_3x"
+                android:tint="@color/btn_color" />
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_title_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_back"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Join Mega Contest"
+                android:textAllCaps="true"
+                android:textColor="@color/btn_color"
+                android:textSize="?attr/actionBarTitleSize"
+                app:custom_font="@string/app_font_regular" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp45"
+        android:text="Make Payment"
+        android:layout_alignParentBottom="true"
+        android:onClick="makePayment"
+        android:background="@drawable/bottomnavigationcolor"/>
+</RelativeLayout>

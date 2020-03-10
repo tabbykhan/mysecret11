@@ -10,7 +10,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.MLM.Adapter.MakePaymentAdapter;
 import com.R;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
@@ -25,6 +29,8 @@ public class MakePayment extends AppCompatActivity {
     Button closeBtn;
     TextView tv_reset;
     ImageView qrCode;
+    MakePaymentAdapter makePaymentAdapter;
+    RecyclerView recycler_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +43,14 @@ public class MakePayment extends AppCompatActivity {
         rlPopUp = findViewById(R.id.rlPopUp);
         closeBtn = findViewById(R.id.closeBtn);
         qrCode = findViewById(R.id.qrCode);
+        recycler_view = findViewById(R.id.recycler_view);
         getQRCode("hello");
+        recycler_view = findViewById(R.id.recycler_view);
+        makePaymentAdapter = new MakePaymentAdapter();
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recycler_view.setLayoutManager(mLayoutManager);
+        recycler_view.setItemAnimator(new DefaultItemAnimator());
+        recycler_view.setAdapter(makePaymentAdapter);
     }
 
     public void makePaymentpopup(View view) {

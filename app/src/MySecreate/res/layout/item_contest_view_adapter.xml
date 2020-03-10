@@ -85,10 +85,10 @@
                                 android:layout_height="@dimen/dp20"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="@dimen/dp5"
-                                android:background="@drawable/bg_cofirm_win_signle_multi"
+                                android:background="@drawable/oval_blue"
                                 android:gravity="center"
                                 android:text="S"
-                                android:textColor="@color/colorRed"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="10sp"
                                 app:custom_font="@string/app_font_regular" />
 
@@ -98,15 +98,15 @@
                                 android:layout_height="@dimen/dp20"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="@dimen/dp5"
-                                android:background="@drawable/bg_cofirm_win_signle_multi"
+                                android:background="@drawable/oval_blue"
                                 android:gravity="center"
                                 android:text="C"
-                                android:textColor="@color/colorRed"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="10sp"
                                 app:custom_font="@string/app_font_regular" />
                             <com.customviews.TypefaceTextView
                                 android:id="@+id/tv_discount"
-                                android:background="@drawable/bg_green_5radius_stroke1gray"
+                                android:background="@drawable/bg_rectangle_blue"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:minWidth="@dimen/dp45"
@@ -221,7 +221,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/txt_only_remaing"
-                            android:textColor="@color/color_yellow_btn"
+                            android:textColor="#AD0004"
                             android:textSize="?attr/app_text_size_extra_small"
                             app:custom_font="@string/app_font_regular" />
 
@@ -246,7 +246,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/transparent_color"
+            android:background="#000C1C"
             android:orientation="horizontal"
             android:gravity="center_vertical"
             android:padding="@dimen/dp8">
@@ -265,13 +265,13 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="ENTRY FEE"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_regular" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_entry"
-                    android:background="@drawable/bg_red_5radius"
+                    android:background="@drawable/bg_btn_rounded_orange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="@dimen/dp45"
@@ -293,7 +293,7 @@
                     android:gravity="center"
                     android:layout_marginStart="@dimen/dp7"
                     android:background="@drawable/bg_strike_line"
-                    android:textColor="@color/colorAppBlack"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_bold" />
 
@@ -313,7 +313,7 @@
                 android:layout_weight="0.20"
                 android:minHeight="@dimen/dp25"
                 android:paddingBottom="@dimen/dp2"
-                android:background="@drawable/bg_red_5radius"
+                android:background="@drawable/bg_btn_rounded_orange"
                 android:gravity="center"
                 android:text="JOIN"
                 android:textColor="@color/colorWhite"

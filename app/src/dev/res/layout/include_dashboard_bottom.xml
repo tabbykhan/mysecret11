@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -25,6 +26,7 @@
                 android:layout_height="@dimen/dp27"
                 android:duplicateParentState="true"
                 android:paddingTop="@dimen/dp7"
+                android:tint="@color/colorWhite"
                 android:src="@drawable/tab_icon_home"
                 app:tintColorStateList="@color/dashboard_tab_image_tint_selector" />
 
@@ -59,6 +61,7 @@
                 android:layout_height="@dimen/dp27"
                 android:duplicateParentState="true"
                 android:paddingTop="@dimen/dp7"
+                android:tint="@color/colorWhite"
                 android:src="@drawable/tab_icon_mycontest"
                 app:tintColorStateList="@color/dashboard_tab_image_tint_selector" />
 
@@ -92,6 +95,7 @@
                 android:layout_height="@dimen/dp27"
                 android:duplicateParentState="true"
                 android:paddingTop="@dimen/dp7"
+                android:tint="@color/colorWhite"
                 android:src="@drawable/profile_icon"
                 app:tintColorStateList="@color/dashboard_tab_image_tint_selector" />
 
@@ -124,6 +128,7 @@
                 android:id="@+id/iv_setting"
                 android:layout_width="@dimen/dp27"
                 android:layout_height="@dimen/dp27"
+                android:tint="@color/colorWhite"
                 android:duplicateParentState="true"
                 android:paddingTop="@dimen/dp7"
                 android:src="@drawable/more_icon"

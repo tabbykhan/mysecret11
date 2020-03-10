@@ -135,7 +135,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/ll_diamand_white"
+                        android:background="@drawable/ll_diamand_white_new"
                         android:text="VS"
                         android:gravity="center"
                         android:textColor="@color/blue_darh"
@@ -257,7 +257,7 @@
                 android:gravity="left"
                 android:maxLines="1"
                 android:text="IND T20 Super league"
-                android:textColor="@color/colorAppBlackAA"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_extra_more_small"
                 app:custom_font="@string/app_font_medium" />
 
@@ -270,7 +270,7 @@
                 android:gravity="right"
                 android:maxLines="1"
                 android:text="Line Up Out"
-                android:textColor="@color/sport_textcolor_selector_green_black"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_extra_more_small"
                 app:custom_font="@string/app_font_medium" />
         </RelativeLayout>
@@ -301,7 +301,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp3"
                 android:text="Contest Joined"
-                android:textColor="@color/colorAppBlackAA"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_extra_more_small"
                 app:custom_font="@string/app_font_regular" />
         </LinearLayout>
