@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item >
-        <shape android:shape="rectangle">
-            <solid android:color="@color/colorOrange" />
+<!--    <item >-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <corners-->
+<!--                android:radius="@dimen/dp5"-->
+<!--                android:bottomLeftRadius="@dimen/dp5"-->
+<!--                android:bottomRightRadius="@dimen/dp5"-->
+<!--                android:topLeftRadius="@dimen/dp5"-->
+<!--                android:topRightRadius="@dimen/dp5"/>-->
+<!--            <solid android:color="@color/colorOrange" />-->
 
-        </shape>
-    </item>
+<!--        </shape>-->
+<!--    </item>-->
 
 
     <item
@@ -16,9 +22,14 @@
         android:right="10dp">
         <shape android:shape="rectangle">
             <corners
-                android:radius="@dimen/dp5"/>
+                android:radius="@dimen/dp10"
+                android:bottomLeftRadius="@dimen/dp10"
+                android:bottomRightRadius="@dimen/dp10"
+                android:topLeftRadius="@dimen/dp10"
+                android:topRightRadius="@dimen/dp10"/>
             <solid android:color="@color/colorOrange" />
         </shape>
+
     </item>
 
 

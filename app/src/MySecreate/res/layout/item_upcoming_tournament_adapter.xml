@@ -2,10 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/my_secreate_bg_coot"
     android:layout_height="wrap_content">
 
     <FrameLayout
         android:id="@+id/fl_card_data"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -16,7 +18,7 @@
             android:layout_marginTop="@dimen/dp5"
             android:layout_marginEnd="@dimen/dp10"
             android:layout_marginBottom="@dimen/dp5"
-            app:cardBackgroundColor="@color/colorWhite"
+            app:cardBackgroundColor="@color/my_secreate_bg_coot"
             app:cardCornerRadius="@dimen/dp5"
             app:cardElevation="@dimen/dp3">
 

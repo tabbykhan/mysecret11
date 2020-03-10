@@ -88,7 +88,8 @@ public class TransactionHistoryActivity extends AppBaseActivity implements Adapt
         }else {
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                     R.array.transaction_array, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            //adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown);
             sp_transaction_type.setAdapter(adapter);
         }
     }

@@ -24,7 +24,8 @@
             <RelativeLayout
                 android:id="@+id/rl_image"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/iv_image"
@@ -45,71 +46,77 @@
             </RelativeLayout>
 
 
-            <com.customviews.TypefaceTextView
-                android:id="@+id/tv_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rl_image"
-                android:layout_marginLeft="@dimen/dp10"
-                android:layout_marginTop="@dimen/dp5"
-                android:layout_marginRight="@dimen/dp10"
-                android:background="@null"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="Test Message"
-                android:textColor="?attr/app_link_text_color"
-                android:textSize="?attr/app_text_size_normal"
-                app:custom_font="?attr/app_font_medium" />
-
-
-            <com.customviews.ReadMoreTextView
-                android:id="@+id/tv_message"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_title"
-                android:layout_marginLeft="@dimen/dp10"
-                android:layout_marginTop="@dimen/dp5"
-                android:layout_marginRight="@dimen/dp10"
-                android:background="@null"
-                android:text="message"
-                android:textColor="?attr/app_text_color"
-                android:textSize="?attr/app_text_size_small"
-                app:colorClickableText="?attr/app_link_text_color"
-                app:custom_font="?attr/app_font_regular"
-                app:trimLength="150"
-                app:trimMode="trimModeLength" />
-
-
             <LinearLayout
-                android:id="@+id/ll_date"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:background="@drawable/bg_white_10radius"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_message"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="@dimen/dp5"
-                android:layout_marginEnd="@dimen/dp5"
-                android:layout_marginBottom="@dimen/dp5"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="@dimen/dp20"
-                    android:layout_height="@dimen/dp20"
-                    android:padding="@dimen/dp3"
-                    android:src="@drawable/clock_icon_3x"
-                    android:tint="?attr/app_text_color_sec" />
+                android:orientation="vertical">
 
                 <com.customviews.TypefaceTextView
-                    android:id="@+id/tv_date"
+                    android:id="@+id/tv_title"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:text="19 Feb 2018"
-                    android:textColor="?attr/app_text_color_sec"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="Test Message"
+                    android:textColor="@color/colorGray"
+                    android:textSize="?attr/app_text_size_normal"
+                    app:custom_font="?attr/app_font_medium" />
+
+                <com.customviews.ReadMoreTextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_title"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginRight="@dimen/dp10"
+                    android:background="@null"
+                    android:text="message"
+                    android:textColor="?attr/app_text_color"
                     android:textSize="?attr/app_text_size_small"
-                    app:custom_font="?attr/app_font_regular" />
+                    app:colorClickableText="?attr/app_link_text_color"
+                    app:custom_font="?attr/app_font_regular"
+                    app:trimLength="150"
+                    app:trimMode="trimModeLength" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_message"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginEnd="@dimen/dp5"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp20"
+                        android:layout_height="@dimen/dp20"
+                        android:padding="@dimen/dp3"
+                        android:src="@drawable/clock_icon_3x"
+                        android:tint="@color/colorGray" />
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="19 Feb 2018"
+                        android:textColor="@color/colorGray"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="?attr/app_font_regular" />
+
+                </LinearLayout>
 
             </LinearLayout>
+
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
