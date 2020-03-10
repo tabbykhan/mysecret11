@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#002341">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -324,7 +325,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="ENTRY FEE"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_regular" />
 
@@ -337,7 +338,7 @@
 
                     <com.customviews.TypefaceTextView
                         android:id="@+id/tv_entry"
-                        android:background="@drawable/bg_red_5radius"
+                        android:background="@drawable/oval_blue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:minWidth="@dimen/dp45"
@@ -359,7 +360,7 @@
                         android:gravity="center"
                         android:layout_marginStart="@dimen/dp7"
                         android:background="@drawable/bg_strike_line"
-                        android:textColor="@color/colorAppBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_bold" />
 
@@ -367,7 +368,8 @@
                         android:id="@+id/iv_discount_image"
                         android:layout_width="@dimen/dp70"
                         android:layout_height="@dimen/dp25"
-                        android:layout_marginStart="@dimen/dp10" />
+                        android:layout_marginStart="@dimen/dp10"
+                        android:tint="@color/colorWhite"/>
                 </LinearLayout>
 
             </LinearLayout>
@@ -379,7 +381,7 @@
                 android:layout_weight="0.20"
                 android:minHeight="@dimen/dp25"
                 android:paddingBottom="@dimen/dp2"
-                android:background="@drawable/bg_green_5radius_stroke1gray"
+                android:background="@drawable/bg_btn_rounded_orange"
                 android:gravity="center"
                 android:text="JOIN"
                 android:textColor="@color/colorWhite"
@@ -394,7 +396,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="-2dp"
             android:layout_marginEnd="-2dp"
-            android:background="@drawable/bg_white_stroke1gray"
+            android:background="@drawable/buttom_bg_contest"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:paddingTop="@dimen/dp10"
@@ -406,7 +408,7 @@
                 android:layout_height="@dimen/dp20"
                 android:layout_marginStart="@dimen/dp20"
                 android:src="@drawable/rupee_note_3x"
-                android:tint="?attr/app_link_text_color" />
+                android:tint="@color/colorWhite" />
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_leaderboard"
@@ -415,7 +417,7 @@
                 android:layout_marginStart="@dimen/dp20"
                 android:layout_weight="1"
                 android:text="View leaderboard"
-                android:textColor="?attr/app_text_color"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_small"
                 app:custom_font="@string/app_font_regular" />
 
@@ -424,7 +426,7 @@
                 android:layout_height="@dimen/dp12"
                 android:layout_marginEnd="@dimen/dp20"
                 android:src="@drawable/right_arrow_3x"
-                android:tint="?attr/app_text_color" />
+                android:tint="@color/colorWhite" />
         </LinearLayout>
 
         <View

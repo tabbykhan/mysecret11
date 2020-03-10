@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
-            android:background="@drawable/bg_red_80radius_stroke2orange"
+            android:background="@drawable/bg_btn_rounded_orange"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -33,7 +33,7 @@
                 android:layout_marginStart="@dimen/dp5"
                 android:gravity="center"
                 android:text="SUPER TEAM"
-                android:textColor="?attr/btn_text_color_sec"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/btn_text_size"
                 app:custom_font="?attr/app_font_regular" />
         </LinearLayout>
