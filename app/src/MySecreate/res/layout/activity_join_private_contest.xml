@@ -153,7 +153,7 @@
         <com.customviews.TypefaceTextView
             android:layout_width="match_parent"
             android:layout_height="?attr/btn_height"
-            android:background="@color/colorRed"
+            android:background="@drawable/bg_btn_rounded_orange"
             android:gravity="center"
             android:text="JOIN CONTEST"
             android:textColor="?attr/btn_text_color"
