@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@color/colorRed"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -27,21 +27,20 @@
                 android:visibility="gone" />
 
 
-            <androidx.cardview.widget.CardView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp10"
                 android:layout_marginTop="@dimen/dp20"
                 android:layout_marginEnd="@dimen/dp10"
                 android:layout_marginBottom="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardCornerRadius="@dimen/dp5"
-                app:cardElevation="@dimen/dp2"
-                app:contentPadding="@dimen/dp10">
+                android:background="@drawable/round_corner_white"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="15dp"
                     android:orientation="vertical">
 
 
@@ -50,7 +49,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp10"
                         android:text="Email Address *"
-                        android:textColor="?attr/app_text_color_sec"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_regular" />
 
@@ -63,7 +62,6 @@
                             android:id="@+id/et_email"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
                             android:ems="10"
                             android:gravity="center_vertical"
                             android:hint=""
@@ -74,7 +72,7 @@
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
                             android:textColor="?attr/app_text_color_sec"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:textColorHint="@color/colorWhite"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
 
@@ -89,9 +87,15 @@
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
                             android:text="Update"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="?attr/app_font_medium" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorWhite"
+                            android:layout_alignParentBottom="true"/>
                     </RelativeLayout>
 
                     <com.customviews.TypefaceTextView
@@ -99,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp15"
                         android:text="Mobile Number *"
-                        android:textColor="?attr/app_text_color_sec"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_regular" />
 
@@ -112,7 +116,6 @@
                             android:id="@+id/et_mobile"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
                             android:ems="10"
                             android:gravity="center_vertical"
                             android:hint=""
@@ -122,8 +125,8 @@
                             android:maxLength="10"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/app_text_color_sec"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
 
@@ -138,9 +141,14 @@
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
                             android:text="Update"
-                            android:textColor="?attr/app_link_text_color"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="?attr/app_font_medium" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorWhite"
+                            android:layout_alignParentBottom="true"/>
                     </RelativeLayout>
 
                     <LinearLayout
@@ -165,7 +173,7 @@
                                     android:id="@+id/et_f_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="?attr/et_height"
-                                    android:background="?attr/et_bg_drawable"
+                                    android:background="@null"
                                     android:ems="10"
                                     android:gravity="center_vertical"
                                     android:hint="First Name *"
@@ -174,12 +182,16 @@
                                     android:lines="1"
                                     android:maxLength="50"
                                     android:nextFocusRight="@+id/et_l_name"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:textColor="@color/colorWhite"
+                                    android:textColorHint="@color/colorWhite"
                                     android:textSize="?attr/et_text_size"
                                     app:custom_font="@string/app_font_regular" />
                             </com.google.android.material.textfield.TextInputLayout>
-
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorWhite"
+                                android:layout_alignParentBottom="true"/>
                         </LinearLayout>
 
                         <View
@@ -204,7 +216,7 @@
                                     android:id="@+id/et_l_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="?attr/et_height"
-                                    android:background="?attr/et_bg_drawable"
+                                    android:background="@null"
                                     android:ems="10"
                                     android:gravity="center_vertical"
                                     android:hint="Last Name"
@@ -213,12 +225,17 @@
                                     android:lines="1"
                                     android:maxLength="50"
                                     android:nextFocusRight="@+id/et_l_name"
-                                    android:textColor="?attr/et_text_color"
-                                    android:textColorHint="?attr/et_hint_text_color"
+                                    android:textColor="@color/colorWhite"
+                                    android:textColorHint="@color/colorWhite"
                                     android:textSize="?attr/et_text_size"
                                     app:custom_font="@string/app_font_regular" />
                             </com.google.android.material.textfield.TextInputLayout>
 
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorWhite"
+                                android:layout_alignParentBottom="true"/>
                         </LinearLayout>
 
 
@@ -229,7 +246,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp15"
                         android:text="Date Of Birth *"
-                        android:textColor="?attr/app_text_color_sec"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_regular" />
 
@@ -238,7 +255,6 @@
                         android:id="@+id/et_dob"
                         android:layout_width="match_parent"
                         android:layout_height="?attr/et_height"
-                        android:background="?attr/et_bg_drawable"
                         android:ems="10"
                         android:gravity="center_vertical"
                         android:hint=""
@@ -246,10 +262,15 @@
                         android:inputType="none"
                         android:lines="1"
                         android:maxLength="50"
-                        android:textColor="?attr/et_text_color"
-                        android:textColorHint="?attr/et_hint_text_color"
+                        android:textColor="@color/colorWhite"
+                        android:textColorHint="@color/colorWhite"
                         android:textSize="?attr/et_text_size"
                         app:custom_font="@string/app_font_regular" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorWhite"
+                        android:layout_alignParentBottom="true"/>
 
 
                     <LinearLayout
@@ -268,7 +289,7 @@
                                 android:id="@+id/et_address_line_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Address line 1"
@@ -276,12 +297,16 @@
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>
-
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorWhite"
+                            android:layout_alignParentBottom="true"/>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -293,7 +318,7 @@
                                 android:id="@+id/et_address_line_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Address line 2"
@@ -301,12 +326,16 @@
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>
-
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorWhite"
+                            android:layout_alignParentBottom="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -326,7 +355,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="State *"
-                                android:textColor="?attr/app_text_color_sec"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="?attr/app_text_size_normal"
                                 app:custom_font="@string/app_font_regular" />
 
@@ -335,7 +364,7 @@
                                 android:id="@+id/et_state"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint=""
@@ -343,10 +372,15 @@
                                 android:inputType="none"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorWhite"
+                                android:layout_alignParentBottom="true"/>
                         </LinearLayout>
 
                         <View
@@ -366,7 +400,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="City"
-                                android:textColor="?attr/app_text_color_sec"
+                                android:textColor="@color/colorWhite"
                                 android:textSize="?attr/app_text_size_normal"
                                 app:custom_font="@string/app_font_regular" />
 
@@ -375,7 +409,7 @@
                                 android:id="@+id/et_city"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint=""
@@ -383,10 +417,15 @@
                                 android:inputType="textCapWords"
                                 android:lines="1"
                                 android:maxLength="50"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/colorWhite"
+                                android:layout_alignParentBottom="true"/>
                         </LinearLayout>
 
 
@@ -409,7 +448,7 @@
                                 android:id="@+id/et_pincode"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
+                                android:background="@null"
                                 android:digits="0123456789"
                                 android:ems="10"
                                 android:gravity="center_vertical"
@@ -418,11 +457,16 @@
                                 android:inputType="number"
                                 android:lines="1"
                                 android:maxLength="6"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/colorWhite"
+                            android:layout_alignParentBottom="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -439,7 +483,7 @@
                             android:layout_width="0dp"
                             android:layout_height="?attr/et_height"
                             android:layout_weight="01"
-                            android:background="?attr/btn_bg_drawable"
+                            android:background="@drawable/bg_btn_rounded_orange"
                             android:gravity="center"
                             android:text="UPDATE"
                             android:textColor="?attr/btn_text_color"
@@ -449,7 +493,7 @@
 
 
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </RelativeLayout>
 
         </LinearLayout>
 

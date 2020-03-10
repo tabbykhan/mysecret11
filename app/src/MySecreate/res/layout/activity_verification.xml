@@ -32,14 +32,15 @@
                 app:custom_font="@string/app_font_medium"
                 app:defaultPaddingBottom="@dimen/dp10"
                 app:defaultPaddingTop="@dimen/dp10"
-                app:defaultTextColor="@color/tab_text_color"
+                app:defaultTextColor="@color/colorGray"
                 app:defaultTextSize="?attr/app_text_size_normal"
                 app:fullHeightIndicator="false"
-                app:indicatorColor="@color/tab_indication_color"
+                app:indicatorColor="@color/colorOrange"
                 app:indicatorHeight="@dimen/dp2"
                 app:indicatorPadding="0dp"
-                app:selTextColor="@color/tab_indication_color"
+                app:selTextColor="@color/colorOrange"
                 app:shouldExpand="true"
+                android:background="@color/colorRed"
                 app:triangleIndicatorVisible="false" />
 
         </RelativeLayout>
@@ -47,7 +48,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/colorScreenBg" />
+            android:background="@color/colorOrange" />
 
 
         <androidx.viewpager.widget.ViewPager

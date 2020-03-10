@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@color/colorRed"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -14,19 +14,29 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/fragment_toolbar">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/refer_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp120"
-                android:src="@drawable/logo_3x" />
+                android:src="@drawable/logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_white"
+                android:layout_margin="@dimen/dp20"
+                android:layout_below="@id/refer_image"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_refer_title"
@@ -35,7 +45,7 @@
                 android:layout_marginTop="@dimen/dp10"
                 android:gravity="center"
                 android:text="Kick off your friend's TheTeam11 journey!"
-                android:textColor="?attr/app_text_color"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_big"
                 app:custom_font="@string/app_font_medium" />
 
@@ -47,7 +57,7 @@
                 android:layout_marginTop="@dimen/dp10"
                 android:gravity="center"
                 android:text="For every friend that plays, you both get 100 for free!"
-                android:textColor="?attr/app_text_color"
+                android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_extra_small"
                 app:custom_font="@string/app_font_regular" />
 
@@ -67,14 +77,15 @@
                     android:gravity="center"
                     android:padding="@dimen/dp5"
                     android:text="How it Works"
-                    android:textColor="?attr/app_link_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
+                    android:background="@drawable/bg_blue"
                     app:custom_font="@string/app_font_regular" />
 
                 <View
-                    android:layout_width="@dimen/dp1"
+                    android:layout_width="@dimen/dp10"
                     android:layout_height="match_parent"
-                    android:background="?attr/app_divider_color">
+                    android:background="@color/transparent_color">
 
                 </View>
 
@@ -86,7 +97,8 @@
                     android:gravity="center"
                     android:padding="@dimen/dp5"
                     android:text="Rules of fairPlay"
-                    android:textColor="?attr/app_link_text_color"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/bg_blue"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
 
@@ -119,7 +131,7 @@
                         android:layout_marginTop="@dimen/dp10"
                         android:gravity="center"
                         android:text="SHARE YOUR INVITE CODE"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorBlack"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -155,7 +167,7 @@
                         android:layout_weight="1"
                         android:orientation="horizontal"
                         android:layout_marginTop="@dimen/dp10"
-                        android:background="@color/colorActivateGreen">
+                        android:background="@drawable/bg_btn_rounded_orange">
 
                         <ImageView
                             android:id="@+id/iv_whatsapp"
@@ -171,8 +183,8 @@
                             android:gravity="center"
                             android:text="Invite Via whatsapp"
                             android:textColor="@color/colorWhite"
-                            android:textSize="?attr/app_text_size_normal"
-                            app:custom_font="@string/app_font_regular" />
+                            android:textSize="@dimen/sp20"
+                            app:custom_font="@string/app_font_bold" />
 
                     </LinearLayout>
                     <com.customviews.TypefaceTextView
@@ -339,8 +351,9 @@
                         android:tint="@color/colorAppBlack" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
     </ScrollView>

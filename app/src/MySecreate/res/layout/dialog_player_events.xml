@@ -223,7 +223,7 @@
                 android:id="@+id/ll_title_lay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorGray50"
+                android:background="#056AC6"
                 android:orientation="horizontal"
                 android:paddingTop="@dimen/dp10"
                 android:paddingBottom="@dimen/dp10">
@@ -235,7 +235,7 @@
                     android:gravity="left"
                     android:paddingStart="@dimen/dp20"
                     android:text="EVENT"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_medium" />
 
@@ -245,7 +245,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="ACTUAL"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_medium" />
 
@@ -256,7 +256,7 @@
                     android:gravity="center_vertical|right"
                     android:paddingEnd="@dimen/dp20"
                     android:text="POINTS"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
                     app:custom_font="@string/app_font_medium" />
 

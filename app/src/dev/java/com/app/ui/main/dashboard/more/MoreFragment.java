@@ -282,7 +282,7 @@ public class MoreFragment extends AppBaseFragment {
         Bundle bundle = new Bundle();
         switch (v.getId()) {
 
-            case R.id.rl_tree_vew:
+            case R.id.rl_invite:
                 if (getActivity() == null) return;
                 ((AppBaseActivity) getActivity()).goToInviteActivity(null);
                 break;
