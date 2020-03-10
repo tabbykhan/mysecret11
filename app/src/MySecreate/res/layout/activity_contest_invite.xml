@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color"
+    android:background="@color/colorRed"
     android:clickable="true"
     android:orientation="vertical">
 
@@ -44,6 +44,7 @@
                         android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:orientation="horizontal"
+                        android:background="#056AC6"
                         android:padding="@dimen/dp5">
 
                         <com.customviews.TintImageView
@@ -53,7 +54,8 @@
                             android:layout_marginLeft="@dimen/dp5"
                             android:layout_width="@dimen/dp15"
                             android:src="@drawable/tickets_icon"
-                            app:tintColorStateList="@color/sport_textcolor_selector_green_black" />
+                            android:tint="@color/colorWhite"
+                            app:tintColorStateList="@color/colorWhite" />
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_invite_code"
@@ -63,7 +65,7 @@
                             android:layout_marginLeft="@dimen/dp5"
                             android:layout_width="wrap_content"
                             android:text="Enter invite code"
-                            android:textColor="@color/sport_textcolor_selector_green_black"
+                            android:textColor="@color/colorWhite"
                             android:textSize="?attr/app_text_size_more_normal"
                             app:custom_font="?attr/app_font_medium" />
 
