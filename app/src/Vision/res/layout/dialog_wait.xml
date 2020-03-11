@@ -30,7 +30,7 @@
             <com.tuyenmonkey.mkloader.MKLoader
                 android:layout_width="@dimen/dp60"
                 android:layout_height="@dimen/dp60"
-                app:mk_color="?attr/dialog_wait_loader_color"
+                app:mk_color="@color/vision_green"
                 app:mk_type="LineSpinner" />
 
         </LinearLayout>

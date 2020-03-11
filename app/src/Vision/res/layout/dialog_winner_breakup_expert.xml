@@ -30,7 +30,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_red_top5radius"
+                    android:background="@drawable/vision_5top_radius"
                     android:paddingTop="@dimen/dp10"
                     android:paddingBottom="@dimen/dp10">
 
@@ -173,7 +173,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="3 X "
                                 android:layout_marginLeft="@dimen/dp5"
-                                android:textColor="@color/colorRed"
+                                android:textColor="@color/vision_green"
                                 android:textSize="?attr/app_text_size_big"
                                 app:custom_font="?attr/app_font_bold" />
 

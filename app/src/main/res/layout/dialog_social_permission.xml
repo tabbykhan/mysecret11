@@ -60,7 +60,7 @@
                     android:gravity="center"
                     android:minWidth="@dimen/dp60"
                     android:text="OK"
-                    android:textColor="?attr/app_link_text_color"
+                    android:textColor="@color/colorBlack"
                     android:textSize="?attr/app_text_size_big"
                     app:custom_font="@string/app_font_regular" />
             </LinearLayout>

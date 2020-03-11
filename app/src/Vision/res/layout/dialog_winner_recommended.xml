@@ -27,7 +27,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_red_top5radius"
+                    android:background="@drawable/vision_5top_radius"
                     android:paddingTop="@dimen/dp10"
                     android:paddingBottom="@dimen/dp10">
 
@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="Choose total no. of winners"
-                    android:textColor="@color/colorRed"
+                    android:textColor="@color/vision_green"
                     android:padding="@dimen/dp8"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_medium" />

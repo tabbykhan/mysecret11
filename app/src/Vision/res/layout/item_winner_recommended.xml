@@ -32,7 +32,7 @@
                     android:layout_gravity="center_horizontal"
                     android:text="4 Winners"
                     android:maxLines="1"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/vision_green"
                     android:padding="@dimen/dp8"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_medium" />

@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#66ffffff">
 
     <LinearLayout
         android:id="@+id/ll_data_lay"
@@ -21,7 +22,7 @@
             android:gravity="left"
             android:paddingStart="@dimen/dp20"
             android:text="Name"
-            android:textColor="?attr/app_text_color"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_normal"
             app:custom_font="@string/app_font_regular" />
 
@@ -32,7 +33,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="1"
-            android:textColor="?attr/app_text_color"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_normal"
             app:custom_font="@string/app_font_regular" />
 
@@ -44,7 +45,7 @@
             android:gravity="center_vertical|right"
             android:paddingEnd="@dimen/dp20"
             android:text="1"
-            android:textColor="?attr/app_text_color"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/app_text_size_normal"
             app:custom_font="@string/app_font_regular" />
 
