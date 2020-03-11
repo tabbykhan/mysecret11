@@ -353,9 +353,10 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
-                        android:layout_width="@dimen/dp25"
-                        android:layout_height="@dimen/dp25"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
                         android:layout_marginEnd="@dimen/dp10"
                         android:padding="@dimen/dp2"
                         android:src="@drawable/password_icon"

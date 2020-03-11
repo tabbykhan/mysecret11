@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/app_screen_bg_color">
+    app:cardBackgroundColor="@color/my_secreate_bg_coot">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_data"
@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/dp10"
         android:layout_marginRight="@dimen/dp10"
         android:layout_marginBottom="@dimen/dp2"
-        app:cardBackgroundColor="@color/colorWhite"
+        app:cardBackgroundColor="@color/my_secreate_bg_coot"
         app:cardCornerRadius="@dimen/dp5">
 
         <LinearLayout
@@ -37,7 +37,7 @@
                     android:layout_marginEnd="@dimen/dp10"
                     android:layout_weight="1"
                     android:text="Vishnu00073553 (1)"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
                     app:custom_font="?attr/app_font_medium" />
 
@@ -99,7 +99,7 @@
                         android:paddingBottom="@dimen/dp2"
                         android:singleLine="true"
                         android:text="n.vishnu"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="?attr/app_font_bold" />
                 </LinearLayout>
@@ -181,7 +181,7 @@
                         android:paddingBottom="@dimen/dp2"
                         android:singleLine="true"
                         android:text="n.vishnu"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="?attr/app_font_bold" />
                 </LinearLayout>
@@ -220,7 +220,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(1)"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="?attr/app_font_regular" />
 
@@ -249,7 +249,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(1)"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="?attr/app_font_regular" />
 
@@ -276,7 +276,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(1)"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="?attr/app_font_regular" />
 
@@ -302,7 +302,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1"
-                        android:textColor="@color/colorBlack"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="?attr/app_font_regular" />
 
@@ -334,7 +334,7 @@
                         android:layout_marginEnd="@dimen/dp10"
                         android:padding="@dimen/dp2"
                         android:src="@drawable/edit_3x"
-                        android:tint="@color/colorRed" />
+                        android:tint="@color/colorWhite" />
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -359,12 +359,12 @@
                         android:layout_marginEnd="@dimen/dp10"
                         android:padding="@dimen/dp2"
                         android:src="@drawable/password_icon"
-                        android:tint="@color/colorRed" />
+                        android:tint="@color/colorWhite" />
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="PREVIEW"
-                        android:textColor="@color/colorGray"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="?attr/app_font_medium" />
 
@@ -383,7 +383,7 @@
                         android:layout_marginEnd="@dimen/dp10"
                         android:padding="@dimen/dp2"
                         android:src="@drawable/clone_3x"
-                        android:tint="@color/colorRed" />
+                        android:tint="@color/colorWhite" />
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

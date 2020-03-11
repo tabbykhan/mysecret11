@@ -249,7 +249,7 @@ public class ContestDetailAdapter extends AppBaseRecycleAdapter {
                 UserModel userModel = getUserModel();
                 if (userModel != null) {
                     if (customerTeamModel.isMyTeam(userModel.getId())) {
-                        cv_data.setCardBackgroundColor(context.getResources().getColor(R.color.colorPrimary20));
+                        cv_data.setCardBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
                         if(isBeatExpertContest()){
                             updateViewVisibitity(tv_bet_expert_entry_fee,View.VISIBLE);
                         }else{
@@ -265,6 +265,7 @@ public class ContestDetailAdapter extends AppBaseRecycleAdapter {
                 }
 
             }
+
 
 
         }

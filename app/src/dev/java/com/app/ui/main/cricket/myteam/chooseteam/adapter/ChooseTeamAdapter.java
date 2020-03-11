@@ -127,7 +127,7 @@ public class ChooseTeamAdapter extends AppBaseRecycleAdapter {
     private class ViewHolder extends BaseViewHolder {
 
         FrameLayout fl_frame_lay;
-        CardView cv_data;
+        LinearLayout cv_data;
         CheckBox cb_team_name;
         TextView tv_team_name;
         TextView tv_already_added;

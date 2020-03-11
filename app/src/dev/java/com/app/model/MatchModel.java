@@ -1,5 +1,6 @@
 package com.app.model;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseModel;
 import com.app.ui.MyApplication;
@@ -237,15 +238,33 @@ public class MatchModel extends AppBaseModel {
     }
 
     public int getTimerColor(){
-        if (isFixtureMatch()) {
-            return R.color.colorRed;
-        } else if (isLiveMatch()) {
-            return R.color.colorRed;
-        } else if (isAbondentMatch()) {
-            return R.color.colorRed;
-        }  else {
-            return R.color.colorActivateGreen;
+
+        if ((ConstantsFlavor.type == ConstantsFlavor.Type.MySecreate)){
+            if (isFixtureMatch()) {
+                return R.color.colorWhite;
+            } else if (isLiveMatch()) {
+                return R.color.colorWhite;
+            } else if (isAbondentMatch()) {
+                return R.color.colorWhite;
+            }  else {
+                return R.color.colorActivateGreen;
+            }
+        }else {
+            if (isFixtureMatch()) {
+
+                return R.color.colorRed;
+            } else if (isLiveMatch()) {
+                return R.color.colorRed;
+            } else if (isAbondentMatch()) {
+                return R.color.colorRed;
+            }  else {
+                return R.color.colorActivateGreen;
+            }
+
         }
+
+
+
     }
 
     public int getTimerColor2(){
