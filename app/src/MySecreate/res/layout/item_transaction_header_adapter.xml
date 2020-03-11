@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2018-12-02"
-                android:textColor="@color/colorBlack"
+                android:textColor="#ffffff"
                 android:textSize="?attr/app_text_size_normal"
                 app:custom_font="@string/app_font_bold" />
         </LinearLayout>
