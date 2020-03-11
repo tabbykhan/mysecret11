@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
+    android:background="@color/my_secreate_bg_coot"
     android:orientation="horizontal">
 
     <RelativeLayout
