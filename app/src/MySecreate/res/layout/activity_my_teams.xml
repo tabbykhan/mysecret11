@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@color/my_secreate_bg_coot">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -21,11 +21,13 @@
         android:id="@+id/swipe_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/my_secreate_bg_coot"
         android:layout_below="@+id/ll_top">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
+            android:background="@color/my_secreate_bg_coot"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_my_team_adapter" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -36,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorRed">
+        android:background="@color/my_secreate_bg_coot">
 
         <LinearLayout
             android:id="@+id/ll_new_team"
@@ -53,7 +55,7 @@
                 android:layout_width="0dp"
                 android:layout_height="?attr/et_height"
                 android:layout_weight="0.5"
-                android:background="@drawable/bg_white_10radius"
+                android:background="@drawable/bg_btn_rounded_orange"
                 android:gravity="center"
                 android:text="CREATE TEAM 1"
                 android:textColor="?attr/app_text_color"
