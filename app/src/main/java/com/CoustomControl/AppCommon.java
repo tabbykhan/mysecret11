@@ -63,16 +63,21 @@ public class AppCommon {
         }
         return false;
     }
-    public void setUserLogin(String userId) {
+    public void setUserLogin(String userId , String password) {
         SharedPreferences.Editor editor = mContext.getSharedPreferences(MyPreference.mUserLogin, MODE_PRIVATE).edit();
         editor.putBoolean(MyPreference.login, true);
         editor.putString(MyPreference.userId, userId);
+        editor.putString(MyPreference.password, password);
         editor.apply();
     }
 
     public boolean isUserLogIn() {
         SharedPreferences prefs = mContext.getSharedPreferences(MyPreference.mUserLogin, MODE_PRIVATE);
         return prefs.getBoolean(MyPreference.login, false);
+    }
+    public String getPassword() {
+        SharedPreferences prefs = mContext.getSharedPreferences(MyPreference.mUserLogin, MODE_PRIVATE);
+        return prefs.getString(MyPreference.password, "");
     }
     public void onHideKeyBoard(Activity activity) {
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -157,5 +162,6 @@ public class AppCommon {
                 .setImageRequest(request)
                 .build();
     }
+
 
 }

@@ -23,6 +23,8 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.ConstantsFlavor;
+import com.CoustomControl.AppCommon;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -75,6 +77,7 @@ public class RegisterActivity extends AppBaseActivity {
     EditText et_email;
     EditText et_mobile;
     EditText et_refer_code;
+    EditText et_userId;
     TypefaceEditText et_password;
     CheckBox cb_terms;
     TextView tv_terms;
@@ -82,6 +85,7 @@ public class RegisterActivity extends AppBaseActivity {
     TextView tv_login;
     TextView tv_referal_msg;
     CheckBox cb_password_show_hide;
+
 
     private AutoCompleteHelper autoCompleteHelper;
     private RecyclerView recycler_view;
@@ -139,6 +143,7 @@ public class RegisterActivity extends AppBaseActivity {
         et_mobile = findViewById(R.id.et_mobile);
         et_refer_code = findViewById(R.id.et_refer_code);
         et_password = findViewById(R.id.et_password);
+        et_userId = findViewById(R.id.et_userId);
         cb_terms = findViewById(R.id.cb_terms);
         tv_terms = findViewById(R.id.tv_terms);
         tv_register = findViewById(R.id.tv_register);
@@ -435,6 +440,7 @@ public class RegisterActivity extends AppBaseActivity {
         String referral_code = et_refer_code.getText().toString().trim();
         String password = et_password.getText().toString();
         String team_name = et_team_name.getText().toString();
+        String userId = et_userId.getText().toString();
 
         if(!team_name.isEmpty()){
             if (team_name.length() < 8 || team_name.length() > 21) {
@@ -462,6 +468,10 @@ public class RegisterActivity extends AppBaseActivity {
         }
         if (password.isEmpty()) {
             showErrorMsg("Please enter password.");
+            return;
+        }
+        if (userId.isEmpty()) {
+            showErrorMsg("Please enter UserID.");
             return;
         }
 
@@ -494,9 +504,13 @@ public class RegisterActivity extends AppBaseActivity {
         requestModel.referral_code = referral_code;
         requestModel.password = password;
         requestModel.team_name = team_name;
+        requestModel.user_id = userId;
 
         displayProgressBar(false, "Wait...");
         getWebRequestHelper().newUser(requestModel, this);
+        if(ConstantsFlavor.type == ConstantsFlavor.Type.vision){
+            AppCommon.getInstance(this).setUserLogin(requestModel.user_id , requestModel.password);
+        }
     }
 
     private void callSocialLogin(SocialData socialData) {

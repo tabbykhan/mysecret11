@@ -225,6 +225,7 @@ public class LoginActivity extends AppBaseActivity {
         if (ConstantsFlavor.type == ConstantsFlavor.Type.vision) {
            // callMLMLoginApi(requestModel , new LoginEntityClass(getEmail() , password));
             getWebRequestHelper().login(requestModel, this);
+            AppCommon.getInstance(this).setUserLogin(requestModel.email , requestModel.password);
         } else
             getWebRequestHelper().login(requestModel, this);
     }

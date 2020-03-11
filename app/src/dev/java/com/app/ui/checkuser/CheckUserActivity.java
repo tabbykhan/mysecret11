@@ -334,16 +334,21 @@ public class CheckUserActivity extends AppBaseActivity {
 
             if (Patterns.EMAIL_ADDRESS.matcher(username).matches()) {
                 requestModel.type = "E";
+                displayProgressBar(false, "Wait...");
+                getWebRequestHelper().checkUser(requestModel, this);
             }else {
-                showErrorMsg("Please enter valid Email.");
+                Bundle bundle = new Bundle();
+                bundle.putString(EMAIL, username);
+                goToLoginActivity(bundle);
+                //showErrorMsg("Please enter valid Email.");
             }
             if (requestModel.type == null) {
                 showErrorMsg("Please enter valid Email.");
                 return;
             }
 
-            displayProgressBar(false, "Wait...");
-            getWebRequestHelper().checkUser(requestModel, this);
+           /* displayProgressBar(false, "Wait...");
+            getWebRequestHelper().checkUser(requestModel, this);*/
         }else {
             String username = et_username.getText().toString().trim();
             if (username.isEmpty()) {

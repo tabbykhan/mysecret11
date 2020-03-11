@@ -357,7 +357,6 @@ public class RegisterMLMActivity extends AppBaseActivity {
 
     private void setupTermsButton() {
         tv_terms.setMovementMethod(LinkMovementMethod.getInstance());
-
         String terms = "T&Cs";
         Pattern compile = Pattern.compile(terms);
         Matcher m1 = compile.matcher(tv_terms.getText().toString());
@@ -573,10 +572,11 @@ public class RegisterMLMActivity extends AppBaseActivity {
         registerRequestModel.setFullname(name);
         registerRequestModel.setRef_user_id(ref_user_id);
         registerRequestModel.setSponsor_name("");
-        registerRequestModel.setUserId(sponserId);
+        registerRequestModel.setUserId(userId);
 
         displayProgressBar(false, "Wait...");
         callMLMRegistration(registerRequestModel ,requestModel);
+        AppCommon.getInstance(this).setUserLogin(userId , password);
        // getWebRequestHelper().newUser(requestModel, this);
     }
 

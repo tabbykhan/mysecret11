@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class RegistrationMLMP implements Serializable {
 
-    private String confirm_password , email , fullname , position , ref_user_id , mobile , userId , password , sponsor_name;
+    private String confirm_password , email , fullname , position , ref_user_id , mobile , user_id , password , sponsor_name;
 
     public String getConfirm_password() {
         return confirm_password;
@@ -55,11 +55,11 @@ public class RegistrationMLMP implements Serializable {
     }
 
     public String getUserId() {
-        return userId;
+        return user_id;
     }
 
     public void setUserId(String userId) {
-        this.userId = userId;
+        this.user_id = userId;
     }
 
     public String getPassword() {

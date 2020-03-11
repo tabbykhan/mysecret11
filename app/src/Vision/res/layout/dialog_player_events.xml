@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         app:behavior_hideable="true"
         app:behavior_peekHeight="0dp"
+        android:background="@drawable/vision_bg"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
         <!--app:layout_behavior="android.support.design.widget.BottomSheetBehavior"-->
 
@@ -19,7 +20,7 @@
             android:id="@+id/ll_data_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorWhite"
+            android:background="@drawable/vision_bg"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -36,7 +37,7 @@
                     android:layout_marginStart="@dimen/dp10"
                     android:gravity="center"
                     android:text="POINTS BREAKUP"
-                    android:textColor="?attr/btn_text_color"
+                    android:textColor="@color/btn_color"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_regular" />
 
@@ -49,7 +50,7 @@
                     android:layout_marginEnd="@dimen/dp15"
                     android:padding="@dimen/dp5"
                     android:src="@drawable/close_3x"
-                    android:tint="?attr/btn_text_color" />
+                    android:tint="@color/btn_color" />
 
             </RelativeLayout>
 
@@ -61,7 +62,7 @@
                 android:layout_marginTop="@dimen/dp10"
                 android:layout_marginRight="@dimen/dp20"
                 android:layout_marginBottom="@dimen/dp20"
-                app:cardBackgroundColor="@color/colorWhite"
+                app:cardBackgroundColor="@color/vision_green"
                 app:cardCornerRadius="@dimen/dp10"
                 app:cardElevation="@dimen/dp7">
 
@@ -120,7 +121,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Player Name"
-                                    android:textColor="?attr/app_text_color"
+                                    android:textColor="@color/colorWhite"
                                     android:textSize="?attr/app_text_size_extra_big"
                                     app:custom_font="?attr/app_font_regular" />
 
@@ -149,7 +150,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="POINTS"
-                                        android:textColor="@color/colorAppBlackAA"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_small"
                                         app:custom_font="?attr/app_font_regular" />
 
@@ -158,7 +159,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="128.0"
-                                        android:textColor="@color/colorBlack"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_big"
                                         app:custom_font="@string/app_font_regular" />
                                 </LinearLayout>
@@ -174,7 +175,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="SELECTED BY"
-                                        android:textColor="@color/colorAppBlackAA"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_small"
                                         app:custom_font="?attr/app_font_regular" />
 
@@ -183,7 +184,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="58%"
-                                        android:textColor="@color/colorBlack"
+                                        android:textColor="@color/colorWhite"
                                         android:textSize="?attr/app_text_size_extra_big"
                                         app:custom_font="@string/app_font_regular" />
                                 </LinearLayout>
@@ -209,7 +210,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="@dimen/dp10"
                                     android:text="Not in your team"
-                                    android:textColor="@color/colorAppBlackAA"
+                                    android:textColor="@color/colorWhite"
                                     android:textSize="?attr/app_text_size_small"
                                     app:custom_font="?attr/app_font_regular" />
                             </LinearLayout>

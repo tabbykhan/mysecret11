@@ -363,7 +363,7 @@
                             android:gravity="center_vertical"
                             android:hint="UserID"
                             android:imeOptions="actionDone"
-                            android:inputType="textPassword"
+                            android:inputType="text"
                             android:lines="1"
                             android:maxLength="50"
                             android:padding="@dimen/dp10"

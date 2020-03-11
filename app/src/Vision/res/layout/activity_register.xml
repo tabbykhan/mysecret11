@@ -208,6 +208,53 @@
                         android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
                         app:custom_font="@string/app_font_regular" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp2"
+                        android:layout_marginTop="@dimen/dp15"
+                        android:layout_marginEnd="@dimen/dp2"
+                        android:layout_marginBottom="@dimen/dp2"
+                        android:background="@drawable/et_vistion"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp20"
+                            android:layout_height="@dimen/dp20"
+                            android:layout_marginStart="@dimen/dp5"
+                            android:src="@drawable/user_name"
+                            android:tint="@color/colorWhite" />
+
+                        <com.customviews.TypefaceEditText
+                            android:id="@+id/et_userId"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/et_height"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:hint="UserID"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"
+                            android:lines="1"
+                            android:maxLength="50"
+                            android:padding="@dimen/dp10"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="?attr/et_text_size"
+                            app:custom_font="@string/app_font_regular" />
+                    </LinearLayout>
+
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/dp5"
+                        android:text="This is your UserID"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
 
 
                     <LinearLayout

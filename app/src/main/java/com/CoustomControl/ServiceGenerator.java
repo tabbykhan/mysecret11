@@ -41,7 +41,7 @@ public class ServiceGenerator {
 
                     // Request customization: add request headers
                     Request.Builder requestBuilder = original.newBuilder()
-                            .header("Authorization", authToken)
+                            .header("Authorization", "Bearer "+authToken)
                             // .header("Content-Type","application/x-www-form-urlencoded")
 //                            .header("Content-Type","application/json")
                             .method(original.method(), original.body());

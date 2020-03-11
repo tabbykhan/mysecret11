@@ -11,5 +11,6 @@ public class NewUserRequestModel extends AppBaseRequestModel {
     public String password;
     public String referral_code;
     public String team_name;
+    public String user_id;
 
 }

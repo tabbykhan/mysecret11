@@ -5,8 +5,8 @@ extern "C" {
 
 std::string getDomain(
         JNIEnv *env) {
-    std::string data = "http://139.162.28.58/";
-   // std::string data = "http://139.162.187.28/"; //http://139.162.187.28/admin/
+    //std::string data = "http://139.162.28.58/";
+    std::string data = "http://139.162.187.28/"; //new url
 
     return data;
 
@@ -15,8 +15,8 @@ std::string getDomain(
 
 std::string getBaseUrl(
         JNIEnv *env) {
-    std::string data = getDomain(env) + "imuons/admin/apis/mobile/v1/";
-    //std::string data = getDomain(env) + "admin/apis/mobile/v1/";
+    //std::string data = getDomain(env) + "imuons/admin/apis/mobile/v1/";
+    std::string data = getDomain(env) + "admin/apis/mobile/v1/";  // new url
     return data;
 }
 

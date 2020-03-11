@@ -7,4 +7,5 @@ class MyPreference {
     public static String userObject = "UserObject";
     public static String bidCount = "BidCount";
     public static String TokenValue = "LAST_UPDATE";
+    public static String password = "PASSWORD";
 }

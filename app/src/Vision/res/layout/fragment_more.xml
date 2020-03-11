@@ -23,7 +23,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/rl_tree_vew"
+                android:id="@+id/rl_invite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/transparent_color">
