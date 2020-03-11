@@ -144,8 +144,8 @@ public class BankAccountFragment extends AppBaseFragment {
 
         } else {
             tv_verify_title.setText("VERIFY BANK ACCOUNT");
-            tv_verify_title.setTextColor(getResources().getColor(R.color.colorBlack));
-            cv_bank_detail.setCardBackgroundColor(getResources().getColor(R.color.transparent_color));
+            tv_verify_title.setTextColor(getResources().getColor(R.color.colorWhite));
+            cv_bank_detail.setCardBackgroundColor(getResources().getColor(R.color.colorWhite));
             updateViewVisibitity(tv_upload_account_proof, View.VISIBLE);
             updateViewVisibitity(tv_proceed, View.VISIBLE);
             updateViewVisibitity(tv_reason, View.GONE);

@@ -40,6 +40,8 @@
                     android:id="@+id/cb_team_name"
                     android:layout_width="@dimen/dp25"
                     android:layout_height="@dimen/dp25"
+                    android:backgroundTint="@color/colorBlack"
+                    android:buttonTintMode="add"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:button="@drawable/selector_winners_checkbox_choose" />

@@ -13,6 +13,7 @@
         android:scrollbarThumbVertical="@drawable/bg_transparent">
 
         <LinearLayout
+            android:background="#012241"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -24,7 +25,7 @@
                 android:layout_marginStart="@dimen/dp10"
                 android:layout_marginEnd="@dimen/dp10"
                 android:layout_marginBottom="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorActivateGreen"
+                app:cardBackgroundColor="#ffffff"
                 app:cardCornerRadius="@dimen/dp5"
                 app:cardElevation="@dimen/dp3">
 
@@ -32,7 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/dp1"
-                    android:background="@drawable/bg_white_5radius"
+                    android:background="#012241"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/dp10"
@@ -42,8 +43,8 @@
                         android:layout_width="@dimen/dp25"
                         android:layout_height="@dimen/dp25"
                         android:layout_marginStart="@dimen/dp10"
-                        android:src="@drawable/cellphone_3x"
-                        android:tint="@color/colorActivateGreen" />
+                        android:src="@drawable/ic_phone_android_white_24dp"
+                         />
 
 
                     <LinearLayout
@@ -58,7 +59,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Your mobile number is verified"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="#ffffff"
                             android:textSize="?attr/app_text_size_small"
                             app:custom_font="?attr/app_font_regular" />
 
@@ -90,6 +91,7 @@
                 app:cardElevation="@dimen/dp3">
 
                 <LinearLayout
+                    android:background="#012241"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -121,6 +123,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:background="#012241"
                         android:id="@+id/ll_already_mobile"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -170,7 +173,7 @@
                             android:layout_marginTop="@dimen/dp20"
                             android:layout_marginEnd="@dimen/dp20"
                             android:layout_marginBottom="@dimen/dp20"
-                            android:background="@drawable/bg_red_5radius"
+                            android:background="@drawable/bg_btn_rounded_orange"
                             android:paddingBottom="@dimen/dp4"
                             android:gravity="center"
                             android:text="VERIFY"
@@ -181,6 +184,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:background="#012241"
                         android:id="@+id/ll_mobile_enter_lay"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -234,7 +238,7 @@
                             android:layout_marginTop="@dimen/dp20"
                             android:layout_marginEnd="@dimen/dp20"
                             android:layout_marginBottom="@dimen/dp20"
-                            android:background="@drawable/bg_red_5radius"
+                            android:background="@drawable/bg_btn_rounded_orange"
                             android:paddingBottom="@dimen/dp4"
                             android:gravity="center"
                             android:text="SEND OTP"
@@ -256,7 +260,7 @@
                 android:layout_marginStart="@dimen/dp10"
                 android:layout_marginEnd="@dimen/dp10"
                 android:layout_marginBottom="@dimen/dp10"
-                app:cardBackgroundColor="@color/colorActivateGreen"
+                app:cardBackgroundColor="#ffffff"
                 app:cardCornerRadius="@dimen/dp5"
                 app:cardElevation="@dimen/dp3">
 
@@ -264,7 +268,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/dp1"
-                    android:background="@drawable/bg_white_5radius"
+                    android:background="#012241"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingTop="@dimen/dp10"
@@ -275,7 +279,7 @@
                         android:layout_height="@dimen/dp25"
                         android:layout_marginStart="@dimen/dp10"
                         android:src="@drawable/envelope_3x"
-                        android:tint="@color/colorActivateGreen" />
+                         />
 
 
                     <LinearLayout
@@ -290,7 +294,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Your email address is verified"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="#ffffff"
                             android:textSize="?attr/app_text_size_small"
                             app:custom_font="?attr/app_font_regular" />
 
@@ -322,6 +326,7 @@
                 app:cardElevation="@dimen/dp3">
 
                 <LinearLayout
+                    android:background="#012241"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -347,7 +352,7 @@
                             android:layout_marginEnd="@dimen/dp10"
                             android:layout_weight="1"
                             android:text="Verify your email"
-                            android:textColor="?attr/app_text_color"
+                            android:textColor="#ffffff"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="?attr/app_font_regular" />
                     </LinearLayout>
@@ -371,7 +376,7 @@
                                 android:layout_width="@dimen/dp25"
                                 android:layout_height="@dimen/dp25"
                                 android:src="@drawable/warning"
-                                android:tint="@color/colorOrange" />
+                                android:tint="#ffffff" />
 
                             <com.customviews.TypefaceTextView
                                 android:layout_width="0dp"
@@ -379,7 +384,7 @@
                                 android:layout_marginStart="@dimen/dp10"
                                 android:layout_weight="1"
                                 android:text="click on the verification link in the mail we sent you to verify your email"
-                                android:textColor="@color/colorRed"
+                                android:textColor="#f1ed99"
                                 android:textSize="?attr/app_text_size_normal"
                                 app:custom_font="?attr/app_font_regular" />
                         </LinearLayout>

@@ -122,8 +122,8 @@ public class PanCardFragment extends AppBaseFragment {
             if (pancard.isInReview() || pancard.isApproved()) {
                 if (pancard.isInReview()) {
                     tv_verify_title.setText("PAN details are under review");
-                    tv_verify_title.setTextColor(getResources().getColor(R.color.colorOrange));
-                    cv_data.setCardBackgroundColor(getResources().getColor(R.color.colorOrange));
+                    tv_verify_title.setTextColor(getResources().getColor(R.color.colorWhite));
+                    cv_data.setCardBackgroundColor(getResources().getColor(R.color.colorWhite));
                 } else {
                     tv_verify_title.setText("PAN details verified");
                     tv_verify_title.setTextColor(getResources().getColor(R.color.colorActivateGreen));
