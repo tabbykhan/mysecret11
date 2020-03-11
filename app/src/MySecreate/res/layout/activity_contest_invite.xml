@@ -146,7 +146,7 @@
 
                                 <com.customviews.TypefaceTextView
                                     android:id="@+id/tv_join_contest"
-                                    android:background="@drawable/bg_green_5radius_stroke1gray"
+                                    android:background="@drawable/bg_btn_rounded_orange"
                                     android:gravity="center"
                                     android:layout_gravity="center"
                                     android:layout_height="wrap_content"
