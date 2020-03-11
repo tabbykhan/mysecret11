@@ -83,7 +83,7 @@ public class MoreFragment extends AppBaseFragment {
         tv_faq = getView().findViewById(R.id.tv_faq);
 
 
-        rl_invite = getView().findViewById(R.id.rl_invite);
+      rl_invite = getView().findViewById(R.id.rl_invite);
         rl_contest_invite_code = getView().findViewById(R.id.rl_contest_invite_code);
         rl_point_system = getView().findViewById(R.id.rl_point_system);
         rl_how_to_play = getView().findViewById(R.id.rl_how_to_play);
@@ -100,7 +100,7 @@ public class MoreFragment extends AppBaseFragment {
         tv_app_version.setText("Version " + AppUpdateUtils.getAppInstalledVersionName(getActivity()));
 
 
-        rl_invite.setOnClickListener(this);
+       rl_invite.setOnClickListener(this);
         rl_contest_invite_code.setOnClickListener(this);
         rl_point_system.setOnClickListener(this);
         rl_how_to_play.setOnClickListener(this);

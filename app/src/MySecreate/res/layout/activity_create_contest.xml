@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="@color/my_secreate_bg_coot">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -43,7 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Contest Size"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_big"
                     app:custom_font="@string/app_font_medium" />
 
@@ -53,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dp5"
                     android:text="10"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_big"
                     app:custom_font="@string/app_font_regular" />
             </LinearLayout>
@@ -70,7 +70,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="Prize Pool"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_big"
                     app:custom_font="@string/app_font_medium" />
 
@@ -81,7 +81,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="50"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_big"
                     app:custom_font="@string/app_font_medium" />
             </LinearLayout>
@@ -98,7 +98,7 @@
                     android:layout_gravity="right"
                     android:gravity="right"
                     android:text="Entry"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_big"
                     app:custom_font="@string/app_font_medium" />
 
@@ -110,7 +110,7 @@
                     android:layout_marginTop="@dimen/dp5"
                     android:gravity="right"
                     android:text="6"
-                    android:textColor="@color/colorAppBlackAA"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_big"
                     app:custom_font="@string/app_font_regular" />
             </LinearLayout>
@@ -191,6 +191,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
+            android:background="@color/my_secreate_bg_coot"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_private_winner_breakup_adapter" />
 
@@ -202,16 +203,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+
         android:orientation="horizontal"
         android:weightSum="1">
 
         <com.customviews.TypefaceTextView
             android:layout_width="match_parent"
             android:layout_height="?attr/btn_height"
-            android:background="@color/colorRed"
             android:gravity="center"
             android:text="CREATE CONTEST"
-            android:textColor="?attr/btn_text_color"
+            android:background="@drawable/bg_btn_rounded_orange"
+            android:textColor="@color/colorWhite"
             android:textSize="?attr/btn_text_size"
             app:custom_font="@string/app_font_regular" />
     </LinearLayout>

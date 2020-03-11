@@ -11,6 +11,7 @@
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_layout"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/fragment_toolbar">
@@ -23,24 +24,28 @@
             android:orientation="vertical">
 
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorWhite">
+               >
 
                 <com.customviews.customtablayout.CustomTabLayout
+
                     android:id="@+id/verification_tabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:custom_font="@string/app_font_medium"
                     app:defaultPaddingBottom="@dimen/dp10"
-                    app:defaultPaddingTop="@dimen/dp10"
+                    app:background="#012241"
+
+                app:defaultPaddingTop="@dimen/dp10"
                     app:defaultTextColor="@color/tab_text_color"
                     app:defaultTextSize="?attr/app_text_size_normal"
                     app:fullHeightIndicator="false"
-                    app:indicatorColor="@color/tab_indication_color"
+                    app:indicatorColor="#ffffff"
                     app:indicatorHeight="@dimen/dp2"
                     app:indicatorPadding="0dp"
-                    app:selTextColor="@color/tab_indication_color"
+                    app:selTextColor="#000000"
                     app:shouldExpand="true"
                     app:triangleIndicatorVisible="false" />
 

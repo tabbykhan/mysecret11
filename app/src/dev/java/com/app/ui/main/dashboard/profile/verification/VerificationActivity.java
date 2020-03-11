@@ -111,8 +111,8 @@ public class VerificationActivity extends AppBaseActivity {
 
     private void setupSwipeLayout() {
         swipe_layout = findViewById(R.id.swipe_layout);
-        swipe_layout.setColorSchemeResources(R.color.colorOrange,
-                R.color.colorPrimary);
+        swipe_layout.setColorSchemeResources(R.color.colorWhite,
+                R.color.colorBlack);
         swipe_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
