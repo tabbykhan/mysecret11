@@ -53,7 +53,8 @@
                 android:text="Team 1"
                 android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_normal"
-                app:custom_font="@string/app_font_medium" />
+                app:custom_font="@string/app_font_medium"
+                android:visibility="visible"/>
 
 
             <ImageView
