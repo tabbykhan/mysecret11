@@ -251,6 +251,7 @@ public class MatchModel extends AppBaseModel {
             }
         }else {
             if (isFixtureMatch()) {
+
                 return R.color.colorRed;
             } else if (isLiveMatch()) {
                 return R.color.colorRed;

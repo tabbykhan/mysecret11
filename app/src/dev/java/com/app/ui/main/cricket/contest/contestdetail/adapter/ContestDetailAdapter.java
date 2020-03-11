@@ -267,6 +267,7 @@ public class ContestDetailAdapter extends AppBaseRecycleAdapter {
             }
 
 
+
         }
 
         @Override
