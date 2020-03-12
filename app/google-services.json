@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "500884600472",
-    "firebase_url": "https://vision11-5f874.firebaseio.com",
-    "project_id": "vision11-5f874",
-    "storage_bucket": "vision11-5f874.appspot.com"
+    "project_number": "217351101863",
+    "firebase_url": "https://mysecreate11.firebaseio.com",
+    "project_id": "mysecreate11",
+    "storage_bucket": "mysecreate11.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:500884600472:android:4ab422603b13f00df102ed",
+        "mobilesdk_app_id": "1:217351101863:android:16f84bce941b087525ea82",
         "android_client_info": {
-          "package_name": "com.imuons.vision"
+          "package_name": "com.imuons.mysecreate"
         }
       },
       "oauth_client": [
         {
-          "client_id": "500884600472-qdrd7af08abfive5sm2ednuapkm6bk8e.apps.googleusercontent.com",
+          "client_id": "217351101863-0v1dlm24h4ls17p0sa13ea2nmvlq91fc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCY-tJ-9nbMdn8JyEzvgw-73IH6cVjzceI"
+          "current_key": "AIzaSyB_SINQh4CkrFYil-NfDqMa1rKbiJv-CMo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "500884600472-qdrd7af08abfive5sm2ednuapkm6bk8e.apps.googleusercontent.com",
+              "client_id": "217351101863-0v1dlm24h4ls17p0sa13ea2nmvlq91fc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
