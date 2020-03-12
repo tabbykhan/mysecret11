@@ -3,23 +3,36 @@ package com.MLM;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.CoustomControl.AppCommon;
+import com.CoustomControl.AppService;
+import com.CoustomControl.ResponseAndPojoClass.RegistrationMLMP;
+import com.CoustomControl.ResponseAndPojoClass.RegistrationMLMResponseClass;
+import com.CoustomControl.ServiceGenerator;
 import com.MLM.Adapter.MakePaymentAdapter;
 import com.R;
+import com.app.model.webrequestmodel.NewUserRequestModel;
+import com.google.gson.Gson;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static android.view.View.VISIBLE;
 
@@ -78,4 +91,45 @@ public class MakePayment extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+
+    private void callMLMRegistration(final RegistrationMLMP registerRequestModel, final NewUserRequestModel requestModel) {
+        if (AppCommon.getInstance(this).isConnectingToInternet(this)) {
+            AppCommon.getInstance(this).setNonTouchableFlags(this);
+            //loaderView.setVisibility(View.VISIBLE);
+            AppService apiService = ServiceGenerator.createService(AppService.class);
+            Call call = apiService.REGISTRATION_RESPONSE_CLASS_CALL(registerRequestModel);
+            call.enqueue(new Callback() {
+                @Override
+                public void onResponse(Call call, Response response) {
+                    AppCommon.getInstance(MakePayment.this).clearNonTouchableFlags(MakePayment.this);
+                    // loaderView.setVisibility(View.GONE);
+
+                    RegistrationMLMResponseClass registrationMLMResponseClass = (RegistrationMLMResponseClass) response.body();
+                    if (registerRequestModel != null) {
+                        Log.i("roiWithdrawalResponse::", new Gson().toJson(registrationMLMResponseClass));
+                        if (registrationMLMResponseClass.getCode() == 200 ) {
+
+                        } else {
+
+                        }
+                    } else {
+
+                    }
+                }
+
+                @Override
+                public void onFailure(Call call, Throwable t) {
+
+                    AppCommon.getInstance(getApplicationContext()).clearNonTouchableFlags(MakePayment.this);
+                    // loaderView.setVisibility(View.GONE);
+                    Toast.makeText(MakePayment.this, "Please check your internet",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            Toast.makeText(this, "Please check your internet", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }

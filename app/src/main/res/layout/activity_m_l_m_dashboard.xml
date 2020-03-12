@@ -56,6 +56,175 @@
 
 
     <RelativeLayout
+        android:id="@+id/rl_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="leadBoard"
+        >
+
+        <ImageView
+            android:id="@+id/img_home"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_home"
+            android:text="Home"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_home"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_network"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="leadBoard"
+        >
+
+        <ImageView
+            android:id="@+id/img_network"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_network"
+            android:text="Netwirk"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_network"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_join_mega_contest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="leadBoard"
+        >
+
+        <ImageView
+            android:id="@+id/img_join_mega_contest"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_join_mega_contest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_join_mega_contest"
+            android:text="Join Mega Contest"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_join_mega_contest"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_Fund"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="leadBoard"
+        >
+
+        <ImageView
+            android:id="@+id/img_Fund"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_Fund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_Fund"
+            android:text="Fund"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_Fund"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/rl_teamView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -182,7 +351,7 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/rl_series_leadborad"
+        android:id="@+id/rl_series_leadbora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/transparent_color"
@@ -223,5 +392,94 @@
             android:layout_below="@+id/img_invite"
             android:background="@color/colorWhite" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_Income_Report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="leadBoard"
+        >
+
+        <ImageView
+            android:id="@+id/img_Income_Report"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_Income_Report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_Income_Report"
+            android:text="Income Report"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_Income_Report"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_Transfer_Balance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent_color"
+        android:onClick="leadBoard"
+        >
+
+        <ImageView
+            android:id="@+id/img_Transfer_Balance"
+            android:layout_width="@dimen/dp25"
+            android:layout_height="@dimen/dp25"
+            android:layout_margin="@dimen/dp15"
+            android:src="@drawable/invite_3x"
+            android:tint="@color/colorWhite" />
+
+        <com.customviews.TypefaceTextView
+            android:id="@+id/txt_Transfer_Balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_Transfer_Balance"
+            android:text="Transfer Balance"
+            android:textColor="@color/colorWhite"
+            android:textSize="?attr/app_text_size_normal"
+            app:custom_font="?attr/app_font_regular" />
+
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/right_arrow_3x"
+            android:tint="@color/colorWhite"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/img_Transfer_Balance"
+            android:background="@color/colorWhite" />
+    </RelativeLayout>
+
+
+
 
 </LinearLayout>
