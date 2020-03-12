@@ -59,7 +59,8 @@ public class TeamView extends AppBaseActivity {
             AppService apiService = ServiceGenerator.createService(AppService.class);
             //Call call = apiService.token_CALL(new AuthEntitiyClass(AppCommon.getInstance(this).getUserId(), AppCommon.getInstance(this).getPassword()));
             dismissProgressBar();
-            Call call = apiService.token_CALL(new AuthEntitiyClass("vp235345@vp11.com", "123456"));
+          //  Call call = apiService.token_CALL(new AuthEntitiyClass("vp235345@vp11.com", "123456"));
+            Call call = apiService.token_CALL(new AuthEntitiyClass("test.side@gmail.com", "123456"));
             call.enqueue(new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) {
