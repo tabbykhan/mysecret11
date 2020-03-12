@@ -77,7 +77,7 @@ public class RegisterActivity extends AppBaseActivity {
     EditText et_email;
     EditText et_mobile;
     EditText et_refer_code;
-    EditText et_userId;
+  //  EditText et_userId;
     TypefaceEditText et_password;
     CheckBox cb_terms;
     TextView tv_terms;
@@ -143,7 +143,7 @@ public class RegisterActivity extends AppBaseActivity {
         et_mobile = findViewById(R.id.et_mobile);
         et_refer_code = findViewById(R.id.et_refer_code);
         et_password = findViewById(R.id.et_password);
-        et_userId = findViewById(R.id.et_userId);
+     //   et_userId = findViewById(R.id.et_userId);
         cb_terms = findViewById(R.id.cb_terms);
         tv_terms = findViewById(R.id.tv_terms);
         tv_register = findViewById(R.id.tv_register);
@@ -440,7 +440,7 @@ public class RegisterActivity extends AppBaseActivity {
         String referral_code = et_refer_code.getText().toString().trim();
         String password = et_password.getText().toString();
         String team_name = et_team_name.getText().toString();
-        String userId = et_userId.getText().toString();
+    //    String userId = et_userId.getText().toString();
 
         if(!team_name.isEmpty()){
             if (team_name.length() < 8 || team_name.length() > 21) {
@@ -470,10 +470,10 @@ public class RegisterActivity extends AppBaseActivity {
             showErrorMsg("Please enter password.");
             return;
         }
-        if (userId.isEmpty()) {
+      /*  if (userId.isEmpty()) {
             showErrorMsg("Please enter UserID.");
             return;
-        }
+        }*/
 
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             showErrorMsg("Please enter valid email address.");
@@ -504,7 +504,7 @@ public class RegisterActivity extends AppBaseActivity {
         requestModel.referral_code = referral_code;
         requestModel.password = password;
         requestModel.team_name = team_name;
-        requestModel.user_id = userId;
+       // requestModel.user_id = userId;
 
         displayProgressBar(false, "Wait...");
         getWebRequestHelper().newUser(requestModel, this);
