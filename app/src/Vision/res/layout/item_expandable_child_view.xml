@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="40sp"
         android:layout_marginLeft="10dp"
-        android:background="@color/transparent_color"
-        android:onClick="leadBoard">
+        android:background="@color/transparent_color">
 
         <ImageView
             android:id="@+id/img_sub_icon"

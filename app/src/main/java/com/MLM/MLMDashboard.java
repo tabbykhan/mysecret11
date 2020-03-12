@@ -40,8 +40,9 @@ public class MLMDashboard extends AppBaseActivity {
             toolbarFragment.setToolbarView(this);
         }*/
         mExpandableListView = findViewById(R.id.navList);
-        expandableListListener();
         setExpandableList();
+        expandableListListener();
+
     }
 
     public void treeView(View view) {
@@ -91,17 +92,17 @@ public class MLMDashboard extends AppBaseActivity {
         network_array.add("Direct View");
         expandListData.put(expandableTitleList.get(1).title, network_array);
 
-        ArrayList<String> topup_array = new ArrayList<>();
-        topup_array.add("Topup");
-        topup_array.add("Topup Report");
-        topup_array.add("Downline Topup Report");
-        expandListData.put(expandableTitleList.get(2).title, topup_array);
-
-
         ArrayList<String> fund_array = new ArrayList<>();
         fund_array.add("Add Fund");
         fund_array.add("Pending Fund Report");
         expandListData.put(expandableTitleList.get(3).title, fund_array);
+
+        ArrayList<String> topup_array = new ArrayList<>();
+        topup_array.add("Topup");
+        topup_array.add("Topup Report");
+        topup_array.add("Downline Topup Report");
+        expandListData.put(expandableTitleList.get(4).title, topup_array);
+
 
         ArrayList<String> income_array = new ArrayList<>();
         income_array.add("Invitee Bonus");
@@ -165,33 +166,44 @@ public class MLMDashboard extends AppBaseActivity {
 
     private void gorupChildClick(int i, int i1) {
         switch (i) {
-            case 1:
-
+            case 0:
 
                 break;
-
-            case 2:// network
+            case 1: //network
                 switch (i1) {
                     case 0://
                             treeView(null);
                         break;
                     case 1:
-                       teamView(null);
+                            teamView(null);
                         break;
                     case 2: // direct list
 
                         break;
                 }
                 break;
-            case 3: //topup
+            case 2: //
                 switch (i1) {
-                    case 0: // topup
+                    case 0://
 
                         break;
-                    case 1:// topup report
+                    case 1:
 
                         break;
-                    case 2: // downline topup
+                    case 2: // direct list
+
+                        break;
+                }
+                break;
+            case 3: // fund
+                switch (i1) {
+                    case 0:
+
+                        break;
+                    case 1:
+
+                        break;
+                    case 2:
 
                         break;
 
