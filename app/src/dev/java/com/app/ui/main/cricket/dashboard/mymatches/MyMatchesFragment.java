@@ -82,8 +82,5 @@ public class MyMatchesFragment extends AppBaseFragment implements MatchTimerList
             AppBaseFragment item = adapter.getItem(0);
             ((MyFixtureFragment) item).onMatchTimeUpdate();
         }
-
     }
-
-
 }
