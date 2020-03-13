@@ -177,7 +177,7 @@ public class ContestAdapter extends AppBaseRecycleAdapter {
 
                         ((AppBaseActivity) context).loadImage(context, iv_discount_image, null,
                                 contestModel.getDiscount_image(),
-                                R.mipmap.ic_launcher_notification);
+                                R.mipmap.ic_launcher);
                         updateViewVisibitity(iv_discount_image, View.VISIBLE);
                     }
 

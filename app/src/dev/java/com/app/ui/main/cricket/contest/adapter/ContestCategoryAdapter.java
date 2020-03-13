@@ -117,7 +117,7 @@ public class ContestCategoryAdapter extends AppBaseRecycleAdapter implements Fil
 
                     ((AppBaseActivity) context).loadImage(context, iv_discount_image, null,
                             contestCategoryModel.getDiscount_image(),
-                            R.mipmap.ic_launcher_notification);
+                            R.drawable.logo);
                     updateViewVisibitity(iv_discount_image,View.VISIBLE);
                 }else{
                     updateViewVisibitity(iv_discount_image,View.GONE);

@@ -488,7 +488,7 @@ public class CheckUserActivity extends AppBaseActivity {
 
     private void showConfirmationDialog(final boolean isNormalUser) {
         Bundle bundle = new Bundle();
-        bundle.putString(MESSAGE, "By joining this contest, you accept "+ getString(R.string.app_name) +" T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim.");
+        bundle.putString(MESSAGE, "By joining this contest, you accept My Secret 11's T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim.");
         bundle.putString(POS_BTN, "OK");
         bundle.putString(NEG_BTN, "NO");
         ConfirmationLocationDialog instance = ConfirmationLocationDialog.getInstance(bundle);

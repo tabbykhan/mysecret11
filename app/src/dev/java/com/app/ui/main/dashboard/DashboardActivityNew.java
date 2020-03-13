@@ -121,38 +121,38 @@ public class DashboardActivityNew extends AppBaseActivity {
             CustomIconModel.IconModel tab_home = customIconModel.getTab_home();
             if (tab_home != null) {
                 txt_home.setText(tab_home.getName());
-                loadImage(this, iv_home, null, tab_home.getImage(), R.mipmap.ic_launcher_notification, -1);
+                loadImage(this, iv_home, null, tab_home.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 txt_home.setText("");
-                iv_home.setImageResource(R.mipmap.ic_launcher_notification);
+                iv_home.setImageResource(R.mipmap.ic_launcher);
             }
 
             CustomIconModel.IconModel tab_my_contest = customIconModel.getTab_my_contest();
             if (tab_my_contest != null) {
                 txt_mycontest.setText(tab_my_contest.getName());
-                loadImage(this, iv_mycontest, null, tab_my_contest.getImage(), R.mipmap.ic_launcher_notification, -1);
+                loadImage(this, iv_mycontest, null, tab_my_contest.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 txt_mycontest.setText("");
-                iv_mycontest.setImageResource(R.mipmap.ic_launcher_notification);
+                iv_mycontest.setImageResource(R.mipmap.ic_launcher);
             }
 
             CustomIconModel.IconModel tab_account = customIconModel.getTab_account();
             if (tab_account != null) {
                 txt_account.setText(tab_account.getName());
-                loadImage(this, iv_account, null, tab_account.getImage(), R.mipmap.ic_launcher_notification, -1);
+                loadImage(this, iv_account, null, tab_account.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 txt_account.setText("");
-                iv_account.setImageResource(R.mipmap.ic_launcher_notification);
+                iv_account.setImageResource(R.mipmap.ic_launcher);
             }
 
 
             CustomIconModel.IconModel tab_more = customIconModel.getTab_more();
             if (tab_more != null) {
                 txt_setting.setText(tab_more.getName());
-                loadImage(this, iv_setting, null, tab_more.getImage(), R.mipmap.ic_launcher_notification, -1);
+                loadImage(this, iv_setting, null, tab_more.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 txt_setting.setText("");
-                iv_setting.setImageResource(R.mipmap.ic_launcher_notification);
+                iv_setting.setImageResource(R.mipmap.ic_launcher);
             }
         }
 
@@ -348,7 +348,7 @@ public class DashboardActivityNew extends AppBaseActivity {
             TextView tv_sport_type = inflate.findViewById(R.id.tv_sport_type);
             ImageView iv_sport_type = inflate.findViewById(R.id.iv_sport_type);
             tv_sport_type.setText(gameModel.getName());
-            loadImage(this, iv_sport_type, null, gameModel.getImage(), R.mipmap.ic_launcher_notification, -1);
+            loadImage(this, iv_sport_type, null, gameModel.getImage(), R.mipmap.ic_launcher, -1);
 
             tabAt.setCustomView(inflate);
 

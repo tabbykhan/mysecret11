@@ -145,8 +145,8 @@ public class PanCardFragment extends AppBaseFragment {
 
             } else if (pancard.isRejected()) {
                 tv_verify_title.setText("PAN details rejected");
-                tv_verify_title.setTextColor(getResources().getColor(R.color.colorRed));
-                cv_data.setCardBackgroundColor(getResources().getColor(R.color.colorRed));
+                tv_verify_title.setTextColor(getResources().getColor(R.color.colorRedLight));
+                cv_data.setCardBackgroundColor(getResources().getColor(R.color.colorRedLight));
                 updateViewVisibitity(tv_upload_pan_card, View.VISIBLE);
                 updateViewVisibitity(tv_proceed, View.VISIBLE);
                 updateViewVisibitity(tv_reason, View.VISIBLE);
@@ -170,7 +170,7 @@ public class PanCardFragment extends AppBaseFragment {
 
             cv_data.setCardBackgroundColor(getResources().getColor(R.color.transparent_color));
             tv_verify_title.setText("UPLOAD PAN CARD");
-            tv_verify_title.setTextColor(getResources().getColor(R.color.colorBlack));
+            tv_verify_title.setTextColor(getResources().getColor(R.color.colorWhite));
             updateViewVisibitity(tv_upload_pan_card, View.VISIBLE);
             updateViewVisibitity(tv_proceed, View.VISIBLE);
             updateViewVisibitity(tv_reason, View.GONE);

@@ -696,7 +696,7 @@ public abstract class AppBaseActivity extends BaseActivity
 
     private void showConfirmationDialog() {
         Bundle bundle = new Bundle();
-        bundle.putString(MESSAGE, "By joining this contest, you accept My Secret 11 T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim.");
+        bundle.putString(MESSAGE, "By joining this contest, you accept My Secret 11's T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim.");
         bundle.putString(POS_BTN, "OK");
         bundle.putString(NEG_BTN, "NO");
         ConfirmationLocationDialog instance = ConfirmationLocationDialog.getInstance(bundle);

@@ -145,8 +145,8 @@ public class MyContestAdapter extends AppBaseRecycleAdapter {
 
                         ((AppBaseActivity) context).loadImage(context, iv_discount_image, null,
                                 contestModel.getDiscount_image(),
-                                R.mipmap.ic_launcher_notification);
-                        updateViewVisibitity(iv_discount_image,View.VISIBLE);
+                                R.drawable.logo);
+                        updateViewVisibitity(iv_discount_image,View.GONE);
                     }
 
                 }else{
