@@ -189,11 +189,12 @@
                 android:orientation="vertical"
                 android:layout_marginStart="@dimen/dp2"
                 android:gravity="center_horizontal">
+<!--                bg_rounded_white_border-->
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_captain"
                     android:layout_width="@dimen/dp30"
                     android:layout_height="@dimen/dp30"
-                    android:background="@drawable/bg_rounded_white_border"
+                    android:background="@drawable/selector_player_choose"
                     android:gravity="center"
                     android:text="C"
                     android:textColor="@color/colorWhite"
@@ -218,11 +219,12 @@
                 android:layout_marginStart="@dimen/dp2"
                 android:layout_marginEnd="@dimen/dp5"
                 android:gravity="center_horizontal">
+<!--                bg_white_roundedborder-->
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_vice_captain"
                     android:layout_width="@dimen/dp30"
                     android:layout_height="@dimen/dp30"
-                    android:background="@drawable/bg_white_roundedborder"
+                    android:background="@drawable/selector_player_choose"
                     android:gravity="center"
                     android:text="VC"
                     android:textColor="@color/colorWhite"
