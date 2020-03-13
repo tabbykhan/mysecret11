@@ -188,7 +188,8 @@ public class MobileFragment extends AppBaseFragment {
 
                 @Override
                 public void updateDrawState(TextPaint ds) {
-                    ds.setColor(((AppBaseActivity) getActivity()).getColorFromStyle(R.attr.app_link_text_color));
+                    ds.setColor(getResources().getColor(R.color.colorWhite));
+                 //   ds.setColor(((AppBaseActivity) getActivity()).getColorFromStyle(R.attr.app_link_text_color));
                     ds.setUnderlineText(true);
                 }
             };
@@ -213,7 +214,8 @@ public class MobileFragment extends AppBaseFragment {
 
                 @Override
                 public void updateDrawState(TextPaint ds) {
-                    ds.setColor(((AppBaseActivity) getActivity()).getColorFromStyle(R.attr.app_link_text_color));
+                    ds.setColor(getResources().getColor(R.color.colorWhite));
+                  //  ds.setColor(((AppBaseActivity) getActivity()).getColorFromStyle(R.attr.app_link_text_color));
                     ds.setUnderlineText(true);
                 }
             };
