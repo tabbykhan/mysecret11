@@ -386,7 +386,7 @@ public class ContestDetailActivity extends AppBaseActivity implements MatchTimer
 
                 loadImage(this, iv_discount_image, null,
                         contestModel.getDiscount_image(),
-                        R.mipmap.ic_launcher_notification);
+                        R.drawable.logo);
                 updateViewVisibitity(iv_discount_image, View.VISIBLE);
             } else {
                 tv_more_entry.setText("");

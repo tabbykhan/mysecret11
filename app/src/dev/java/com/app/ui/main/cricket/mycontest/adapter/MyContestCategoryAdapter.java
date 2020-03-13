@@ -104,7 +104,7 @@ public class MyContestCategoryAdapter extends AppBaseRecycleAdapter {
 
                     ((AppBaseActivity) context).loadImage(context, iv_discount_image, null,
                             contestCategoryModel.getDiscount_image(),
-                            R.mipmap.ic_launcher_notification);
+                            R.drawable.logo);
                     updateViewVisibitity(iv_discount_image,View.VISIBLE);
                 }else{
                     updateViewVisibitity(iv_discount_image,View.GONE);
@@ -129,7 +129,7 @@ public class MyContestCategoryAdapter extends AppBaseRecycleAdapter {
                     }
                 });
             } else {
-                iv_discount_image.setImageResource(R.mipmap.ic_launcher_notification);
+                iv_discount_image.setImageResource(R.mipmap.ic_launcher);
                 iv_contest_cat.setImageResource(R.mipmap.ic_launcher_round);
                 tv_contest_cat_name.setText("");
                 tv_contest_cat_des.setText("");

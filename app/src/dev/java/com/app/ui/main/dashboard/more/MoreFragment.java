@@ -148,34 +148,34 @@ public class MoreFragment extends AppBaseFragment {
             CustomIconModel.IconModel more_invite_friends = customIconModel.getMore_invite_friends();
             if (more_invite_friends != null) {
                 txt_invite.setText(more_invite_friends.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_invite, null, more_invite_friends.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_invite, null, more_invite_friends.getImage(), R.mipmap.ic_launcher, -1);
                 updateViewVisibitity(rl_invite, View.VISIBLE);
             } else {
                 updateViewVisibitity(rl_invite, View.GONE);
                 txt_invite.setText("");
-                img_invite.setImageResource(R.mipmap.ic_launcher_notification);
+                img_invite.setImageResource(R.mipmap.ic_launcher);
             }
 
             CustomIconModel.IconModel more_contest_invite_code = customIconModel.getMore_contest_invite_code();
             if (more_contest_invite_code != null) {
                 updateViewVisibitity(rl_contest_invite_code, View.VISIBLE);
                 txt_invite_code.setText(more_contest_invite_code.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_contest, null, more_contest_invite_code.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_contest, null, more_contest_invite_code.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_contest_invite_code, View.GONE);
                 txt_invite_code.setText("");
-                img_contest.setImageResource(R.mipmap.ic_launcher_notification);
+                img_contest.setImageResource(R.mipmap.ic_launcher);
             }
 
             CustomIconModel.IconModel more_fantasy_point_system = customIconModel.getMore_fantasy_point_system();
             if (more_fantasy_point_system != null) {
                 updateViewVisibitity(rl_point_system, View.VISIBLE);
                 tv_graph.setText(more_fantasy_point_system.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_graph, null, more_fantasy_point_system.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_graph, null, more_fantasy_point_system.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_point_system, View.GONE);
                 tv_graph.setText("");
-                img_graph.setImageResource(R.mipmap.ic_launcher_notification);
+                img_graph.setImageResource(R.mipmap.ic_launcher);
             }
 
 
@@ -183,11 +183,11 @@ public class MoreFragment extends AppBaseFragment {
             if (more_how_to_play != null) {
                 updateViewVisibitity(rl_how_to_play, View.VISIBLE);
                 tv_play.setText(more_how_to_play.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_play, null, more_how_to_play.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_play, null, more_how_to_play.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_how_to_play, View.GONE);
                 tv_play.setText("");
-                img_play.setImageResource(R.mipmap.ic_launcher_notification);
+                img_play.setImageResource(R.mipmap.ic_launcher);
             }
 
 
@@ -195,11 +195,11 @@ public class MoreFragment extends AppBaseFragment {
             if (more_helpdesk != null) {
                 updateViewVisibitity(rl_helpdesk, View.VISIBLE);
                 tv_helpdesk.setText(more_helpdesk.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_helpdesk, null, more_helpdesk.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_helpdesk, null, more_helpdesk.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_helpdesk, View.GONE);
                 tv_helpdesk.setText("");
-                img_helpdesk.setImageResource(R.mipmap.ic_launcher_notification);
+                img_helpdesk.setImageResource(R.mipmap.ic_launcher);
             }
 
 
@@ -207,11 +207,11 @@ public class MoreFragment extends AppBaseFragment {
             if (more_aboutus != null) {
                 updateViewVisibitity(rl_about_us, View.VISIBLE);
                 tv_about.setText(more_aboutus.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_about, null, more_aboutus.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_about, null, more_aboutus.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_about_us, View.GONE);
                 tv_about.setText("");
-                img_about.setImageResource(R.mipmap.ic_launcher_notification);
+                img_about.setImageResource(R.mipmap.ic_launcher);
             }
 
 
@@ -219,11 +219,11 @@ public class MoreFragment extends AppBaseFragment {
             if (more_legality != null) {
                 updateViewVisibitity(rl_legality, View.VISIBLE);
                 tv_ligality.setText(more_legality.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_ligality, null, more_legality.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_ligality, null, more_legality.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_legality, View.GONE);
                 tv_ligality.setText("");
-                img_ligality.setImageResource(R.mipmap.ic_launcher_notification);
+                img_ligality.setImageResource(R.mipmap.ic_launcher);
             }
 
 
@@ -231,11 +231,11 @@ public class MoreFragment extends AppBaseFragment {
             if (more_withdraw_policy != null) {
                 updateViewVisibitity(rl_withdraw_policy, View.VISIBLE);
                 tv_withdraw_policy.setText(more_withdraw_policy.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_withdraw_policy, null, more_withdraw_policy.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_withdraw_policy, null, more_withdraw_policy.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_withdraw_policy, View.GONE);
                 tv_withdraw_policy.setText("");
-                img_withdraw_policy.setImageResource(R.mipmap.ic_launcher_notification);
+                img_withdraw_policy.setImageResource(R.mipmap.ic_launcher);
             }
 
 
@@ -243,11 +243,11 @@ public class MoreFragment extends AppBaseFragment {
             if (more_terms_of_services != null) {
                 updateViewVisibitity(rl_terms_services, View.VISIBLE);
                 tv_terms_services.setText(more_terms_of_services.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_terms_services, null, more_terms_of_services.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_terms_services, null, more_terms_of_services.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_terms_services, View.GONE);
                 tv_terms_services.setText("");
-                img_terms_services.setImageResource(R.mipmap.ic_launcher_notification);
+                img_terms_services.setImageResource(R.mipmap.ic_launcher);
             }
 
 
@@ -255,22 +255,22 @@ public class MoreFragment extends AppBaseFragment {
             if (more_contact != null) {
                 updateViewVisibitity(rl_contact, View.VISIBLE);
                 tv_contect.setText(more_contact.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_contect, null, more_contact.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_contect, null, more_contact.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_contact, View.GONE);
                 tv_contect.setText("");
-                img_contect.setImageResource(R.mipmap.ic_launcher_notification);
+                img_contect.setImageResource(R.mipmap.ic_launcher);
             }
 
             CustomIconModel.IconModel more_faq = customIconModel.getMore_faq();
             if (more_faq != null) {
                 updateViewVisibitity(rl_faq, View.VISIBLE);
                 tv_faq.setText(more_faq.getName());
-                ((AppBaseActivity) getActivity()).loadImage(this, img_faq, null, more_faq.getImage(), R.mipmap.ic_launcher_notification, -1);
+                ((AppBaseActivity) getActivity()).loadImage(this, img_faq, null, more_faq.getImage(), R.mipmap.ic_launcher, -1);
             } else {
                 updateViewVisibitity(rl_faq, View.GONE);
                 tv_faq.setText("");
-                img_faq.setImageResource(R.mipmap.ic_launcher_notification);
+                img_faq.setImageResource(R.mipmap.ic_launcher);
             }
         }
 

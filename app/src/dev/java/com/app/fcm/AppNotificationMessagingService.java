@@ -138,7 +138,7 @@ public class AppNotificationMessagingService extends NotificationMessagingServic
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,
                 getString(R.string.app_name))
-                .setSmallIcon(R.mipmap.ic_launcher_notification)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri);
 
@@ -193,7 +193,7 @@ public class AppNotificationMessagingService extends NotificationMessagingServic
 
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this,
                 getString(R.string.app_name))
-                .setSmallIcon(R.mipmap.ic_launcher_notification)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri);
 

@@ -364,6 +364,7 @@
                         app:custom_font="@string/app_font_bold" />
 
                     <ImageView
+
                         android:id="@+id/iv_discount_image"
                         android:layout_width="@dimen/dp70"
                         android:layout_height="@dimen/dp25"
