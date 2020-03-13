@@ -2,6 +2,7 @@ package com.app.ui.main.cricket.dialogs.winnerbreakupdialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -199,8 +200,11 @@ public class WinnerBreakupDialog extends AppBaseDialogFragment {
                 }
                 UserModel userModel = getUserModel();
                 if(userModel!=null && userModel.getSettings()!=null){
+                    Log.d("message display",responsePojo.getBottomMessage());
                     userModel.getSettings().setWINNING_BREAKUP_MESSAGE(responsePojo.getBottomMessage());
                     updateUserInPrefs();
+                }else{
+
                 }
 
                 updateBottomMessage();
