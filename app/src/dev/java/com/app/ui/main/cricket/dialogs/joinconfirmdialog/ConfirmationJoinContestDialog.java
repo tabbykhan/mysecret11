@@ -141,7 +141,8 @@ public class ConfirmationJoinContestDialog extends AppBaseDialogFragment {
         UserModel userModel = getUserModel();
         if (userModel != null && userModel.getSettings() != null) {
             //tv_bottom_message.setText(userModel.getSettings().getJOIN_CONTEST_MESSAGE());
-            tv_bottom_message.setText("By joining this contest, you accept My Secret 11 T&amp;C and confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim.");
+            tv_bottom_message.setText("By joining this contest, you accept My Secret 11 T & C and" +
+                    " confirm that you are not a resident of Assam, Odissa, Telangana, Nagaland or Sikkim.");
         } else {
             tv_bottom_message.setText("");
         }
