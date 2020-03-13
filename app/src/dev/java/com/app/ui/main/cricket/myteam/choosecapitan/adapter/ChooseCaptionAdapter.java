@@ -227,16 +227,19 @@ public class ChooseCaptionAdapter extends AppBaseRecycleAdapter implements Filte
             boolean needShowImage = false;
             if (caption == null) {
                 tv_captain.setActivated(false);
+                tv_captain.setSelected(false);
                 tv_captain.setText("C");
             } else {
                 if (playerModel.getPlayer_id().equals(caption)) {
                     tv_captain.setActivated(true);
+                    tv_captain.setSelected(true);
                     //tv_captain.setText("2x");
                     tv_captain.setText("C");
                     iv_player_c_vc_image.setImageResource(R.drawable.points2x_3x);
                     needShowImage = true;
                 } else {
                     tv_captain.setActivated(false);
+                    tv_captain.setSelected(false);
                     tv_captain.setText("C");
 
                 }
@@ -244,16 +247,19 @@ public class ChooseCaptionAdapter extends AppBaseRecycleAdapter implements Filte
 
             if (vcCaption == null) {
                 tv_vice_captain.setActivated(false);
+                tv_vice_captain.setSelected(false);
                 tv_vice_captain.setText("VC");
             } else {
                 if (playerModel.getPlayer_id().equals(vcCaption)) {
                     tv_vice_captain.setActivated(true);
+                    tv_vice_captain.setSelected(true);
                     //tv_vice_captain.setText("1.5x");
                     tv_vice_captain.setText("VC");
                     iv_player_c_vc_image.setImageResource(R.drawable.points15x_3x);
                     needShowImage = true;
                 } else {
                     tv_vice_captain.setActivated(false);
+                    tv_vice_captain.setSelected(false);
                     tv_vice_captain.setText("VC");
 
                 }
