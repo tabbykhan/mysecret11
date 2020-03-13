@@ -150,10 +150,12 @@ public class PlayersAdapter extends AppBaseRecycleAdapter implements Filterable 
 
             if (playerModel.isSelected()) {
                 iv_add_player.setActivated(true);
-                ll_layout.setActivated(true);
+                ll_layout.setSelected(true);
+              //  ll_layout.setActivated(true);
             } else {
                 iv_add_player.setActivated(false);
-                ll_layout.setActivated(false);
+                ll_layout.setSelected(false);
+              //  ll_layout.setActivated(false);
             }
 
             if (playerModel.isInPlayingSquadUpdated()) {
