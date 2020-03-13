@@ -245,6 +245,7 @@ public class ChooseCaptionAdapter extends AppBaseRecycleAdapter implements Filte
                 }
             }
 
+
             if (vcCaption == null) {
                 tv_vice_captain.setActivated(false);
                 tv_vice_captain.setSelected(false);
