@@ -226,7 +226,7 @@
                                 android:paddingEnd="@dimen/dp5"
                                 android:paddingTop="@dimen/dp10"
                                 android:paddingBottom="@dimen/dp10"
-                                android:textColor="@color/colorWhite"
+                                android:textColor="@color/colorBlack"
                                 android:drawablePadding="@dimen/dp10"
                                 android:background="@drawable/bg_rounded_white_transparent"
                                 android:textColorHint="?attr/et_hint_text_color"
