@@ -300,7 +300,7 @@
                                 android:layout_width="@dimen/dp25"
                                 android:layout_height="@dimen/dp25"
                                 android:padding="@dimen/dp2"
-                                android:tint="@color/colorAppBlack"
+                                android:tint="@color/colorWhite"
                                 android:src="@android:drawable/ic_popup_sync"/>
 
                         </LinearLayout>
