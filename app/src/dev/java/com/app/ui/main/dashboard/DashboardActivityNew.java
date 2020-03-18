@@ -121,10 +121,10 @@ public class DashboardActivityNew extends AppBaseActivity {
             CustomIconModel.IconModel tab_home = customIconModel.getTab_home();
             if (tab_home != null) {
                 txt_home.setText(tab_home.getName());
-                loadImage(this, iv_home, null, tab_home.getImage(), R.drawable.homes, -1);
+                loadImage(this, iv_home, null, tab_home.getImage(), R.drawable.tab_icon_home, -1);
             } else {
                 txt_home.setText("");
-                iv_home.setImageResource(R.drawable.homes);
+                iv_home.setImageResource(R.drawable.tab_icon_home);
             }
 
             CustomIconModel.IconModel tab_my_contest = customIconModel.getTab_my_contest();
