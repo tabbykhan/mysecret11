@@ -121,38 +121,38 @@ public class DashboardActivityNew extends AppBaseActivity {
             CustomIconModel.IconModel tab_home = customIconModel.getTab_home();
             if (tab_home != null) {
                 txt_home.setText(tab_home.getName());
-                loadImage(this, iv_home, null, tab_home.getImage(), R.mipmap.ic_launcher, -1);
+                loadImage(this, iv_home, null, tab_home.getImage(), R.drawable.homes, -1);
             } else {
                 txt_home.setText("");
-                iv_home.setImageResource(R.mipmap.ic_launcher);
+                iv_home.setImageResource(R.drawable.homes);
             }
 
             CustomIconModel.IconModel tab_my_contest = customIconModel.getTab_my_contest();
             if (tab_my_contest != null) {
                 txt_mycontest.setText(tab_my_contest.getName());
-                loadImage(this, iv_mycontest, null, tab_my_contest.getImage(), R.mipmap.ic_launcher, -1);
+                loadImage(this, iv_mycontest, null, tab_my_contest.getImage(), R.drawable.tab_icon_mycontest, -1);
             } else {
                 txt_mycontest.setText("");
-                iv_mycontest.setImageResource(R.mipmap.ic_launcher);
+                iv_mycontest.setImageResource(R.drawable.tab_icon_mycontest);
             }
 
             CustomIconModel.IconModel tab_account = customIconModel.getTab_account();
             if (tab_account != null) {
                 txt_account.setText(tab_account.getName());
-                loadImage(this, iv_account, null, tab_account.getImage(), R.mipmap.ic_launcher, -1);
+                loadImage(this, iv_account, null, tab_account.getImage(), R.drawable.profile_icon, -1);
             } else {
                 txt_account.setText("");
-                iv_account.setImageResource(R.mipmap.ic_launcher);
+                iv_account.setImageResource(R.drawable.profile_icon);
             }
 
 
             CustomIconModel.IconModel tab_more = customIconModel.getTab_more();
             if (tab_more != null) {
                 txt_setting.setText(tab_more.getName());
-                loadImage(this, iv_setting, null, tab_more.getImage(), R.mipmap.ic_launcher, -1);
+                loadImage(this, iv_setting, null, tab_more.getImage(), R.drawable.more_icon, -1);
             } else {
                 txt_setting.setText("");
-                iv_setting.setImageResource(R.mipmap.ic_launcher);
+                iv_setting.setImageResource(R.drawable.more_icon);
             }
         }
 
