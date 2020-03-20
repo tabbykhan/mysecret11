@@ -52,6 +52,7 @@ public class MoreFragment extends AppBaseFragment {
     TextView tv_faq;
 
 
+    
     @Override
     public int getLayoutResourceId() {
         return R.layout.fragment_more;
