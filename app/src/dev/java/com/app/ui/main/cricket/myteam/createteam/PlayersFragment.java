@@ -89,9 +89,14 @@ public class PlayersFragment extends AppBaseFragment {
 
                     case R.id.iv_sort_points: {
                         if (currentSortType == 1) {
-                            return Float.compare(player2.getTotal_points(), player1.getTotal_points());
+                          //  return Float.compare(player2.getTotal_points(),player1.getTotal_points());
+                            return Integer.compare(Integer.parseInt(player2.getSelected_byText()),
+                                    Integer.parseInt(player1.getSelected_byText()));
+
                         } else {
-                            return Float.compare(player1.getTotal_points(), player2.getTotal_points());
+//                            return Float.compare(player1.getTotal_points(), player2.getTotal_points());
+                            return Integer.compare(Integer.parseInt(player1.getSelected_byText()),
+                                    Integer.parseInt(player2.getSelected_byText()));
                         }
 
                     }
