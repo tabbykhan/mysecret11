@@ -1,6 +1,7 @@
 package com.app.ui.main.cricket.myteam.myteams.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -175,20 +176,22 @@ public class MyTeamsAdapter extends AppBaseRecycleAdapter {
             PlayerModel vise_captainmodel = customerTeamModel.getVise_captain();
             if (vise_captainmodel != null) {
                 tv_vicecaptain_name.setText(vise_captainmodel.getName());
+
+                Log.i("my team ", "------");
                 /*((AppBaseActivity) context).loadImage(context, img_vcaptain, null,
                         vise_captainmodel.getImage(), R.drawable.no_image);*/
                 if (customerTeamModel.isPlayerFromTeam1(vise_captainmodel)) {
                     tv_vicecaptain_name.setActivated(true);
-                    tv_vice_captain_title.setActivated(false);
+                    tv_vice_captain_title.setActivated(true);
                 } else {
                     tv_vicecaptain_name.setActivated(false);
-                    tv_vice_captain_title.setActivated(false);
+                    tv_vice_captain_title.setActivated(true);
                 }
             } else {
                 tv_vicecaptain_name.setText("");
                 /*img_vcaptain.setImageResource(R.drawable.no_image);*/
-                tv_vicecaptain_name.setActivated(false);
-                tv_vice_captain_title.setActivated(false);
+              //  tv_vicecaptain_name.setActivated(false);
+               tv_vice_captain_title.setActivated(true);
             }
             PlayerModel mpp = customerTeamModel.getTrump();
             if (mpp != null) {
