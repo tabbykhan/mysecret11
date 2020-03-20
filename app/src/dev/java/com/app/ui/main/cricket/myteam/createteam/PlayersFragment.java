@@ -81,22 +81,24 @@ public class PlayersFragment extends AppBaseFragment {
                 switch (currentSortBy.getId()) {
                     case R.id.iv_sort_players: {
                         if (currentSortType == 1) {
-                            return player2.getName().compareToIgnoreCase(player1.getName());
+                          //  return player2.getName().compareToIgnoreCase(player1.getName());
+                            return Integer.compare(Integer.parseInt(player2.getSelected_byText()),
+                                    Integer.parseInt(player1.getSelected_byText()));
                         } else {
-                            return player1.getName().compareToIgnoreCase(player2.getName());
+                          //  return player1.getName().compareToIgnoreCase(player2.getName());
+                            return Integer.compare(Integer.parseInt(player1.getSelected_byText()),
+                                    Integer.parseInt(player2.getSelected_byText()));
                         }
                     }
 
                     case R.id.iv_sort_points: {
                         if (currentSortType == 1) {
-                          //  return Float.compare(player2.getTotal_points(),player1.getTotal_points());
-                            return Integer.compare(Integer.parseInt(player2.getSelected_byText()),
-                                    Integer.parseInt(player1.getSelected_byText()));
+                            return Float.compare(player2.getTotal_points(),player1.getTotal_points());
+
 
                         } else {
-//                            return Float.compare(player1.getTotal_points(), player2.getTotal_points());
-                            return Integer.compare(Integer.parseInt(player1.getSelected_byText()),
-                                    Integer.parseInt(player2.getSelected_byText()));
+                            return Float.compare(player1.getTotal_points(), player2.getTotal_points());
+
                         }
 
                     }
