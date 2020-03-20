@@ -101,6 +101,11 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         }
 
         @Override
+        public void reset() {
+            checkselectedplayerType();
+        }
+
+        @Override
         public int getSelectedPlayer() {
             return getTotalSelectedPlayers();
         }
@@ -120,7 +125,33 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             return matchModelWithPlayers.getTeam2();
         }
     };
+    private int selected_player_type=0;
+    private PlayersFragment playersFragment2;
 
+    private void checkselectedplayerType() {
+        if(selected_player_type==0){
+            TeamModel team1 = matchModelWithPlayers.getTeam1();
+            List<PlayerModel> resetLits=new ArrayList<>();
+            List<PlayerModel> allPlayers = matchModelWithPlayers.getWicketkeapers();
+            for (PlayerModel playerModel : allPlayers) {
+                boolean b = playersFragment2.onPlayerSelected(playerModel);
+                if (b) {
+                    if (getApplicationContext() != null)
+                        refreshOtherFragmentData();
+                }
+            }
+            updateUi();
+        }else if (selected_player_type==1){
+
+        }else if(selected_player_type==2){
+
+        }else if(selected_player_type==3){
+
+        }else if(selected_player_type==4){
+
+        }
+
+    }
 
 
     public CustomerTeamModel getCustomerTeam() {
@@ -367,6 +398,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             @Override
             public void onPageSelected(int i) {
                 //adapter.getItem(i).onPageSelected();
+                selected_player_type=i;
             }
 
             @Override
@@ -376,7 +408,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         });
         adapter = new ViewPagerAdapter(getFm());
 
-        PlayersFragment playersFragment2 = new PlayersFragment();
+         playersFragment2 = new PlayersFragment();
         playersFragment2.setPlayersList(matchModelWithPlayers.getWicketkeapers());
         playersFragment2.setType(1);
         playersFragment2.setMin(getTeamSetting().getMIN_WICKETKEEPER());
@@ -667,6 +699,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         }
 
         allPlayers = matchModelWithPlayers.getBatsmans();
+
         if (allPlayers != null && allPlayers.size() > 0) {
             for (PlayerModel player : allPlayers) {
                 player.setPlayerType(2);

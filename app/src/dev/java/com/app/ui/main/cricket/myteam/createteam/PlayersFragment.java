@@ -3,6 +3,7 @@ package com.app.ui.main.cricket.myteam.createteam;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,22 +57,6 @@ public class PlayersFragment extends AppBaseFragment {
     int type;
     int min;
     int max;
-
-    Filter filter = new Filter() {
-        @Override
-        protected FilterResults performFiltering(CharSequence constraint) {
-            Collections.sort(players, listSorter);
-            return null;
-        }
-
-        @Override
-        protected void publishResults(CharSequence constraint, FilterResults results) {
-            if (adapter != null && getActivity() != null) {
-                adapter.notifyDataSetChanged();
-            }
-        }
-    };
-
     Comparator listSorter = new Comparator() {
         @Override
         public int compare(Object o1, Object o2) {
@@ -81,19 +66,17 @@ public class PlayersFragment extends AppBaseFragment {
                 switch (currentSortBy.getId()) {
                     case R.id.iv_sort_players: {
                         if (currentSortType == 1) {
-                          //  return player2.getName().compareToIgnoreCase(player1.getName());
-                            return Integer.compare(Integer.parseInt(player2.getSelected_byText()),
-                                    Integer.parseInt(player1.getSelected_byText()));
+                            //  return player2.getName().compareToIgnoreCase(player1.getName());
+                            return Integer.compare(Integer.parseInt(player2.getSelected_byText()), Integer.parseInt(player1.getSelected_byText()));
                         } else {
-                          //  return player1.getName().compareToIgnoreCase(player2.getName());
-                            return Integer.compare(Integer.parseInt(player1.getSelected_byText()),
-                                    Integer.parseInt(player2.getSelected_byText()));
+                            //  return player1.getName().compareToIgnoreCase(player2.getName());
+                            return Integer.compare(Integer.parseInt(player1.getSelected_byText()), Integer.parseInt(player2.getSelected_byText()));
                         }
                     }
 
                     case R.id.iv_sort_points: {
                         if (currentSortType == 1) {
-                            return Float.compare(player2.getTotal_points(),player1.getTotal_points());
+                            return Float.compare(player2.getTotal_points(), player1.getTotal_points());
 
 
                         } else {
@@ -115,6 +98,21 @@ public class PlayersFragment extends AppBaseFragment {
         }
 
     };
+    Filter filter = new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            Collections.sort(players, listSorter);
+            return null;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            if (adapter != null && getActivity() != null) {
+                adapter.notifyDataSetChanged();
+            }
+        }
+    };
+    private LinearLayout ll_reset_list;
 
     public void setPlayersList(List<PlayerModel> players) {
         this.players = players;
@@ -171,18 +169,19 @@ public class PlayersFragment extends AppBaseFragment {
         iv_sort_credits = getView().findViewById(R.id.iv_sort_credits);
         ll_sort_credits.setOnClickListener(this);
 
+        ll_reset_list=getView().findViewById(R.id.fragment_player_list_reset);
+        ll_reset_list.setOnClickListener(this);
         updateSortArrow();
 
         tv_player_title = getView().findViewById(R.id.tv_player_title);
         initializeRecyclerView();
         tv_player_title.setText(fragmentTitle(type));
-        if(getActivity()!=null)
-        perFormFilter(((CreateTeamActivity) getActivity()).currentSortBy,
-                ((CreateTeamActivity) getActivity()).currentSortType);
+        if (getActivity() != null)
+            perFormFilter(((CreateTeamActivity) getActivity()).currentSortBy, ((CreateTeamActivity) getActivity()).currentSortType);
     }
 
-    public void performDefaultSort(){
-        if(ll_sort_credits!=null){
+    public void performDefaultSort() {
+        if (ll_sort_credits != null) {
             ll_sort_credits.performClick();
         }
     }
@@ -283,11 +282,19 @@ public class PlayersFragment extends AppBaseFragment {
             }
 
             break;
+            case R.id.fragment_player_list_reset:{
+               adapter.notifyDataSetChanged();
+                updateSelectedPlayer.reset();
+
+            }
+            break;
+
         }
     }
 
     public void perFormFilter(int currentSortBy, int currentSortType) {
-        if (getView() == null || adapter == null || getActivity() == null) return;
+        if (getView() == null || adapter == null || getActivity() == null)
+            return;
         switch (currentSortBy) {
             case 0: {
                 this.currentSortBy = iv_sort_players;
@@ -358,8 +365,7 @@ public class PlayersFragment extends AppBaseFragment {
 
             @Override
             public boolean isMaxPlayerSelected() {
-                return updateSelectedPlayer.getSelectedPlayer() >=
-                        updateSelectedPlayer.getTeamSetting().getMAX_PLAYERS();
+                return updateSelectedPlayer.getSelectedPlayer() >= updateSelectedPlayer.getTeamSetting().getMAX_PLAYERS();
             }
 
             @Override
@@ -393,31 +399,24 @@ public class PlayersFragment extends AppBaseFragment {
                 }
 
                 int totalMinPlayer = requiredSelectedPlayer;
-                if (totalMinPlayer + previousSelectedPlayer > updateSelectedPlayer.getTeamSetting().getMAX_PLAYERS()) {
-                    return true;
-                }
-                return false;
+                return totalMinPlayer + previousSelectedPlayer > updateSelectedPlayer.getTeamSetting().getMAX_PLAYERS();
             }
 
             @Override
             public boolean isCreditExceed(float playerCredit) {
-                float totalCredit = updateSelectedPlayer.getSelectedPlayerTotalPoints()
-                        + playerCredit;
-                if (totalCredit > updateSelectedPlayer.getTeamSetting().getMAX_CREDITS()) {
-                    return true;
-                }
-                return false;
+                float totalCredit = updateSelectedPlayer.getSelectedPlayerTotalPoints() + playerCredit;
+                return totalCredit > updateSelectedPlayer.getTeamSetting().getMAX_CREDITS();
             }
 
             @Override
             public String getPlayerTypeName(long team_id) {
                 TeamModel team1 = updateSelectedPlayer.getTeam1();
                 TeamModel team2 = updateSelectedPlayer.getTeam2();
-                String correctColor = "#"+ Integer.toHexString(ContextCompat.getColor(getActivity(), R.color.colorWhite)).substring(2);
-                String correctColor2 = "#"+ Integer.toHexString(ContextCompat.getColor(getActivity(), R.color.colorWhite)).substring(2);
+                String correctColor = "#" + Integer.toHexString(ContextCompat.getColor(getActivity(), R.color.colorWhite)).substring(2);
+                String correctColor2 = "#" + Integer.toHexString(ContextCompat.getColor(getActivity(), R.color.colorWhite)).substring(2);
 
                 if (team1.getId() == team_id) {
-                    return "<font color='" +correctColor + "'>" + team1.getName(1) + "</font>";
+                    return "<font color='" + correctColor + "'>" + team1.getName(1) + "</font>";
                 } else {
                     return "<font color='" + correctColor2 + "'>" + team2.getName(1) + "</font>";
                 }
@@ -456,21 +455,22 @@ public class PlayersFragment extends AppBaseFragment {
         });
     }
 
-    private boolean onPlayerSelected(PlayerModel playerModel) {
+    public boolean onPlayerSelected(PlayerModel playerModel) {
         if (playerModel.isSelected()) {
+            Log.i("is player select", "--00--");
             playerModel.setSelected(false);
             updateSelectedPlayer.updatePlayer(playerModel);
             adapter.notifyDataSetChanged();
             return true;
         } else if (!adapter.isMaxPlayerSelected()) {
+            Log.i("is player not select", "--11111--");
             if (!adapter.isMaxFrom1Team(playerModel.getTeam_id())) {
                 if (!adapter.isMaxPlayerType()) {
                     if (adapter.isMinPlayerFailed()) {
                         for (int i = 1; i < 5; i++) {
                             int playerCount1 = updateSelectedPlayer.getPlayerCountByType(i);
                             if (playerCount1 < updateSelectedPlayer.getTeamSetting().getMinPlayer(i) && i != type) {
-                                String minPlayerMessage = getMinPlayerMessage(updateSelectedPlayer.getTeamSetting().getMinPlayer(i),
-                                        getPlayerTypeFullName(i));
+                                String minPlayerMessage = getMinPlayerMessage(updateSelectedPlayer.getTeamSetting().getMinPlayer(i), getPlayerTypeFullName(i));
                                 showErrorMsg(minPlayerMessage);
                                 adapter.notifyDataSetChanged();
                                 return false;
@@ -546,6 +546,7 @@ public class PlayersFragment extends AppBaseFragment {
 
         float getSelectedPlayerTotalPoints();
 
+        void reset();
 
         int getSelectedPlayer();
 

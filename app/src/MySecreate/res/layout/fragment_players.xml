@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/my_secreate_bg_coot">
+    android:background="@color/my_secreate_bg_coot"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="@dimen/dp3"
             android:layout_marginLeft="@dimen/dp10"
-            android:layout_marginRight="@dimen/dp10"
             android:layout_marginTop="@dimen/dp5"
-            app:cardBackgroundColor="@color/transparent_color"
+            android:layout_marginRight="@dimen/dp10"
             android:layout_marginBottom="@dimen/dp10"
-            app:cardElevation="@dimen/dp3">
+            app:cardBackgroundColor="@color/transparent_color"
+            app:cardCornerRadius="@dimen/dp3"
+            app:cardElevation="@dimen/dp3"
+            >
+
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_player_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp5"
                 android:layout_marginBottom="@dimen/dp5"
-                android:gravity="center"
                 android:background="@drawable/bg_whiteborder_bg_app_color"
+                android:gravity="center"
                 android:text="Pick 1 Wicket Keeper"
                 android:textAllCaps="true"
                 android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_small"
-                app:custom_font="@string/app_font_medium" />
+                app:custom_font="@string/app_font_medium"
+                />
 
         </androidx.cardview.widget.CardView>
 
@@ -42,38 +48,44 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            >
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.1"
+                android:layout_weight="1.2"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="1"
+                >
 
                 <com.customviews.TypefaceTextView
-                    android:layout_width="@dimen/dp50"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/ll_left_round_corner_blue"
                     android:gravity="center"
                     android:text="INFO"
-                    android:background="@drawable/ll_left_round_corner_blue"
                     android:textAllCaps="true"
                     android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
-                    app:custom_font="@string/app_font_regular" />
+                    app:custom_font="@string/app_font_regular"
+                    />
 
 
                 <LinearLayout
                     android:id="@+id/ll_sort_players"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7"
                     android:background="#0673D8"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:paddingStart="@dimen/dp5"
                     android:paddingTop="@dimen/dp10"
-                    android:paddingBottom="@dimen/dp10">
+                    android:paddingBottom="@dimen/dp10"
+                    >
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
@@ -82,7 +94,8 @@
                         android:textAllCaps="true"
                         android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_extra_small"
-                        app:custom_font="@string/app_font_regular" />
+                        app:custom_font="@string/app_font_regular"
+                        />
 
                     <ImageView
                         android:id="@+id/iv_sort_players"
@@ -90,7 +103,8 @@
                         android:layout_height="@dimen/dp10"
                         android:layout_marginStart="@dimen/dp5"
                         android:src="@drawable/down_arrow_3x"
-                        android:tint="@color/colorWhite" />
+                        android:tint="@color/colorWhite"
+                        />
                 </LinearLayout>
 
             </LinearLayout>
@@ -101,11 +115,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
-                android:gravity="center"
                 android:background="#024B8F"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:paddingTop="@dimen/dp10"
-                android:paddingBottom="@dimen/dp10">
+                android:paddingBottom="@dimen/dp10"
+                >
 
                 <com.customviews.TypefaceTextView
                     android:layout_width="wrap_content"
@@ -114,7 +129,8 @@
                     android:textAllCaps="true"
                     android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
-                    app:custom_font="@string/app_font_regular" />
+                    app:custom_font="@string/app_font_regular"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_sort_points"
@@ -122,7 +138,8 @@
                     android:layout_height="@dimen/dp10"
                     android:layout_marginStart="@dimen/dp5"
                     android:src="@drawable/down_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    />
             </LinearLayout>
 
 
@@ -131,11 +148,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
-                android:gravity="center"
+
                 android:background="@drawable/ll_right_round_corner_blue"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:paddingTop="@dimen/dp10"
-                android:paddingBottom="@dimen/dp10">
+                android:paddingBottom="@dimen/dp10"
+                >
 
                 <com.customviews.TypefaceTextView
                     android:layout_width="wrap_content"
@@ -144,7 +163,8 @@
                     android:textAllCaps="true"
                     android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_extra_small"
-                    app:custom_font="@string/app_font_regular" />
+                    app:custom_font="@string/app_font_regular"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_sort_credits"
@@ -152,9 +172,30 @@
                     android:layout_height="@dimen/dp10"
                     android:layout_marginStart="@dimen/dp5"
                     android:src="@drawable/down_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/fragment_player_list_reset"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:background="#024B8F"
+                android:visibility="gone"
+
+                android:gravity="center"
+                >
+
+                <ImageView
+
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_reset"
+                    >
+
+                </ImageView>
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -163,7 +204,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingStart="@dimen/dp10"
-            android:paddingEnd="@dimen/dp10"/>
+            android:paddingEnd="@dimen/dp10"
+            />
 
     </LinearLayout>
 
