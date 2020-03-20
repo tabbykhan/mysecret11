@@ -18,11 +18,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="@dimen/dp10"
             android:layout_marginTop="@dimen/dp20"
-            android:background="@drawable/round_corner_white">
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_corner_white"
+            android:orientation="vertical">
 
 
             <RelativeLayout
@@ -51,18 +51,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_invite"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_invite"
                     android:background="?attr/app_divider_color" />
             </RelativeLayout>
 
@@ -93,13 +93,13 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
                     android:layout_width="match_parent"
@@ -135,18 +135,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_graph"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_graph"
                     android:background="?attr/app_divider_color" />
             </RelativeLayout>
 
@@ -177,18 +177,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_play"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_play"
                     android:background="?attr/app_divider_color" />
 
             </RelativeLayout>
@@ -220,18 +220,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_helpdesk"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_helpdesk"
                     android:background="?attr/app_divider_color" />
             </RelativeLayout>
 
@@ -248,7 +248,7 @@
                     android:layout_height="@dimen/dp25"
                     android:layout_margin="@dimen/dp15"
                     android:src="@drawable/about_us_3x"
-                    android:tint="@color/colorWhite"/>
+                    android:tint="@color/colorWhite" />
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_about"
@@ -262,18 +262,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_about"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_about"
                     android:background="?attr/app_divider_color" />
 
             </RelativeLayout>
@@ -305,26 +305,26 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_ligality"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_ligality"
                     android:background="?attr/app_divider_color" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:id="@+id/rl_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                >
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/img_account"
@@ -346,18 +346,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_account"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_account"
                     android:background="@color/colorWhite" />
             </RelativeLayout>
 
@@ -387,6 +387,49 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
+                    android:layout_width="@dimen/dp10"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/right_arrow_3x"
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/img_withdraw_policy"
+                    android:background="?attr/app_divider_color" />
+
+            </RelativeLayout>
+
+            //Private policy
+            <RelativeLayout
+                android:id="@+id/rl_private_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent_color">
+
+                <ImageView
+                    android:id="@+id/img_private_policy"
+                    android:layout_width="@dimen/dp25"
+                    android:layout_height="@dimen/dp25"
+                    android:layout_margin="@dimen/dp15"
+                    android:src="@drawable/invite_3x"
+                    android:tint="@color/colorWhite" />
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/tv_private_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/img_private_policy"
+                    android:text="Private Policy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="?attr/app_text_size_normal"
+                    app:custom_font="?attr/app_font_regular" />
+
+                <ImageView
                     android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
@@ -396,14 +439,12 @@
                     android:tint="@color/colorWhite" />
 
                 <View
-                    android:layout_below="@+id/img_withdraw_policy"
+                    android:layout_below="@+id/img_private_policy"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="?attr/app_divider_color" />
 
             </RelativeLayout>
-
-
             <RelativeLayout
                 android:id="@+id/rl_terms_services"
                 android:layout_width="match_parent"
@@ -430,18 +471,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_terms_services"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_terms_services"
                     android:background="?attr/app_divider_color" />
             </RelativeLayout>
 
@@ -472,18 +513,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_contect"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_contect"
                     android:background="?attr/app_divider_color" />
             </RelativeLayout>
 
@@ -514,18 +555,18 @@
                     app:custom_font="?attr/app_font_regular" />
 
                 <ImageView
-                    android:visibility="gone"
                     android:layout_width="@dimen/dp10"
                     android:layout_height="@dimen/dp10"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/right_arrow_3x"
-                    android:tint="?attr/app_text_color" />
+                    android:tint="?attr/app_text_color"
+                    android:visibility="gone" />
 
                 <View
-                    android:layout_below="@+id/img_faq"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_below="@+id/img_faq"
                     android:background="?attr/app_divider_color" />
             </RelativeLayout>
 

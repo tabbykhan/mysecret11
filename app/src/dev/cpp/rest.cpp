@@ -482,6 +482,7 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetReferEarn(
     std::string data = getBaseUrl(env) + "get_refer_earn";
     return env->NewStringUTF(data.c_str());
 }
+
 JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetReferEarnDetail(
         JNIEnv *env,
         jobject obj) {
@@ -638,6 +639,12 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_CreateCustomerEnquiry(
     return env->NewStringUTF(data.c_str());
 }
 
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetPrivatePolicy(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBasePageUrl(env) + "privacy-policy.html";
+    return env->NewStringUTF(data.c_str());
+}
 }
 
 

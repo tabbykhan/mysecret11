@@ -19,16 +19,17 @@ public class CustomIconModel extends AppBaseModel {
     IconModel more_aboutus;
     IconModel more_legality;
     IconModel more_withdraw_policy;
+    IconModel more_private_policy;
     IconModel more_terms_of_services;
     IconModel more_contact;
     IconModel more_faq;
 
     @Override
     public int hashCode() {
-        return Objects.hash(getTab_home(),getTab_my_contest(),getTab_feeds(),getTab_account(),getTab_more(),
-                getMore_invite_friends(),getMore_contest_invite_code(),getMore_fantasy_point_system(),
-                getMore_how_to_play(),getMore_helpdesk(),getMore_aboutus(),getMore_legality(),
-                getMore_withdraw_policy(),getMore_terms_of_services(),getMore_contact(),getMore_faq());
+        return Objects.hash(getTab_home(), getTab_my_contest(), getTab_feeds(), getTab_account(), getTab_more(),
+                getMore_invite_friends(), getMore_contest_invite_code(), getMore_fantasy_point_system(),
+                getMore_how_to_play(), getMore_helpdesk(), getMore_aboutus(), getMore_legality(),
+                getMore_withdraw_policy(),getMore_private_policy(), getMore_terms_of_services(), getMore_contact(), getMore_faq());
     }
 
     public IconModel getTab_home() {
@@ -135,6 +136,14 @@ public class CustomIconModel extends AppBaseModel {
         this.more_withdraw_policy = more_withdraw_policy;
     }
 
+    public IconModel getMore_private_policy() {
+        return more_private_policy;
+    }
+
+    public void setMore_private_policy(IconModel more_private_policy) {
+        this.more_private_policy = more_private_policy;
+    }
+
     public IconModel getMore_terms_of_services() {
         return more_terms_of_services;
     }
@@ -159,14 +168,14 @@ public class CustomIconModel extends AppBaseModel {
         this.more_faq = more_faq;
     }
 
-    public static class IconModel extends AppBaseModel{
+    public static class IconModel extends AppBaseModel {
         String tag;
         String name;
         String image;
 
         @Override
         public int hashCode() {
-            return Objects.hash(getTag(),getName(),getImage());
+            return Objects.hash(getTag(), getName(), getImage());
         }
 
         public String getTag() {

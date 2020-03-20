@@ -110,7 +110,7 @@ android {
         cmake {
             if (currentFlavour == 'imuonsDev') {
                 path "src/imuons/CMakeLists.txt"
-            }else if (currentFlavour == 'visionDev') {
+            } else if (currentFlavour == 'visionDev') {
                 path "src/Vision/CMakeLists.txt"
             } else {
                 path "src/imuons/CMakeLists.txt"

@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ConstantsFlavor;
 import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseFragment;
@@ -21,11 +22,10 @@ import com.rest.WebServices;
 public class MoreFragment extends AppBaseFragment {
 
     RelativeLayout rl_invite, rl_contest_invite_code, rl_point_system,
-            rl_how_to_play, rl_helpdesk, rl_about_us, rl_legality, rl_withdraw_policy, rl_terms_services,
+            rl_how_to_play, rl_helpdesk, rl_about_us, rl_legality, rl_withdraw_policy, rl_terms_services,rl_private_policy,
             rl_contact, rl_faq, rl_account;
 
     TextView tv_app_version;
-
     ImageView img_invite;
     TextView txt_invite;
     ImageView img_contest;
@@ -41,7 +41,9 @@ public class MoreFragment extends AppBaseFragment {
     ImageView img_ligality;
     TextView tv_ligality;
     ImageView img_withdraw_policy;
+    ImageView img_private_policy;
     TextView tv_withdraw_policy;
+    TextView tv_private_policy;
     ImageView img_terms_services;
     TextView tv_terms_services;
     ImageView img_contect;
@@ -74,7 +76,9 @@ public class MoreFragment extends AppBaseFragment {
         img_ligality = getView().findViewById(R.id.img_ligality);
         tv_ligality = getView().findViewById(R.id.tv_ligality);
         img_withdraw_policy = getView().findViewById(R.id.img_withdraw_policy);
+        img_private_policy = getView().findViewById(R.id.img_private_policy);
         tv_withdraw_policy = getView().findViewById(R.id.tv_withdraw_policy);
+        tv_private_policy = getView().findViewById(R.id.tv_private_policy);
         img_terms_services = getView().findViewById(R.id.img_terms_services);
         tv_terms_services = getView().findViewById(R.id.tv_terms_services);
         img_contect = getView().findViewById(R.id.img_contect);
@@ -91,6 +95,7 @@ public class MoreFragment extends AppBaseFragment {
         rl_about_us = getView().findViewById(R.id.rl_about_us);
         rl_legality = getView().findViewById(R.id.rl_legality);
         rl_withdraw_policy = getView().findViewById(R.id.rl_withdraw_policy);
+        rl_private_policy = getView().findViewById(R.id.rl_private_policy);
         rl_terms_services = getView().findViewById(R.id.rl_terms_services);
         rl_contact = getView().findViewById(R.id.rl_contact);
         rl_faq = getView().findViewById(R.id.rl_faq);
@@ -108,10 +113,23 @@ public class MoreFragment extends AppBaseFragment {
         rl_about_us.setOnClickListener(this);
         rl_legality.setOnClickListener(this);
         rl_withdraw_policy.setOnClickListener(this);
+      //  rl_private_policy.setOnClickListener(this);
         rl_terms_services.setOnClickListener(this);
         rl_contact.setOnClickListener(this);
         rl_faq.setOnClickListener(this);
         rl_account.setOnClickListener(this);
+
+        if (ConstantsFlavor.type==ConstantsFlavor.Type.MySecreate){
+            rl_private_policy.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString(DATA1, tv_private_policy.getText().toString());
+                    bundle.putString(DATA, WebServices.GetPrivacyPolicy());
+                    goToWebViewActivity(bundle);
+                }
+            });
+        }
 
         setupCustomIcons();
 
@@ -238,6 +256,21 @@ public class MoreFragment extends AppBaseFragment {
                 img_withdraw_policy.setImageResource(R.drawable.withdraw_icon);
             }
 
+            /*if (ConstantsFlavor.type==ConstantsFlavor.Type.MySecreate){
+                //private policy
+                CustomIconModel.IconModel more_private_policy = customIconModel.getMore_private_policy();
+                if (more_private_policy != null) {
+                    updateViewVisibitity(rl_private_policy, View.VISIBLE);
+                    tv_private_policy.setText(more_private_policy.getName());
+                    ((AppBaseActivity) getActivity()).loadImage(this, img_private_policy, null, more_private_policy.getImage(), R.drawable.withdraw_icon, -1);
+                } else {
+                    updateViewVisibitity(rl_private_policy, View.GONE);
+                    tv_private_policy.setText("");
+                    img_private_policy.setImageResource(R.drawable.withdraw_icon);
+                }
+            }*/
+
+
 
             CustomIconModel.IconModel more_terms_of_services = customIconModel.getMore_terms_of_services();
             if (more_terms_of_services != null) {
@@ -327,6 +360,8 @@ public class MoreFragment extends AppBaseFragment {
                 bundle.putString(DATA, WebServices.GetWithdrawPolicy());
                 goToWebViewActivity(bundle);
                 break;
+
+
             case R.id.rl_terms_services:
                 bundle.putString(DATA1, tv_terms_services.getText().toString());
                 bundle.putString(DATA, WebServices.GetTnc());

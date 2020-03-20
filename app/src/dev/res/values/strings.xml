@@ -11,7 +11,6 @@
     <string name="browser_key">AIzaSyD5Lgf7GY1NbeTSf-yKayNJN0chpPuJN-Q</string>
 
 
-
     <string name="withdraw_min_max"><![CDATA[min \u20B9200 & max \u20B92000 allowed per day]]></string>
     <string name="transition_logo_move">transition_logo_move</string>
     <string name="transition_mobile_move">transition_mobile_move</string>

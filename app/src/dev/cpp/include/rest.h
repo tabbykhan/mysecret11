@@ -337,6 +337,9 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetLegality(
 JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetWithdrawPolicy(
                 JNIEnv *env,
                 jobject obj);
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetPrivatePolicy(
+                JNIEnv *env,
+                jobject obj);
 JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetTnc(
                 JNIEnv *env,
                 jobject obj);
@@ -352,7 +355,9 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetHelpDesk(
 JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetApplyPromoCode(
                 JNIEnv *env,
                 jobject obj);
-
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetPrivatePolicy(
+        JNIEnv *env,
+        jobject obj);
 
 }
 
