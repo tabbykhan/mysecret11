@@ -16,11 +16,6 @@ import java.util.Calendar;
 public class DatePickerUtil {
 
 
-    /**
-     * use for show date picker
-     *
-     * @param clickedView
-     */
     public static MyDatePickerDialog getDatePicker(String title,Context context, final View clickedView,
                                                  final OnDateSelectedListener onDateSelectedListener) {
 

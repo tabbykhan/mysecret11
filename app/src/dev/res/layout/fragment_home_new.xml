@@ -53,9 +53,10 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorWhite"
-                android:text="JOIN ST11 MEGA CONTEST"
+                android:text="My innings My winnings"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/dp15"
+                android:textAllCaps="true"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp40"
                 android:visibility="visible"/>

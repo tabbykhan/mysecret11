@@ -3,7 +3,7 @@ package com.CoustomControl.ResponseAndPojoClass;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Product {
+public class  Product {
     @SerializedName("product_name")
     @Expose
     private String productName;
