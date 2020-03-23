@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/app_screen_bg_color"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <include
         android:id="@+id/fragment_toolbar"
-        layout="@layout/include_toolbar_fargment" />
+        layout="@layout/include_toolbar_fargment"
+        />
 
     <include
         android:id="@+id/ll_top"
         layout="@layout/include_match_timer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fragment_toolbar" />
+        android:layout_below="@+id/fragment_toolbar"
+        />
 
     <LinearLayout
         android:id="@+id/ll_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#002341"
         android:orientation="vertical"
-        android:background="#002341">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#012241"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <com.customviews.TypefaceTextView
                 android:id="@+id/tv_max_player_in_a_team"
@@ -41,31 +47,36 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="?attr/app_text_size_normal"
                 android:visibility="gone"
-                app:custom_font="?attr/app_font_medium" />
+                app:custom_font="?attr/app_font_medium"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp5"
                 android:gravity="bottom"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_horizontal|bottom"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    >
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dp2"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        >
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            >
 
                             <ImageView
                                 android:id="@+id/iv_caption_image"
@@ -74,7 +85,8 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="0dp"
                                 android:gravity="center_vertical"
-                                android:src="@drawable/no_image" />
+                                android:src="@drawable/no_image"
+                                />
 
                             <com.customviews.TypefaceTextView
                                 android:layout_width="wrap_content"
@@ -89,7 +101,8 @@
                                 android:text="2x"
                                 android:textColor="@color/colorWhite"
                                 android:textSize="@dimen/sp10"
-                                android:visibility="gone" />
+                                android:visibility="gone"
+                                />
                         </RelativeLayout>
 
 
@@ -100,7 +113,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp3"
                         android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        >
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_caption_name"
@@ -111,7 +125,8 @@
                             android:text="CAPTAIN"
                             android:textColor="@color/colorWhite"
                             android:textSize="@dimen/sp10"
-                            app:custom_font="?attr/app_font_regular" />
+                            app:custom_font="?attr/app_font_regular"
+                            />
 
                         <com.customviews.TypefaceTextView
                             android:layout_width="wrap_content"
@@ -120,7 +135,8 @@
                             android:text="(C)"
                             android:textColor="#6FADFC"
                             android:textSize="@dimen/sp10"
-                            app:custom_font="?attr/app_font_regular" />
+                            app:custom_font="?attr/app_font_regular"
+                            />
                     </LinearLayout>
 
 
@@ -132,24 +148,28 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center_horizontal|bottom"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    >
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dp2"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        >
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            >
 
                             <ImageView
                                 android:id="@+id/iv_vc_caption_image"
                                 android:layout_width="@dimen/dp60"
                                 android:layout_height="@dimen/dp60"
                                 android:gravity="center_vertical"
-                                android:src="@drawable/no_image" />
+                                android:src="@drawable/no_image"
+                                />
 
                             <com.customviews.TypefaceTextView
                                 android:layout_width="wrap_content"
@@ -164,7 +184,8 @@
                                 android:text="1.5x"
                                 android:textColor="@color/colorWhite"
                                 android:textSize="@dimen/sp10"
-                                android:visibility="gone" />
+                                android:visibility="gone"
+                                />
                         </RelativeLayout>
 
 
@@ -175,7 +196,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp3"
                         android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        >
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_vc_caption_name"
@@ -186,7 +208,8 @@
                             android:text="VICE CAPTAIN"
                             android:textColor="@color/colorWhite"
                             android:textSize="@dimen/sp10"
-                            app:custom_font="?attr/app_font_regular" />
+                            app:custom_font="?attr/app_font_regular"
+                            />
 
                         <com.customviews.TypefaceTextView
                             android:layout_width="wrap_content"
@@ -195,7 +218,8 @@
                             android:text="(VC)"
                             android:textColor="#6FADFC"
                             android:textSize="@dimen/sp10"
-                            app:custom_font="?attr/app_font_regular" />
+                            app:custom_font="?attr/app_font_regular"
+                            />
                     </LinearLayout>
 
 
@@ -204,32 +228,31 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dp1"
-                android:layout_marginTop="@dimen/dp10"
-                android:background="?attr/app_divider_color" />
 
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/dp5"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:visibility="gone">
+            android:visibility="visible"
+            android:weightSum="1"
+            >
 
             <LinearLayout
                 android:id="@+id/ll_sort_players"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.9"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:background="@drawable/ll_left_round_corner_blue"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:paddingTop="@dimen/dp7"
-                android:paddingBottom="@dimen/dp7">
+                android:paddingBottom="@dimen/dp7"
+                >
 
                 <com.customviews.TypefaceTextView
                     android:layout_width="wrap_content"
@@ -238,7 +261,8 @@
                     android:text="PLAYERS"
                     android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
-                    app:custom_font="?attr/app_font_regular" />
+                    app:custom_font="?attr/app_font_regular"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_sort_players"
@@ -246,26 +270,30 @@
                     android:layout_height="@dimen/dp10"
                     android:layout_marginStart="@dimen/dp5"
                     android:src="@drawable/down_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_sort_points"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:background="#0673D8"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:paddingTop="@dimen/dp7"
-                android:paddingBottom="@dimen/dp7">
+                android:paddingBottom="@dimen/dp7"
+                >
 
                 <com.customviews.TypefaceTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="POINTS"
+                    android:text="Captain"
                     android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_small"
-                    app:custom_font="?attr/app_font_regular" />
+                    app:custom_font="?attr/app_font_regular"
+                    />
 
                 <ImageView
                     android:id="@+id/iv_sort_points"
@@ -273,21 +301,49 @@
                     android:layout_height="@dimen/dp10"
                     android:layout_marginStart="@dimen/dp5"
                     android:src="@drawable/down_arrow_3x"
-                    android:tint="@color/colorWhite" />
+                    android:tint="@color/colorWhite"
+                    />
 
             </LinearLayout>
 
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="?attr/app_divider_color"
+                />
 
-            <com.customviews.TypefaceTextView
+            <LinearLayout
+                android:id="@+id/ll_sort_points_vc"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                android:layout_weight="0.3"
+                android:background="@drawable/ll_right_round_corner_blue"
+                android:gravity="center"
+                android:orientation="horizontal"
                 android:paddingTop="@dimen/dp7"
                 android:paddingBottom="@dimen/dp7"
-                android:text=""
-                android:textColor="?attr/app_text_color"
-                android:textSize="?attr/app_text_size_small"
-                app:custom_font="?attr/app_font_regular" />
+                >
+
+                <com.customviews.TypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vice Captain"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="?attr/app_text_size_small"
+                    app:custom_font="?attr/app_font_regular"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_sort_points_vc"
+                    android:layout_width="@dimen/dp10"
+                    android:layout_height="@dimen/dp10"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:src="@drawable/down_arrow_3x"
+                    android:tint="@color/colorWhite"
+                    />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -300,8 +356,10 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp5"
             android:layout_weight="1"
-            tools:listitem="@layout/item_choose_caption_adapter" />
+            tools:listitem="@layout/item_choose_caption_adapter"
+            />
 
         <com.customviews.TypefaceTextView
             android:id="@+id/tv_save"
@@ -314,7 +372,8 @@
             android:text="SAVE TEAM"
             android:textColor="@color/colorWhite"
             android:textSize="?attr/btn_text_size"
-            app:custom_font="?attr/app_font_regular" />
+            app:custom_font="?attr/app_font_regular"
+            />
 
     </LinearLayout>
 

@@ -96,11 +96,22 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
 
                     case R.id.iv_sort_points: {
                         if (currentSortType == 1) {
-                            return Float.compare(player2.getTotal_points(), player1.getTotal_points());
+                           // return Float.compare(player2.getTotal_points(),player1.getTotal_points());
+                            return Float.compare(Float.parseFloat(player2.getCaptionSelected_byText()), Float.parseFloat(player1.getCaptionSelected_byText()));
                         } else {
-                            return Float.compare(player1.getTotal_points(), player2.getTotal_points());
+                            //return Float.compare(player1.getTotal_points(),player2.getTotal_points());
+                            return Float.compare(Float.parseFloat(player1.getCaptionSelected_byText()), Float.parseFloat(player2.getCaptionSelected_byText()));
                         }
 
+                    }
+                    case R.id.iv_sort_points_vc:{
+                        if (currentSortType == 1) {
+                            return Float.compare(Float.parseFloat(player2.getViceCaptionSelected_byText()),
+                                    Float.parseFloat(player1.getViceCaptionSelected_byText()));
+                        } else {
+                            return Float.compare(Float.parseFloat(player1.getViceCaptionSelected_byText()),
+                                    Float.parseFloat(player2.getViceCaptionSelected_byText()));
+                        }
                     }
                 }
             }
@@ -108,6 +119,8 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
         }
 
     };
+    private LinearLayout ll_sort_points_vc;
+    private ImageView iv_sort_points_vc;
 
     private MatchModel getMatchModel() {
         return MyApplication.getInstance().getSelectedMatch();
@@ -177,6 +190,10 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
         ll_sort_points = findViewById(R.id.ll_sort_points);
         iv_sort_points = findViewById(R.id.iv_sort_points);
         ll_sort_points.setOnClickListener(this);
+
+        ll_sort_points_vc = findViewById(R.id.ll_sort_points_vc);
+        iv_sort_points_vc = findViewById(R.id.iv_sort_points_vc);
+        ll_sort_points_vc.setOnClickListener(this);
 
         tv_timer_time = findViewById(R.id.tv_timer_time);
         tv_match_name = findViewById(R.id.tv_match_name);
@@ -384,6 +401,20 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
             }
 
             break;
+            case R.id.ll_sort_points_vc:{
+                if (currentSortBy != null) {
+                    if (currentSortBy.getId() != iv_sort_points_vc.getId()) {
+                        currentSortBy = iv_sort_points_vc;
+                        currentSortType = 0;
+                    } else {
+                        currentSortType = (currentSortType == 0) ? 1 : 0;
+                    }
+                } else {
+                    currentSortBy = iv_sort_points_vc;
+                    currentSortType = 0;
+                }
+                updateSortArrow();
+            }
         }
     }
 
@@ -396,14 +427,17 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
                 case R.id.iv_sort_players:
                     updateViewVisibitity(iv_sort_players, View.VISIBLE);
                     updateViewVisibitity(iv_sort_points, View.INVISIBLE);
+                    updateViewVisibitity(iv_sort_points_vc, View.INVISIBLE);
                     break;
                 case R.id.iv_sort_points:
                     updateViewVisibitity(iv_sort_players, View.INVISIBLE);
                     updateViewVisibitity(iv_sort_points, View.VISIBLE);
+                    updateViewVisibitity(iv_sort_points_vc, View.INVISIBLE);
                     break;
-                case R.id.iv_sort_credits:
+                case R.id.iv_sort_points_vc:
                     updateViewVisibitity(iv_sort_players, View.INVISIBLE);
                     updateViewVisibitity(iv_sort_points, View.INVISIBLE);
+                    updateViewVisibitity(iv_sort_points_vc, View.VISIBLE);
                     break;
             }
 
