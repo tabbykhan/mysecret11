@@ -214,8 +214,6 @@ public class DashboardActivityNew extends AppBaseActivity {
         rl_fragment_container = findViewById(R.id.rl_fragment_container);
 
         callGetProfile();
-
-
         new AppCustomIconsHelper().start();
 
         if (getWebRequestHelper() != null) {
