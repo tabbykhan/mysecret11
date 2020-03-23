@@ -422,6 +422,7 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
         if (currentSortBy == null) {
             updateViewVisibitity(iv_sort_players, View.INVISIBLE);
             updateViewVisibitity(iv_sort_points, View.INVISIBLE);
+            updateViewVisibitity(iv_sort_points_vc, View.INVISIBLE);
         } else {
             switch (currentSortBy.getId()) {
                 case R.id.iv_sort_players:

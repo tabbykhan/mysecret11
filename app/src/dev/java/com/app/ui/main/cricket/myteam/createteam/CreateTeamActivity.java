@@ -3,6 +3,7 @@ package com.app.ui.main.cricket.myteam.createteam;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -39,10 +40,25 @@ import java.util.List;
 
 public class CreateTeamActivity extends AppBaseActivity implements MatchTimerListener {
 
+    public float totalSelectedPlayerPoints = 0;
+    public int totalTeam1Players = 0;
+    public int totalTeam2Players = 0;
+    public int currentSortBy = -1;
+    public int currentSortType = 0;
     ToolbarFragment toolbarFragment;
-
     ImageView iv_man;
-
+    TabLayout create_team_tabs;
+    ViewPager view_pager;
+    ViewPagerAdapter adapter;
+    LinearLayout ll_bottom;
+    LinearLayout ll_team_preview;
+    TextView tv_continue;
+    int totalSelectedWckitKeeper = 0;
+    int totalSelectedBetsman = 0;
+    int totalSelectedAllrounder = 0;
+    int totalSelectedBowler = 0;
+    CustomerTeamModel customerExistTeam;
+    MatchModel matchModelWithPlayers;
     private TextView tv_max_player_in_a_team;
     private LinearLayout ll_team_detail;
     private TextView tv_selected_player;
@@ -54,26 +70,6 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
     private ImageView iv_team_two;
     private TextView tv_credit_limit;
     private ProgressBarView progressBar_team;
-    TabLayout create_team_tabs;
-    ViewPager view_pager;
-    ViewPagerAdapter adapter;
-    LinearLayout ll_bottom;
-    LinearLayout ll_team_preview;
-    TextView tv_continue;
-
-    public float totalSelectedPlayerPoints = 0;
-    int totalSelectedWckitKeeper = 0;
-    int totalSelectedBetsman = 0;
-    int totalSelectedAllrounder = 0;
-    int totalSelectedBowler = 0;
-    public int totalTeam1Players = 0;
-    public int totalTeam2Players = 0;
-
-    public int currentSortBy = -1;
-    public int currentSortType = 0;
-
-    CustomerTeamModel customerExistTeam;
-    MatchModel matchModelWithPlayers;
     PlayersFragment.UpdateSelectedPlayer updateSelectedPlayer = new PlayersFragment.UpdateSelectedPlayer() {
         @Override
         public void updatePlayer(PlayerModel playerModel) {
@@ -103,6 +99,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         @Override
         public void reset() {
             checkselectedplayerType();
+
         }
 
         @Override
@@ -125,30 +122,72 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             return matchModelWithPlayers.getTeam2();
         }
     };
-    private int selected_player_type=0;
+    private int selected_player_type = 0;
     private PlayersFragment playersFragment2;
 
     private void checkselectedplayerType() {
-        if(selected_player_type==0){
-            TeamModel team1 = matchModelWithPlayers.getTeam1();
-            List<PlayerModel> resetLits=new ArrayList<>();
-            List<PlayerModel> allPlayers = matchModelWithPlayers.getWicketkeapers();
+        List<PlayerModel> allPlayers;
+        TeamModel team1 = matchModelWithPlayers.getTeam1();
+        if (selected_player_type == 0) {
+             allPlayers = matchModelWithPlayers.getWicketkeapers();
             for (PlayerModel playerModel : allPlayers) {
-                boolean b = playersFragment2.onPlayerSelected(playerModel);
-                if (b) {
-                    if (getApplicationContext() != null)
-                        refreshOtherFragmentData();
+                if (playerModel.isSelected()) {
+                    playerModel.setSelected(false);
+                    totalSelectedWckitKeeper--;
+                    totalSelectedPlayerPoints -= playerModel.getCredits();
+                    if (playerModel.getTeam_id() == team1.getId()) {
+                        totalTeam1Players--;
+                    } else {
+                        totalTeam2Players--;
+                    }
                 }
             }
             updateUi();
-        }else if (selected_player_type==1){
-
-        }else if(selected_player_type==2){
-
-        }else if(selected_player_type==3){
-
-        }else if(selected_player_type==4){
-
+        } else if (selected_player_type == 1) {
+            allPlayers = matchModelWithPlayers.getBatsmans();
+            for (PlayerModel playerModel : allPlayers) {
+                if (playerModel.isSelected()) {
+                    totalSelectedBetsman--;
+                    playerModel.setSelected(false);
+                    totalSelectedPlayerPoints -= playerModel.getCredits();
+                    if (playerModel.getTeam_id() == team1.getId()) {
+                        totalTeam1Players--;
+                    } else {
+                        totalTeam2Players--;
+                    }
+                }
+            }
+            updateUi();
+        } else if (selected_player_type == 2) {
+            allPlayers = matchModelWithPlayers.getAllrounders();
+            for (PlayerModel playerModel : allPlayers) {
+                if (playerModel.isSelected()) {
+                    totalSelectedAllrounder--;
+                    playerModel.setSelected(false);
+                    totalSelectedPlayerPoints -= playerModel.getCredits();
+                    if (playerModel.getTeam_id() == team1.getId()) {
+                        totalTeam1Players--;
+                    } else {
+                        totalTeam2Players--;
+                    }
+                }
+            }
+            updateUi();
+        } else if (selected_player_type == 3) {
+            allPlayers = matchModelWithPlayers.getBowlers();
+            for (PlayerModel playerModel : allPlayers) {
+                if (playerModel.isSelected()) {
+                    totalSelectedBowler--;
+                    playerModel.setSelected(false);
+                    totalSelectedPlayerPoints -= playerModel.getCredits();
+                    if (playerModel.getTeam_id() == team1.getId()) {
+                        totalTeam1Players--;
+                    } else {
+                        totalTeam2Players--;
+                    }
+                }
+            }
+            updateUi();
         }
 
     }
@@ -179,18 +218,22 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         Bundle extras = getIntent().getExtras();
         return (extras == null ? "" : extras.getString(DATA4, ""));
     }
+
     public List<String> getEntryFeeSuggest() {
         Bundle extras = getIntent().getExtras();
         String Siggest = (extras == null ? "" : extras.getString(DATA4, ""));
-        if(isValidString(Siggest)){
-            return  new Gson().fromJson(Siggest,new TypeToken<List<String>>(){}.getType());
+        if (isValidString(Siggest)) {
+            return new Gson().fromJson(Siggest, new TypeToken<List<String>>() {
+            }.getType());
         }
         return new ArrayList<>();
     }
+
     public String getEntryFee() {
         Bundle extras = getIntent().getExtras();
         return (extras == null ? "" : extras.getString(DATA5, ""));
     }
+
     public String getMaxEntryFee() {
         Bundle extras = getIntent().getExtras();
         return (extras == null ? "" : extras.getString(DATA6, ""));
@@ -292,7 +335,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             toolbarFragment.setLeftTitle(getMatchModel().getRemainTimeText() + " Left");
 
             boolean matchTimeExpire = getMatchModel().isMatchTimeExpire();
-            if(matchTimeExpire){
+            if (matchTimeExpire) {
                 showMatchExpireDialog();
             }
         }
@@ -320,13 +363,13 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
 
 
     private void setupData() {
-        if (matchModelWithPlayers == null) return;
+        if (matchModelWithPlayers == null)
+            return;
         CustomerTeamModel customerTeam = customerExistTeam;
         if (customerTeam != null) {
             List<PlayerModel> selectedPlayers = customerTeam.getWicketkeapers();
             List<PlayerModel> allPlayers = matchModelWithPlayers.getWicketkeapers();
-            if (allPlayers != null && allPlayers.size() > 0 &&
-                    selectedPlayers != null && selectedPlayers.size() > 0) {
+            if (allPlayers != null && allPlayers.size() > 0 && selectedPlayers != null && selectedPlayers.size() > 0) {
                 for (PlayerModel player : allPlayers) {
                     if (selectedPlayers.indexOf(player) >= 0) {
                         player.setSelected(true);
@@ -335,8 +378,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             }
             selectedPlayers = customerTeam.getBatsmans();
             allPlayers = matchModelWithPlayers.getBatsmans();
-            if (allPlayers != null && allPlayers.size() > 0 &&
-                    selectedPlayers != null && selectedPlayers.size() > 0) {
+            if (allPlayers != null && allPlayers.size() > 0 && selectedPlayers != null && selectedPlayers.size() > 0) {
                 for (PlayerModel player : allPlayers) {
                     if (selectedPlayers.indexOf(player) >= 0) {
                         player.setSelected(true);
@@ -345,8 +387,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             }
             selectedPlayers = customerTeam.getAllrounders();
             allPlayers = matchModelWithPlayers.getAllrounders();
-            if (allPlayers != null && allPlayers.size() > 0 &&
-                    selectedPlayers != null && selectedPlayers.size() > 0) {
+            if (allPlayers != null && allPlayers.size() > 0 && selectedPlayers != null && selectedPlayers.size() > 0) {
                 for (PlayerModel player : allPlayers) {
                     if (selectedPlayers.indexOf(player) >= 0) {
                         player.setSelected(true);
@@ -355,8 +396,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             }
             selectedPlayers = customerTeam.getBowlers();
             allPlayers = matchModelWithPlayers.getBowlers();
-            if (allPlayers != null && allPlayers.size() > 0 &&
-                    selectedPlayers != null && selectedPlayers.size() > 0) {
+            if (allPlayers != null && allPlayers.size() > 0 && selectedPlayers != null && selectedPlayers.size() > 0) {
                 for (PlayerModel player : allPlayers) {
                     if (selectedPlayers.indexOf(player) >= 0) {
                         player.setSelected(true);
@@ -375,11 +415,9 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         TeamModel team1 = matchModelWithPlayers.getTeam1();
         TeamModel team2 = matchModelWithPlayers.getTeam2();
         tv_team1_name.setText(team1.getName(1));
-        loadImage(this, iv_team_one, null, team1.getImage(),
-                R.drawable.no_image);
+        loadImage(this, iv_team_one, null, team1.getImage(), R.drawable.no_image);
         tv_team2_name.setText(team2.getName(1));
-        loadImage(this, iv_team_two, null, team2.getImage(),
-                R.drawable.no_image);
+        loadImage(this, iv_team_two, null, team2.getImage(), R.drawable.no_image);
         String max_from_one_team = String.format("Max %s players from a team", getTeamSetting().getMAX_PLAYERS_PER_TEAM());
         tv_max_player_in_a_team.setText(max_from_one_team);
 
@@ -398,7 +436,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             @Override
             public void onPageSelected(int i) {
                 //adapter.getItem(i).onPageSelected();
-                selected_player_type=i;
+                selected_player_type = i;
             }
 
             @Override
@@ -408,7 +446,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         });
         adapter = new ViewPagerAdapter(getFm());
 
-         playersFragment2 = new PlayersFragment();
+        playersFragment2 = new PlayersFragment();
         playersFragment2.setPlayersList(matchModelWithPlayers.getWicketkeapers());
         playersFragment2.setType(1);
         playersFragment2.setMin(getTeamSetting().getMIN_WICKETKEEPER());
@@ -469,7 +507,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
 
 
     private void calculateData() {
-        if (matchModelWithPlayers == null) return;
+        if (matchModelWithPlayers == null)
+            return;
 
         totalSelectedPlayerPoints = 0;
         totalSelectedWckitKeeper = 0;
@@ -480,7 +519,6 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         totalTeam2Players = 0;
 
         TeamModel team1 = matchModelWithPlayers.getTeam1();
-
         List<PlayerModel> allPlayers = matchModelWithPlayers.getWicketkeapers();
         for (PlayerModel playerModel : allPlayers) {
             if (playerModel.isSelected()) {
@@ -491,6 +529,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
                 } else {
                     totalTeam2Players++;
                 }
+            } else {
+                Log.i("De selected--", "--" + playerModel.isSelected());
             }
         }
 
@@ -542,7 +582,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
     }
 
     private void createTabs() {
-        if (create_team_tabs == null) return;
+        if (create_team_tabs == null)
+            return;
         TabLayout.Tab tabAt = create_team_tabs.getTabAt(0);
         View inflate = LayoutInflater.from(this).inflate(R.layout.include_create_team_tab, null);
         inflate.setActivated(true);
@@ -554,7 +595,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         iv_player_type.setImageResource(R.drawable.icon_player_type_wkt_3x);
         tabAt.setCustomView(inflate);
 
-
+        Log.i("player size check--", "" + totalSelectedWckitKeeper);
         tabAt = create_team_tabs.getTabAt(1);
         inflate = LayoutInflater.from(this).inflate(R.layout.include_create_team_tab, null);
         tv_player_type = inflate.findViewById(R.id.tv_player_type);
@@ -571,11 +612,9 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         tv_player_type_count = inflate.findViewById(R.id.tv_player_type_count);
         iv_player_type = inflate.findViewById(R.id.iv_player_type);
         tv_player_type.setText("AR");
-        tv_player_type_count.setText(totalSelectedAllrounder+"");
+        tv_player_type_count.setText(totalSelectedAllrounder + "");
         iv_player_type.setImageResource(R.drawable.icon_player_type_ar_3x);
         tabAt.setCustomView(inflate);
-
-
 
 
         tabAt = create_team_tabs.getTabAt(3);
@@ -592,7 +631,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
     }
 
     private void updateUi() {
-        if (create_team_tabs == null) return;
+        if (create_team_tabs == null)
+            return;
 
         TabLayout.Tab tabAt = create_team_tabs.getTabAt(0);
         View inflate = tabAt.getCustomView();
@@ -600,9 +640,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         TextView tv_player_type_count = inflate.findViewById(R.id.tv_player_type_count);
         ImageView iv_player_type = inflate.findViewById(R.id.iv_player_type);
         tv_player_type.setText("WK");
-        tv_player_type_count.setText( totalSelectedWckitKeeper + "");
+        tv_player_type_count.setText(totalSelectedWckitKeeper + "");
         iv_player_type.setImageResource(R.drawable.icon_player_type_wkt_3x);
-
 
 
         tabAt = create_team_tabs.getTabAt(1);
@@ -611,7 +650,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         tv_player_type_count = inflate.findViewById(R.id.tv_player_type_count);
         iv_player_type = inflate.findViewById(R.id.iv_player_type);
         tv_player_type.setText("BAT");
-        tv_player_type_count.setText( totalSelectedBetsman + "");
+        tv_player_type_count.setText(totalSelectedBetsman + "");
         iv_player_type.setImageResource(R.drawable.icon_player_type_bat_3x);
 
 
@@ -631,9 +670,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         tv_player_type_count = inflate.findViewById(R.id.tv_player_type_count);
         iv_player_type = inflate.findViewById(R.id.iv_player_type);
         tv_player_type.setText("BOWL");
-        tv_player_type_count.setText( totalSelectedBowler + "");
+        tv_player_type_count.setText(totalSelectedBowler + "");
         iv_player_type.setImageResource(R.drawable.icon_player_type_bowl_3x);
-
 
 
         tv_team1players.setText(String.valueOf(totalTeam1Players));
@@ -663,13 +701,13 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         customerTeamModel.setId(customerExistTeam != null ? customerTeamModel.getId() : 0);
         customerTeamModel.setName(customerExistTeam != null ? customerTeamModel.getName() : "");
 
-        PlayerModel alreadyCaption=null;
-        PlayerModel alreadyVCCaption=null;
-        PlayerModel alreadyMpp=null;
+        PlayerModel alreadyCaption = null;
+        PlayerModel alreadyVCCaption = null;
+        PlayerModel alreadyMpp = null;
         if (customerExistTeam != null) {
-            alreadyCaption=customerExistTeam.getCaptain();
-            alreadyVCCaption=customerExistTeam.getVise_captain();
-            alreadyMpp=customerExistTeam.getTrump();
+            alreadyCaption = customerExistTeam.getCaptain();
+            alreadyVCCaption = customerExistTeam.getVise_captain();
+            alreadyMpp = customerExistTeam.getTrump();
         }
         customerTeamModel.setWicketkeapers(new ArrayList<PlayerModel>());
         customerTeamModel.setBatsmans(new ArrayList<PlayerModel>());
@@ -683,13 +721,13 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
                 if (player.isSelected()) {
                     customerTeamModel.getWicketkeapers().add(player);
 
-                    if(alreadyCaption!=null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())){
+                    if (alreadyCaption != null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())) {
                         customerTeamModel.setCaptain(customerExistTeam.getCaptain());
                     }
-                    if(alreadyVCCaption!=null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())){
+                    if (alreadyVCCaption != null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())) {
                         customerTeamModel.setVise_captain(customerExistTeam.getVise_captain());
                     }
-                    if(alreadyMpp!=null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())){
+                    if (alreadyMpp != null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())) {
                         customerTeamModel.setTrump(customerExistTeam.getTrump());
                     }
 
@@ -706,13 +744,13 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
                 if (player.isSelected()) {
                     customerTeamModel.getBatsmans().add(player);
 
-                    if(alreadyCaption!=null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())){
+                    if (alreadyCaption != null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())) {
                         customerTeamModel.setCaptain(customerExistTeam.getCaptain());
                     }
-                    if(alreadyVCCaption!=null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())){
+                    if (alreadyVCCaption != null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())) {
                         customerTeamModel.setVise_captain(customerExistTeam.getVise_captain());
                     }
-                    if(alreadyMpp!=null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())){
+                    if (alreadyMpp != null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())) {
                         customerTeamModel.setTrump(customerExistTeam.getTrump());
                     }
                 }
@@ -726,13 +764,13 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
                 if (player.isSelected()) {
                     customerTeamModel.getAllrounders().add(player);
 
-                    if(alreadyCaption!=null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())){
+                    if (alreadyCaption != null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())) {
                         customerTeamModel.setCaptain(customerExistTeam.getCaptain());
                     }
-                    if(alreadyVCCaption!=null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())){
+                    if (alreadyVCCaption != null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())) {
                         customerTeamModel.setVise_captain(customerExistTeam.getVise_captain());
                     }
-                    if(alreadyMpp!=null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())){
+                    if (alreadyMpp != null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())) {
                         customerTeamModel.setTrump(customerExistTeam.getTrump());
                     }
                 }
@@ -746,13 +784,13 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
                 if (player.isSelected()) {
                     customerTeamModel.getBowlers().add(player);
 
-                    if(alreadyCaption!=null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())){
+                    if (alreadyCaption != null && player.getPlayer_id().equals(alreadyCaption.getPlayer_id())) {
                         customerTeamModel.setCaptain(customerExistTeam.getCaptain());
                     }
-                    if(alreadyVCCaption!=null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())){
+                    if (alreadyVCCaption != null && player.getPlayer_id().equals(alreadyVCCaption.getPlayer_id())) {
                         customerTeamModel.setVise_captain(customerExistTeam.getVise_captain());
                     }
-                    if(alreadyMpp!=null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())){
+                    if (alreadyMpp != null && player.getPlayer_id().equals(alreadyMpp.getPlayer_id())) {
                         customerTeamModel.setTrump(customerExistTeam.getTrump());
                     }
                 }
@@ -827,7 +865,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
     public void onWebRequestResponse(WebRequest webRequest) {
         dismissProgressBar();
         super.onWebRequestResponse(webRequest);
-        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
+        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412)
+            return;
         switch (webRequest.getWebRequestId()) {
             case ID_MATCH_PLAYERS:
                 handleMatchPlayersResponse(webRequest);
@@ -838,13 +877,16 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
 
     private void handleMatchPlayersResponse(WebRequest webRequest) {
         MatchPlayersResponseModel responsePojo = webRequest.getResponsePojo(MatchPlayersResponseModel.class);
-        if (responsePojo == null) return;
+        if (responsePojo == null)
+            return;
         if (!responsePojo.isError()) {
             matchModelWithPlayers = responsePojo.getData();
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             setupData();
         } else {
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             showErrorMsg(responsePojo.getMessage());
         }
 
@@ -853,7 +895,8 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
 
     @Override
     public void onMatchTimeUpdate() {
-        if (isFinishing()) return;
+        if (isFinishing())
+            return;
 
         setMatchData();
     }
