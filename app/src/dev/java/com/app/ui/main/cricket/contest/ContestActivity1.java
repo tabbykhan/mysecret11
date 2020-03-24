@@ -77,6 +77,9 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
     ViewPager viewpager_match;
     ViewPagerAdapter adapter1;
     TabLayout mymatches_tabs;
+    private LinearLayout ll_my_team_create_team_join_contest_layer;
+    private LinearLayout ll_create_team;
+    private TextView tv_create_team_count;
 
 
     public MatchModel getMatchModel() {
@@ -130,6 +133,11 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             tv_create_new_team = findViewById(R.id.tv_create_new_team);
             tv_my_teams_count = findViewById(R.id.tv_my_teams_count);
             tv_my_contest_count = findViewById(R.id.tv_my_contest_count);
+            ll_my_team_create_team_join_contest_layer=
+                    findViewById(R.id.ll_my_team_create_team_join_contest_layer);
+            ll_create_team=findViewById(R.id.ll_create_team);
+            tv_create_team_count=findViewById(R.id.tv_create_team_count);
+            ll_create_team.setOnClickListener(this);
             updateBottomDetail();
 
             recycler_view = findViewById(R.id.recycler_view);
@@ -197,17 +205,21 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
         }
         updateViewVisibitity(rl_bottom_lay, View.VISIBLE);
         if (detailBean.getTotal_teams() > 0) {
+
             updateViewVisibitity(ll_new_team, View.GONE);
             updateViewVisibitity(ll_teams_detail, View.VISIBLE);
             ll_my_teams.setOnClickListener(this);
             ll_my_contest.setOnClickListener(this);
+            ll_create_team.setOnClickListener(this);
             tv_my_teams_count.setText(String.valueOf(detailBean.getTotal_teams()));
+            tv_create_team_count.setText(String.valueOf(detailBean.getTotal_teams()+1));
             tv_my_contest_count.setText(String.valueOf(detailBean.getTotal_joined_contest()));
         } else {
             updateViewVisibitity(ll_new_team, View.VISIBLE);
             updateViewVisibitity(ll_teams_detail, View.GONE);
             ll_my_teams.setOnClickListener(null);
             ll_my_contest.setOnClickListener(null);
+            ll_create_team.setOnClickListener(null);
         }
     }
 
@@ -217,6 +229,10 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             case R.id.tv_create_new_team: {
                 goToCreateTeamActivity(null);
             }
+            case R.id.ll_create_team:{
+                goToCreateTeamActivity(null);
+            }
+
             break;
 
             case R.id.ll_my_teams: {

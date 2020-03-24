@@ -96,8 +96,10 @@
                 android:background="?attr/app_divider_color" />
 
             <LinearLayout
+                android:id="@+id/ll_my_team_create_team_join_contest_layer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:weightSum="3"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -141,7 +143,46 @@
                     android:layout_marginBottom="@dimen/dp5"
                     android:background="?attr/app_divider_color" />
 
+                <LinearLayout
+                    android:id="@+id/ll_create_team"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:orientation="vertical"
+                    android:background="@color/color_yellow_shadow"
+                    android:paddingBottom="@dimen/dp10">
 
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_create_team_count"
+                        android:layout_width="@dimen/dp20"
+                        android:layout_height="@dimen/dp20"
+                        android:background="@drawable/bg_blue_oval"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:text="Create team"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:background="?attr/app_divider_color" />
                 <LinearLayout
                     android:id="@+id/ll_my_contest"
                     android:layout_width="0dp"
