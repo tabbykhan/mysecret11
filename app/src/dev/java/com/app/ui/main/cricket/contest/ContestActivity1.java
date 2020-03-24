@@ -2,6 +2,7 @@ package com.app.ui.main.cricket.contest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -73,8 +74,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
     ConfirmationJoinContestDialog confirmationJoinContestDialog;
 
 
-    /*implement tan bar*/
-    ViewPager viewpager_match;
+    /*implement tan bar*/ ViewPager viewpager_match;
     ViewPagerAdapter adapter1;
     TabLayout mymatches_tabs;
     private LinearLayout ll_my_team_create_team_join_contest_layer;
@@ -133,10 +133,9 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             tv_create_new_team = findViewById(R.id.tv_create_new_team);
             tv_my_teams_count = findViewById(R.id.tv_my_teams_count);
             tv_my_contest_count = findViewById(R.id.tv_my_contest_count);
-            ll_my_team_create_team_join_contest_layer=
-                    findViewById(R.id.ll_my_team_create_team_join_contest_layer);
-            ll_create_team=findViewById(R.id.ll_create_team);
-            tv_create_team_count=findViewById(R.id.tv_create_team_count);
+            ll_my_team_create_team_join_contest_layer = findViewById(R.id.ll_my_team_create_team_join_contest_layer);
+            ll_create_team = findViewById(R.id.ll_create_team);
+            tv_create_team_count = findViewById(R.id.tv_create_team_count);
             ll_create_team.setOnClickListener(this);
             updateBottomDetail();
 
@@ -147,7 +146,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             setMatchData();
             tv_create_new_team.setOnClickListener(this);
             //initializeRecyclerView();
-//            getMatchContest();
+            //            getMatchContest();
 
 
             //ll_enter_invite_code.setOnClickListener(this);
@@ -189,8 +188,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
         if (getMatchModel() != null) {
             tv_match_name.setText(getMatchModel().getShortName());
             tv_timer_time.setText(getMatchModel().getRemainTimeText());
-            tv_timer_time.setTextColor(getResources().getColor(getMatchModel()
-                    .getTimerColor()));
+            tv_timer_time.setTextColor(getResources().getColor(getMatchModel().getTimerColor()));
             boolean matchTimeExpire = getMatchModel().isMatchTimeExpire();
             if (matchTimeExpire) {
                 showMatchExpireDialog();
@@ -210,10 +208,20 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             updateViewVisibitity(ll_teams_detail, View.VISIBLE);
             ll_my_teams.setOnClickListener(this);
             ll_my_contest.setOnClickListener(this);
-            ll_create_team.setOnClickListener(this);
             tv_my_teams_count.setText(String.valueOf(detailBean.getTotal_teams()));
-            tv_create_team_count.setText(String.valueOf(detailBean.getTotal_teams()+1));
             tv_my_contest_count.setText(String.valueOf(detailBean.getTotal_joined_contest()));
+            Log.i("limit team creation", "" + getMatchModel().getMatch_limit());
+            Log.i("total team", "" + detailBean.getTotal_teams());
+            if (detailBean.getTotal_teams() < getMatchModel().getMatch_limit()) {
+                ll_create_team.setOnClickListener(this);
+                tv_create_team_count.setText(String.valueOf(detailBean.getTotal_teams() + 1));
+            } else {
+                LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 2f);
+                ll_my_team_create_team_join_contest_layer.setLayoutParams(layoutParams1);
+                updateViewVisibitity(ll_create_team, View.GONE);
+                ll_create_team.setOnClickListener(null);
+               // tv_create_team_count.setText(String.valueOf(detailBean.getTotal_teams() + 1));
+            }
         } else {
             updateViewVisibitity(ll_new_team, View.VISIBLE);
             updateViewVisibitity(ll_teams_detail, View.GONE);
@@ -229,7 +237,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             case R.id.tv_create_new_team: {
                 goToCreateTeamActivity(null);
             }
-            case R.id.ll_create_team:{
+            case R.id.ll_create_team: {
                 goToCreateTeamActivity(null);
             }
 
@@ -294,9 +302,9 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
     }
 
 
-
     private void openConfirmJoinContest(final String entryFee, final long matchContestId, final long teamId) {
-        if (matchContestId == -1 || teamId == -1) return;
+        if (matchContestId == -1 || teamId == -1)
+            return;
         Bundle bundle = new Bundle();
         bundle.putLong(DATA, matchContestId);
         bundle.putString(DATA4, entryFee);
@@ -352,22 +360,22 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
 
             }
 
-            getWebRequestHelper().getMatchContest(getMatchModel().getId(),
-                    getMatchModel().getMatch_id(), this);
+            getWebRequestHelper().getMatchContest(getMatchModel().getId(), getMatchModel().getMatch_id(), this);
         }
     }
 
     @Override
     public void onWebRequestPreResponse(WebRequest webRequest) {
         super.onWebRequestPreResponse(webRequest);
-        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
+        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412)
+            return;
         switch (webRequest.getWebRequestId()) {
             case ID_MATCH_CONTESTS:
                 MatchContestResponseModel responsePojo = webRequest.getResponsePojo(MatchContestResponseModel.class);
                 if (responsePojo != null) {
                     if (responsePojo.getData().size() > 0 && adapter1 != null) {
                         CashFragment item = (CashFragment) adapter1.getItem(0);
-                        if(item!=null) {
+                        if (item != null) {
                             int currentSortType = item.getCurrentSortType();
 
                             for (ContestCategoryModel contestCategoryModel : responsePojo.getData()) {
@@ -408,7 +416,8 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             dismissProgressBar();
         }
         super.onWebRequestResponse(webRequest);
-        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
+        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412)
+            return;
         switch (webRequest.getWebRequestId()) {
             case ID_MATCH_CONTESTS:
                 handleMatchContestResponse(webRequest);
@@ -422,7 +431,8 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
 
     private void handleMatchContestResponse(WebRequest webRequest) {
         MatchContestResponseModel responsePojo = (MatchContestResponseModel) webRequest.getResponsePojo();
-        if (responsePojo == null) return;
+        if (responsePojo == null)
+            return;
         if (!responsePojo.isError()) {
             detailBean = responsePojo.getDetail();
             List<ContestCategoryModel> data = responsePojo.getData();
@@ -445,7 +455,8 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
                 beatTheExpertModels.addAll(beatTheExpert);
             }
 
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
 
             AppBaseFragment item = adapter1.getItem(0);
             ((CashFragment) item).setupDetsil(detailBean);
@@ -455,11 +466,13 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             ((PracticeFragment) item).setupDetsil(detailBean);
             ((PracticeFragment) item).setupData(practiceCategoryModels);
 
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             updateBottomDetail();
             //adapter.notifyDataSetChanged();
         } else {
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             showErrorMsg(responsePojo.getMessage());
         }
 
@@ -467,12 +480,13 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
 
     private void handleCustomerJoinContestResponse(WebRequest webRequest) {
         CustomerJoinContestResponseModel responsePojo = webRequest.getResponsePojo(CustomerJoinContestResponseModel.class);
-        if (responsePojo == null) return;
+        if (responsePojo == null)
+            return;
         if (!responsePojo.isError()) {
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             showCustomToast(responsePojo.getMessage());
-            if (confirmationJoinContestDialog != null && confirmationJoinContestDialog.getDialog() != null &&
-                    confirmationJoinContestDialog.getDialog().isShowing()) {
+            if (confirmationJoinContestDialog != null && confirmationJoinContestDialog.getDialog() != null && confirmationJoinContestDialog.getDialog().isShowing()) {
                 confirmationJoinContestDialog.dismiss();
             }
             UserModel userModel = getUserModel();
@@ -482,7 +496,8 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             }
             getMatchContest();
         } else {
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             showErrorMsg(responsePojo.getMessage());
         }
 
