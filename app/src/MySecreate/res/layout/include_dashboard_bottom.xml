@@ -45,7 +45,40 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_5_player_match"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
 
+            <com.customviews.TintImageView
+                android:id="@+id/iv_5_player"
+                android:layout_width="@dimen/dp27"
+                android:layout_height="@dimen/dp27"
+                android:tint="@color/colorWhite"
+                android:duplicateParentState="true"
+                android:paddingTop="@dimen/dp7"
+                android:src="@drawable/ic_player_5"
+                app:tintColorStateList="@color/dashboard_tab_image_tint_selector" />
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/txt_five_payer_macth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp2"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:paddingBottom="@dimen/dp7"
+                android:text="5 A Side"
+                android:singleLine="true"
+                android:textColor="@color/dashboard_tab_text_color_selector"
+                android:textSize="?attr/app_text_size_extra_small" />
+
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/ll_mycontest"
             android:layout_width="0dp"

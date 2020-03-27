@@ -236,6 +236,7 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.send(context, webServiceResponseListener);
     }
 
+
     public void getMatchPlayersStats(String match_uniqueid, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchPlayersStats(), match_uniqueid);
         WebRequest webRequest = new WebRequest(ID_MATCH_PLAYERS_STATS, url,
@@ -349,6 +350,7 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
     }
+
     public void getMatchPrivateContestDetail(String slug,String match_unique_id, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchPrivateContestDetail(), slug,match_unique_id);
         WebRequest webRequest = new WebRequest(ID_GET_MATCH_PRIVATE_CONTEST_DETAIL, url,
@@ -494,6 +496,15 @@ public class WebRequestHelper implements WebRequestConstants {
         return webRequest;
     }
 
+    public WebRequest walletAddBalance(DepositAmountRequestModel requestModel,
+                                     WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_DEPOSIT_AMOUNT,WebServices.cashfree_wallet(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
+        webRequest.send(context, webServiceResponseListener);
+        return webRequest;
+    }
+
 
     public void customerWithdrawAmount(WithdrawAmountRequestModel requestModel,
                                        WebServiceResponseListener webServiceResponseListener) {
@@ -599,6 +610,33 @@ public class WebRequestHelper implements WebRequestConstants {
     public void createCustomerEnquiry(CustomerEnquiryRequestModel customerEnquiryRequestModel, WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_CREATE_CUSTOMER_ENQUIRY, WebServices.CreateCustomerEnquiry(), WebRequest.POST_REQ);
         webRequest.setRequestModel(customerEnquiryRequestModel);
+        webRequest.send(context, webServiceResponseListener);
+    }
+
+
+    public void getFivePlayerMatch(String matchProgress,
+                                   WebServiceResponseListener webServiceResponseListener) {
+        String url =String.format(WebServices.get_matches_5aside(), matchProgress);
+        WebRequest webRequest = new WebRequest(ID_5_PLAYER_MATCH, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void createfivePlayerTeam(CreateTeamRequestModel requestModel,
+                                     WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CREATE_5_PLAYER_TEAM,
+                WebServices.create_customer_team_five_players(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
+        webRequest.send(context, webServiceResponseListener);
+    }
+
+    public void getFiveMatchPlayers(long id,
+                                    WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.get_match_players_5aside(), id);
+        WebRequest webRequest = new WebRequest(ID_5_PLAYER_TEAM_LIST, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
 }

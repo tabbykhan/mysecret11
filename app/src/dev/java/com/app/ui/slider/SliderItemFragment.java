@@ -81,12 +81,14 @@ public class SliderItemFragment extends AppBaseFragment {
                 if (match != null) {
                     if (match.isFixtureMatch()) {
                         MyApplication.getInstance().setSelectedMatch(match);
+                        MyApplication.getInstance().setIs_5_player_match(false);
                         Bundle bundle = new Bundle();
                         bundle.putString(DATA, match.getMatch_id());
                         goToContestActivity(bundle);
 
                     } else {
                         MyApplication.getInstance().setSelectedMatch(match);
+                        MyApplication.getInstance().setIs_5_player_match(false);
                         Bundle bundle = new Bundle();
                         bundle.putString(DATA, match.getMatch_id());
                         bundle.putString(DATA1, SliderItemFragment.this.getClass().getSimpleName());

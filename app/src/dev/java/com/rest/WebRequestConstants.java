@@ -120,6 +120,9 @@ public interface WebRequestConstants {
     int ID_APPLY_PROMO_CODE = 77;
     int ID_CREATE_CUSTOMER_ENQUIRY = 79;
     int ID_TEAM_NAME = 80;
+    int ID_5_PLAYER_MATCH=81;
+    int ID_CREATE_5_PLAYER_TEAM=82;
+    int ID_5_PLAYER_TEAM_LIST=83;
 
 
 }

@@ -216,11 +216,9 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
                 ll_create_team.setOnClickListener(this);
                 tv_create_team_count.setText(String.valueOf(detailBean.getTotal_teams() + 1));
             } else {
-                LinearLayout.LayoutParams layoutParams1 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 2f);
-                ll_my_team_create_team_join_contest_layer.setLayoutParams(layoutParams1);
+                ll_my_team_create_team_join_contest_layer.setWeightSum(2);
                 updateViewVisibitity(ll_create_team, View.GONE);
                 ll_create_team.setOnClickListener(null);
-               // tv_create_team_count.setText(String.valueOf(detailBean.getTotal_teams() + 1));
             }
         } else {
             updateViewVisibitity(ll_new_team, View.VISIBLE);

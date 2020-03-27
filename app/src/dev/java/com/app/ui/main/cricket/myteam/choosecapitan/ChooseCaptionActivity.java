@@ -2,6 +2,7 @@ package com.app.ui.main.cricket.myteam.choosecapitan;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Filter;
 import android.widget.ImageView;
@@ -415,6 +416,7 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
                 }
                 updateSortArrow();
             }
+            break;
         }
     }
 
@@ -500,7 +502,14 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
 
                 requestModel.player_json.clear();
                 requestModel.player_json.addAll(selectedPlayers);
-                getWebRequestHelper().createCustomerTeam(requestModel, this);
+
+               Log.i("Player create", new Gson().toJson(requestModel));
+               if(MyApplication.getInstance().isIs_5_player_match()){
+                   getWebRequestHelper().createfivePlayerTeam(requestModel, this);
+               }else{
+                   getWebRequestHelper().createCustomerTeam(requestModel, this);
+               }
+
             } else {
                 UpdateTeamRequestModel requestModel = new UpdateTeamRequestModel();
                 requestModel.customer_team_id = getCustomerTeamId();
@@ -548,6 +557,9 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
                 break;
             case ID_UPDATE_CUSTOMER_TEAM:
                 handleUpdateCustomerTeamResponse(webRequest);
+                break;
+            case ID_CREATE_5_PLAYER_TEAM:
+                handleCreateCustomerTeamResponse(webRequest);
                 break;
         }
 

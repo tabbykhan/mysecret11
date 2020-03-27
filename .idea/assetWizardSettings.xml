@@ -76,14 +76,27 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="textAsset">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="fontFamily" value="Arial" />
+                                                <entry key="text" value="5 Player" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
                                     <map>
+                                      <entry key="assetType" value="TEXT" />
                                       <entry key="imageAsset" value="C:\Users\iMuonsAndroid01\AndroidStudioProjects\sportsteam\app\src\SportsTeam\res\drawable-hdpi\add_icon.png" />
-                                      <entry key="outputName" value="ic_reset" />
+                                      <entry key="outputName" value="ic_player_5" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="fdfffd" />
+                                      <entry key="themeColor" value="ffffff" />
                                     </map>
                                   </option>
                                 </PersistentState>

@@ -1,13 +1,13 @@
-package com.app.ui.main.cricket.dashboard.homenew.fixture;
+package com.app.ui.main.cricket.dashboard.homenew.five_player_match;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -18,32 +18,22 @@ import com.app.model.webresponsemodel.UpcomingMatchesResponseModel;
 import com.app.ui.MatchTimerListener;
 import com.app.ui.MyApplication;
 import com.app.ui.main.cricket.contest.ContestActivity1;
-import com.app.ui.main.cricket.dashboard.homenew.fixture.adapters.FixtureAdapter;
+import com.app.ui.main.cricket.dashboard.homenew.five_player_match.adapters.FivePlayerMatchAdapter;
+import com.google.gson.Gson;
 import com.medy.retrofitwrapper.WebRequest;
 import com.utilities.ItemClickSupport;
 
 import java.util.List;
 
+public class FivePlayerMatchFragment extends AppBaseFragment implements MatchTimerListener {
 
-/**
- * Created by Vishnu Gupta on 10/1/19.
- */
-public class FixtureFragment extends AppBaseFragment implements MatchTimerListener {
-    private FixtureAdapter adapter;
-    private RecyclerView recycler_view;
-    private SwipeRefreshLayout swipe_layout;
-    private TextView tv_no_item;
-    private TextView tv_upcoming_matches;
+    private FivePlayerMatchAdapter adapter;
+
 
 
     @Override
-    public int getLayoutResourceId() {
-        return R.layout.fargment_home;
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         if (getView() != null) {
             return getView();
         }
@@ -51,17 +41,13 @@ public class FixtureFragment extends AppBaseFragment implements MatchTimerListen
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        MyApplication.getInstance().addMatchTimerListener(this);
+    public int getLayoutResourceId() {
+        return R.layout.fragment_five_player_match;
     }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        MyApplication.getInstance().removeMatchTimerListener(this);
-    }
-
+    private RecyclerView recycler_view;
+    private SwipeRefreshLayout swipe_layout;
+    private TextView tv_no_item;
+    private TextView tv_upcoming_matches;
     @Override
     public void initializeComponent() {
         super.initializeComponent();
@@ -75,6 +61,11 @@ public class FixtureFragment extends AppBaseFragment implements MatchTimerListen
 
         onPageSelected();
     }
+    @Override
+    public void onPageSelected() {
+        if (swipe_layout == null) return;
+        getUpcomingMatches();
+    }
 
     private void setupSwipeLayout() {
         swipe_layout = getView().findViewById(R.id.swipe_layout);
@@ -87,10 +78,14 @@ public class FixtureFragment extends AppBaseFragment implements MatchTimerListen
             }
         });
     }
-
+    private void getUpcomingMatches() {
+        swipe_layout.setRefreshing(true);
+        updateViewVisibitity(tv_no_item, View.GONE);
+        getWebRequestHelper().getFivePlayerMatch("F", this);
+    }
 
     private void initializeRecyclerView() {
-        adapter = new FixtureAdapter(getActivity(), MyApplication.getInstance().getUpcomingMatches()) {
+        adapter = new FivePlayerMatchAdapter(getActivity(), MyApplication.getInstance().getFivePlayerUpcomingMatches()) {
             @Override
             public int getViewHeight() {
                 return Math.round(recycler_view.getWidth() * 0.26f);
@@ -104,13 +99,13 @@ public class FixtureFragment extends AppBaseFragment implements MatchTimerListen
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 try {
-                    MatchModel matchModel = MyApplication.getInstance().getUpcomingMatches().get(position);
+                    MatchModel matchModel = MyApplication.getInstance().getFivePlayerUpcomingMatches().get(position);
                     if (matchModel != null) {
                         if (matchModel.getContest_count() == 0) {
                             showErrorMsg("Contests for this match will open soon. Stay tuned!");
                         } else {
                             MyApplication.getInstance().setSelectedMatch(matchModel);
-                            MyApplication.getInstance().setIs_5_player_match(false);
+                            MyApplication.getInstance().setIs_5_player_match(true);
                             Bundle bundle = new Bundle();
                             bundle.putString(DATA, matchModel.getMatch_id());
                             goToContestActivity(bundle);
@@ -123,12 +118,50 @@ public class FixtureFragment extends AppBaseFragment implements MatchTimerListen
             }
         });
     }
-
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-    }
+    public void onWebRequestResponse(WebRequest webRequest) {
+        if (swipe_layout != null)
+            swipe_layout.setRefreshing(false);
+        super.onWebRequestResponse(webRequest);
+        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
+        switch (webRequest.getWebRequestId()) {
+            case ID_5_PLAYER_MATCH:
+                handleUpcomingMatchesResponse(webRequest);
+                break;
+        }
 
+    }
+    private void handleUpcomingMatchesResponse(WebRequest webRequest) {
+        UpcomingMatchesResponseModel responsePojo = webRequest.getResponsePojo(UpcomingMatchesResponseModel.class);
+        if (responsePojo == null) return;
+        if (!responsePojo.isError()) {
+            MyApplication.getInstance().setServerDate(responsePojo.getServer_date());
+            synchronized (MyApplication.getInstance().getLock()) {
+                Log.i("5 match", new Gson().toJson(responsePojo.getData()));
+                List<MatchModel> data = responsePojo.getData();
+                MyApplication.getInstance().getFivePlayerUpcomingMatches().clear();
+                if (data != null && data.size() > 0) {
+                    MyApplication.getInstance().getFivePlayerUpcomingMatches().addAll(data);
+                }
+                if (isFinishing()) return;
+                adapter.notifyDataSetChanged();
+                updateNoDataView();
+                MyApplication.getInstance().startTimer();
+            }
+        } else {
+            if (isFinishing()) return;
+            showErrorMsg(responsePojo.getMessage());
+        }
+
+    }
+    private void updateNoDataView() {
+        if (MyApplication.getInstance().getFivePlayerUpcomingMatches().size() > 0) {
+            updateViewVisibitity(tv_no_item, View.GONE);
+        } else {
+            tv_no_item.setText("No Upcoming match available");
+            updateViewVisibitity(tv_no_item, View.VISIBLE);
+        }
+    }
     private void goToContestActivity(Bundle bundle) {
         if (isFinishing()) return;
         Intent intent = new Intent(getActivity(), ContestActivity1.class);
@@ -142,69 +175,9 @@ public class FixtureFragment extends AppBaseFragment implements MatchTimerListen
     }
 
     @Override
-    public void onPageSelected() {
-        if (swipe_layout == null) return;
-        getUpcomingMatches();
-    }
-
-    private void getUpcomingMatches() {
-        swipe_layout.setRefreshing(true);
-        updateViewVisibitity(tv_no_item, View.GONE);
-        getWebRequestHelper().getUpcomingMatches("F", this);
-    }
-
-    @Override
-    public void onWebRequestResponse(WebRequest webRequest) {
-        if (swipe_layout != null)
-            swipe_layout.setRefreshing(false);
-        super.onWebRequestResponse(webRequest);
-        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
-        switch (webRequest.getWebRequestId()) {
-            case ID_UPCOMING_MATCHES:
-                handleUpcomingMatchesResponse(webRequest);
-                break;
-        }
-
-    }
-
-
-    private void handleUpcomingMatchesResponse(WebRequest webRequest) {
-        UpcomingMatchesResponseModel responsePojo = webRequest.getResponsePojo(UpcomingMatchesResponseModel.class);
-        if (responsePojo == null) return;
-        if (!responsePojo.isError()) {
-            MyApplication.getInstance().setServerDate(responsePojo.getServer_date());
-            synchronized (MyApplication.getInstance().getLock()) {
-                List<MatchModel> data = responsePojo.getData();
-                MyApplication.getInstance().getUpcomingMatches().clear();
-                if (data != null && data.size() > 0) {
-                    MyApplication.getInstance().getUpcomingMatches().addAll(data);
-                }
-                if (isFinishing()) return;
-                adapter.notifyDataSetChanged();
-                updateNoDataView();
-                MyApplication.getInstance().startTimer();
-            }
-        } else {
-            if (isFinishing()) return;
-            showErrorMsg(responsePojo.getMessage());
-        }
-
-    }
-
-    private void updateNoDataView() {
-        if (MyApplication.getInstance().getUpcomingMatches().size() > 0) {
-            updateViewVisibitity(tv_no_item, View.GONE);
-        } else {
-            tv_no_item.setText("No Upcoming match available");
-            updateViewVisibitity(tv_no_item, View.VISIBLE);
-        }
-    }
-
-    @Override
     public void onMatchTimeUpdate() {
         if (isFinishing()) return;
         if (adapter != null)
             adapter.notifyDataSetChanged();
     }
-
 }

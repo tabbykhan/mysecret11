@@ -154,7 +154,6 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetUpcomingMatches(
     std::string data = getBaseUrl(env) + "get_matches/%s";//match_progress(F,L,R)
     return env->NewStringUTF(data.c_str());
 }
-
 JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerUpcomingMatches(
         JNIEnv *env,
         jobject obj) {
@@ -645,6 +644,32 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetPrivatePolicy(
     std::string data = getBasePageUrl(env) + "privacy-policy.html";
     return env->NewStringUTF(data.c_str());
 }
+
+//-----------------new service----
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_cashfree_1wallet(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "cashfree_wallet";//payment gateway
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_get_1matches_15aside(JNIEnv *env,jobject obj){
+   std::string data = getBaseUrl(env) + "get_matches_5aside/F";//get5player match(F,L,R)
+    return env->NewStringUTF(data.c_str());
+}
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_get_1match_1players_15aside(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_match_players_5aside/%s";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_create_1customer_1team_1five_1players(JNIEnv
+*env,jobject obj){
+ std::string data = getBaseUrl(env) + "create_customer_team_five_players";// 5 player team create
+    return env->NewStringUTF(data.c_str());
+}
+
 }
 
 

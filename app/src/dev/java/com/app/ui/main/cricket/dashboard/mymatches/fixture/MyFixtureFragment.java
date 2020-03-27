@@ -2,6 +2,7 @@ package com.app.ui.main.cricket.dashboard.mymatches.fixture;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import com.app.ui.MatchTimerListener;
 import com.app.ui.MyApplication;
 import com.app.ui.main.cricket.dashboard.mymatches.fixture.adapters.MyFixtureAdapter;
 import com.app.ui.main.cricket.mycontest.MyContestActivity;
+import com.google.gson.Gson;
 import com.medy.retrofitwrapper.WebRequest;
 import com.utilities.DeviceScreenUtil;
 import com.utilities.ItemClickSupport;
@@ -107,6 +109,7 @@ public class MyFixtureFragment extends AppBaseFragment implements MatchTimerList
                     MatchModel matchModel = MyApplication.getInstance().getMyUpcomingMatches().get(position);
                     if (matchModel != null) {
                         MyApplication.getInstance().setSelectedMatch(matchModel);
+                        MyApplication.getInstance().setIs_5_player_match(false);
                         Bundle bundle = new Bundle();
                         bundle.putString(DATA, matchModel.getMatch_id());
                         bundle.putString(DATA1, MyFixtureFragment.this.getClass().getSimpleName());
@@ -168,6 +171,7 @@ public class MyFixtureFragment extends AppBaseFragment implements MatchTimerList
             MyApplication.getInstance().setServerDate(responsePojo.getServer_date());
             synchronized (MyApplication.getInstance().getLock()) {
                 List<MatchModel> data = responsePojo.getData();
+                Log.i("fixture match check ", new Gson().toJson(responsePojo.getData()));
                 MyApplication.getInstance().getMyUpcomingMatches().clear();
                 if (data != null && data.size() > 0) {
                     MyApplication.getInstance().getMyUpcomingMatches().addAll(data);

@@ -2,6 +2,7 @@ package com.app.ui.main.cricket.myteam.myteams;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -249,6 +250,7 @@ public class MyTeamsActivity extends AppBaseActivity implements MatchTimerListen
                 customerTeamModels.addAll(data);
             }
             if (isFinishing()) return;
+            Log.i("team creation limmt", ""+getMatchModel().getMatch_limit());
             tv_create_new_team.setText("CREATE TEAM " + String.valueOf(customerTeamModels.size() + 1));
             if (customerTeamModels.size() < getMatchModel().getMatch_limit()) {
                 updateViewVisibitity(rl_bottom_lay, View.VISIBLE);

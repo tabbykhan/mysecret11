@@ -75,6 +75,7 @@ public class DashboardActivityNew extends AppBaseActivity {
             }
         }
     };
+    private LinearLayout ll_5_player_match;
 
     @Override
     protected void onResume() {
@@ -126,7 +127,6 @@ public class DashboardActivityNew extends AppBaseActivity {
                 txt_home.setText("");
                 iv_home.setImageResource(R.drawable.tab_icon_home);
             }
-
             CustomIconModel.IconModel tab_my_contest = customIconModel.getTab_my_contest();
             if (tab_my_contest != null) {
                 txt_mycontest.setText(tab_my_contest.getName());
@@ -200,11 +200,14 @@ public class DashboardActivityNew extends AppBaseActivity {
         ll_mycontest = findViewById(R.id.ll_mycontest);
         ll_account = findViewById(R.id.ll_account);
         ll_setting = findViewById(R.id.ll_setting);
+        ll_5_player_match=findViewById(R.id.ll_5_player_match);
 
         ll_home.setOnClickListener(this);
         ll_mycontest.setOnClickListener(this);
         ll_account.setOnClickListener(this);
         ll_setting.setOnClickListener(this);
+
+        ll_5_player_match.setOnClickListener(this);
 
         onBackStackChangedListener.onBackStackChanged();
 
@@ -304,6 +307,7 @@ public class DashboardActivityNew extends AppBaseActivity {
         }
     }
 
+
     private void createTabs() {
         if (gamesList == null) return;
         if (tab_sports == null) return;
@@ -399,16 +403,16 @@ public class DashboardActivityNew extends AppBaseActivity {
             case R.id.ll_home:
                 clearFragmentBackStack(0);
                 break;
-
             case R.id.ll_mycontest:
                 addMyContestFragment();
                 break;
-
 
             case R.id.ll_account:
                 addMyProfile();
                 break;
 
+//            case R.id.ll_5_player_match:
+//                break;
             case R.id.ll_setting:
                 addMorefragment();
                 break;

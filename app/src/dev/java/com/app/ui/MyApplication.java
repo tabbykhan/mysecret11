@@ -39,6 +39,7 @@ public class MyApplication extends AppBaseApplication {
     private Runnable runnable;
     private long serverDate=0;
     private List<MatchModel> upcomingMatches = new ArrayList<>();
+    private List<MatchModel> fivePlayerMatches = new ArrayList<>();
     private List<MatchModel> liveMatches = new ArrayList<>();
     private List<MatchModel> pastMatches = new ArrayList<>();
     private List<MatchModel> myUpcomingMatches = new ArrayList<>();
@@ -49,6 +50,16 @@ public class MyApplication extends AppBaseApplication {
     private MatchModel selectedMatch;
     private MatchModel matchModelWithPlayers;
     private GameModel currentGame;
+
+  public  boolean isIs_5_player_match() {
+        return is_5_player_match;
+    }
+
+   public void setIs_5_player_match(boolean is_5_player_match) {
+        this.is_5_player_match = is_5_player_match;
+    }
+
+    private boolean is_5_player_match;
 
 
     public void setServerDate(long serverDate) {
@@ -174,6 +185,9 @@ public class MyApplication extends AppBaseApplication {
 
     public List<MatchModel> getUpcomingMatches() {
         return upcomingMatches;
+    }
+    public List<MatchModel> getFivePlayerUpcomingMatches() {
+        return fivePlayerMatches;
     }
 
     public List<MatchModel> getLiveMatches() {

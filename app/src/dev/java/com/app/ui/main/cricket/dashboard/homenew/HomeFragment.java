@@ -13,6 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.R;
 import com.app.appbase.AppBaseFragment;
 import com.app.appbase.ViewPagerAdapter;
+import com.app.ui.main.cricket.dashboard.homenew.five_player_match.FivePlayerMatchFragment;
 import com.app.ui.main.cricket.dashboard.homenew.fixture.FixtureFragment;
 import com.app.ui.main.cricket.dashboard.homenew.live.LiveFragment;
 import com.app.ui.main.cricket.dashboard.homenew.result.ResultFragment;
@@ -88,6 +89,8 @@ public class HomeFragment extends AppBaseFragment {
     private void setupViewPager() {
         adapter = new ViewPagerAdapter(getChildFm());
         adapter.addFragment(new FixtureFragment(), "FIXTURE"); // UPCOMING
+        adapter.addFragment(new FivePlayerMatchFragment(), "5 A Side");// five player selection
+        // match
         adapter.addFragment(new LiveFragment(), "LIVE");
         adapter.addFragment(new ResultFragment(), "COMPLETED");
         viewpager_match.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

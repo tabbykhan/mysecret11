@@ -88,6 +88,10 @@ public final class WebServices {
 
     public static native String WalletRecharge();
 
+    public static native String cashfree_wallet();
+
+    public static native String get_matches_5aside();
+
     public static native String CustomerWithdrawAmount();
 
     public static native String CustomerWalletHistory();
@@ -148,8 +152,9 @@ public final class WebServices {
 
     public static native String GetApplyPromoCode();
 
-
     public static native String CreateCustomerEnquiry();
+    public static native String create_customer_team_five_players();
+    public static native String get_match_players_5aside();
 
 
 }

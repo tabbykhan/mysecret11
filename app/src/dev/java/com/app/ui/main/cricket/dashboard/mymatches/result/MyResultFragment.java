@@ -110,6 +110,7 @@ public class MyResultFragment extends AppBaseFragment implements MatchTimerListe
                     MatchModel matchModel = MyApplication.getInstance().getMyPastMatches().get(position);
                     if (matchModel != null) {
                         MyApplication.getInstance().setSelectedMatch(matchModel);
+                        MyApplication.getInstance().setIs_5_player_match(false);
                         Bundle bundle = new Bundle();
                         bundle.putString(DATA, matchModel.getMatch_id());
                         bundle.putString(DATA1, MyResultFragment.this.getClass().getSimpleName());

@@ -22,6 +22,9 @@ import com.app.model.MatchModel;
 import com.app.model.PlayerModel;
 import com.app.model.TeamModel;
 import com.app.model.TeamSettingModel;
+import com.app.model.webrequestmodel.CreateTeamRequestModel;
+import com.app.model.webrequestmodel.UpdateTeamRequestModel;
+import com.app.model.webresponsemodel.CreateTeamResponseModel;
 import com.app.model.webresponsemodel.MatchPlayersResponseModel;
 import com.app.ui.MatchTimerListener;
 import com.app.ui.MyApplication;
@@ -310,6 +313,9 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         ll_bottom = findViewById(R.id.ll_bottom);
         ll_team_preview = findViewById(R.id.ll_team_preview);
         tv_continue = findViewById(R.id.tv_continue);
+//        if(MyApplication.getInstance().isIs_5_player_match()){
+//            tv_continue.setText("SAVE TEAM");
+//        }
         ll_team_preview.setOnClickListener(this);
         tv_continue.setOnClickListener(this);
 
@@ -813,8 +819,12 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
                     return;
                 }
                 if (getTotalSelectedPlayers() == getTeamSetting().getMAX_PLAYERS()) {
+//                    if(MyApplication.getInstance().isIs_5_player_match()){
+//                        callSaveTeam();
+//                    }else {
+//
+//                    }
                     CustomerTeamModel customerTeamModel = generateLatestCustomerTeam();
-
                     Bundle bundle = new Bundle();
                     bundle.putString(DATA, new Gson().toJson(customerTeamModel));
                     bundle.putLong(DATA1, getCustomerTeamId());
@@ -857,7 +867,12 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
     private void getMatchPlayers() {
         if (getMatchModel() != null) {
             displayProgressBar(false);
-            getWebRequestHelper().getMatchPlayers(getMatchModel().getId(), this);
+            if(MyApplication.getInstance().isIs_5_player_match()){
+                getWebRequestHelper().getFiveMatchPlayers(getMatchModel().getId(), this);
+            }else{
+                getWebRequestHelper().getMatchPlayers(getMatchModel().getId(), this);
+            }
+
         }
     }
 
@@ -870,6 +885,15 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         switch (webRequest.getWebRequestId()) {
             case ID_MATCH_PLAYERS:
                 handleMatchPlayersResponse(webRequest);
+                break;
+            case ID_5_PLAYER_TEAM_LIST:
+                handleMatchPlayersResponse(webRequest);
+                break;
+            case ID_CREATE_5_PLAYER_TEAM:
+                handleCreateCustomerTeamResponse(webRequest);
+                break;
+            case ID_UPDATE_CUSTOMER_TEAM:
+
                 break;
         }
 
@@ -931,6 +955,58 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
                 ((PlayersFragment) item).perFormFilter(currentSortBy, currentSortType);
             }
         }
+    }
+
+
+
+    private void callSaveTeam() {
+        if (getMatchModel() != null && getUserModel() != null) {
+
+            displayProgressBar(false);
+            if (getCustomerTeamId() == -1) {
+                CreateTeamRequestModel requestModel = new CreateTeamRequestModel();
+                requestModel.match_unique_id = getMatchModel().getMatch_id();
+                CustomerTeamModel customerTeamModel=generateLatestCustomerTeam();
+                List<PlayerModel> selectedPlayers = new ArrayList<>();
+                selectedPlayers.addAll(customerTeamModel.getWicketkeapers());
+                selectedPlayers.addAll(customerTeamModel.getBatsmans());
+                selectedPlayers.addAll(customerTeamModel.getAllrounders());
+                selectedPlayers.addAll(customerTeamModel.getBowlers());
+                requestModel.player_json.addAll(selectedPlayers);
+                Log.i("Player create", new Gson().toJson(requestModel));
+                getWebRequestHelper().createfivePlayerTeam(requestModel, this);
+            } else {
+                UpdateTeamRequestModel requestModel = new UpdateTeamRequestModel();
+                requestModel.customer_team_id = getCustomerTeamId();
+                requestModel.match_unique_id = getMatchModel().getMatch_id();
+                CustomerTeamModel customerTeamModel=generateLatestCustomerTeam();
+                List<PlayerModel> selectedPlayers = new ArrayList<>();
+                selectedPlayers.addAll(customerTeamModel.getWicketkeapers());
+                selectedPlayers.addAll(customerTeamModel.getBatsmans());
+                selectedPlayers.addAll(customerTeamModel.getAllrounders());
+                selectedPlayers.addAll(customerTeamModel.getBowlers());
+                requestModel.player_json.addAll(selectedPlayers);
+
+             //   getWebRequestHelper().updateCustomerTeam(requestModel, this); update customer
+                //   team
+            }
+
+        }
+    }
+
+
+    private void handleCreateCustomerTeamResponse(WebRequest webRequest) {
+        CreateTeamResponseModel responsePojo = webRequest.getResponsePojo(CreateTeamResponseModel.class);
+        if (responsePojo == null) return;
+        if (!responsePojo.isError()) {
+            if (isFinishing()) return;
+            showCustomToast(responsePojo.getMessage());
+          //  setResult(responsePojo.getData());
+        } else {
+            if (isFinishing()) return;
+            showErrorMsg(responsePojo.getMessage());
+        }
+
     }
 
 }

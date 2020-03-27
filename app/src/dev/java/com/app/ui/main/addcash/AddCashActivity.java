@@ -347,12 +347,12 @@ public class AddCashActivity extends AppBaseActivity implements MatchTimerListen
         float amt = Float.parseFloat(amount);
         DepositAmountRequestModel requestModel = new DepositAmountRequestModel();
         requestModel.amount = amt;
-        requestModel.paymentmethod = paymentType;
+       // requestModel.paymentmethod = paymentType;
         requestModel.promocode = promo_code;
 
         openPaymentDialog(requestModel);
-//        displayProgressBar(false);
-//        getWebRequestHelper().customerDepositAmount(requestModel, this);
+      //  displayProgressBar(false);// commit
+      //  getWebRequestHelper().customerDepositAmount(requestModel, this);//commit
     }
 
     private void applyPromoCode() {

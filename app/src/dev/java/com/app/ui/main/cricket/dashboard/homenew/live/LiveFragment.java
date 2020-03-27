@@ -94,6 +94,7 @@ public class LiveFragment extends AppBaseFragment {
                     MatchModel matchModel = MyApplication.getInstance().getLiveMatches().get(position);
                     if (matchModel != null) {
                         MyApplication.getInstance().setSelectedMatch(matchModel);
+                        MyApplication.getInstance().setIs_5_player_match(false);
                         Bundle bundle = new Bundle();
                         bundle.putString(DATA, matchModel.getMatch_id());
                         bundle.putString(DATA1, LiveFragment.this.getClass().getSimpleName());
