@@ -10,6 +10,8 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -70,6 +72,9 @@ public class WithdrawActivity extends AppBaseActivity {
             }
         }
     };
+    private RadioGroup rb_group;
+    private String wallet_type="winning";
+    private TextView tv_bouns_balance;
 
 
     @Override
@@ -89,11 +94,13 @@ public class WithdrawActivity extends AppBaseActivity {
         tv_help_desk = findViewById(R.id.tv_help_desk);
         setupHelpDeskButton();
         tv_winning_balance = findViewById(R.id.tv_winning_balance);
+        tv_bouns_balance=findViewById(R.id.tv_bonus_balance);
         cv_bank_detail = findViewById(R.id.cv_bank_detail);
         tv_account_number = findViewById(R.id.tv_account_number);
         tv_account_name = findViewById(R.id.tv_account_name);
         tv_account_ifsc = findViewById(R.id.tv_account_ifsc);
         tv_min_max = findViewById(R.id.tv_min_max);
+        rb_group = findViewById(R.id.wdt_rb_grp);
 
         et_amount = findViewById(R.id.et_amount);
         et_amount.removeTextChangedListener(textWatcher);
@@ -104,6 +111,19 @@ public class WithdrawActivity extends AppBaseActivity {
         tv_proceed.setOnClickListener(this);
         setupData();
 
+
+        rb_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                RadioButton rb = findViewById(checkedId);
+                if (rb.getText().toString().equals("Winning wallet amount")) {
+                    wallet_type = "winning";
+                } else {
+                    wallet_type = "bonus";
+                }
+            }
+        });
     }
 
     private void setupHelpDeskButton() {
@@ -115,7 +135,7 @@ public class WithdrawActivity extends AppBaseActivity {
             URLSpan urlSpan = new URLSpan(m1.group(0)) {
                 @Override
                 public void onClick(View widget) {
-                    Bundle bundle=new Bundle();
+                    Bundle bundle = new Bundle();
                     bundle.putString(DATA1, signUp.trim());
                     goToHelpDeskActivity(bundle);
                 }
@@ -137,13 +157,13 @@ public class WithdrawActivity extends AppBaseActivity {
         if (userModel != null && userModel.isWithdrawAvailable()) {
             SettingsModel settings = userModel.getSettings();
             if (settings != null) {
-                tv_min_max.setText("min " + currency_symbol + settings.getWITHDRAW_AMOUNT_MIN_Text() +
-                        " & max " + currency_symbol + settings.getWITHDRAW_AMOUNT_MAX_Text() + " allowed per day");
+                tv_min_max.setText("min " + currency_symbol + settings.getWITHDRAW_AMOUNT_MIN_Text() + " & max " + currency_symbol + settings.getWITHDRAW_AMOUNT_MAX_Text() + " allowed per day");
             } else {
                 tv_min_max.setText("");
             }
             WalletModel wallet = userModel.getWallet();
             tv_winning_balance.setText(currency_symbol + " " + wallet.getWinning_walletText());
+            tv_bouns_balance.setText(currency_symbol + " " + wallet.getBonus_walletText());
             BankDetailModel bankdetail = userModel.getBankdetail();
             tv_account_number.setText("A/C " + bankdetail.getAccount_number());
             tv_account_name.setText(bankdetail.getAccount_holder_name());
@@ -151,6 +171,7 @@ public class WithdrawActivity extends AppBaseActivity {
 
         } else {
             tv_winning_balance.setText(currency_symbol + " 0");
+            tv_bouns_balance.setText(currency_symbol + " 0");
             tv_account_name.setText("");
             tv_account_number.setText("");
             tv_account_ifsc.setText("");
@@ -176,6 +197,7 @@ public class WithdrawActivity extends AppBaseActivity {
     }
 
     private void callWithdrawAmount() {
+
         String amount = et_amount.getText().toString().trim();
         if (amount.startsWith(currency_symbol) && amount.length() > 1) {
             amount = amount.substring(1).trim();
@@ -203,6 +225,7 @@ public class WithdrawActivity extends AppBaseActivity {
 
         WithdrawAmountRequestModel requestModel = new WithdrawAmountRequestModel();
         requestModel.amount = amt;
+        requestModel.wallet_type = wallet_type;
         displayProgressBar(false);
         getWebRequestHelper().customerWithdrawAmount(requestModel, this);
     }
@@ -224,7 +247,8 @@ public class WithdrawActivity extends AppBaseActivity {
     public void onWebRequestResponse(WebRequest webRequest) {
         dismissProgressBar();
         super.onWebRequestResponse(webRequest);
-        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
+        if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412)
+            return;
         switch (webRequest.getWebRequestId()) {
             case ID_WITHDRAW_AMOUNT:
                 handleWithdrawAmountResponse(webRequest);
@@ -235,14 +259,17 @@ public class WithdrawActivity extends AppBaseActivity {
 
     private void handleWithdrawAmountResponse(WebRequest webRequest) {
         WithdrawAmountResponseModel responsePojo = webRequest.getResponsePojo(WithdrawAmountResponseModel.class);
-        if (responsePojo == null) return;
+        if (responsePojo == null)
+            return;
         if (!responsePojo.isError()) {
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             showCustomToast(responsePojo.getMessage());
             setResult(RESULT_OK);
             supportFinishAfterTransition();
         } else {
-            if (isFinishing()) return;
+            if (isFinishing())
+                return;
             showErrorMsg(responsePojo.getMessage());
         }
 

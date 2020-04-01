@@ -10,5 +10,6 @@ import com.app.appbase.AppBaseRequestModel;
 public class WithdrawAmountRequestModel extends AppBaseRequestModel {
 
     public float amount;
+    public String wallet_type;
 
 }

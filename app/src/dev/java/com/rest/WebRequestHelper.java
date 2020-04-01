@@ -506,6 +506,7 @@ public class WebRequestHelper implements WebRequestConstants {
     }
 
 
+
     public void customerWithdrawAmount(WithdrawAmountRequestModel requestModel,
                                        WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_WITHDRAW_AMOUNT, WebServices.CustomerWithdrawAmount(),

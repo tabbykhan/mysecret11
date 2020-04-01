@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#012241">
+    android:background="#012241"
+    >
 
     <include
         android:id="@+id/fragment_toolbar"
-        layout="@layout/include_toolbar_fargment" />
+        layout="@layout/include_toolbar_fargment"
+        />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/fragment_toolbar"
-        android:scrollbarThumbVertical="@drawable/bg_transparent">
+        android:scrollbarThumbVertical="@drawable/bg_transparent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -30,58 +36,99 @@
                     android:layout_alignTop="@+id/cv_data_timer"
                     android:layout_alignBottom="@+id/cv_data_timer"
                     android:orientation="vertical"
-                    android:weightSum="1">
+                    android:weightSum="1"
+                    >
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="0.5"
-                        android:background="#F66D090E" />
+                        android:background="#F66D090E"
+                        />
                 </LinearLayout>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_data_timer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_marginEnd="@dimen/dp10"
-                    android:layout_marginBottom="@dimen/dp5"
                     app:cardBackgroundColor="@color/my_secreate_bg_coot"
-                    app:cardCornerRadius="@dimen/dp17"
-                    app:cardMaxElevation="@dimen/dp3">
-                <LinearLayout
-                    android:id="@+id/ll_top"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingTop="@dimen/dp7"
-                    android:paddingBottom="@dimen/dp7">
+                    app:cardCornerRadius="0dp"
+                    app:cardMaxElevation="@dimen/dp3"
+                    >
 
-                    <com.customviews.TypefaceTextView
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:id="@+id/ll_top"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp10"
-                        android:layout_weight="1"
-                        android:text="Your Winnings"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="?attr/app_text_size_small"
-                        app:custom_font="@string/app_font_regular" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/dp7"
+                        android:paddingBottom="@dimen/dp7"
+                        >
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_weight="1"
+                            android:text="Your Winnings"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="@string/app_font_regular"
+                            />
 
 
-                    <com.customviews.TypefaceTextView
-                        android:id="@+id/tv_winning_balance"
-                        android:layout_width="wrap_content"
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_winning_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp3"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:text="10"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="@string/app_font_regular"
+                            />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/ll_top1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/dp3"
-                        android:layout_marginEnd="@dimen/dp10"
-                        android:text="10"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="?attr/app_text_size_small"
-                        app:custom_font="@string/app_font_regular" />
+                        android:layout_marginTop="@dimen/dp30"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/dp7"
+                        android:paddingBottom="@dimen/dp7"
+                        >
+
+                        <com.customviews.TypefaceTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp10"
+                            android:layout_weight="1"
+                            android:text="Your Bonus"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="@string/app_font_regular"
+                            />
 
 
-                </LinearLayout>
+                        <com.customviews.TypefaceTextView
+                            android:id="@+id/tv_bonus_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp3"
+                            android:layout_marginEnd="@dimen/dp10"
+                            android:text="10"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="?attr/app_text_size_small"
+                            app:custom_font="@string/app_font_regular"
+                            />
+
+
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </RelativeLayout>
 
@@ -95,27 +142,31 @@
                 android:layout_marginBottom="@dimen/dp5"
                 app:cardBackgroundColor="@color/colorWhite"
                 app:cardCornerRadius="@dimen/dp5"
-                app:cardElevation="@dimen/dp3">
+                app:cardElevation="@dimen/dp3"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dp10"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    >
 
                     <ImageView
                         android:layout_width="@dimen/dp30"
                         android:layout_height="@dimen/dp30"
                         android:padding="@dimen/dp5"
+                        android:src="@drawable/icon_bank"
                         android:tint="@color/colorBlack"
-                        android:src="@drawable/icon_bank" />
+                        />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/dp10"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        >
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_account_number"
@@ -124,7 +175,8 @@
                             android:text="123456"
                             android:textColor="@color/colorAppBlack"
                             android:textSize="?attr/app_text_size_big"
-                            app:custom_font="@string/app_font_medium" />
+                            app:custom_font="@string/app_font_medium"
+                            />
 
                         <com.customviews.TypefaceTextView
                             android:id="@+id/tv_account_name"
@@ -133,7 +185,8 @@
                             android:text="123456"
                             android:textColor="@color/colorAppBlack50"
                             android:textSize="?attr/app_text_size_more_normal"
-                            app:custom_font="@string/app_font_regular" />
+                            app:custom_font="@string/app_font_regular"
+                            />
 
 
                         <com.customviews.TypefaceTextView
@@ -143,7 +196,8 @@
                             android:text="123456"
                             android:textColor="@color/colorAppBlack50"
                             android:textSize="?attr/app_text_size_more_normal"
-                            app:custom_font="@string/app_font_regular" />
+                            app:custom_font="@string/app_font_regular"
+                            />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -157,35 +211,39 @@
                 android:text="Want to change Bank account? Please visit Help Desk"
                 android:textColor="?attr/app_text_color_sec"
                 android:textSize="?attr/app_text_size_extra_small"
-                app:custom_font="?attr/app_font_regular" />
+                app:custom_font="?attr/app_font_regular"
+                />
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
                 android:layout_marginTop="@dimen/dp15"
-                android:theme="@style/TextInputTheme">
+                android:layout_marginEnd="@dimen/dp10"
+                android:background="@drawable/bg_rounded_white"
+                android:theme="@style/TextInputTheme"
+                >
 
 
                 <com.customviews.TypefaceEditText
                     android:id="@+id/et_amount"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/et_height"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_marginEnd="@dimen/dp10"
-                    android:background="@drawable/bg_rounded_white"
                     android:ems="10"
                     android:gravity="center_vertical"
                     android:hint="Amount"
+                    android:background="@color/transparent_color"
                     android:imeOptions="actionDone"
                     android:inputType="number"
-                    android:paddingLeft="@dimen/dp10"
                     android:lines="1"
                     android:maxLength="15"
-                    android:textColor="?attr/et_text_color"
+                    android:paddingLeft="@dimen/dp10"
+                    android:textColor="@color/colorWhite"
                     android:textColorHint="?attr/et_hint_text_color"
                     android:textSize="?attr/et_text_size"
-                    app:custom_font="@string/app_font_regular" />
+                    app:custom_font="@string/app_font_regular"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.customviews.TypefaceTextView
@@ -198,7 +256,69 @@
                 android:text="@string/withdraw_min_max"
                 android:textColor="?attr/app_text_color_sec"
                 android:textSize="?attr/app_text_size_extra_small"
-                app:custom_font="?attr/app_font_regular" />
+                app:custom_font="?attr/app_font_regular"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginEnd="@dimen/dp10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                >
+
+                <com.customviews.TypefaceTextView
+                    android:id="@+id/sponsorIdtxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp5"
+                    android:gravity="left"
+                    android:text="Withdraw from"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="?attr/app_text_size_extra_small"
+                    app:custom_font="?attr/app_font_regular"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/wdt_rb_grp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sponsorIdtxt"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/wdr_from_winning"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:buttonTint="@color/colorWhite"
+                        android:checked="true"
+                        android:text="Winning wallet amount"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/sp18"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/wdr_from_bonus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dp20"
+                        android:buttonTint="@color/colorWhite"
+                        android:text="Bonus wallet amount"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/sp18"
+                        />
+                </RadioGroup>
+            </RelativeLayout>
 
 
             <LinearLayout
@@ -208,7 +328,8 @@
                 android:layout_marginBottom="@dimen/dp20"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:weightSum="1">
+                android:weightSum="1"
+                >
 
                 <com.customviews.TypefaceTextView
                     android:id="@+id/tv_proceed"
@@ -220,7 +341,8 @@
                     android:text="WITHDRAW NOW"
                     android:textColor="?attr/btn_text_color"
                     android:textSize="?attr/btn_text_size"
-                    app:custom_font="@string/app_font_regular" />
+                    app:custom_font="@string/app_font_regular"
+                    />
             </LinearLayout>
 
 

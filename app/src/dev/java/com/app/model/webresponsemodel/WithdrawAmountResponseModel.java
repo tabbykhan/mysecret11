@@ -9,6 +9,4 @@ import com.app.appbase.AppBaseResponseModel;
 
 public class WithdrawAmountResponseModel extends AppBaseResponseModel {
 
-
-
 }
