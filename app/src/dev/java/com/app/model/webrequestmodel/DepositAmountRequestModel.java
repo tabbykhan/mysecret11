@@ -10,7 +10,7 @@ import com.app.appbase.AppBaseRequestModel;
 public class DepositAmountRequestModel extends AppBaseRequestModel {
 
     public float amount;
-   // public String paymentmethod;//PAYTM,RAZORPAY
+   public String paymentmethod;//PAYTM,RAZORPAY
     public String promocode;
 
 

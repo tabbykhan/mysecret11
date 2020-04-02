@@ -331,6 +331,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp30"
+                        android:visibility="gone"
                         android:text="Payment Option"
                         android:textColor="?attr/app_text_color"
                         android:textSize="?attr/app_text_size_normal"

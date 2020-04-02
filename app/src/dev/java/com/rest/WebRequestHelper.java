@@ -498,7 +498,7 @@ public class WebRequestHelper implements WebRequestConstants {
 
     public WebRequest walletAddBalance(DepositAmountRequestModel requestModel,
                                      WebServiceResponseListener webServiceResponseListener) {
-        WebRequest webRequest = new WebRequest(ID_DEPOSIT_AMOUNT,WebServices.cashfree_wallet(),
+        WebRequest webRequest = new WebRequest(ID_DEPOSIT_AMOUNT,WebServices.wallet_recharge(),
                 WebRequest.POST_REQ);
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
@@ -608,6 +608,7 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
     }
+
     public void createCustomerEnquiry(CustomerEnquiryRequestModel customerEnquiryRequestModel, WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_CREATE_CUSTOMER_ENQUIRY, WebServices.CreateCustomerEnquiry(), WebRequest.POST_REQ);
         webRequest.setRequestModel(customerEnquiryRequestModel);
@@ -638,6 +639,14 @@ public class WebRequestHelper implements WebRequestConstants {
         WebRequest webRequest = new WebRequest(ID_5_PLAYER_TEAM_LIST, url,
                 WebRequest.POST_REQ);
         webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
+
+    public void customer_withdraw_amount(WithdrawAmountRequestModel requestModel,
+                                       WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_WITHDRAW_AMOUNT, WebServices.customer_withdraw_amount(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
     }
 }

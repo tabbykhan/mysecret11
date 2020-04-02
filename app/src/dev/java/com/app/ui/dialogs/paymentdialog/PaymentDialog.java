@@ -232,11 +232,11 @@ public class PaymentDialog extends AppBaseDialogFragment {
                 MyApplication.getInstance().printLog(TAG, "onPageFinished = " + url);
 
                 if (url.equals(WebServices.cashfree_wallet())) {
-                    Log.i("onPageFinished",url);
+                    Log.i("onPageFinished", url);
                     view.loadUrl("javascript:window." + ResponseHandleInterface.NAME + ".handleResponse2(document.getElementById('notify_url').value);");
                     view.loadUrl("javascript:window." + ResponseHandleInterface.NAME + ".handleResponse1(document.getElementById('return_url').value);");
                 } else if (url.contains(RETURN_URL)) {
-                    Log.i("onPageFinished else",url);
+                    Log.i("onPageFinished else", url);
                     showResultData("Deposit added successfully...!");
                     view.loadUrl("javascript:window." + ResponseHandleInterface.NAME + ".handleResponse(document.getElementsByTagName('body')[0].innerText);");
                 }
@@ -258,9 +258,11 @@ public class PaymentDialog extends AppBaseDialogFragment {
     private void startPayment() {
         UserModel userModel = getUserModel();
         if (userModel != null) {
+            Log.i("add amount 2", "1");
+            //  web_view.loadUrl(WebServices.WalletRecharge());
 
-            // web_view.loadUrl(WebServices.WalletRecharge());
-            web_view.loadUrl(walletRechargeResponse);
+            // web_view.loadUrl(WebServices.wallet_recharge());
+            web_view.loadData(walletRechargeResponse, "text/html", "UTF-8");
 
         }
     }
@@ -288,16 +290,23 @@ public class PaymentDialog extends AppBaseDialogFragment {
 
     private void handleWalletRechargeResponse(WebRequest webRequest) {
         try {
+
             WalletResponseModel responsePojo = webRequest.getResponsePojo(WalletResponseModel.class);
             if (responsePojo != null) {
-
-                walletRechargeResponse = responsePojo.getData();
+                Log.i("add amount", webRequest.getResponseString());
+                walletRechargeResponse = webRequest.getResponseString();
                 if (isValidString(walletRechargeResponse)) {
-                    Log.i("payment response", walletRechargeResponse);
-
+                    Log.i("add amount 1", "1");
                     startPayment();
                 }
-            } else {
+            } else if(webRequest.getResponseString()!=null){
+                walletRechargeResponse = webRequest.getResponseString();
+                if (isValidString(walletRechargeResponse)) {
+                    Log.i("add amount 3", "1");
+                    startPayment();
+                }
+
+            }else{
                 dismiss();
                 return;
             }
@@ -316,47 +325,11 @@ public class PaymentDialog extends AppBaseDialogFragment {
         return false;
     }
 
-
-    public interface PaymentSuccessListener {
-        void onPaymentResponse(DepositWalletResponseModel responseModel);
-    }
-
-    class ResponseHandleInterface {
-
-        public static final String NAME = "RESPONSE_HANDLER";
-
-        public ResponseHandleInterface() {
-        }
-
-        @SuppressWarnings("unused")
-        @JavascriptInterface
-        public void handleResponse(String response) {
-            Log.i("handleResponse-",response);
-            MyApplication.getInstance().printLog(TAG, response);
-            DepositWalletResponseModel responseModel = new Gson().fromJson(response, DepositWalletResponseModel.class);
-            if (paymentSuccessListener != null)
-                paymentSuccessListener.onPaymentResponse(responseModel);
-        }
-
-        @JavascriptInterface
-        public void handleResponse1(String response) {
-            Log.i("handleResponse 1-",response);
-            RETURN_URL = response;
-            MyApplication.getInstance().printLog(TAG, "RETURN_URL=" + RETURN_URL);
-        }
-
-        @JavascriptInterface
-        public void handleResponse2(String response) {
-            Log.i("handleResponse 2-",response);
-            NOTIFY_URL = response;
-            MyApplication.getInstance().printLog(TAG, "NOTIFY_URL=" + NOTIFY_URL);
-        }
-    }
     private void showResultData(String resulte) {
         Bundle bundle = new Bundle();
         bundle.putString(MESSAGE, resulte);
         bundle.putString(POS_BTN, "Ok");
-      //  bundle.putString(NEG_BTN, "NO");
+        //  bundle.putString(NEG_BTN, "NO");
         ConfirmationDialog instance = ConfirmationDialog.getInstance(bundle);
         instance.setOnClickListener(new DialogInterface.OnClickListener() {
             @Override
@@ -374,5 +347,41 @@ public class PaymentDialog extends AppBaseDialogFragment {
             }
         });
         instance.show(getChildFm(), instance.getClass().getSimpleName());
+    }
+
+    public interface PaymentSuccessListener {
+        void onPaymentResponse(DepositWalletResponseModel responseModel);
+    }
+
+    class ResponseHandleInterface {
+
+        public static final String NAME = "RESPONSE_HANDLER";
+
+        public ResponseHandleInterface() {
+        }
+
+        @SuppressWarnings("unused")
+        @JavascriptInterface
+        public void handleResponse(String response) {
+            Log.i("handleResponse-", response);
+            MyApplication.getInstance().printLog(TAG, response);
+            DepositWalletResponseModel responseModel = new Gson().fromJson(response, DepositWalletResponseModel.class);
+            if (paymentSuccessListener != null)
+                paymentSuccessListener.onPaymentResponse(responseModel);
+        }
+
+        @JavascriptInterface
+        public void handleResponse1(String response) {
+            Log.i("handleResponse 1-", response);
+            RETURN_URL = response;
+            MyApplication.getInstance().printLog(TAG, "RETURN_URL=" + RETURN_URL);
+        }
+
+        @JavascriptInterface
+        public void handleResponse2(String response) {
+            Log.i("handleResponse 2-", response);
+            NOTIFY_URL = response;
+            MyApplication.getInstance().printLog(TAG, "NOTIFY_URL=" + NOTIFY_URL);
+        }
     }
 }

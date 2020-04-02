@@ -90,9 +90,13 @@ public final class WebServices {
 
     public static native String cashfree_wallet();
 
+    public static native String wallet_recharge();
+
     public static native String get_matches_5aside();
 
     public static native String CustomerWithdrawAmount();
+
+    public static native String customer_withdraw_amount();
 
     public static native String CustomerWalletHistory();
 

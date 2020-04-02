@@ -70,7 +70,7 @@ public class AddCashActivity extends AppBaseActivity implements MatchTimerListen
     private CardView cv_razorpay;
     private ImageView iv_radio_razorpay;
 
-    String paymentType = "PAYTM";
+    String paymentType = "CASHFREE";
 
     CustomerJoinContestResponseModel.PreJoinedModel preJoinedModel;
     PromoCodeResponseModel promoCodeResponseModel;
@@ -347,7 +347,7 @@ public class AddCashActivity extends AppBaseActivity implements MatchTimerListen
         float amt = Float.parseFloat(amount);
         DepositAmountRequestModel requestModel = new DepositAmountRequestModel();
         requestModel.amount = amt;
-       // requestModel.paymentmethod = paymentType;
+        requestModel.paymentmethod = paymentType;
         requestModel.promocode = promo_code;
 
         openPaymentDialog(requestModel);

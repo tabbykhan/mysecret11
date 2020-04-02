@@ -45,7 +45,9 @@ public class WithdrawActivity extends AppBaseActivity {
     EditText et_amount;
     TextView tv_min_max;
     TextView tv_proceed;
-
+    private RadioGroup rb_group;
+    private String wallet_type="winning";
+    private TextView tv_bouns_balance;
     TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -72,9 +74,7 @@ public class WithdrawActivity extends AppBaseActivity {
             }
         }
     };
-    private RadioGroup rb_group;
-    private String wallet_type="winning";
-    private TextView tv_bouns_balance;
+
 
 
     @Override
@@ -218,14 +218,14 @@ public class WithdrawActivity extends AppBaseActivity {
         if (settings != null) {
             if (amt < settings.getWITHDRAW_AMOUNT_MIN() || amt > settings.getWITHDRAW_AMOUNT_MAX()) {
                 showErrorMsg(tv_min_max.getText().toString());
-                return;
+              //  return; remove comment
             }
         }
 
 
         WithdrawAmountRequestModel requestModel = new WithdrawAmountRequestModel();
         requestModel.amount = amt;
-        requestModel.wallet_type = wallet_type;
+        requestModel.wallet_type = wallet_type.toString();
         displayProgressBar(false);
         getWebRequestHelper().customerWithdrawAmount(requestModel, this);
     }

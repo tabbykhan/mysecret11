@@ -646,11 +646,16 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetPrivatePolicy(
 }
 
 //-----------------new service----
-
 JNIEXPORT jstring JNICALL Java_com_rest_WebServices_cashfree_1wallet(
         JNIEnv *env,
         jobject obj) {
     std::string data = getBaseUrl(env) + "cashfree_wallet";//payment gateway
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_wallet_1recharge(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "wallet_recharge";//payment gateway
     return env->NewStringUTF(data.c_str());
 }
 JNIEXPORT jstring JNICALL Java_com_rest_WebServices_get_1matches_15aside(JNIEnv *env,jobject obj){
@@ -669,7 +674,11 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_create_1customer_1team_1five
  std::string data = getBaseUrl(env) + "create_customer_team_five_players";// 5 player team create
     return env->NewStringUTF(data.c_str());
 }
-
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_customer_1withdraw_1amount(JNIEnv
+*env,jobject obj){
+ std::string data = getBaseUrl(env) + "customer_withdraw_amount";// customer withdraw amount
+    return env->NewStringUTF(data.c_str());
+}
 }
 
 
