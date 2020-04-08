@@ -51,6 +51,7 @@ public class ContestActivity extends AppBaseActivity implements MatchTimerListen
     public static final int REQUEST_LOW_BALANCE = 106;
     public static final int REQUEST_CHOOSE_PLAYER = 107;
     public static final int REQUEST_CREATE_PRIVATE_CONTEST = 109;
+    public static  final int REQUEST_FILTER_CONTEST=110;
 
     ToolbarFragment toolbarFragment;
 

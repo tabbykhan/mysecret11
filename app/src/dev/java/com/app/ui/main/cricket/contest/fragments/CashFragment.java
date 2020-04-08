@@ -20,7 +20,9 @@ import com.app.appbase.AppBaseFragment;
 import com.app.model.ContestCategoryModel;
 import com.app.model.ContestModel;
 import com.app.model.webresponsemodel.MatchContestResponseModel;
+import com.app.ui.main.cricket.contest.ContestActivity;
 import com.app.ui.main.cricket.contest.ContestActivity1;
+import com.app.ui.main.cricket.contest.ContestAllFiltersActivity;
 import com.app.ui.main.cricket.contest.adapter.ContestCategoryAdapter;
 import com.app.ui.main.cricket.contest.contestdetail.ContestDetailActivity;
 import com.app.ui.main.cricket.dialogs.winnerbreakupdialog.WinnerBreakupDialog;
@@ -74,6 +76,7 @@ public class CashFragment extends AppBaseFragment {
 
     View currentSortBy = null;
     int currentSortType = 0;//0 mean asyc 1 mean desc
+    private TextView tv_contest_all_filter;
 
     public Filter getFilter() {
         return filter;
@@ -151,9 +154,10 @@ public class CashFragment extends AppBaseFragment {
         rl_bottom_lay = getView().findViewById(R.id.rl_bottom_lay);
         tv_more_entry = getView().findViewById(R.id.tv_more_entry);
         iv_discount_image = getView().findViewById(R.id.iv_discount_image);
-
+        tv_contest_all_filter=getView().findViewById(R.id.tv_contest_all_filter);
         ll_filters_lay = getView().findViewById(R.id.ll_filters_lay);
         updateViewVisibitity(ll_filters_lay,View.GONE);
+        tv_contest_all_filter.setOnClickListener(this);
 
         ll_sort_winnings = getView().findViewById(R.id.ll_sort_winnings);
         ll_sort_winnings.setOnClickListener(this);
@@ -378,6 +382,14 @@ public class CashFragment extends AppBaseFragment {
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
     }
+    private void goToContestFilterActivity(Bundle bundle) {
+        Intent intent = new Intent(getActivity(), ContestAllFiltersActivity.class);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivityForResult(intent, ContestActivity.REQUEST_FILTER_CONTEST);
+        getActivity().overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
+    }
 
     public void setupData(List<ContestCategoryModel> contestCategoryModels) {
         this.contestCategoryModels = contestCategoryModels;
@@ -476,6 +488,9 @@ public class CashFragment extends AppBaseFragment {
                 updateSortArrow(true);
             }
             break;
+            case  R.id.tv_contest_all_filter:
+                goToContestFilterActivity(null);
+                break;
         }
     }
 }
