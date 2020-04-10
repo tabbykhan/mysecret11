@@ -3,6 +3,7 @@ package com.app.ui.main.cricket.contest.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Filter;
 import android.widget.ImageView;
@@ -30,8 +31,13 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.utilities.DeviceScreenUtil;
 import com.utilities.ItemClickSupport;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.app.Activity.RESULT_OK;
 
 
 /**
@@ -39,33 +45,15 @@ import java.util.List;
  */
 public class CashFragment extends AppBaseFragment {
 
-    private RecyclerView recycler_view;
     private static ContestCategoryAdapter adapter;
-
     List<ContestCategoryModel> contestCategoryModels = new ArrayList<>();
     List<ContestCategoryModel> beatTheExpertModel = new ArrayList<>();
     MatchContestResponseModel.DetailBean detailBean;
-
-    AppBarLayout.OnOffsetChangedListener appBarOnOffsetChangedListener=new AppBarLayout.OnOffsetChangedListener() {
-        @Override
-        public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-            if(swipe_layout!=null){
-                swipe_layout.setEnabled(i == 0);
-            }
-        }
-    };
-
     long viewMoreCatId = -1;
     int viewMoreCatIdPos = -1;
-    private TextView tv_no_item;
-    private AppBarLayout app_bar_layout;
-    private SwipeRefreshLayout swipe_layout;
-    private RelativeLayout rl_beat_the_expert;
     RelativeLayout rl_bottom_lay;
-    private boolean view_info = false;
     TextView tv_more_entry;
     ImageView iv_discount_image;
-
     LinearLayout ll_filters_lay;
     LinearLayout ll_sort_winnings;
     LinearLayout ll_sort_entry_fee;
@@ -76,37 +64,23 @@ public class CashFragment extends AppBaseFragment {
 
     View currentSortBy = null;
     int currentSortType = 0;//0 mean asyc 1 mean desc
-    private TextView tv_contest_all_filter;
-
-    public Filter getFilter() {
-        return filter;
-    }
-
-    public View getCurrentSortBy() {
-        return currentSortBy;
-    }
-
-    public int getCurrentSortType() {
-        return currentSortType;
-    }
-
     Filter filter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
-            if(contestCategoryModels!=null && contestCategoryModels.size()>0){
+            if (contestCategoryModels != null && contestCategoryModels.size() > 0) {
                 for (ContestCategoryModel contestCategoryModel : contestCategoryModels) {
                     switch (currentSortBy.getId()) {
                         case R.id.iv_sort_total_winnings: {
-                            contestCategoryModel.sortContest(1,currentSortType);
+                            contestCategoryModel.sortContest(1, currentSortType);
                         }
                         break;
                         case R.id.iv_sort_entry_fee: {
-                            contestCategoryModel.sortContest(2,currentSortType);
+                            contestCategoryModel.sortContest(2, currentSortType);
 
                         }
                         break;
                         case R.id.iv_sort_winners: {
-                            contestCategoryModel.sortContest(3,currentSortType);
+                            contestCategoryModel.sortContest(3, currentSortType);
                         }
                         break;
                     }
@@ -122,7 +96,35 @@ public class CashFragment extends AppBaseFragment {
             }
         }
     };
+    private RecyclerView recycler_view;
+    private TextView tv_no_item;
+    private AppBarLayout app_bar_layout;
+    private SwipeRefreshLayout swipe_layout;
+    AppBarLayout.OnOffsetChangedListener appBarOnOffsetChangedListener = new AppBarLayout.OnOffsetChangedListener() {
+        @Override
+        public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
+            if (swipe_layout != null) {
+                swipe_layout.setEnabled(i == 0);
+            }
+        }
+    };
+    private RelativeLayout rl_beat_the_expert;
+    private boolean view_info = false;
+    private TextView tv_contest_all_filter;
+    private JSONObject filter_json;
 
+
+    public Filter getFilter() {
+        return filter;
+    }
+
+    public View getCurrentSortBy() {
+        return currentSortBy;
+    }
+
+    public int getCurrentSortType() {
+        return currentSortType;
+    }
 
     @Override
     public int getLayoutResourceId() {
@@ -133,7 +135,7 @@ public class CashFragment extends AppBaseFragment {
     public void onResume() {
         super.onResume();
         app_bar_layout.addOnOffsetChangedListener(appBarOnOffsetChangedListener);
-        ((ContestActivity1) getActivity()).getMatchContest();
+        ((ContestActivity1) getActivity()).getMatchContest(filter_json);
     }
 
     @Override
@@ -148,15 +150,15 @@ public class CashFragment extends AppBaseFragment {
         setupSwipeLayout();
         app_bar_layout = getView().findViewById(R.id.app_bar_layout);
         recycler_view = getView().findViewById(R.id.recycler_view);
-        tv_no_item = getView().findViewById(R.id.tv_no_item);
         rl_beat_the_expert = getView().findViewById(R.id.rl_beat_the_expert);
         updateViewVisibitity(rl_beat_the_expert, View.GONE);
         rl_bottom_lay = getView().findViewById(R.id.rl_bottom_lay);
         tv_more_entry = getView().findViewById(R.id.tv_more_entry);
         iv_discount_image = getView().findViewById(R.id.iv_discount_image);
-        tv_contest_all_filter=getView().findViewById(R.id.tv_contest_all_filter);
+        tv_contest_all_filter = getView().findViewById(R.id.tv_contest_all_filter);
         ll_filters_lay = getView().findViewById(R.id.ll_filters_lay);
-        updateViewVisibitity(ll_filters_lay,View.GONE);
+        tv_no_item = getView().findViewById(R.id.tv_no_item);
+        updateViewVisibitity(ll_filters_lay, View.GONE);
         tv_contest_all_filter.setOnClickListener(this);
 
         ll_sort_winnings = getView().findViewById(R.id.ll_sort_winnings);
@@ -206,7 +208,7 @@ public class CashFragment extends AppBaseFragment {
             } else {
                 currentSortBy.setRotation(0);
             }
-            if(needSorting&&adapter!=null){
+            if (needSorting && adapter != null) {
                 adapter.getFilter().filter(String.valueOf(currentSortBy.getId()));
             }
 
@@ -215,18 +217,19 @@ public class CashFragment extends AppBaseFragment {
 
     @Override
     public void onPageSelected() {
-        if (swipe_layout == null) return;
-        ((ContestActivity1) getActivity()).getMatchContest();
+        if (swipe_layout == null)
+            return;
+        ((ContestActivity1) getActivity()).getMatchContest(filter_json);
     }
 
-    public void showRefreshing(){
-        if(swipe_layout!=null){
+    public void showRefreshing() {
+        if (swipe_layout != null) {
             swipe_layout.setRefreshing(true);
         }
     }
 
     private void initializeRecyclerView(final List<ContestCategoryModel> contestCategoryModels) {
-        if(currentSortBy==null){
+        if (currentSortBy == null) {
             currentSortBy = iv_sort_total_winnings;
             currentSortType = 1;
             updateSortArrow(false);
@@ -264,9 +267,11 @@ public class CashFragment extends AppBaseFragment {
                             if (!contestModel.isMoreJoinAvailable()) {
                                 return;
                             }
-                            if (detailBean == null) return;
+                            if (detailBean == null)
+                                return;
                             boolean b = ((AppBaseActivity) getActivity()).checkContestJoinAvailable(contestModel);
-                            if (!b) return;
+                            if (!b)
+                                return;
                             if (detailBean.getTotal_teams() == 0) {
                                 Bundle bundle = new Bundle();
                                 bundle.putLong(DATA2, contestModel.getMatch_contest_id());
@@ -358,13 +363,12 @@ public class CashFragment extends AppBaseFragment {
 
     private void setupSwipeLayout() {
         swipe_layout = getView().findViewById(R.id.swipe_layout);
-        swipe_layout.setColorSchemeResources(R.color.colorOrange,
-                R.color.colorPrimary);
+        swipe_layout.setColorSchemeResources(R.color.colorOrange, R.color.colorPrimary);
         swipe_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 swipe_layout.setRefreshing(true);
-                ((ContestActivity1) getActivity()).getMatchContest();
+                ((ContestActivity1) getActivity()).getMatchContest(filter_json);
             }
         });
     }
@@ -382,10 +386,14 @@ public class CashFragment extends AppBaseFragment {
         startActivity(intent);
         getActivity().overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
     }
+
     private void goToContestFilterActivity(Bundle bundle) {
         Intent intent = new Intent(getActivity(), ContestAllFiltersActivity.class);
         if (bundle != null) {
             intent.putExtras(bundle);
+        }
+        if(filter_json!=null){
+                intent.putExtra("data", filter_json.toString());
         }
         startActivityForResult(intent, ContestActivity.REQUEST_FILTER_CONTEST);
         getActivity().overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
@@ -399,13 +407,20 @@ public class CashFragment extends AppBaseFragment {
             view_info = true;
             updateViewVisibitity(recycler_view, View.VISIBLE);
             updateViewVisibitity(ll_filters_lay, View.VISIBLE);
+            tv_no_item.setVisibility(View.GONE);
+
         } else {
-            updateViewVisibitity(recycler_view, View.GONE);
-            updateViewVisibitity(ll_filters_lay, View.GONE);
+            Log.i("no contrstss", "----");
+            tv_no_item.setVisibility(View.VISIBLE);
+            recycler_view.setVisibility(View.GONE);
+            ll_filters_lay.setVisibility(View.GONE);
+
+
         }
         swipe_layout.setRefreshing(false);
-        updateView();
+        //updateView();
     }
+
 
     public void setupDetsil(MatchContestResponseModel.DetailBean detailBean) {
         this.detailBean = detailBean;
@@ -415,10 +430,10 @@ public class CashFragment extends AppBaseFragment {
         if (view_info) {
             updateViewVisibitity(tv_no_item, View.GONE);
         } else {
-            updateViewVisibitity(tv_no_item, View.VISIBLE);
+            tv_no_item.setVisibility(View.VISIBLE);
+           // updateViewVisibitity(tv_no_item, View.VISIBLE);
         }
     }
-
 
 
     @Override
@@ -488,9 +503,30 @@ public class CashFragment extends AppBaseFragment {
                 updateSortArrow(true);
             }
             break;
-            case  R.id.tv_contest_all_filter:
+            case R.id.tv_contest_all_filter:
                 goToContestFilterActivity(null);
                 break;
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == ContestActivity.REQUEST_FILTER_CONTEST) {
+            if (resultCode == RESULT_OK) {
+                if (data != null && data.getExtras() != null) {
+                    Bundle extras = data.getExtras();
+                    String filter = extras.getString(DATA, "");
+                    Log.i("Filter apply 1", filter);
+
+                    try {
+                        filter_json = new JSONObject(filter);
+                        // ((ContestActivity1) getActivity()).  getFilterMatchContest();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
         }
     }
 }

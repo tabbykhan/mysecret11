@@ -37,6 +37,8 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.gson.Gson;
 import com.medy.retrofitwrapper.WebRequest;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -91,7 +93,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
         super.onResume();
         MyApplication.getInstance().addMatchTimerListener(this);
 
-        getMatchContest();
+        // getMatchContest(null);
 
     }
 
@@ -345,7 +347,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
         }
     }
 
-    public void getMatchContest() {
+    public void getMatchContest(JSONObject jsonObject) {
         if (getMatchModel() != null) {
             try {
                 AppBaseFragment item = adapter1.getItem(0);
@@ -358,7 +360,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
 
             }
 
-            getWebRequestHelper().getMatchContest(getMatchModel().getId(), getMatchModel().getMatch_id(), this);
+            getWebRequestHelper().getMatchContest(getMatchModel().getId(), getMatchModel().getMatch_id(), jsonObject, this);
         }
     }
 
@@ -440,9 +442,18 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             contestCategoryModels.clear();
             practiceCategoryModels.clear();
             beatTheExpertModels.clear();
+            AppBaseFragment item = adapter1.getItem(0);
+
+            if (isFinishing())
+                return;
 
             if (data != null && data.size() > 0) {
                 contestCategoryModels.addAll(data);
+                ((CashFragment) item).setupDetsil(detailBean);
+                ((CashFragment) item).setupData(contestCategoryModels);
+            }else{
+                Log.i("no data--", "_------ no contest--");
+                ((CashFragment) item).setupData(contestCategoryModels);
             }
 
             if (data_para != null && data_para.size() > 0) {
@@ -453,16 +464,10 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
                 beatTheExpertModels.addAll(beatTheExpert);
             }
 
-            if (isFinishing())
-                return;
-
-            AppBaseFragment item = adapter1.getItem(0);
-            ((CashFragment) item).setupDetsil(detailBean);
-            ((CashFragment) item).setupData(contestCategoryModels);
-
             item = adapter1.getItem(1);
             ((PracticeFragment) item).setupDetsil(detailBean);
             ((PracticeFragment) item).setupData(practiceCategoryModels);
+
 
             if (isFinishing())
                 return;
@@ -492,7 +497,7 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
                 userModel.setWallet(responsePojo.getData().getWallet());
                 updateUserInPrefs();
             }
-            getMatchContest();
+            getMatchContest(null);
         } else {
             if (isFinishing())
                 return;
@@ -538,6 +543,35 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
                     openConfirmJoinContest(entryFee, matchContestId, teamId);
                 }
             }
+        }
+        //        else if (requestCode == ContestActivity.REQUEST_FILTER_CONTEST) {
+        //            if (resultCode == RESULT_OK) {
+        //                if (data != null && data.getExtras() != null) {
+        //                    Bundle extras = data.getExtras();
+        //                    String filter = extras.getString(DATA, "");
+        //                    try {
+        //                        getFilterMatchContest(new JSONObject(filter));
+        //                    } catch (JSONException e) {
+        //                        e.printStackTrace();
+        //                    }
+        //                    Log.i("Filter apply2", filter);
+        //                }
+        //            }
+        //        }
+    }
+
+    public void getFilterMatchContest(JSONObject jsonObject) {
+        if (getMatchModel() != null) {
+            try {
+                AppBaseFragment item = adapter1.getItem(0);
+                ((CashFragment) item).showRefreshing();
+
+
+                item = adapter1.getItem(1);
+                ((PracticeFragment) item).showRefreshing();
+            } catch (Exception e) {
+            }
+            getWebRequestHelper().getMatchContest_withFilter(getMatchModel().getId(), getMatchModel().getMatch_id(), jsonObject, this);
         }
     }
 }

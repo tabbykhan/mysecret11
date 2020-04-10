@@ -29,6 +29,11 @@ import com.app.model.webrequestmodel.WithdrawAmountRequestModel;
 import com.medy.retrofitwrapper.WebRequest;
 import com.medy.retrofitwrapper.WebServiceResponseListener;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Iterator;
+
 /**
  * Created by ubuntu on 27/3/18.
  */
@@ -178,7 +183,31 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.send(context, webServiceResponseListener);
     }
 
-    public void getMatchContest(long id, String uniqueId, WebServiceResponseListener webServiceResponseListener) {
+    public void getMatchContest(long id, String uniqueId,
+                                JSONObject jsonObject,
+                                WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetMatchContests(), id, uniqueId);
+        WebRequest webRequest = new WebRequest(ID_MATCH_CONTESTS, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        if(jsonObject!=null){
+            Iterator<String> keysItr = jsonObject.keys();
+            while (keysItr.hasNext()) {
+                String key = keysItr.next();
+                String value = null;
+                try {
+                    value = (String) jsonObject.get(key);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                webRequest.addParam(key, value);
+            }
+        }
+        webRequest.send(context, webServiceResponseListener);
+    }
+
+    public void getMatchContest_withFilter(long id, String uniqueId, JSONObject jsonObject,
+                                 WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchContests(), id, uniqueId);
         WebRequest webRequest = new WebRequest(ID_MATCH_CONTESTS, url,
                 WebRequest.POST_REQ);

@@ -194,7 +194,7 @@ public class PracticeFragment extends AppBaseFragment {
             @Override
             public void onRefresh() {
                 swipe_layout.setRefreshing(true);
-                ((ContestActivity1)getActivity()).getMatchContest();
+                ((ContestActivity1)getActivity()).getMatchContest(null);
             }
         });
     }

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#002341"
+    android:background="#011827"
     >
 
     <androidx.cardview.widget.CardView
@@ -31,7 +31,7 @@
                 android:onClick="backBtn"
                 android:padding="@dimen/dp12"
                 android:src="@drawable/back_icon_3x"
-                android:tint="@color/btn_color"
+                android:tint="@color/colorWhite"
                 />
 
             <com.customviews.TypefaceTextView
@@ -48,12 +48,27 @@
                 android:textSize="?attr/actionBarTitleSize"
                 app:custom_font="@string/app_font_regular"
                 />
+
+            <TextView
+                android:id="@+id/tv_contest_clear_filter"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="@dimen/dp10"
+                android:text="Clear Filter"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorWhite"
+                android:gravity="right|center"
+                android:drawablePadding="@dimen/dp10"
+                android:drawableTint="@color/colorWhite"
+                android:drawableEnd="@drawable/ic_reset"
+                android:layout_height="match_parent">
+
+            </TextView>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp60"
         android:layout_marginTop="@dimen/dp50"
         >
 
@@ -64,12 +79,14 @@
             android:padding="@dimen/dp10"
             >
 
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:background="@drawable/ll_10_top_round_corner_black_new"
                 android:text="Entry"
-                android:layout_marginStart="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp10"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp18"
                 ></TextView>
@@ -77,81 +94,94 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp10"
-                android:orientation="horizontal"
-                android:weightSum="1"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@drawable/bg_10_rounded_bordar_white"
+                android:orientation="vertical"
                 >
 
-                <TextView
-                    android:id="@+id/entry1_50"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹1 - ₹50"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
-                <TextView
-                    android:id="@+id/entry51_100"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹51 - ₹100"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/dp10"
-                android:weightSum="1"
-                >
+                    <TextView
+                        android:id="@+id/entry1_50"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹1 - ₹50"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
-                <TextView
-                    android:id="@+id/entry101_1000"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹101 - ₹1000"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
-                <TextView
-                    android:id="@+id/entry1001_above"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹1001 &amp; above"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                    <TextView
+                        android:id="@+id/entry51_100"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹51 - ₹100"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/entry101_1000"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹101 - ₹1000"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
+
+                    <TextView
+                        android:id="@+id/entry1001_above"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹1001 &amp; above"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
+
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:background="@drawable/ll_10_top_round_corner_black_new"
                 android:text="Number of Teams"
-                android:layout_marginTop="@dimen/dp10"
-                android:layout_marginStart="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp10"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp18"
                 ></TextView>
@@ -159,104 +189,118 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp10"
-                android:orientation="horizontal"
-                android:weightSum="1"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@drawable/bg_10_rounded_bordar_white"
+                android:orientation="vertical"
                 >
 
-                <TextView
-                    android:id="@+id/team_2"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="2"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
-                <TextView
-                    android:id="@+id/team_3_10"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="3 - 10"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/dp10"
-                android:weightSum="1"
-                >
+                    <TextView
+                        android:id="@+id/team_2"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="2"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
-                <TextView
-                    android:id="@+id/team_11_100"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="11 - 100"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
-                <TextView
-                    android:id="@+id/team_101_1000"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="101 - 1000"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                    <TextView
+                        android:id="@+id/team_3_10"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="3 - 10"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/dp10"
-                android:weightSum="1"
-                >
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/team_1001_above"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="1001 &amp; above"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/team_11_100"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="11 - 100"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
+
+                    <TextView
+                        android:id="@+id/team_101_1000"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="101 - 1000"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/team_1001_above"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="1001 &amp; above"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
 
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:background="@drawable/ll_10_top_round_corner_black_new"
                 android:text="Prize Pool"
-                android:layout_marginTop="@dimen/dp10"
-                android:layout_marginStart="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp10"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp18"
                 ></TextView>
@@ -264,116 +308,140 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp10"
-                android:orientation="horizontal"
-                android:weightSum="1"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@drawable/bg_10_rounded_bordar_white"
+                android:orientation="vertical"
                 >
 
-                <TextView
-                    android:id="@+id/prize1_10000"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹1 - ₹10,000"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
-                <TextView
-                    android:id="@+id/prize10000_1_lakh"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹10,000 - ₹1 Lakh"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/dp10"
-                android:weightSum="1"
-                >
+                    <TextView
+                        android:id="@+id/prize1_10000"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹1 - ₹10,000"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
-                <TextView
-                    android:id="@+id/prize1_lakh_10_lakh"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹1 Lakh - ₹10 Lakh"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
-                <TextView
-                    android:id="@+id/prize10_lakh_25_lakh"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="@dimen/dp10"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹10 Lakh - ₹25 Lakh"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                    <TextView
+                        android:id="@+id/prize10000_1_lakh"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹10,000 - ₹1 Lakh"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="@dimen/dp10"
-                android:weightSum="1"
-                >
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/prize25_lakh_above"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/selector_player_choose"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/dp10"
-                    android:text="₹25 Lakh - above"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/dp15"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/prize1_lakh_10_lakh"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹1 Lakh - ₹10 Lakh"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
+
+                    <TextView
+                        android:id="@+id/prize10_lakh_25_lakh"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/dp10"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹10 Lakh - ₹25 Lakh"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    >
+
+                    <TextView
+                        android:id="@+id/prize25_lakh_above"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/selector_player_choose"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/dp10"
+                        android:text="₹25 Lakh - above"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/dp15"
+                        />
 
 
+                </LinearLayout>
             </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contest Type"
-                android:layout_marginTop="@dimen/dp10"
                 android:layout_marginStart="@dimen/dp10"
-                android:layout_marginBottom="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:background="@drawable/ll_10_top_round_corner_black_new"
+                android:text="Contest Type"
                 android:textColor="@color/colorWhite"
-                android:textSize="@dimen/sp18"></TextView>
+                android:textSize="@dimen/sp18"
+                ></TextView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp10"
+            android:layout_marginBottom="@dimen/dp10"
+            android:background="@drawable/bg_10_rounded_bordar_white"
+            android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp10"
+                android:layout_margin="@dimen/dp5"
+                android:layout_marginBottom="@dimen/dp20"
                 android:orientation="horizontal"
                 android:weightSum="1"
                 >
 
                 <TextView
+                    android:id="@+id/single_entry"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.5"
@@ -384,7 +452,9 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/dp15"
                     />
+
                 <TextView
+                    android:id="@+id/multi_entry"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="@dimen/dp10"
@@ -398,15 +468,17 @@
                     />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
                 android:orientation="horizontal"
-                android:layout_margin="@dimen/dp10"
                 android:weightSum="1"
                 >
 
                 <TextView
+                    android:id="@+id/single_winnner"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.5"
@@ -417,7 +489,9 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/dp15"
                     />
+
                 <TextView
+                    android:id="@+id/multi_winner"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="@dimen/dp10"
@@ -431,15 +505,17 @@
                     />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp5"
                 android:orientation="horizontal"
-                android:layout_margin="@dimen/dp10"
                 android:weightSum="1"
                 >
 
                 <TextView
+                    android:id="@+id/confirmed"
                     android:layout_width="0dp"
                     android:layout_height="40dp"
                     android:layout_weight="0.5"
@@ -453,6 +529,8 @@
 
 
             </LinearLayout>
+        </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>
@@ -468,7 +546,7 @@
             android:id="@+id/ll_new_team"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorRed"
+            android:background="#011827"
             android:gravity="center"
             android:orientation="horizontal"
             android:paddingTop="@dimen/dp10"

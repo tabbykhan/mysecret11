@@ -423,7 +423,7 @@ public class ContestActivity extends AppBaseActivity implements MatchTimerListen
         if (getMatchModel() != null) {
             swipe_layout.setRefreshing(true);
             getWebRequestHelper().getMatchContest(getMatchModel().getId(),
-                    getMatchModel().getMatch_id(), this);
+                    getMatchModel().getMatch_id(), null,this);
         }
     }
 
