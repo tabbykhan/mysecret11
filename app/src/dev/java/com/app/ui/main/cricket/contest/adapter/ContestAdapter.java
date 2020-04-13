@@ -41,7 +41,8 @@ public class ContestAdapter extends AppBaseRecycleAdapter {
 
     @Override
     public int getDataCount() {
-        return list == null ? 0 : ((list.size() > 3) ? ((viewMoreEnable) ? list.size() : 3) : list.size());
+        return list == null ? 0 : ((list.size() > 3) ? ((viewMoreEnable) ? list.size() : 3) :
+                list.size());
     }
 
     private class ViewHolder extends BaseViewHolder {
