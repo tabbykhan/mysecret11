@@ -62,10 +62,10 @@ public class TeamPlayerEventAdapter extends AppBaseRecycleAdapter {
             tv_event_point = itemView.findViewById(R.id.tv_event_point);
             view_seprator = itemView.findViewById(R.id.view_seprator);
 
-            tv_event_name.setTextColor(context.getResources().getColor(R.color.colorAppBlack));
-            tv_event_value.setTextColor(context.getResources().getColor(R.color.colorAppBlack));
-            tv_event_point.setTextColor(context.getResources().getColor(R.color.colorAppBlack));
-            view_seprator.setBackgroundColor(context.getResources().getColor(R.color.colorAppBlack50));
+//            tv_event_name.setTextColor(context.getResources().getColor(R.color.colorAppBlack));
+//            tv_event_value.setTextColor(context.getResources().getColor(R.color.colorAppBlack));
+//            tv_event_point.setTextColor(context.getResources().getColor(R.color.colorAppBlack));
+            view_seprator.setBackgroundColor(context.getResources().getColor(R.color.colorWhite));
         }
 
         @Override

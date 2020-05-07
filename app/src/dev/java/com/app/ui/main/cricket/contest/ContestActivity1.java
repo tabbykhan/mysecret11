@@ -236,13 +236,13 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
         switch (v.getId()) {
             case R.id.tv_create_new_team: {
                 goToCreateTeamActivity(null);
+
             }
+            break;
             case R.id.ll_create_team: {
                 goToCreateTeamActivity(null);
             }
-
             break;
-
             case R.id.ll_my_teams: {
                 Bundle bundle = new Bundle();
                 bundle.putString(DATA, getMatchModel().getMatch_id());

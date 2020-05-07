@@ -1,6 +1,7 @@
 package com.app.ui.main.cricket.matchstats.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -111,18 +112,23 @@ public class MatchStatsAdapter extends AppBaseRecycleAdapter {
 
                 if (playerModel.isMyPlayer()) {
                     iv_your_player.setActivated(true);
+                    iv_your_player.setSelected(true);
                 } else {
                     iv_your_player.setActivated(false);
+                    iv_your_player.setSelected(false);
                 }
                 if (getMatchModel().isPastMatch()) {
                     if (playerModel.isDreamTeamPlayer()) {
                         updateViewVisibitity(iv_top_player, View.VISIBLE);
+                        Log.i("playerstate", "---------VISIBLE-------");
                     } else {
                         updateViewVisibitity(iv_top_player, View.INVISIBLE);
+                        Log.i("playerstate", "---------INVISIBLE 1-------");
                     }
 
                 } else {
                     updateViewVisibitity(iv_top_player, View.INVISIBLE);
+                    Log.i("playerstate", "---------INVISIBLE 2-------");
                 }
             }
 

@@ -907,10 +907,12 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             matchModelWithPlayers = responsePojo.getData();
             if (isFinishing())
                 return;
+            Log.i("activity result", "-----5------------");
             setupData();
         } else {
             if (isFinishing())
                 return;
+            Log.i("activity result", "-----6-----------");
             showErrorMsg(responsePojo.getMessage());
         }
 
@@ -919,8 +921,7 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
 
     @Override
     public void onMatchTimeUpdate() {
-        if (isFinishing())
-            return;
+        if (isFinishing()) return;
 
         setMatchData();
     }
@@ -932,6 +933,9 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
             if (resultCode == RESULT_OK) {
                 setResult(RESULT_OK, data);
                 supportFinishAfterTransition();
+                Log.i("activity result", "---1--------------");
+            }else{
+                Log.i("activity result", "-----2------------");
             }
         }
     }
@@ -1001,8 +1005,10 @@ public class CreateTeamActivity extends AppBaseActivity implements MatchTimerLis
         if (!responsePojo.isError()) {
             if (isFinishing()) return;
             showCustomToast(responsePojo.getMessage());
+            Log.i("activity result", "-----3------------");
           //  setResult(responsePojo.getData());
         } else {
+            Log.i("activity result", "-----4------------");
             if (isFinishing()) return;
             showErrorMsg(responsePojo.getMessage());
         }

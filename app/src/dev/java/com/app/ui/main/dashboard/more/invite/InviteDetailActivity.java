@@ -155,7 +155,8 @@ public class InviteDetailActivity extends AppBaseActivity {
                 .setMaxWidth(DeviceScreenUtil.getInstance().getWidth(0.90f))
                 .setGravity(Gravity.BOTTOM)
                 .setArrowEnabled(true)
-                .setText("Cash bonus will be added to your THETEAM11 account only once the winner has been declared for the matches your friends have joined cash contest in")
+                .setText("Cash bonus will be added to your MySecret11 account only once the " +
+                        "winner has been declared for the matches your friends have joined cash contest in")
                 .setTextColor(getResources().getColor(R.color.colorWhite))
                 .setBackgroundColor(getResources().getColor(R.color.colorPrimary))
                 .setCancelable(true)

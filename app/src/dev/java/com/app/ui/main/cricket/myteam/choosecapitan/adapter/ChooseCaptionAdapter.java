@@ -14,6 +14,8 @@ import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseRecycleAdapter;
 import com.app.model.PlayerModel;
+import com.app.model.TeamModel;
+import com.app.ui.MyApplication;
 
 import java.util.List;
 
@@ -27,6 +29,9 @@ public class ChooseCaptionAdapter extends AppBaseRecycleAdapter implements Filte
     PlayerModel captionModel;
     PlayerModel vccaptionModel;
     PlayerModel treamplaerModel;
+
+    private TeamModel teamModel1;
+    private TeamModel teamModel2;
 
     public PlayerModel getCaptionModel() {
         return captionModel;
@@ -46,6 +51,8 @@ public class ChooseCaptionAdapter extends AppBaseRecycleAdapter implements Filte
 
     public ChooseCaptionAdapter(List<PlayerModel> list) {
         this.list = list;
+        teamModel1=   MyApplication.getInstance().getSelectedMatch().getTeam1();
+        teamModel2=MyApplication.getInstance().getSelectedMatch().getTeam2();
     }
 
     public void setCaption(String caption) {
@@ -205,6 +212,13 @@ public class ChooseCaptionAdapter extends AppBaseRecycleAdapter implements Filte
             tv_player_name.setText(playerModel.getName());
 
             //tv_team_type.setText(Html.fromHtml(getPlayerTypeName(playerModel.getTeam_id())));
+
+            if (playerModel.getTeam_id()==teamModel1.getId()  ) {
+                tv_team_type.setText(teamModel1.getSort_name());
+            } else if (playerModel.getTeam_id() == teamModel2.getId()) {
+                tv_team_type.setText(teamModel2.getSort_name());
+            }
+
 
             if (getPlayerTeamType(playerModel.getTeam_id()) == 1) {
                 tv_team_type.setBackground(tv_team_type.getContext().getResources().getDrawable(R.drawable.bg_white_left2radius));

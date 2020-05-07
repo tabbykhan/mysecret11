@@ -17,6 +17,7 @@ import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseApplication;
 import com.app.appbase.AppBaseFragment;
+import com.app.appupdater.AppUpdateChecker;
 import com.app.appupdater.DialogAppUpdater;
 import com.app.model.AppVersionModel;
 import com.app.model.CustomIconModel;
@@ -223,7 +224,7 @@ public class DashboardActivityNew extends AppBaseActivity {
             getWebRequestHelper().getGames(this);
         }
 
-        /*new AppUpdateChecker(this, new AppUpdateChecker.AppUpdateAvailableListener() {
+        new AppUpdateChecker(this, new AppUpdateChecker.AppUpdateAvailableListener() {
             @Override
             public void appUpdateAvailable(AppVersionModel appUpdatemodal) {
                 DashboardActivityNew.this.appVersionModel = appUpdatemodal;
@@ -239,7 +240,7 @@ public class DashboardActivityNew extends AppBaseActivity {
 
                 }
             }
-        }).checkForUpdate();*/
+        }).checkForUpdate();
 
     }
 

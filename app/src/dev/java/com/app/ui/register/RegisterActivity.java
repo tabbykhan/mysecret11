@@ -69,10 +69,8 @@ public class RegisterActivity extends AppBaseActivity {
 
 
     ToolbarFragment toolbarFragment;
-
     RelativeLayout rl_fb_btn;
     RelativeLayout rl_gplus_btn;
-
     EditText et_name;
     EditText et_email;
     EditText et_mobile;
@@ -85,8 +83,6 @@ public class RegisterActivity extends AppBaseActivity {
     TextView tv_login;
     TextView tv_referal_msg;
     CheckBox cb_password_show_hide;
-
-
     private AutoCompleteHelper autoCompleteHelper;
     private RecyclerView recycler_view;
     EditText et_team_name;
@@ -296,12 +292,12 @@ public class RegisterActivity extends AppBaseActivity {
 
                 @Override
                 public void updateDrawState(TextPaint ds) {
-                    ds.setColor(getColorFromStyle(R.attr.app_link_text_color));
+                    ds.setColor(getResources().getColor(R.color.colorWhite));
                     ds.setUnderlineText(false);
                 }
             };
             SpannableString string = SpannableString.valueOf(tv_login.getText());
-            string.setSpan(urlSpan, m1.start(), m1.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+           string.setSpan(urlSpan, m1.start(), m1.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
     }
 
@@ -354,6 +350,7 @@ public class RegisterActivity extends AppBaseActivity {
             string.setSpan(urlSpan, m1.start(), m1.end(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
     }
+
 
 
     @Override

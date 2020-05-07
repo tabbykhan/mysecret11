@@ -100,8 +100,7 @@
                         android:id="@+id/iv_your_player"
                         android:layout_width="@dimen/dp10"
                         android:layout_height="@dimen/dp10"
-                        android:tint="@color/iv_green_red_tint_color"
-                        android:src="@drawable/tick_3x" />
+                        android:src="@drawable/tick_3x"/>
 
                     <ImageView
                         android:id="@+id/iv_top_player"

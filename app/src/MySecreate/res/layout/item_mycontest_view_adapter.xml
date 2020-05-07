@@ -280,7 +280,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/txt_only_remaing"
-                                android:textColor="@color/color_yellow_btn"
+                                android:textColor="#AD0004"
                                 android:textSize="?attr/app_text_size_extra_small"
                                 app:custom_font="@string/app_font_regular" />
 

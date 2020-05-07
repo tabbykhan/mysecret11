@@ -534,6 +534,8 @@ public class PlayersFragment extends AppBaseFragment {
                 }
 
             }
+        }else{
+            Log.i("player fragment", "----frag  resulte--");
         }
     }
 

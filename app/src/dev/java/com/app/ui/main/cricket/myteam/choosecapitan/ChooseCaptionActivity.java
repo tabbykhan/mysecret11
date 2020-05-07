@@ -601,6 +601,13 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
             extras.putLong(DATA1, data.getId());
             intent = new Intent();
             intent.putExtras(extras);
+        }else{
+            Log.i("match id less", "-----------------");
+            Bundle extras = getIntent().getExtras();
+//            extras.putLong(DATA1, data.getId());
+            extras.putLong(DATA1, getCustomerTeamId());
+            intent = new Intent();
+            intent.putExtras(extras);
         }
         setResult(RESULT_OK, intent);
         supportFinishAfterTransition();

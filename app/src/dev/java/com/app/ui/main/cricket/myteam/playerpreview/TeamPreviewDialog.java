@@ -492,7 +492,10 @@ public class TeamPreviewDialog extends AppBaseDialogFragment {
             case R.id.iv_edit_team:
                 dismiss();
                 if (this.teamPreviewDialogListener != null) {
-                    teamPreviewDialogListener.needTeamEdit(this.customerTeamModel);
+                    if(customerTeamModel!=null){
+                        teamPreviewDialogListener.needTeamEdit(this.customerTeamModel);
+                    }
+
                 }
                 break;
 

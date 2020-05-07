@@ -15,6 +15,8 @@ import com.R;
 import com.app.appbase.AppBaseActivity;
 import com.app.appbase.AppBaseRecycleAdapter;
 import com.app.model.PlayerModel;
+import com.app.model.TeamModel;
+import com.app.ui.MyApplication;
 
 import java.util.List;
 
@@ -22,11 +24,14 @@ public class PlayersAdapter extends AppBaseRecycleAdapter implements Filterable 
 
     private Context context;
     List<PlayerModel> list;
-
+    private TeamModel teamModel1;
+    private TeamModel teamModel2;
 
     public PlayersAdapter(Context context, List<PlayerModel> list) {
         this.context = context;
         this.list = list;
+        teamModel1=   MyApplication.getInstance().getSelectedMatch().getTeam1();
+        teamModel2=MyApplication.getInstance().getSelectedMatch().getTeam2();
     }
 
     @Override
@@ -123,6 +128,11 @@ public class PlayersAdapter extends AppBaseRecycleAdapter implements Filterable 
             tv_player_name.setText(playerModel.getName());
 
             //tv_team_type.setText(Html.fromHtml(getPlayerTypeName(playerModel.getTeam_id())));
+            if (playerModel.getTeam_id()==teamModel1.getId()  ) {
+                tv_team_type.setText(teamModel1.getSort_name());
+            } else if (playerModel.getTeam_id() == teamModel2.getId()) {
+                tv_team_type.setText(teamModel2.getSort_name());
+            }
 
             if(ConstantsFlavor.type == ConstantsFlavor.Type.sportteam){
                 if (getPlayerTeamType(playerModel.getTeam_id()) == 1) {

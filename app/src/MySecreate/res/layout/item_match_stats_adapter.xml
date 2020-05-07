@@ -100,14 +100,12 @@
                         android:id="@+id/iv_your_player"
                         android:layout_width="@dimen/dp10"
                         android:layout_height="@dimen/dp10"
-                        android:tint="@color/colorWhite"
                         android:src="@drawable/tick_3x" />
 
                     <ImageView
                         android:id="@+id/iv_top_player"
                         android:layout_width="@dimen/dp10"
                         android:layout_height="@dimen/dp10"
-                        android:tint="@color/colorWhite"
                         android:layout_marginStart="@dimen/dp5"
                         android:src="@drawable/top_3x" />
                 </LinearLayout>
