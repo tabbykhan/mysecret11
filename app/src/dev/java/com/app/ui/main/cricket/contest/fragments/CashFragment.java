@@ -414,8 +414,6 @@ public class CashFragment extends AppBaseFragment {
             tv_no_item.setVisibility(View.VISIBLE);
             recycler_view.setVisibility(View.GONE);
             ll_filters_lay.setVisibility(View.GONE);
-
-
         }
         swipe_layout.setRefreshing(false);
         //updateView();

@@ -2,6 +2,7 @@ package com.app.ui.main.webview;
 
 import android.graphics.Bitmap;
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -31,8 +32,11 @@ public class WebViewActivity extends AppBaseActivity {
     }
 
     public String getWebUrl() {
-        if (getIntent().getExtras() != null)
+        if (getIntent().getExtras() != null){
+            Log.d("url--","-web url-"+getIntent().getExtras().getString(DATA) );
             return getIntent().getExtras().getString(DATA);
+        }
+
         return "";
     }
 

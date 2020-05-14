@@ -121,7 +121,6 @@ public class NotificationsAdapter extends AppBaseRecycleAdapter implements Heade
                 NotificationModel transactionHistoryModel = list.get(position);
                 tv_date.setText(transactionHistoryModel.getCreatedDateText());
             }
-
         }
     }
 

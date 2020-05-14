@@ -9,6 +9,7 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -390,7 +391,7 @@ public class CheckUserActivity extends AppBaseActivity {
     private void callSocialLogin(SocialData socialData) {
         if (!socialData.isValidEmail()) {
             socialLogout();
-            showErrorMsg("Something went wrong");
+            showErrorMsg("Email Id not available in your facebook account");
             return;
         }
 
@@ -471,11 +472,14 @@ public class CheckUserActivity extends AppBaseActivity {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.d("activity  ", "----resulte--");
         if (requestCode == GplusLoginHandler.RC_SIGN_IN && resultCode != Activity.RESULT_CANCELED) {
             MyApplication.getInstance().getGplusLoginHandler().onActivityResult(data);
         } else if (requestCode == FacebookLoginHandler.fbLoginRequestCode()) {
             MyApplication.getInstance().getFacebookLoginHandler().onActivityResult(requestCode,
                     resultCode, data);
+        }else{
+            Log.d("gmail ", "----else--");
         }
     }
 

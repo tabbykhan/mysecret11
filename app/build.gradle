@@ -99,10 +99,9 @@ android {
             dimension "server"
             versionCode 1
             versionName "1.0.1"
-            applicationId "com.imuons.mysecreate"
+            applicationId "com.mysecret"
         }
-
-
+//        com.imuons.mysecreate
     }
 
     externalNativeBuild {

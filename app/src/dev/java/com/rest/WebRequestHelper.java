@@ -395,8 +395,6 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
-
-
     public void customerPreJoinContest(CustomerJoinContestRequestModel requestModel,
                                        WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_CUSTOMER_PRE_JOIN_CONTEST, WebServices.CustomerPreJoinContest(),

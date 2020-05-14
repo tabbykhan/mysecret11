@@ -3,8 +3,11 @@
     <string name="currency_symbol">\u20B9</string>
 
 
-    <string name="facebook_app_id">513373502893268</string>
-    <string name="fb_login_protocol_scheme">fb513373502893268</string>
+<!--    <string name="facebook_app_id">513373502893268</string>-->
+<!--    <string name="fb_login_protocol_scheme">fb513373502893268</string>-->
+
+    <string name="facebook_app_id">264423684964819</string>
+    <string name="fb_login_protocol_scheme">fb264423684964819</string>
 
     <string name="android_key">AIzaSyDvIqq1nN8Mygmlp6Gu2nXhRQFbg6GIyKU</string>
     <string name="server_key">AIzaSyCqpqAabml53TX_1NY6euAmPFHDyyVwEnM</string>

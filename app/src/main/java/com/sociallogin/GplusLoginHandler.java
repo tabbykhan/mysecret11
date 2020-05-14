@@ -54,6 +54,7 @@ public class GplusLoginHandler {
     }
 
     public void gPlusSignIn(Context context) {
+        Log.d("gmail ", "----login--");
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         ((Activity) context).startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -76,14 +77,17 @@ public class GplusLoginHandler {
 
 
     public void onActivityResult(Intent data) {
+        Log.d("activity  ", "----resulte---");
         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
         handleSignInResult(task);
     }
 
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        Log.d("gmail ", "----else--"+completedTask);
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             if (account != null) {
+                Log.d("gmail 1 ", "----else--"+completedTask);
                 SocialData socialData = new SocialData();
                 socialData.setEmail(account.getEmail());
                 socialData.setFirstName(account.getGivenName());
@@ -92,14 +96,18 @@ public class GplusLoginHandler {
                 socialData.setLoginFrom("G");
                 printLog("SocialData== " + socialData.toString());
                 if (socialLoginListner != null) {
+                    Log.d("gmail 2 ", "----else--"+completedTask);
                     socialLoginListner.socialLoginSuccess(socialData);
                 }
             } else {
+
+                Log.d("gmail 3 ", "----else--"+completedTask);
                 int statusCode = 200;
                 String message = "Something went wrong";
                 showToast("GoogleSignInAccount error" + "\n" + statusCode + " - " + message);
             }
         } catch (ApiException e) {
+            Log.d("exception 2 ", "----else--"+e.getMessage());
             int statusCode = e.getStatusCode();
             String message = e.getMessage();
             if (message == null) {
@@ -111,7 +119,7 @@ public class GplusLoginHandler {
 
     private void printLog(String msg) {
         if (msg == null) return;
-        Log.e(getClass().getSimpleName(), msg);
+        Log.e("gmail login log", msg);
     }
 
     private void showToast(String msg) {

@@ -631,7 +631,7 @@ public class RegisterMLMActivity extends AppBaseActivity {
     private void callSocialLogin(SocialData socialData) {
         if (!socialData.isValidEmail()) {
             socialLogout();
-            showErrorMsg("Something went wrong");
+            showErrorMsg("Email Id not available in your facebook account");
             return;
         }
 

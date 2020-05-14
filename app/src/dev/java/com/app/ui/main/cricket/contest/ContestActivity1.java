@@ -438,7 +438,6 @@ public class ContestActivity1 extends AppBaseActivity implements MatchTimerListe
             List<ContestCategoryModel> data = responsePojo.getData();
             List<ContestCategoryModel> data_para = responsePojo.getPractice();
             List<ContestCategoryModel> beatTheExpert = responsePojo.getBeatTheExpert();
-
             contestCategoryModels.clear();
             practiceCategoryModels.clear();
             beatTheExpertModels.clear();

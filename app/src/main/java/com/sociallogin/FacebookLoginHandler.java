@@ -138,6 +138,7 @@ public class FacebookLoginHandler {
                         showToast("Facebook Error\n" + msg);
                     } else {
                         JSONObject jsonObject = response.getJSONObject();
+                        Log.d("json obj 1","--"+jsonObject.toString());
                         if (jsonObject != null) {
                             SocialData socialData = new SocialData();
                             socialData.setId(jsonObject.optString("id"));
