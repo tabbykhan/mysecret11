@@ -80,7 +80,7 @@ public class BankAccountFragment extends AppBaseFragment {
                 userModel.getPancard() == null || userModel.getPancard().isRejected()) {
             updateViewVisibitity(cv_data_pending, View.VISIBLE);
             updateViewVisibitity(cv_bank_detail, View.GONE);
-            return;
+           // return;
         }
         updateViewVisibitity(cv_data_pending, View.GONE);
         updateViewVisibitity(cv_bank_detail, View.VISIBLE);

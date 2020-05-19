@@ -471,7 +471,9 @@ public class CheckUserActivity extends AppBaseActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
         super.onActivityResult(requestCode, resultCode, data);
+
         Log.d("activity  ", "----resulte--");
         if (requestCode == GplusLoginHandler.RC_SIGN_IN && resultCode != Activity.RESULT_CANCELED) {
             MyApplication.getInstance().getGplusLoginHandler().onActivityResult(data);

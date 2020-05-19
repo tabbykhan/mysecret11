@@ -63,6 +63,7 @@ public class AppCommon {
         }
         return false;
     }
+
     public void setUserLogin(String userId , String password) {
         SharedPreferences.Editor editor = mContext.getSharedPreferences(MyPreference.mUserLogin, MODE_PRIVATE).edit();
         editor.putBoolean(MyPreference.login, true);

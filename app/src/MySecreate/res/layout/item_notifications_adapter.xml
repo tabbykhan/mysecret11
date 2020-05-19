@@ -17,34 +17,10 @@
         app:cardCornerRadius="@dimen/dp5"
         app:cardElevation="@dimen/dp3">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
+            android:orientation="vertical"
             android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:id="@+id/rl_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone">
-
-                <ImageView
-                    android:id="@+id/iv_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp1"
-                    android:layout_marginTop="@dimen/dp1"
-                    android:layout_marginRight="@dimen/dp1"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/logo_3x" />
-
-                <ProgressBar
-                    android:id="@+id/pb_image"
-                    android:layout_width="@dimen/dp20"
-                    android:layout_height="@dimen/dp20"
-                    android:layout_centerInParent="true" />
-
-            </RelativeLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,7 +39,7 @@
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="Test Message"
-                    android:textColor="@color/colorGray"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="?attr/app_font_medium" />
 
@@ -116,9 +92,32 @@
                 </LinearLayout>
 
             </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/rl_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone">
 
+                <ImageView
+                    android:id="@+id/iv_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp1"
+                    android:layout_marginTop="@dimen/dp1"
+                    android:layout_marginRight="@dimen/dp1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo_3x" />
 
-        </RelativeLayout>
+                <ProgressBar
+                    android:id="@+id/pb_image"
+                    android:layout_width="@dimen/dp20"
+                    android:layout_height="@dimen/dp20"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 

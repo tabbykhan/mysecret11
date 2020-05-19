@@ -39,7 +39,7 @@ import java.util.Set;
  * Created by ubuntu on 12/5/16.
  */
 public class FacebookLoginHandler {
-    static CallbackManager callbackManager;
+  public   static CallbackManager callbackManager;
 
     static {
         callbackManager = CallbackManager.Factory.create();
@@ -135,6 +135,7 @@ public class FacebookLoginHandler {
                     if (response.getError() != null) {
                         FacebookRequestError facebookRequestError = response.getError();
                         String msg = facebookRequestError.getErrorMessage();
+                        Log.d("error 1", msg);
                         showToast("Facebook Error\n" + msg);
                     } else {
                         JSONObject jsonObject = response.getJSONObject();
@@ -192,8 +193,9 @@ public class FacebookLoginHandler {
 
     private static GraphRequest getGraphMeRequestWithCache(
             final String accessToken) {
+        Log.d("accesstoken", accessToken);
         Bundle parameters = new Bundle();
-        parameters.putString("fields", "id,name,first_name,middle_name,last_name,link,email");
+        parameters.putString("fields", "id,name,first_name,middle_name,last_name,email");
         parameters.putString("access_token", accessToken);
         GraphRequest graphRequest = new GraphRequest(
                 null,

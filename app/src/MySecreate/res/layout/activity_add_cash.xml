@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/app_screen_bg_color">
+    android:background="#002341">
 
     <include
         android:id="@+id/fragment_toolbar"
@@ -45,7 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Unutilized Balance + Winnings"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -56,7 +56,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="20"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_medium" />
                 </LinearLayout>
@@ -65,6 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/dp10"
+                    android:backgroundTint="@color/colorWhite"
                     android:background="?attr/app_divider_color" />
 
 
@@ -81,7 +82,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Entry"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -92,7 +93,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="20"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_medium" />
                 </LinearLayout>
@@ -101,7 +102,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/dp10"
-                    android:background="?attr/app_divider_color" />
+                    android:background="?attr/app_divider_color"
+                    android:backgroundTint="@color/colorWhite"/>
 
 
                 <LinearLayout
@@ -118,13 +120,13 @@
                         android:layout_height="@dimen/dp25"
                         android:padding="@dimen/dp5"
                         android:src="@drawable/gift_3x"
-                        android:tint="?attr/app_link_text_color" />
+                        android:tint="@color/colorWhite" />
 
                     <com.customviews.TypefaceTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Usable Cash Bonus"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_small"
                         app:custom_font="@string/app_font_regular" />
 
@@ -146,7 +148,7 @@
                         android:layout_weight="1"
                         android:gravity="right"
                         android:text="20"
-                        android:textColor="?attr/app_text_color"
+                        android:textColor="@color/colorWhite"
                         android:textSize="?attr/app_text_size_normal"
                         app:custom_font="@string/app_font_medium" />
                 </LinearLayout>
@@ -155,6 +157,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="@dimen/dp10"
+                    android:backgroundTint="@color/colorWhite"
                     android:background="?attr/app_divider_color" />
 
             </LinearLayout>
@@ -171,7 +174,7 @@
                     android:layout_marginTop="@dimen/dp20"
                     android:gravity="center"
                     android:text="ADD CASH TO YOUR ACCOUNT"
-                    android:textColor="?attr/app_text_color"
+                    android:textColor="@color/colorWhite"
                     android:textSize="?attr/app_text_size_normal"
                     app:custom_font="@string/app_font_medium" />
 
@@ -197,7 +200,6 @@
                             android:id="@+id/et_amount"
                             android:layout_width="match_parent"
                             android:layout_height="?attr/et_height"
-                            android:background="?attr/et_bg_drawable"
                             android:ems="10"
                             android:gravity="center_vertical"
                             android:hint="Amount to add"
@@ -207,8 +209,8 @@
                             android:maxLength="15"
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
-                            android:textColor="?attr/et_text_color"
-                            android:textColorHint="?attr/et_hint_text_color"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
                             android:textSize="?attr/et_text_size"
                             app:custom_font="@string/app_font_regular" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -291,7 +293,6 @@
                                 android:id="@+id/et_promo_code"
                                 android:layout_width="match_parent"
                                 android:layout_height="?attr/et_height"
-                                android:background="?attr/et_bg_drawable"
                                 android:ems="10"
                                 android:gravity="center_vertical"
                                 android:hint="Promocode"
@@ -301,8 +302,8 @@
                                 android:maxLength="15"
                                 android:paddingStart="@dimen/dp10"
                                 android:paddingEnd="@dimen/dp10"
-                                android:textColor="?attr/et_text_color"
-                                android:textColorHint="?attr/et_hint_text_color"
+                                android:textColor="@color/colorWhite"
+                                android:textColorHint="@color/colorWhite"
                                 android:textSize="?attr/et_text_size"
                                 app:custom_font="@string/app_font_regular" />
                         </com.google.android.material.textfield.TextInputLayout>

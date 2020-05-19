@@ -174,7 +174,8 @@ public class NotificationsAdapter extends AppBaseRecycleAdapter implements Heade
 
             if (isValidString(notificationModel.getImage_large())) {
                 updateViewVisibitity(rl_image, View.VISIBLE);
-                ((AppBaseActivity) context).loadImage(context, iv_image, pb_image, notificationModel.getImage_large(),
+                ((AppBaseActivity) context).loadImage(context, iv_image, pb_image,
+                        notificationModel.getImage_large(),
                         R.drawable.logo_3x, -1);
             } else {
                 updateViewVisibitity(rl_image, View.GONE);
