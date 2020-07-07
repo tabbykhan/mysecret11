@@ -40,10 +40,10 @@ import com.app.ui.MyApplication;
 import com.app.ui.main.ToolbarFragment;
 import com.app.ui.main.cricket.contest.ContestActivity;
 import com.app.ui.main.cricket.dialogs.winnerbreakupexpert.WinnerBreakupExpertDialog;
-import com.app.ui.main.cricket.myteam.playerpreview.TeamPreviewDialog;
 import com.app.ui.main.soccer.contest.contestdetail.adapter.SoccerContestDetailAdapter;
 import com.app.ui.main.soccer.dialog.ConfirmationSoccerJoinContestDialog;
 import com.app.ui.main.soccer.dialog.SoccerWinnerBreakupDialog;
+import com.app.ui.main.soccer.team.playerpreview.SoccerTeamPreviewDialog;
 import com.app.ui.main.soccer.team.switchteam.SwitchSoccerTeamActivity;
 import com.google.gson.Gson;
 import com.medy.retrofitwrapper.ConnectionDetector;
@@ -717,15 +717,15 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
     }
 
     private void openTeamPreviewDialog(Bundle bundle) {
-        TeamPreviewDialog instance = TeamPreviewDialog.getInstance(bundle);
+        SoccerTeamPreviewDialog instance = SoccerTeamPreviewDialog.getInstance(bundle);
         instance.setCustomerTeamModel(null);
-        instance.setTeamPreviewDialogListener(new TeamPreviewDialog.TeamPreviewDialogListener() {
+        instance.setTeamPreviewDialogListener(new SoccerTeamPreviewDialog.TeamPreviewDialogListener() {
             @Override
             public void needTeamEdit(CustomerTeamModel customerTeamModel) {
                 Bundle bundle = new Bundle();
                 bundle.putLong(DATA1, customerTeamModel.getId());
                 bundle.putString(DATA, new Gson().toJson(customerTeamModel));
-                goToCreateTeamActivity(bundle);
+                goToCreateSoccerTeamActivity(bundle);
             }
 
         });

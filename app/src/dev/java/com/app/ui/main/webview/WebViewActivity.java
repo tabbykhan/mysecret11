@@ -33,7 +33,7 @@ public class WebViewActivity extends AppBaseActivity {
 
     public String getWebUrl() {
         if (getIntent().getExtras() != null){
-            Log.d("url--","-web url-"+getIntent().getExtras().getString(DATA) );
+            Log.d("webview","-web url-"+getIntent().getExtras().getString(DATA) );
             return getIntent().getExtras().getString(DATA);
         }
 
