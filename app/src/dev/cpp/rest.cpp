@@ -790,5 +790,12 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerResultMatchesSocc
     std::string data = getBaseUrl(env) + "get_customer_matches_soccer/R";//match_progress(F,L,R)
     return env->NewStringUTF(data.c_str());
 }
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerSoccerMatchTeamDetail(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_customer_match_team_detail_soccer/%s";
+    //customer_team_id
+    return env->NewStringUTF(data.c_str());
+}
 }
 

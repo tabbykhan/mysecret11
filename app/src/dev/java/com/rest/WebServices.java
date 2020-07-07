@@ -212,4 +212,5 @@ public final class WebServices {
     public static native String GetCustomerUpcomingMatchesSoccer();
     public static native String GetCustomerLiveMatchesSoccer();
     public static native String GetCustomerResultMatchesSoccer();
+    public static native String GetCustomerSoccerMatchTeamDetail();
 }

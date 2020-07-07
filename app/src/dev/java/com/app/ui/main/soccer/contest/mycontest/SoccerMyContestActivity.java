@@ -188,9 +188,9 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
                     updateViewVisibitity(ll_score_card, View.VISIBLE);
                     if (scoreModel.isScoreAvailable()) {
                         tv_team1.setText(scoreModel.getTeam1().getName(1));
-                        tv_team1_score.setText(scoreModel.getTeam1().getScore());
+                        tv_team1_score.setText(scoreModel.getTeam1().getTeam_goal());
                         tv_team2.setText(scoreModel.getTeam2().getName(1));
-                        tv_team2_score.setText(scoreModel.getTeam2().getScore());
+                        tv_team2_score.setText(scoreModel.getTeam2().getTeam_goal());
 
                         updateViewVisibitity(ll_score_data, View.VISIBLE);
 

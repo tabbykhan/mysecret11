@@ -16,6 +16,16 @@ public class TeamModel extends AppBaseModel {
     String team_wicket;
     String team_overs;
 
+  public   int getTeam_goal() {
+        return this.team_goal;
+    }
+
+    void setTeam_goal(int team_goal) {
+       this.team_goal = team_goal;
+
+    }
+
+    int team_goal;
     public long getId() {
         return id;
     }

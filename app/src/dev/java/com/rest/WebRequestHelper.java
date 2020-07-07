@@ -401,6 +401,14 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
+    public void getGetCustomerSoccerTeamDetail(long customer_team_id,
+                                          WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetCustomerSoccerMatchTeamDetail(), customer_team_id);
+        WebRequest webRequest = new WebRequest(ID_CUSTOMER_SOCCER_TEAM_DETAIL, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
 
     public void getDreamTeamDetail(String match_unique_id, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchDreamTeamDetail(), match_unique_id);
