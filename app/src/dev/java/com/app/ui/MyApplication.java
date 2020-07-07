@@ -11,6 +11,7 @@ import com.app.appbase.AppBaseResponseModel;
 import com.app.model.GameModel;
 import com.app.model.MatchModel;
 import com.app.model.webrequestmodel.UpdateDeviceTokenRequestModel;
+import com.app.model.websoccerresponsemodel.SoccerFixtureMatchDataModel;
 import com.app.ui.checkuser.CheckUserActivity;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.fcm.NotificationPrefs;
@@ -50,8 +51,10 @@ public class MyApplication extends AppBaseApplication {
     private MatchModel selectedMatch;
     private MatchModel matchModelWithPlayers;
     private GameModel currentGame;
+    private List<SoccerFixtureMatchDataModel> soccerUpcomingMatchs=new ArrayList<>();
+    private SoccerFixtureMatchDataModel soccerSelectedMatch;
 
-  public  boolean isIs_5_player_match() {
+    public  boolean isIs_5_player_match() {
         return is_5_player_match;
     }
 
@@ -94,6 +97,13 @@ public class MyApplication extends AppBaseApplication {
 
     public void setSelectedMatch(MatchModel selectedMatch) {
         this.selectedMatch = selectedMatch;
+    }
+
+    public void soccerSelectedMatch(SoccerFixtureMatchDataModel dataModel){
+        this.soccerSelectedMatch=dataModel;
+    }
+    public SoccerFixtureMatchDataModel getSoccerSelectedMatch(){
+        return soccerSelectedMatch;
     }
 
     public MatchModel getMatchModelWithPlayers() {
@@ -185,6 +195,9 @@ public class MyApplication extends AppBaseApplication {
 
     public List<MatchModel> getUpcomingMatches() {
         return upcomingMatches;
+    }
+    public List<SoccerFixtureMatchDataModel> getSoccerUpcoming(){
+        return soccerUpcomingMatchs;
     }
     public List<MatchModel> getFivePlayerUpcomingMatches() {
         return fivePlayerMatches;

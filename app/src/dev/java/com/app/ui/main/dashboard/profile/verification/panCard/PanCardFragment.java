@@ -100,7 +100,7 @@ public class PanCardFragment extends AppBaseFragment {
             tv_state.setTag(pancard.getState());
             tv_state.setText(pancard.getState().getName());
             tv_reason.setText(pancard.getReason());
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppBaseModel.DATE_DDMMYYYY);
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppBaseModel.YYYY_MM_DD);
             try {
                 Date date = simpleDateFormat.parse(pancard.getDob());
                 Calendar calendar = Calendar.getInstance();

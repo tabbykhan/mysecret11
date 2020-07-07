@@ -17,4 +17,5 @@ public class CreateTeamRequestModel extends AppBaseRequestModel {
     public String match_unique_id;
     @ParamJSON
     public List<PlayerModel> player_json = new ArrayList<>();
+    public String user_id;
 }

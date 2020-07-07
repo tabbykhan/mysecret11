@@ -212,6 +212,39 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+<!--soccer-->
+        <activity
+            android:name="com.app.ui.main.soccer.contest.view.SoccerContestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.team.createteam.CreateSoccerTeamActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.team.createteam.ChooseSoccerCaptionActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.team.myteam.SoccerMyTeamsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.team.chooseteam.ChooseSoccerTeamActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.team.switchteam.SwitchSoccerTeamActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.contest.contestdetail.SoccerContestDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.contest.mycontest.SoccerMyContestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

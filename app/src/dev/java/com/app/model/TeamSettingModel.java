@@ -6,6 +6,8 @@ public class TeamSettingModel extends AppBaseModel {
     int MAX_PLAYERS;
     float MAX_CREDITS;
     int MAX_PLAYERS_PER_TEAM;
+
+
     int MIN_WICKETKEEPER;
     int MAX_WICKETKEEPER;
     int MIN_BATSMAN;
@@ -14,6 +16,18 @@ public class TeamSettingModel extends AppBaseModel {
     int MAX_ALLROUNDER;
     int MIN_BOWLER;
     int MAX_BOWLER;
+
+    int MIN_GOALKEEPER;
+    int MAX_GOALKEEPER;
+
+    int MIN_DEFENDER;
+    int MAX_DEFENDER;
+
+    int MIN_MIDFIELDER;
+    int MAX_MIDFIELDER;
+
+    int MIN_FORWARD;
+    int MAX_FORWARD;
 
 
     public int getMinPlayer(int type) {
@@ -29,8 +43,8 @@ public class TeamSettingModel extends AppBaseModel {
         return 0;
     }
 
-    public int getTotalMinPlayer(){
-        return getMIN_WICKETKEEPER()+getMIN_BATSMAN()+getMIN_ALLROUNDER()+getMIN_BOWLER();
+    public int getTotalMinPlayer() {
+        return getMIN_WICKETKEEPER() + getMIN_BATSMAN() + getMIN_ALLROUNDER() + getMIN_BOWLER();
     }
 
 
@@ -46,13 +60,13 @@ public class TeamSettingModel extends AppBaseModel {
         return MAX_CREDITS;
     }
 
+    public void setMAX_CREDITS(float MAX_CREDITS) {
+        this.MAX_CREDITS = MAX_CREDITS;
+    }
+
     public String getMaxCreditsText() {
         String s = getValidDecimalFormat(getMAX_CREDITS());
         return s.replaceAll("\\.00", "");
-    }
-
-    public void setMAX_CREDITS(float MAX_CREDITS) {
-        this.MAX_CREDITS = MAX_CREDITS;
     }
 
     public int getMAX_PLAYERS_PER_TEAM() {
@@ -126,4 +140,71 @@ public class TeamSettingModel extends AppBaseModel {
     public void setMAX_BOWLER(int MAX_BOWLER) {
         this.MAX_BOWLER = MAX_BOWLER;
     }
+
+
+    // soccer data
+    public int getMINGOALKEEPER() {
+        return MIN_GOALKEEPER;
+    }
+
+    public void setMINGOALKEEPER(int mINGOALKEEPER) {
+        this.MIN_GOALKEEPER = mINGOALKEEPER;
+    }
+
+    public int getMAXGOALKEEPER() {
+        return MAX_GOALKEEPER;
+    }
+
+    public void setMAXGOALKEEPER(int mAXGOALKEEPER) {
+        this.MAX_GOALKEEPER = mAXGOALKEEPER;
+    }
+
+    public int getMINDEFENDER() {
+        return MIN_DEFENDER;
+    }
+
+    public void setMINDEFENDER(int mINDEFENDER) {
+        this.MIN_DEFENDER = mINDEFENDER;
+    }
+
+    public int getMAXDEFENDER() {
+        return MAX_DEFENDER;
+    }
+
+    public void setMAXDEFENDER(int mAXDEFENDER) {
+        this.MAX_DEFENDER = mAXDEFENDER;
+    }
+
+    public int getMINMIDFIELDER() {
+        return MIN_MIDFIELDER;
+    }
+
+    public void setMINMIDFIELDER(int mINMIDFIELDER) {
+        this.MIN_MIDFIELDER = mINMIDFIELDER;
+    }
+
+    public int getMAXMIDFIELDER() {
+        return MAX_MIDFIELDER;
+    }
+
+    public void setMAXMIDFIELDER(int mAXMIDFIELDER) {
+        this.MAX_MIDFIELDER = mAXMIDFIELDER;
+    }
+
+    public int getMINFORWARD() {
+        return MIN_FORWARD;
+    }
+
+    public void setMINFORWARD(int mINFORWARD) {
+        this.MIN_FORWARD = mINFORWARD;
+    }
+
+    public int getMAXFORWARD() {
+        return MAX_FORWARD;
+    }
+
+    public void setMAXFORWARD(int mAXFORWARD) {
+        this.MAX_FORWARD = mAXFORWARD;
+    }
+
 }

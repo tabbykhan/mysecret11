@@ -54,6 +54,14 @@ import com.app.ui.main.dashboard.profile.playerinfo.PlayerInfoActivity;
 import com.app.ui.main.dashboard.profile.verification.VerificationActivity;
 import com.app.ui.main.editteamname.EditTeamNameActivity;
 import com.app.ui.main.notifications.NotificationsActivity;
+import com.app.ui.main.soccer.contest.contestdetail.SoccerContestDetailActivity;
+import com.app.ui.main.soccer.contest.mycontest.SoccerMyContestActivity;
+import com.app.ui.main.soccer.contest.view.SoccerContestActivity;
+import com.app.ui.main.soccer.team.chooseteam.ChooseSoccerTeamActivity;
+import com.app.ui.main.soccer.team.createteam.ChooseSoccerCaptionActivity;
+import com.app.ui.main.soccer.team.createteam.CreateSoccerTeamActivity;
+import com.app.ui.main.soccer.team.myteam.SoccerMyTeamsActivity;
+import com.app.ui.main.soccer.team.switchteam.SwitchSoccerTeamActivity;
 import com.app.ui.main.webview.WebViewActivity;
 import com.app.ui.main.withdrawcash.WithdrawActivity;
 import com.app.ui.optverifiction.OtpVerifyActivity;
@@ -657,7 +665,84 @@ public class ToolbarFragment extends AppBaseFragment {
             updateViewVisibitity(iv_back, View.VISIBLE);
             updateViewVisibitity(iv_menu, View.GONE);
             tv_title_left.setText("PROFILE");
-        } else {
+        } else if (activity instanceof SoccerContestActivity) {
+                updateViewVisibitity(ll_wallet, View.VISIBLE);
+                updateViewVisibitity(rl_notification, View.VISIBLE);
+                updateViewVisibitity(iv_image_left, View.GONE);
+                updateViewVisibitity(tv_title_left, View.VISIBLE);
+                updateViewVisibitity(tv_title_center, View.GONE);
+                updateViewVisibitity(iv_back, View.VISIBLE);
+                updateViewVisibitity(iv_menu, View.GONE);
+                tv_title_left.setText("CONTESTS");
+        }else if(activity instanceof CreateSoccerTeamActivity) {
+                updateViewVisibitity(ll_wallet, View.GONE);
+                updateViewVisibitity(rl_notification, View.GONE);
+                updateViewVisibitity(iv_image_left, View.GONE);
+                updateViewVisibitity(tv_title_left, View.VISIBLE);
+                updateViewVisibitity(tv_title_center, View.GONE);
+                updateViewVisibitity(iv_back, View.VISIBLE);
+                updateViewVisibitity(iv_menu, View.GONE);
+                tv_title_left.setText("CREATE YOUR SQUAD");
+
+
+        }else if (activity instanceof ChooseSoccerCaptionActivity) {
+            updateViewVisibitity(ll_wallet, View.GONE);
+            updateViewVisibitity(rl_notification, View.GONE);
+            updateViewVisibitity(iv_image_left, View.GONE);
+            updateViewVisibitity(tv_title_left, View.VISIBLE);
+            updateViewVisibitity(tv_title_center, View.GONE);
+            updateViewVisibitity(iv_back, View.VISIBLE);
+            updateViewVisibitity(iv_menu, View.GONE);
+            tv_title_left.setText("CHOOSE C & VC");
+
+        }else if (activity instanceof SoccerMyTeamsActivity) {
+            updateViewVisibitity(ll_wallet, View.GONE);
+            updateViewVisibitity(rl_notification, View.GONE);
+            updateViewVisibitity(iv_image_left, View.GONE);
+            updateViewVisibitity(tv_title_left, View.VISIBLE);
+            updateViewVisibitity(tv_title_center, View.GONE);
+            updateViewVisibitity(iv_back, View.VISIBLE);
+            updateViewVisibitity(iv_menu, View.GONE);
+            tv_title_left.setText("MY TEAMS");
+        }else if (activity instanceof SwitchSoccerTeamActivity) {
+            updateViewVisibitity(ll_wallet, View.GONE);
+            updateViewVisibitity(rl_notification, View.GONE);
+            updateViewVisibitity(iv_image_left, View.GONE);
+            updateViewVisibitity(tv_title_left, View.VISIBLE);
+            updateViewVisibitity(tv_title_center, View.GONE);
+            updateViewVisibitity(iv_back, View.VISIBLE);
+            updateViewVisibitity(iv_menu, View.GONE);
+            tv_title_left.setText("SWITCH TEAM");
+
+        }else if (activity instanceof ChooseSoccerTeamActivity) {
+            updateViewVisibitity(ll_wallet, View.GONE);
+            updateViewVisibitity(rl_notification, View.GONE);
+            updateViewVisibitity(iv_image_left, View.GONE);
+            updateViewVisibitity(tv_title_left, View.VISIBLE);
+            updateViewVisibitity(tv_title_center, View.GONE);
+            updateViewVisibitity(iv_back, View.VISIBLE);
+            updateViewVisibitity(iv_menu, View.GONE);
+            tv_title_left.setText("SELECT TEAM");
+
+        }else if (activity instanceof SoccerContestDetailActivity) {
+            updateViewVisibitity(ll_wallet, View.GONE);
+            updateViewVisibitity(rl_notification, View.GONE);
+            updateViewVisibitity(iv_image_left, View.GONE);
+            updateViewVisibitity(tv_title_left, View.VISIBLE);
+            updateViewVisibitity(tv_title_center, View.GONE);
+            updateViewVisibitity(iv_back, View.VISIBLE);
+            updateViewVisibitity(iv_menu, View.GONE);
+            tv_title_left.setText("CONTEST DETAIL");
+
+        }else if (activity instanceof SoccerMyContestActivity) {
+            updateViewVisibitity(ll_wallet, View.VISIBLE);
+            updateViewVisibitity(rl_notification, View.VISIBLE);
+            updateViewVisibitity(iv_image_left, View.GONE);
+            updateViewVisibitity(tv_title_left, View.VISIBLE);
+            updateViewVisibitity(tv_title_center, View.GONE);
+            updateViewVisibitity(iv_back, View.VISIBLE);
+            updateViewVisibitity(iv_menu, View.GONE);
+            tv_title_left.setText("JOIN CONTEST");
 
         }
 

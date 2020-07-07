@@ -147,6 +147,7 @@ public class MyFixtureFragment extends AppBaseFragment implements MatchTimerList
         swipe_layout.setRefreshing(true);
         updateViewVisibitity(ll_no_item, View.GONE);
         updateViewVisibitity(tv_no_item, View.GONE);
+
         getWebRequestHelper().getCustomerUpcomingMatches(this);
     }
 

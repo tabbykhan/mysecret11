@@ -1,5 +1,7 @@
 package com.app.model;
 
+import android.util.Log;
+
 import com.app.appbase.AppBaseModel;
 
 public class PlayerModel extends AppBaseModel {
@@ -259,7 +261,9 @@ public class PlayerModel extends AppBaseModel {
 
     public String getSelected_byText() {
         String s = getValidDecimalFormat(getSelected_by());
+        Log.d("selected", s);
         return s.replaceAll("\\.00", "");
+
     }
 
     public String getCaptionSelected_byText() {

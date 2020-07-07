@@ -63,6 +63,9 @@ import com.app.ui.main.dashboard.profile.myaccount.transactionhistory.Transactio
 import com.app.ui.main.dashboard.profile.myaccount.withdrawlhistory.WithdrawHistoryActivity;
 import com.app.ui.main.dashboard.profile.playerinfo.PlayerInfoActivity;
 import com.app.ui.main.dashboard.profile.verification.VerificationActivity;
+import com.app.ui.main.soccer.dialog.ShareSoccerPrivateContestDialog;
+import com.app.ui.main.soccer.team.chooseteam.ChooseSoccerTeamActivity;
+import com.app.ui.main.soccer.team.createteam.CreateSoccerTeamActivity;
 import com.app.ui.main.webview.WebViewActivity;
 import com.app.ui.main.withdrawcash.WithdrawActivity;
 import com.app.ui.optverifiction.OtpVerifyActivity;
@@ -851,6 +854,15 @@ public abstract class AppBaseActivity extends BaseActivity
         startActivityForResult(intent, ContestActivity.REQUEST_CREATE_TEAM);
         overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
     }
+    public void goToCreateSoccerTeamActivity(Bundle bundle) {
+        Intent intent = new Intent(this, CreateSoccerTeamActivity.class);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        if (isFinishing()) return;
+        startActivityForResult(intent, ContestActivity.REQUEST_CREATE_TEAM);
+        overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
+    }
 
 
     public void goToJoinPrivateContestActivity(Bundle bundle) {
@@ -870,7 +882,14 @@ public abstract class AppBaseActivity extends BaseActivity
         startActivityForResult(intent, ContestActivity.REQUEST_JOIN_CONTEST);
         overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
     }
-
+    public void goToSoccerChooseTeamActivity(Bundle bundle) {
+        Intent intent = new Intent(this, ChooseSoccerTeamActivity.class);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivityForResult(intent, ContestActivity.REQUEST_JOIN_CONTEST);
+        overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
+    }
     public void goToMatchStatsActivity(Bundle bundle) {
         Intent intent = new Intent(this, MatchStatsActivity.class);
         if (bundle != null) {
@@ -896,7 +915,12 @@ public abstract class AppBaseActivity extends BaseActivity
         if (isFinishing()) return;
         intent.show(getFm(), intent.getClass().getSimpleName());
     }
+    public void goToShareSoccerPrivateContestDialog(Bundle bundle) {
+        ShareSoccerPrivateContestDialog intent = ShareSoccerPrivateContestDialog.getInstance(bundle);
 
+        if (isFinishing()) return;
+        intent.show(getFm(), intent.getClass().getSimpleName());
+    }
 
 
     public void gotoMyProfileActivity(Bundle bundle) {

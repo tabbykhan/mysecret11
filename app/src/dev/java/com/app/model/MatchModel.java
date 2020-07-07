@@ -310,5 +310,42 @@ public class MatchModel extends AppBaseModel {
         return getMatch_progress().equals("IR");
     }
 
+//soccer data model
+
+    List<PlayerModel>  Goalkeepers;
+    List<PlayerModel>  Defenders;
+    List<PlayerModel>  Midfielders;
+    List<PlayerModel>  Forwards;
+    public List<PlayerModel> getGoalkeepers() {
+        return Goalkeepers ;
+    }
+
+    public void setGoalkeepers(List<PlayerModel> goalkeepers) {
+        this.Goalkeepers = goalkeepers;
+    }
+
+    public List<PlayerModel> getDefenders() {
+        return Defenders;
+    }
+
+    public void setDefenders(List<PlayerModel> defenders) {
+        this.Defenders = defenders;
+    }
+
+    public List<PlayerModel> getMidfielders() {
+        return Midfielders;
+    }
+
+    public void setMidfielders(List<PlayerModel> midfielders) {
+        this.Midfielders = midfielders;
+    }
+
+    public List<PlayerModel> getForwards() {
+        return Forwards;
+    }
+
+    public void setForwards(List<PlayerModel> forwards) {
+        this.Forwards = forwards;
+    }
 
 }

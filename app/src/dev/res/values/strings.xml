@@ -3,8 +3,8 @@
     <string name="currency_symbol">\u20B9</string>
 
 
-<!--    <string name="facebook_app_id">513373502893268</string>-->
-<!--    <string name="fb_login_protocol_scheme">fb513373502893268</string>-->
+    <!--    <string name="facebook_app_id">513373502893268</string>-->
+    <!--    <string name="fb_login_protocol_scheme">fb513373502893268</string>-->
 
     <string name="facebook_app_id">264423684964819</string>
     <string name="fb_login_protocol_scheme">fb264423684964819</string>

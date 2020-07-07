@@ -107,7 +107,6 @@ public class AppNotificationMessagingService extends NotificationMessagingServic
         }
     }
 
-
     @Override
     public void generatePushNotification(AppNotificationModel notificationModal) {
         if (notificationModal.isAdminAlert()) {

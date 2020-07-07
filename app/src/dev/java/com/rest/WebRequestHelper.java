@@ -161,6 +161,14 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
+    public void getUpcomingSoccerMatches(String matchProgress,
+                                   WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetSoccerMatch(), matchProgress);
+        WebRequest webRequest = new WebRequest(ID_UPCOMING_SOCCER_MATCH, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
 
     public void getCustomerUpcomingMatches(WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_CUSTOMER_UPCOMING_MATCHES, WebServices.GetCustomerUpcomingMatches(),
@@ -168,9 +176,29 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
+    public void getCustomerSoccerUpcomingMatches(WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CUSTOMER_SOCCER_UPCOMING_MATCHES, WebServices.GetCustomerUpcomingMatchesSoccer(),
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
 
     public void getCustomerLiveMatches(WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_CUSTOMER_LIVE_MATCHES, WebServices.GetCustomerLiveMatches(),
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void getCustomerSoccerLiveMatches(WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CUSTOMER_SOCCER_LIVE_MATCHES,
+                WebServices.GetCustomerLiveMatchesSoccer(),
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void getCustomerResultLiveMatches(WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CUSTOMER_SOCCER_RESULT_MATCHES,
+                WebServices.GetCustomerResultMatchesSoccer(),
                 WebRequest.POST_REQ);
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
@@ -184,10 +212,33 @@ public class WebRequestHelper implements WebRequestConstants {
     }
 
     public void getMatchContest(long id, String uniqueId,
-                                JSONObject jsonObject,
-                                WebServiceResponseListener webServiceResponseListener) {
+                                  JSONObject jsonObject,
+                                  WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchContests(), id, uniqueId);
         WebRequest webRequest = new WebRequest(ID_MATCH_CONTESTS, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        if(jsonObject!=null){
+            Iterator<String> keysItr = jsonObject.keys();
+            while (keysItr.hasNext()) {
+                String key = keysItr.next();
+                String value = null;
+                try {
+                    value = (String) jsonObject.get(key);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                webRequest.addParam(key, value);
+            }
+        }
+        webRequest.send(context, webServiceResponseListener);
+    }
+
+    public void getSoccerMatchContest(long id, String uniqueId,
+                                JSONObject jsonObject,
+                                WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetSoccerMatchContest(), id, uniqueId);
+        WebRequest webRequest = new WebRequest(ID_SOCCER_MATCH_CONTEST, url,
                 WebRequest.POST_REQ);
         webRequest.addParam("hgh","fgj");
         if(jsonObject!=null){
@@ -222,8 +273,14 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
-
-    public void getMatchContestPdf(long match_contest_id, String match_unique_id, WebServiceResponseListener webServiceResponseListener) {
+    public void getSoccerMatchContestDetail(long match_contest_id, String match_unique_id,
+                                       WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetMatchSoccerContestsDetail(), match_contest_id, match_unique_id);
+        WebRequest webRequest = new WebRequest(ID_MATCH_SOCCER_CONTESTS_DETAIL, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }    public void getMatchContestPdf(long match_contest_id, String match_unique_id, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchContestPdf(), match_contest_id, match_unique_id);
         WebRequest webRequest = new WebRequest(ID_CONTEST_PDF, url,
                 WebRequest.POST_REQ);
@@ -239,11 +296,27 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
+    public void getSoccerContestTeams(String match_unique_id, long match_contest_id, long page_no,
+                                 WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetSoccerContestTeams(), match_unique_id, match_contest_id, page_no);
+        WebRequest webRequest = new WebRequest(ID_SOCCER_CONTEST_TEAMS, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
 
 
     public void getCustomerMatchContest(long id, String uniqueId, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetCustomerMatchContests(), id, uniqueId);
         WebRequest webRequest = new WebRequest(ID_GET_CUSTOMER_MATCH_CONTEST, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void getCustomerSoccerMatchContest(long id, String uniqueId,
+                                         WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetCustomerSoccerMatchContests(), id, uniqueId);
+        WebRequest webRequest = new WebRequest(ID_GET_CUSTOMER_SOCCER_MATCH_CONTEST, url,
                 WebRequest.POST_REQ);
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
@@ -256,6 +329,14 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
+    public void getContestSoccerWinnerBreakUp(long id,
+                                         WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetContestSoccerWinnerBreakUp(), id);
+        WebRequest webRequest = new WebRequest(ID_CONTEST_SOCCER_WINNER_BREAKUP, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
 
     public void getMatchPlayers(long id, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchPlayers(), id);
@@ -264,7 +345,14 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
-
+    public void getSoccerMatchPlayer(long id,
+                                    WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetSoccerMatchPlayer(), id);
+        WebRequest webRequest = new WebRequest(ID_SOCCER_MATCH_PLAYERS, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
 
     public void getMatchPlayersStats(String match_uniqueid, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchPlayersStats(), match_uniqueid);
@@ -274,9 +362,16 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.send(context, webServiceResponseListener);
     }
 
-    public void createCustomerTeam(CreateTeamRequestModel requestModel,
+       public void createCustomerTeam(CreateTeamRequestModel requestModel,
                                    WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_CREATE_CUSTOMER_TEAM, WebServices.CreateCustomerTeam(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void createSoccerCustomerTeam(CreateTeamRequestModel requestModel,
+                                   WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CREATE_SOCCER_CUSTOMER_TEAM, WebServices.CreateCustomerSoccerTeam(),
                 WebRequest.POST_REQ);
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
@@ -286,6 +381,14 @@ public class WebRequestHelper implements WebRequestConstants {
     public void getGetCustomerTeams(String match_unique_id, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetCustomerMatchTeams(), match_unique_id);
         WebRequest webRequest = new WebRequest(ID_GET_CUSTOMER_TEAMS, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void getGetSoccerCustomerTeams(String match_unique_id,
+                                     WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetCustomeSoccerrMatchTeams(), match_unique_id);
+        WebRequest webRequest = new WebRequest(ID_GET_CUSTOMER_SOCCER_TEAMS, url,
                 WebRequest.POST_REQ);
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
@@ -327,6 +430,13 @@ public class WebRequestHelper implements WebRequestConstants {
     public void updateCustomerTeam(UpdateTeamRequestModel requestModel,
                                    WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_UPDATE_CUSTOMER_TEAM, WebServices.UpdateCustomerTeam(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void updateCustomerSoccerTeam(UpdateTeamRequestModel requestModel,
+                                   WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_UPDATE_CUSTOMER_SOCCER_TEAM, WebServices.UpdateCustomerSoccerTeam(),
                 WebRequest.POST_REQ);
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
@@ -395,9 +505,24 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }
+    public void shareSoccerContest(String slug,
+                                WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.ShareSoccerContest(), slug);
+        WebRequest webRequest = new WebRequest(ID_SHARE_SOCCER_CONTEST, url,
+                WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
     public void customerPreJoinContest(CustomerJoinContestRequestModel requestModel,
                                        WebServiceResponseListener webServiceResponseListener) {
         WebRequest webRequest = new WebRequest(ID_CUSTOMER_PRE_JOIN_CONTEST, WebServices.CustomerPreJoinContest(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void customerSoccerPreJoinContest(CustomerJoinContestRequestModel requestModel,
+                                       WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CUSTOMER_SOCCER_PRE_JOIN_CONTEST, WebServices.CustomerSoccerPreJoinContest(),
                 WebRequest.POST_REQ);
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
@@ -410,6 +535,13 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
     }
+    public void customerSoccerJoinContest(CustomerJoinContestRequestModel requestModel,
+                                    WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CUSTOMER_SOCCER_JOIN_CONTEST, WebServices.CustomerSoccerJoinContest(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
+        webRequest.send(context, webServiceResponseListener);
+    }
 
     public void customerSwitchTeam(SwitchTeamRequestModel requestModel,
                                    WebServiceResponseListener webServiceResponseListener) {
@@ -418,10 +550,24 @@ public class WebRequestHelper implements WebRequestConstants {
         webRequest.setRequestModel(requestModel);
         webRequest.send(context, webServiceResponseListener);
     }
+    public void customerSoccerSwitchTeam(SwitchTeamRequestModel requestModel,
+                                   WebServiceResponseListener webServiceResponseListener) {
+        WebRequest webRequest = new WebRequest(ID_CUSTOMER_SOCCER_SWITCH_TEAM, WebServices.CustomerSoccerSwitchTeam(),
+                WebRequest.POST_REQ);
+        webRequest.setRequestModel(requestModel);
+        webRequest.send(context, webServiceResponseListener);
+    }
 
     public void getMatchScore(String match_id, WebServiceResponseListener webServiceResponseListener) {
         String url = String.format(WebServices.GetMatchScore(), match_id);
         WebRequest webRequest = new WebRequest(ID_MATCH_SCORE, url, WebRequest.POST_REQ);
+        webRequest.addParam("hgh","fgj");
+        webRequest.send(context, webServiceResponseListener);
+    }
+    public void getSoccerMatchScore(String match_id,
+                               WebServiceResponseListener webServiceResponseListener) {
+        String url = String.format(WebServices.GetSoccerMatchScore(), match_id);
+        WebRequest webRequest = new WebRequest(ID_SOCCER_MATCH_SCORE, url, WebRequest.POST_REQ);
         webRequest.addParam("hgh","fgj");
         webRequest.send(context, webServiceResponseListener);
     }

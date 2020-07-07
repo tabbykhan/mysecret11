@@ -497,6 +497,7 @@ public class ChooseCaptionActivity extends AppBaseActivity implements MatchTimer
                 });
 
                 for (int i = 0; i < selectedPlayers.size(); i++) {
+                    Log.d("position",""+selectedPlayers.get(i));
                     selectedPlayers.get(i).setPlayer_pos(i+1);
                 }
 

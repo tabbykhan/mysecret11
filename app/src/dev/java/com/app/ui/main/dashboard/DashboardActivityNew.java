@@ -2,6 +2,7 @@ package com.app.ui.main.dashboard;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -33,6 +34,8 @@ import com.app.ui.main.cricket.dashboard.homenew.HomeFragment;
 import com.app.ui.main.cricket.dashboard.mymatches.MyMatchesFragment;
 import com.app.ui.main.dashboard.more.MoreFragment;
 import com.app.ui.main.dashboard.profile.MyProfileFragment;
+import com.app.ui.main.soccer.dashboard.home.FragmentSoccerHome;
+import com.app.ui.main.soccer.dashboard.mymatch.MySoccerMatchesFragment;
 import com.base.BaseFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.medy.retrofitwrapper.WebRequest;
@@ -256,6 +259,13 @@ public class DashboardActivityNew extends AppBaseActivity {
             FragmentTransaction transaction = manager.beginTransaction();
             transaction.add(R.id.rl_fragment_container, sportsCricketFragment);
             transaction.commit();
+        }else if(gameModel.isSoccer()){
+            Log.d("Soccer", "--------");
+            FragmentSoccerHome  sportsCricketFragment=new FragmentSoccerHome();
+            FragmentManager manager = getFm();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.add(R.id.rl_fragment_container, sportsCricketFragment);
+            transaction.commit();
         }
 
         QuotationDontShowModel quotationDontShowModel = MyApplication.getInstance().getQuotationDontShowModel();
@@ -300,10 +310,18 @@ public class DashboardActivityNew extends AppBaseActivity {
         GameModel gameModel = gamesList.get(selectedTabPosition);
 
         if (gameModel.isCricket()) {
+            Log.i("game ", "cricket");
             BaseFragment baseFragment = getLatestFragment(R.id.rl_fragment_container);
             if ((baseFragment instanceof MyMatchesFragment)) return;
 
             MyMatchesFragment fragment = new MyMatchesFragment();
+            changeFragment(fragment, true, true, 0, false);
+        }else if(gameModel.isSoccer()){
+            Log.i("game ", "soccer");
+            BaseFragment baseFragment = getLatestFragment(R.id.rl_fragment_container);
+            if ((baseFragment instanceof MySoccerMatchesFragment)) return;
+
+            MySoccerMatchesFragment fragment = new MySoccerMatchesFragment();
             changeFragment(fragment, true, true, 0, false);
         }
     }
@@ -342,16 +360,22 @@ public class DashboardActivityNew extends AppBaseActivity {
             View inflate = LayoutInflater.from(this).inflate(R.layout.include_sport_tab, null);
             LinearLayout ll_tab = inflate.findViewById(R.id.ll_tab);
             if (i == 0) {
-                ll_tab.setBackground(getResources().getDrawable(R.drawable.tab_selecation_left));
+//                ll_tab.setActivated(true);
+              //  ll_tab.setBackground(getResources().getDrawable(R.drawable.tab_selecation_left));
             } else if (i == gamesList.size() - 1) {
-                ll_tab.setBackground(getResources().getDrawable(R.drawable.tab_selecation_right));
+               // ll_tab.setActivated(true);
+              //  ll_tab.setBackground(getResources().getDrawable(R.drawable.tab_selecation_right));
             } else {
-                ll_tab.setBackground(getResources().getDrawable(R.drawable.tab_selecation_center));
+              //  ll_tab.setActivated(true);
+               // ll_tab.setBackground(getResources().getDrawable(R.drawable
+                // .tab_selecation_center));
             }
             TextView tv_sport_type = inflate.findViewById(R.id.tv_sport_type);
             ImageView iv_sport_type = inflate.findViewById(R.id.iv_sport_type);
             tv_sport_type.setText(gameModel.getName());
-            loadImage(this, iv_sport_type, null, gameModel.getImage(), R.mipmap.ic_launcher, -1);
+            String image_url =gameModel.getImage();
+          //  String image_url ="https://apims11.mysecret11.com/admin/img/no_image_team.png";
+            loadImage(this, iv_sport_type, null, image_url, R.mipmap.ic_launcher, -1);
 
             tabAt.setCustomView(inflate);
 
@@ -455,7 +479,21 @@ public class DashboardActivityNew extends AppBaseActivity {
                 ll_account.setActivated(false);
                 ll_setting.setActivated(false);
 
+            }else if (baseFragment instanceof FragmentSoccerHome) {
+                ll_home.setActivated(true);
+                ll_mycontest.setActivated(false);
+                ll_account.setActivated(false);
+                ll_setting.setActivated(false);
+
             } else if (baseFragment instanceof MyMatchesFragment) {
+                is_home_tab_click = false;
+                ll_home.setActivated(false);
+                ll_mycontest.setActivated(true);
+                ll_account.setActivated(false);
+                ll_setting.setActivated(false);
+
+
+            } else if (baseFragment instanceof MySoccerMatchesFragment) {
                 is_home_tab_click = false;
                 ll_home.setActivated(false);
                 ll_mycontest.setActivated(true);

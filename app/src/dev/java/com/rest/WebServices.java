@@ -1,7 +1,6 @@
 package com.rest;
 
 
-
 public final class WebServices {
     static {
         System.loadLibrary("rest");
@@ -31,40 +30,71 @@ public final class WebServices {
     public static native String Login();
 
     public static native String Logout();
+
     public static native String GetSuggestedTeamName();
 
     public static native String GetUpcomingMatches();
+
     public static native String GetCustomerUpcomingMatches();
+
     public static native String GetCustomerLiveMatches();
+
     public static native String GetCustomerPastMatches();
+
     public static native String GetMatchPlayers();
+
     public static native String GetMatchPlayersStats();
+
     public static native String GetMatchContests();
+
     public static native String GetMatchContestsDetail();
+
     public static native String GetMatchContestPdf();
+
     public static native String GetContestTeams();
+
     public static native String GetCustomerMatchContests();
+
     public static native String GetContestWinnerBreakUp();
+
     public static native String CreateCustomerTeam();
+
     public static native String GetCustomerMatchTeams();
+
     public static native String GetCustomerMatchTeamDetail();
+
     public static native String GetCustomerMatchTeamStats();
+
     public static native String GetMatchDreamTeamDetail();
+
     public static native String GetMatchDreamTeamStats();
+
     public static native String UpdateCustomerTeam();
+
+    public static native String UpdateCustomerSoccerTeam();
+
     public static native String GetSeriesByPlayerStatistics();
 
     public static native String GetAlreadyCreatedTeamCount();
+
     public static native String GetPrivateContestSettings();
+
     public static native String GetPrivateContestEntryFee();
+
     public static native String GetPrivateContestWinningBreakUp();
+
     public static native String CreatePrivateContest();
+
     public static native String GetMatchPrivateContestDetail();
+
     public static native String ShareContest();
 
     public static native String CustomerPreJoinContest();
+
     public static native String CustomerJoinContest();
+
     public static native String CustomerSwitchTeam();
+
     public static native String GetMatchScore();
 
 
@@ -157,8 +187,29 @@ public final class WebServices {
     public static native String GetApplyPromoCode();
 
     public static native String CreateCustomerEnquiry();
+
     public static native String create_customer_team_five_players();
+
     public static native String get_match_players_5aside();
 
+    public static native String GetSoccerMatch();
 
+    public static native String GetSoccerMatchContest();
+
+    public static native String GetSoccerMatchPlayer();
+
+    public static native String CreateCustomerSoccerTeam();
+    public static native String GetCustomeSoccerrMatchTeams();
+    public static native String CustomerSoccerPreJoinContest();
+    public static native String GetContestSoccerWinnerBreakUp();
+    public static native String CustomerSoccerJoinContest();
+    public static native String GetMatchSoccerContestsDetail();
+    public static native String CustomerSoccerSwitchTeam();
+    public static native String GetSoccerMatchScore();
+    public static native String GetSoccerContestTeams();
+    public static native String GetCustomerSoccerMatchContests();
+    public static native String ShareSoccerContest();
+    public static native String GetCustomerUpcomingMatchesSoccer();
+    public static native String GetCustomerLiveMatchesSoccer();
+    public static native String GetCustomerResultMatchesSoccer();
 }

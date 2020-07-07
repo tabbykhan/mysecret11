@@ -679,7 +679,116 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_customer_1withdraw_1amount(J
  std::string data = getBaseUrl(env) + "customer_withdraw_amount";// customer withdraw amount
     return env->NewStringUTF(data.c_str());
 }
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerMatch(JNIEnv
+*env,jobject obj){
+ std::string data = getBaseUrl(env) + "get_matches_soccer/%s";//match_progress(F,L,R)
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerMatchContest(JNIEnv *env,jobject obj){
+  std::string data = getBaseUrl(env) + "get_match_contest_soccer/%s/%s";//matchid/match_uniqueid
+    return env->NewStringUTF(data.c_str());
+
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerMatchPlayer(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_match_players_soccer/%s";//matchid
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_CreateCustomerSoccerTeam(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "create_customer_soccer_team";
+    return env->NewStringUTF(data.c_str());
+}
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomeSoccerrMatchTeams(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_customer_match_teams_soccer/%s";//match_unique_id
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_UpdateCustomerSoccerTeam(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "update_customer_team_soccer";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_CustomerSoccerPreJoinContest(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "customer_pre_join_contest_soccer";
+    return env->NewStringUTF(data.c_str());
 }
 
 
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_CustomerSoccerJoinContest(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "customer_join_contest_soccer";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetContestSoccerWinnerBreakUp(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_contest_winner_breakup_soccer/%s";//contestid
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetMatchSoccerContestsDetail(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data =
+            getBaseUrl(env) + "get_match_contest_detail_soccer/%s/%s";//match_contest_id,match_unique_id
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_CustomerSoccerSwitchTeam(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "customer_switch_team_soccer";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerMatchScore(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_match_score_soccer/%s";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerContestTeams(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data =
+            getBaseUrl(env) + "get_contest_teams_soccer/%s/%s/%s";//match_unique_id, match_contest_id,page_no
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerSoccerMatchContests(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_customer_match_contest_soccer/%s/%s";//matchid/uniqueid
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_ShareSoccerContest(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_match_contest_share_detail_soccer/%s";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerUpcomingMatchesSoccer(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_customer_matches_soccer/F";//match_progress(F,L,R)
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerLiveMatchesSoccer(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_customer_matches_soccer/L";//match_progress(F,L,R)
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerResultMatchesSoccer(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_customer_matches_soccer/R";//match_progress(F,L,R)
+    return env->NewStringUTF(data.c_str());
+}
+}
 

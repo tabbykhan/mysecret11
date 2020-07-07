@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#002341"
+    android:clickable="true">
+
+    <include
+        android:id="@+id/fragment_toolbar"
+        layout="@layout/include_toolbar_fargment" />
+
+
+    <include
+        android:id="@+id/ll_top"
+        layout="@layout/include_match_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_toolbar" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_bottom_lay"
+        android:layout_below="@+id/ll_top"
+        android:layout_marginTop="@dimen/dp1"
+        android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mymatches_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#002341"
+            app:tabBackground="@drawable/tab_selecation_match"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorOrange"
+            app:tabIndicatorHeight="0dp"
+            app:tabPadding="@dimen/dp5"
+            app:tabRippleColor="@null"
+            app:tabSelectedTextColor="@color/colorWhite"
+            app:tabTextColor="@color/colorWhite" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager_match"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/ll_new_team"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#002341"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dp10"
+            android:paddingBottom="@dimen/dp10"
+            android:weightSum="1">
+
+            <com.customviews.TypefaceTextView
+                android:id="@+id/tv_create_new_team"
+                android:layout_width="0dp"
+                android:layout_height="?attr/et_height"
+                android:layout_weight="0.5"
+                android:background="@drawable/bg_btn_rounded_orange"
+                android:gravity="center"
+                android:text="CREATE TEAM 1"
+                android:textColor="@color/colorWhite"
+                android:textSize="?attr/btn_text_size"
+                app:custom_font="@string/app_font_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_teams_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp10"
+            >
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp1"
+                android:background="?attr/app_divider_color" />
+
+            <LinearLayout
+                android:id="@+id/ll_my_team_create_team_join_contest_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_my_teams"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="#AD0004"
+                    android:paddingBottom="@dimen/dp10">
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_my_teams_count"
+                        android:layout_width="@dimen/dp20"
+                        android:layout_height="@dimen/dp20"
+                        android:background="@drawable/bg_orange_oval"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:text="MY TEAMS"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:background="?attr/app_divider_color" />
+
+                <LinearLayout
+                    android:id="@+id/ll_create_team"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:orientation="vertical"
+                    android:background="@color/color_yellow_shadow"
+                    android:paddingBottom="@dimen/dp10">
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_create_team_count"
+                        android:layout_width="@dimen/dp20"
+                        android:layout_height="@dimen/dp20"
+                        android:background="@drawable/bg_blue_oval"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:text="Create team"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                </LinearLayout>
+                <View
+                    android:layout_width="@dimen/dp1"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:background="?attr/app_divider_color" />
+                <LinearLayout
+                    android:id="@+id/ll_my_contest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:background="#0152A4"
+                    android:paddingBottom="@dimen/dp10">
+
+
+                    <com.customviews.TypefaceTextView
+                        android:id="@+id/tv_my_contest_count"
+                        android:layout_width="@dimen/dp20"
+                        android:layout_height="@dimen/dp20"
+                        android:background="@drawable/bg_orange_oval"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_extra_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                    <com.customviews.TypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:text="JOINED CONTESTS"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="?attr/app_text_size_small"
+                        app:custom_font="@string/app_font_regular" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
+
+

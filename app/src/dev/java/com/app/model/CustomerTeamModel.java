@@ -13,6 +13,7 @@ public class CustomerTeamModel extends AppBaseModel {
     PlayerModel vise_captain;
     PlayerModel mpp;
 
+
     TeamModel team1;
     TeamModel team2;
 
@@ -21,6 +22,12 @@ public class CustomerTeamModel extends AppBaseModel {
     List<PlayerModel> wicketkeapers;
     List<PlayerModel> allrounders;
     List<PlayerStatsModel> players_stats;
+// soccer game player
+    List<PlayerModel>  Goalkeepers;
+    List<PlayerModel>  Defenders;
+    List<PlayerModel>  Midfielders;
+    List<PlayerModel>  Forwards;
+
 
     private long team1Players = -1;
     private long team2Players = -1;
@@ -261,6 +268,40 @@ public class CustomerTeamModel extends AppBaseModel {
     public String getTotalPointsText() {
         String s = getValidDecimalFormat(getTotalPoints());
         return s.replaceAll("\\.00", "");
+    }
+
+
+    // soccer getter setter method
+    public List<PlayerModel> getGoalkeepers() {
+        return Goalkeepers ;
+    }
+
+    public void setGoalkeepers(List<PlayerModel> goalkeepers) {
+        this.Goalkeepers = goalkeepers;
+    }
+
+    public List<PlayerModel> getDefenders() {
+        return Defenders;
+    }
+
+    public void setDefenders(List<PlayerModel> defenders) {
+        this.Defenders = defenders;
+    }
+
+    public List<PlayerModel> getMidfielders() {
+        return Midfielders;
+    }
+
+    public void setMidfielders(List<PlayerModel> midfielders) {
+        this.Midfielders = midfielders;
+    }
+
+    public List<PlayerModel> getForwards() {
+        return Forwards;
+    }
+
+    public void setForwards(List<PlayerModel> forwards) {
+        this.Forwards = forwards;
     }
 
 }
