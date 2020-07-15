@@ -17,9 +17,9 @@ import com.app.appbase.AppBaseFragment;
 import com.app.model.ContestCategoryModel;
 import com.app.model.ContestModel;
 import com.app.model.webresponsemodel.MatchContestResponseModel;
-import com.app.ui.main.cricket.contest.ContestActivity1;
-import com.app.ui.main.cricket.contest.adapter.ContestCategoryAdapter;
 import com.app.ui.main.soccer.contest.contestdetail.SoccerContestDetailActivity;
+import com.app.ui.main.soccer.contest.contestdetail.adapter.SoccerContestCategoryAdapter;
+import com.app.ui.main.soccer.contest.view.SoccerContestActivity;
 import com.app.ui.main.soccer.dialog.SoccerWinnerBreakupDialog;
 import com.utilities.DeviceScreenUtil;
 import com.utilities.ItemClickSupport;
@@ -33,7 +33,7 @@ import java.util.List;
 public class SoccerPracticeFragment extends AppBaseFragment {
 
     private RecyclerView recycler_view;
-    private static ContestCategoryAdapter adapter;
+    private static SoccerContestCategoryAdapter adapter;
 
     List<ContestCategoryModel> contestCategoryModels = new ArrayList<>();
     MatchContestResponseModel.DetailBean detailBean;
@@ -66,10 +66,10 @@ public class SoccerPracticeFragment extends AppBaseFragment {
     }
 
     private void initializeRecyclerView(final List<ContestCategoryModel> contestCategoryModels) {
-        adapter = new ContestCategoryAdapter(getActivity(), contestCategoryModels);
+        adapter = new SoccerContestCategoryAdapter(getActivity(), contestCategoryModels);
         recycler_view.setLayoutManager(getVerticalLinearLayoutManager());
         recycler_view.setAdapter(adapter);
-        adapter = new ContestCategoryAdapter(getActivity(), contestCategoryModels) {
+        adapter = new SoccerContestCategoryAdapter(getActivity(), contestCategoryModels) {
             @Override
             public int getLastItemBottomMargin() {
                 return rl_bottom_lay.getHeight() + DeviceScreenUtil.getInstance().convertDpToPixel(10);
@@ -194,7 +194,7 @@ public class SoccerPracticeFragment extends AppBaseFragment {
             @Override
             public void onRefresh() {
                 swipe_layout.setRefreshing(true);
-                ((ContestActivity1)getActivity()).getMatchContest(null);
+                ((SoccerContestActivity)getActivity()).getMatchContest(null);
             }
         });
     }

@@ -343,7 +343,7 @@ public class SoccerContestActivity extends AppBaseActivity implements MatchTimer
             if (isValidString(entryFee)) {
                 requestModel.entry_fees = entryFee;
             }
-            getWebRequestHelper().customerJoinContest(requestModel, this);
+            getWebRequestHelper().customerSoccerJoinContest(requestModel, this);
 
         }
     }
@@ -413,7 +413,7 @@ public class SoccerContestActivity extends AppBaseActivity implements MatchTimer
     @Override
     public void onWebRequestResponse(WebRequest webRequest) {
         // swipe_layout.setRefreshing(false);
-        if (ID_CUSTOMER_JOIN_CONTEST == webRequest.getWebRequestId()) {
+        if (ID_CUSTOMER_SOCCER_JOIN_CONTEST == webRequest.getWebRequestId()) {
             dismissProgressBar();
         }
         super.onWebRequestResponse(webRequest);
@@ -423,7 +423,7 @@ public class SoccerContestActivity extends AppBaseActivity implements MatchTimer
             case ID_SOCCER_MATCH_CONTEST:
                 handleMatchContestResponse(webRequest);
                 break;
-            case ID_CUSTOMER_JOIN_CONTEST:
+            case ID_CUSTOMER_SOCCER_JOIN_CONTEST:
                 handleCustomerJoinContestResponse(webRequest);
                 break;
         }

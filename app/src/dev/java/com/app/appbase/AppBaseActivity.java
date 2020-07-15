@@ -63,7 +63,9 @@ import com.app.ui.main.dashboard.profile.myaccount.transactionhistory.Transactio
 import com.app.ui.main.dashboard.profile.myaccount.withdrawlhistory.WithdrawHistoryActivity;
 import com.app.ui.main.dashboard.profile.playerinfo.PlayerInfoActivity;
 import com.app.ui.main.dashboard.profile.verification.VerificationActivity;
+import com.app.ui.main.soccer.contest.joinprivatecontest.JoinSoccerPrivateContestActivity;
 import com.app.ui.main.soccer.dialog.ShareSoccerPrivateContestDialog;
+import com.app.ui.main.soccer.soccermatchstate.SoccerMatchStatsActivity;
 import com.app.ui.main.soccer.team.chooseteam.ChooseSoccerTeamActivity;
 import com.app.ui.main.soccer.team.createteam.CreateSoccerTeamActivity;
 import com.app.ui.main.webview.WebViewActivity;
@@ -872,7 +874,13 @@ public abstract class AppBaseActivity extends BaseActivity
         }
         startActivity(intent);
     }
-
+    public void goToSoccerJoinPrivateContestActivity(Bundle bundle) {
+        Intent intent = new Intent(this, JoinSoccerPrivateContestActivity.class);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+    }
 
     public void goToChooseTeamActivity(Bundle bundle) {
         Intent intent = new Intent(this, ChooseTeamActivity.class);
@@ -898,7 +906,14 @@ public abstract class AppBaseActivity extends BaseActivity
         startActivity(intent);
         overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
     }
-
+    public void goToSoocerMatchStatsActivity(Bundle bundle) {
+        Intent intent = new Intent(this, SoccerMatchStatsActivity.class);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+        overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
+    }
     public void goToTeamStatsActivity(Bundle bundle) {
         Intent intent = new Intent(this, TeamStatsActivity.class);
         if (bundle != null) {

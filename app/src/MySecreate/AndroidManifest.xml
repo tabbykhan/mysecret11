@@ -245,6 +245,18 @@
             android:name="com.app.ui.main.soccer.contest.mycontest.SoccerMyContestActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.soccermatchstate.SoccerMatchStatsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.contest.joinprivatecontest.JoinSoccerPrivateContestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.app.ui.main.soccer.contest.makeyourcontest.CreateSoccerPrivateContestActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
     </application>
 
 </manifest>

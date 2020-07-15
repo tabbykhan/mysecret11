@@ -25,7 +25,7 @@ import com.app.model.TeamModel;
 import com.app.model.TeamSettingModel;
 import com.app.ui.MyApplication;
 import com.app.ui.main.cricket.contest.ContestActivity;
-import com.app.ui.main.cricket.dialogs.playerdetaildialog.PlayerDetailDialog;
+import com.app.ui.main.soccer.dialog.SoccerPlayerDetailDialog;
 import com.app.ui.main.soccer.team.createteam.adapter.SoccerPlayersAdapter;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
@@ -505,10 +505,10 @@ public class SoccerPlayersFragment extends AppBaseFragment {
 
 
     private void openPlayerDetailDialog(final PlayerModel playerModel) {
-        PlayerDetailDialog playerDetailDialog = PlayerDetailDialog.getInstance(null);
+        SoccerPlayerDetailDialog playerDetailDialog = SoccerPlayerDetailDialog.getInstance(null);
         playerDetailDialog.setPlayerModel(playerModel);
         playerDetailDialog.setFromCreateTeam(true);
-        playerDetailDialog.setPlayerDetailDialogListener(new PlayerDetailDialog.PlayerDetailDialogListener() {
+        playerDetailDialog.setPlayerDetailDialogListener(new SoccerPlayerDetailDialog.PlayerDetailDialogListener() {
             @Override
             public void onPlayerSelected(AppBaseDialogFragment appBaseDialogFragment) {
                 boolean b = SoccerPlayersFragment.this.onPlayerSelected(playerModel);

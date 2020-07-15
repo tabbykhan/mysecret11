@@ -797,5 +797,82 @@ JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetCustomerSoccerMatchTeamDe
     //customer_team_id
     return env->NewStringUTF(data.c_str());
 }
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerMatchPlayersStats(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_match_players_stats_soccer/%s";//match_uniqueid
+    return env->NewStringUTF(data.c_str());
+}
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerPrivateContestSettings(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_private_contest_settings";
+    return env->NewStringUTF(data.c_str());
+}
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerPrivateContestEntryFee(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_private_contest_entry_fee";
+    return env->NewStringUTF(data.c_str());
+}
+
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerPrivateContestWinningBreakUp(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_private_contest_winning_breakup_soccer";
+    return env->NewStringUTF(data.c_str());
+}
+
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_CreateSoccerPrivateContest(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "create_private_contest_soccer";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerMatchPrivateContestDetail(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_match_private_contest_detail_soccer/%s/%s";
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerAlreadyCreatedTeamCount(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_already_created_team_count_soccer/%s";
+    return env->NewStringUTF(data.c_str());
+}
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetMatchSoccerContestPdf(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data =
+            getBaseUrl(env) + "get_match_contest_pdf_soccer/%s/%s";//match_contest_id,match_unique_id
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerSeriesByPlayerStatistics(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) +
+                       "get_series_by_player_statistics_soccer/%s/%s";//match_unique_id,player_unique_id
+    return env->NewStringUTF(data.c_str());
+}
+
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerMatchDreamTeamDetail(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_match_dream_team_detail_soccer/%s";//match_unique_id
+    return env->NewStringUTF(data.c_str());
+}
+JNIEXPORT jstring JNICALL Java_com_rest_WebServices_GetSoccerSlider(
+        JNIEnv *env,
+        jobject obj) {
+    std::string data = getBaseUrl(env) + "get_slider_soccer";
+    return env->NewStringUTF(data.c_str());
+}
+
 }
 

@@ -1,6 +1,7 @@
 package com.app.ui.main.soccer.team.createteam.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -33,6 +34,8 @@ public class SoccerPlayersAdapter extends AppBaseRecycleAdapter implements Filte
 
         teamModel1=   MyApplication.getInstance().getSelectedMatch().getTeam1();
         teamModel2=MyApplication.getInstance().getSelectedMatch().getTeam2();
+        Log.d("team1 name", teamModel1.getSort_name() );
+        Log.d("team2 name", teamModel2.getSort_name() );
     }
 
     @Override
@@ -127,7 +130,11 @@ public class SoccerPlayersAdapter extends AppBaseRecycleAdapter implements Filte
                     playerModel.getImage(), R.drawable.no_image);
 
             tv_player_name.setText(playerModel.getName());
+            Log.d("palyer id", "---------"+playerModel.getTeam_id() );
+            Log.d("team1 name id", "==========="+teamModel1.getId() );
 
+
+            Log.d("team2 name id", "==========="+teamModel2.getId() );
             //tv_team_type.setText(Html.fromHtml(getPlayerTypeName(playerModel.getTeam_id())));
             if (playerModel.getTeam_id()==teamModel1.getId()  ) {
                 tv_team_type.setText(teamModel1.getSort_name());

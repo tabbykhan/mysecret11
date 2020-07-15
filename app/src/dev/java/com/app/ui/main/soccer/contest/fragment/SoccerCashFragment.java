@@ -23,8 +23,8 @@ import com.app.model.ContestModel;
 import com.app.model.webresponsemodel.MatchContestResponseModel;
 import com.app.ui.main.cricket.contest.ContestActivity;
 import com.app.ui.main.cricket.contest.ContestAllFiltersActivity;
-import com.app.ui.main.cricket.contest.adapter.ContestCategoryAdapter;
 import com.app.ui.main.soccer.contest.contestdetail.SoccerContestDetailActivity;
+import com.app.ui.main.soccer.contest.contestdetail.adapter.SoccerContestCategoryAdapter;
 import com.app.ui.main.soccer.contest.view.SoccerContestActivity;
 import com.app.ui.main.soccer.dialog.SoccerWinnerBreakupDialog;
 import com.google.android.material.appbar.AppBarLayout;
@@ -45,7 +45,7 @@ import static android.app.Activity.RESULT_OK;
  */
 public class SoccerCashFragment extends AppBaseFragment {
 
-    private static ContestCategoryAdapter adapter;
+    private static SoccerContestCategoryAdapter adapter;
     List<ContestCategoryModel> contestCategoryModels = new ArrayList<>();
     List<ContestCategoryModel> beatTheExpertModel = new ArrayList<>();
     MatchContestResponseModel.DetailBean detailBean;
@@ -234,7 +234,7 @@ public class SoccerCashFragment extends AppBaseFragment {
             currentSortType = 1;
             updateSortArrow(false);
         }
-        adapter = new ContestCategoryAdapter(getActivity(), contestCategoryModels) {
+        adapter = new SoccerContestCategoryAdapter(getActivity(), contestCategoryModels) {
             @Override
             public int getLastItemBottomMargin() {
                 return rl_bottom_lay.getHeight() + DeviceScreenUtil.getInstance().convertDpToPixel(10);

@@ -186,7 +186,7 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
             } else {
                 if (scoreModel != null) {
                     updateViewVisibitity(ll_score_card, View.VISIBLE);
-                    if (scoreModel.isScoreAvailable()) {
+                    if (scoreModel.isSoccerScoreAvailable()) {
                         tv_team1.setText(scoreModel.getTeam1().getName(1));
                         tv_team1_score.setText(scoreModel.getTeam1().getTeam_goal());
                         tv_team2.setText(scoreModel.getTeam2().getName(1));
@@ -324,7 +324,7 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ll_player_stats: {
-                goToMatchStatsActivity(null);
+                goToSoocerMatchStatsActivity(null);
             }
             break;
             case R.id.ll_dream_team: {

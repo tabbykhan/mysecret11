@@ -32,6 +32,7 @@ public class PlayersAdapter extends AppBaseRecycleAdapter implements Filterable 
         this.list = list;
         teamModel1=   MyApplication.getInstance().getSelectedMatch().getTeam1();
         teamModel2=MyApplication.getInstance().getSelectedMatch().getTeam2();
+
     }
 
     @Override

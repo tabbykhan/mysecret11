@@ -14,9 +14,9 @@ import com.R;
 import com.app.appbase.AppBaseFragment;
 import com.app.appbase.ViewPagerAdapter;
 import com.app.ui.main.soccer.dashboard.home.fixture.FragmentSoccerFixtureMatch;
-import com.app.ui.main.soccer.dashboard.home.live.FragmentSoccerLiveMatch;
-import com.app.ui.main.soccer.dashboard.home.result.FragmentSoccerResultMatch;
-import com.app.ui.slider.SliderFragment;
+import com.app.ui.main.soccer.dashboard.home.live.LiveSocerFragment;
+import com.app.ui.main.soccer.dashboard.home.result.ResultSoccerMatchFragment;
+import com.app.ui.main.soccer.slider.SoccerSliderFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 import com.utilities.DeviceScreenUtil;
@@ -97,8 +97,8 @@ public class FragmentSoccerHome extends AppBaseFragment {
         adapter.addFragment(new FragmentSoccerFixtureMatch(), "FIXTURE"); // UPCOMING
         // adapter.addFragment(new FivePlayerMatchFragment(), "5 A Side");// five player selection
         // match
-        adapter.addFragment(new FragmentSoccerLiveMatch(), "LIVE");
-        adapter.addFragment(new FragmentSoccerResultMatch(), "COMPLETED");
+        adapter.addFragment(new LiveSocerFragment(), "LIVE");
+        adapter.addFragment(new ResultSoccerMatchFragment(), "COMPLETED");
         viewpager_match.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -134,7 +134,7 @@ public class FragmentSoccerHome extends AppBaseFragment {
 
     }
     private void addSlider() {
-        SliderFragment sliderFragment = new SliderFragment();
+        SoccerSliderFragment sliderFragment = new SoccerSliderFragment();
         sliderFragment.setMainContainer(app_bar_layout);
         FragmentTransaction transaction = getChildFm().beginTransaction();
         transaction.add(R.id.container, sliderFragment);

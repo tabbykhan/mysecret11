@@ -519,7 +519,7 @@ public class SoccerTeamPreviewDialog extends AppBaseDialogFragment {
             setupData();
             displayProgressBar(false);
             if (getCustomerTeamId() == 0) {
-                getWebRequestHelper().getDreamTeamDetail(getMatchModel().getMatch_id(), this);
+                getWebRequestHelper().getSoccerDreamTeamDetail(getMatchModel().getMatch_id(), this);
             } else {
                 getWebRequestHelper().getGetCustomerSoccerTeamDetail(getCustomerTeamId(), this);
             }
@@ -538,6 +538,9 @@ public class SoccerTeamPreviewDialog extends AppBaseDialogFragment {
         if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
         switch (webRequest.getWebRequestId()) {
             case ID_CUSTOMER_SOCCER_TEAM_DETAIL:
+                handleCustomerTeamDetailResponse(webRequest);
+                break;
+            case ID_CUSTOMER_SOCCER_DREAM_TEAM_DETAIL:
                 handleCustomerTeamDetailResponse(webRequest);
                 break;
         }

@@ -14,6 +14,8 @@ import com.R;
 import com.app.appbase.AppBaseRecycleAdapter;
 import com.app.model.CustomerTeamModel;
 import com.app.model.PlayerModel;
+import com.app.model.TeamModel;
+import com.app.ui.MyApplication;
 import com.utilities.DeviceScreenUtil;
 
 import java.util.List;
@@ -26,11 +28,13 @@ public class SoccerMyTeamsAdapter extends AppBaseRecycleAdapter {
     Context context;
 
     List<CustomerTeamModel> list;
-
+    private TeamModel teamModel1;
+    private TeamModel teamModel2;
     public SoccerMyTeamsAdapter(Context context, List<CustomerTeamModel> list) {
         this.context = context;
         this.list = list;
-
+        teamModel1=   MyApplication.getInstance().getSelectedMatch().getTeam1();
+        teamModel2=MyApplication.getInstance().getSelectedMatch().getTeam2();
     }
 
     @Override

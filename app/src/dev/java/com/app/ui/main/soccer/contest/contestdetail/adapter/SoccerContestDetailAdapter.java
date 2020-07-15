@@ -26,13 +26,16 @@ public class SoccerContestDetailAdapter extends AppBaseRecycleAdapter {
     Context context;
     List<ContestTeamModel> list;
 
-
+    boolean viewMoreEnable;
     private boolean loadMore = false;
 
-
+    public boolean isDiscountedCategory() {
+        return false;
+    }
     public SoccerContestDetailAdapter(Context context, List<ContestTeamModel> list) {
         this.context = context;
         this.list = list;
+
     }
 
     public void setLoadMore(boolean isLoading) {

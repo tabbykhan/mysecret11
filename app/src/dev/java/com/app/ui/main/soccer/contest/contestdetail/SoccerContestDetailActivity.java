@@ -282,14 +282,12 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
             } else {
                 if (scoreModel != null) {
                     updateViewVisibitity(ll_score_card, View.VISIBLE);
-                    if (scoreModel.isScoreAvailable()) {
+                    if (scoreModel.isSoccerScoreAvailable()) {
                         tv_team1.setText(scoreModel.getTeam1().getName(1));
-                        tv_team1_score.setText(scoreModel.getTeam1().getScore());
+                        tv_team1_score.setText(scoreModel.getTeam1().getSoccerScore());
                         tv_team2.setText(scoreModel.getTeam2().getName(1));
-                        tv_team2_score.setText(scoreModel.getTeam2().getScore());
-
+                        tv_team2_score.setText(scoreModel.getTeam2().getSoccerScore());
                         updateViewVisibitity(ll_score_data, View.VISIBLE);
-
                         if (scoreModel.isValidString(scoreModel.getScore_board_notes())) {
                             tv_win.setText(scoreModel.getScore_board_notes());
                             updateViewVisibitity(tv_win, View.VISIBLE);
@@ -662,7 +660,7 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
                         bundle.putString((DATA7), String.valueOf(contestModel.getEntry_fee_multiplier()));
                         bundle.putString((DATA8), String.valueOf(contestModel.getMore_entry_fees()));
                     }
-                    goToCreateTeamActivity(bundle);
+                    goToCreateSoccerTeamActivity(bundle);
                 } else {
                     Bundle bundle = new Bundle();
                     bundle.putLong(DATA1, contestModel.getMatch_contest_id());
@@ -685,7 +683,7 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
             break;
 
             case R.id.ll_player_stats: {
-                goToMatchStatsActivity(null);
+                goToSoocerMatchStatsActivity(null);
             }
             break;
             case R.id.ll_dream_team: {
@@ -807,7 +805,7 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
     private void getContestPdf() {
         if (getMatchModel() != null) {
             displayProgressBar(false);
-            getWebRequestHelper().getMatchContestPdf(getMatchContestId(),
+            getWebRequestHelper().getSoccerMatchContestPdf(getMatchContestId(),
                     getMatchModel().getMatch_id(), this);
         }
     }
@@ -823,7 +821,7 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
             if (isValidString(entryFee)) {
                 requestModel.entry_fees = entryFee;
             }
-            getWebRequestHelper().customerJoinContest(requestModel, this);
+            getWebRequestHelper().customerSoccerJoinContest(requestModel, this);
 
         }
     }
@@ -834,8 +832,8 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
         if (webRequest.getWebRequestId() == ID_SOCCER_CONTEST_TEAMS) {
             setLoadingNextData(false);
         }
-        if (webRequest.getWebRequestId() == ID_CONTEST_PDF ||
-                webRequest.getWebRequestId() == ID_CUSTOMER_JOIN_CONTEST) {
+        if (webRequest.getWebRequestId() == ID_SOCCER_CONTEST_PDF ||
+                webRequest.getWebRequestId() == ID_CUSTOMER_SOCCER_JOIN_CONTEST) {
             dismissProgressBar();
         }
         super.onWebRequestResponse(webRequest);
@@ -850,10 +848,10 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
             case ID_SOCCER_MATCH_SCORE:
                 handleMatchScoreResponse(webRequest);
                 break;
-            case ID_CONTEST_PDF:
+            case ID_SOCCER_CONTEST_PDF:
                 handleContestPdfResponse(webRequest);
                 break;
-            case ID_CUSTOMER_JOIN_CONTEST:
+            case ID_CUSTOMER_SOCCER_JOIN_CONTEST:
                 handleCustomerJoinContestResponse(webRequest);
                 break;
         }

@@ -23,7 +23,7 @@ import com.app.appbase.AppBaseFragment;
 import com.app.model.webresponsemodel.PrivateContestFreeResponseModel;
 import com.app.model.webresponsemodel.PrivateContestSettingResponseModel;
 import com.app.ui.main.cricket.contest.ContestActivity;
-import com.app.ui.main.cricket.contest.makeyourcontest.createcontest.CreatePrivateContestActivity;
+import com.app.ui.main.soccer.contest.makeyourcontest.CreateSoccerPrivateContestActivity;
 import com.medy.retrofitwrapper.WebRequest;
 
 /**
@@ -159,7 +159,7 @@ public class SoccerPrivateFragment extends AppBaseFragment {
     }
 
     private void getPrivateContestSettings() {
-        getWebRequestHelper().getPrivateContestSettings(this);
+        getWebRequestHelper().getSoccerPrivateContestSettings(this);
     }
 
     private void getPrivateContestEntryFee() {
@@ -174,7 +174,7 @@ public class SoccerPrivateFragment extends AppBaseFragment {
             return;
         }
         updateViewVisibitity(pb_playing, View.VISIBLE);
-        getWebRequestHelper().getPrivateContestEntryFee(total_contest_size, total_winning_amount, this);
+        getWebRequestHelper().getSoccerPrivateContestEntryFee(total_contest_size, total_winning_amount, this);
     }
 
     @Override
@@ -204,7 +204,7 @@ public class SoccerPrivateFragment extends AppBaseFragment {
         Bundle bundle = new Bundle();
         bundle.putString(PRIVATE_SLUG,invite_code);
         if(getActivity()==null)return;
-        ((AppBaseActivity)getActivity()).goToJoinPrivateContestActivity(bundle);
+        ((AppBaseActivity)getActivity()).goToSoccerJoinPrivateContestActivity(bundle);
     }
 
 
@@ -265,10 +265,10 @@ public class SoccerPrivateFragment extends AppBaseFragment {
         super.onWebRequestResponse(webRequest);
         if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412) return;
         switch (webRequest.getWebRequestId()) {
-            case ID_GET_PRIVATE_CONTEST_SETTING:
+            case ID_GET_SOCCER_PRIVATE_CONTEST_SETTING:
                 handleContestSettingResponse(webRequest);
                 break;
-            case ID_GET_PRIVATE_CONTEST_ENTRY_FEE:
+            case ID_GET_SOCCER_PRIVATE_CONTEST_ENTRY_FEE:
                 handleContestEnertFreeResponse(webRequest);
                 break;
 
@@ -310,7 +310,7 @@ public class SoccerPrivateFragment extends AppBaseFragment {
 
 
     private void goToCreateContestActivity(Bundle bundle) {
-        Intent intent = new Intent(getActivity(), CreatePrivateContestActivity.class);
+        Intent intent = new Intent(getActivity(), CreateSoccerPrivateContestActivity.class);
         if (bundle != null) {
             intent.putExtras(bundle);
         }

@@ -372,6 +372,7 @@ public class CreateSoccerTeamActivity extends AppBaseActivity implements MatchTi
         if (matchModelWithPlayers == null)
             return;
         CustomerTeamModel customerTeam = customerExistTeam;
+
         if (customerTeam != null) {
             List<PlayerModel> selectedPlayers = customerTeam.getGoalkeepers();
             List<PlayerModel> allPlayers = matchModelWithPlayers.getGoalkeepers();
@@ -596,7 +597,7 @@ public class CreateSoccerTeamActivity extends AppBaseActivity implements MatchTi
         TextView tv_player_type = inflate.findViewById(R.id.tv_player_type);
         TextView tv_player_type_count = inflate.findViewById(R.id.tv_player_type_count);
         ImageView iv_player_type = inflate.findViewById(R.id.iv_player_type);
-        tv_player_type.setText("GT");
+        tv_player_type.setText("GK");
         tv_player_type_count.setText(totalSelectedWckitKeeper + "");
         iv_player_type.setImageResource(R.drawable.ic_gk1);
         tabAt.setCustomView(inflate);
@@ -645,7 +646,7 @@ public class CreateSoccerTeamActivity extends AppBaseActivity implements MatchTi
         TextView tv_player_type = inflate.findViewById(R.id.tv_player_type);
         TextView tv_player_type_count = inflate.findViewById(R.id.tv_player_type_count);
         ImageView iv_player_type = inflate.findViewById(R.id.iv_player_type);
-        tv_player_type.setText("GT");
+        tv_player_type.setText("GK");
         tv_player_type_count.setText(totalSelectedWckitKeeper + "");
         iv_player_type.setImageResource(R.drawable.ic_gk1);
 

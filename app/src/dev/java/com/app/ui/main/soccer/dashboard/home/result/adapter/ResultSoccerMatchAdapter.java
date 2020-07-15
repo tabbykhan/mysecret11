@@ -1,12 +1,10 @@
-package com.app.ui.main.soccer.dashboard.home.fixture.adapter;
+package com.app.ui.main.soccer.dashboard.home.result.adapter;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import androidx.fragment.app.FragmentActivity;
 
 import com.R;
 import com.app.appbase.AppBaseActivity;
@@ -19,13 +17,21 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
-public class SoccerFixtureMatchAdapter extends AppBaseRecycleAdapter {
+/**
+ * Created by Vishnu Gupta on 7/1/19.
+ */
+public class ResultSoccerMatchAdapter extends AppBaseRecycleAdapter {
     Context context;
     List<MatchModel> upcomingMatches;
 
-    public SoccerFixtureMatchAdapter(FragmentActivity activity, List<MatchModel> upcomingMatches) {
-        context = activity;
+
+    public ResultSoccerMatchAdapter(Context context, List<MatchModel> upcomingMatches) {
+        this.context = context;
         this.upcomingMatches = upcomingMatches;
+    }
+
+    public int getViewHeight() {
+        return 0;
     }
 
     @Override
@@ -37,11 +43,6 @@ public class SoccerFixtureMatchAdapter extends AppBaseRecycleAdapter {
     public int getDataCount() {
         return upcomingMatches == null ? 0 : upcomingMatches.size();
     }
-
-    public int getViewHeight() {
-        return 0;
-    }
-
 
     private class ViewHolder extends BaseViewHolder {
 
@@ -63,9 +64,7 @@ public class SoccerFixtureMatchAdapter extends AppBaseRecycleAdapter {
         View view_seprator;
         LinearLayout ll_joined_contest;
         TextView tv_match_squad;
-
         //CardView cv_timer_lay;
-
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -87,42 +86,29 @@ public class SoccerFixtureMatchAdapter extends AppBaseRecycleAdapter {
             ll_joined_contest = itemView.findViewById(R.id.ll_joined_contest);
             tv_match_squad = itemView.findViewById(R.id.tv_match_squad);
             //cv_timer_lay = itemView.findViewById(R.id.cv_timer_lay);
-
-
         }
 
         @Override
         public void setData(int position) {
-            updateViewVisibitity(ll_match_status, View.GONE);
+            updateViewVisibitity(ll_timer_lay, View.GONE);
+            updateViewVisibitity(tv_timer_time, View.GONE);
             updateViewVisibitity(view_seprator, View.GONE);
             updateViewVisibitity(ll_joined_contest, View.GONE);
+            updateViewVisibitity(view_disable_layer, View.GONE);
 
-            //            CardView.LayoutParams layoutParams = (CardView.LayoutParams) ll_view.getLayoutParams();
-            //            layoutParams.height = getViewHeight();
-            //            ll_view.setLayoutParams(layoutParams);
+//            CardView.LayoutParams layoutParams = (CardView.LayoutParams) ll_view.getLayoutParams();
+//            layoutParams.height = getViewHeight();
+//            ll_view.setLayoutParams(layoutParams);
 
-            //            int bg = position % backgrounds.length;
-            //
-            //            ll_view.setBackground(context.getResources().getDrawable(backgrounds[bg]));
+//            int bg = position % backgrounds.length;
+//
+//            ll_view.setBackground(context.getResources().getDrawable(backgrounds[bg]));
 
             MatchModel matchModel = upcomingMatches.get(position);
-            if (matchModel == null)
-                return;
+            if (matchModel == null) return;
 
-            if (matchModel.getContest_count() == 0) {
-                ll_view.setAlpha(0.5f);
-                updateViewVisibitity(view_disable_layer, View.VISIBLE);
-            } else {
-                ll_view.setAlpha(1.0f);
-                updateViewVisibitity(view_disable_layer, View.GONE);
-            }
+            tv_match_squad.setText(matchModel.getMatchDateText());
 
-            if (matchModel.isInPlayingSquadUpdated()) {
-                tv_match_squad.setText("Line Up Out");
-                tv_match_squad.setActivated(true);
-            } else {
-                tv_match_squad.setText("");
-            }
             SeriesModel series = matchModel.getSeries();
             if (series != null) {
                 tv_match_name.setText(series.getName());
@@ -135,16 +121,21 @@ public class SoccerFixtureMatchAdapter extends AppBaseRecycleAdapter {
             } else {
                 tv_match_name_sec.setText("");
             }
-            tv_timer_time.setText(matchModel.getRemainTimeText());
-           /* tv_timer_time.setTextColor(context.getResources().getColor(matchModel
-                    .getTimerColor()));*/
+            tv_status.setText(matchModel.getRemainTimeText());
+            tv_status.setTextColor(context.getResources().getColor(matchModel
+                    .getTimerColor()));
+            /*if (matchModel.isAbondentMatch()) {
+                ll_match_status.setBackgroundResource(R.drawable.bg_transparent_5radius_stroke1red);
+            } else {
+                ll_match_status.setBackgroundResource(R.drawable.bg_transparent_5radius_stroke1green);
+            }*/
+
 
             TeamModel team1 = matchModel.getTeam1();
             if (team1 != null) {
-                tv_team1_name.setText(team1.getName());
-              /*  ((AppBaseActivity) context).loadImage(context, iv_team1, pb_image1, team1.getImage(),
-                        R.mipmap.ic_launcher_round);*/
-                ((AppBaseActivity) context).loadImageSDV(context, iv_team1, pb_image1, team1.getImage(), R.mipmap.ic_launcher_round);
+                tv_team1_name.setText(team1.getName(1));
+                ((AppBaseActivity) context).loadImage(context, iv_team1, pb_image1, team1.getImage(),
+                        R.mipmap.ic_launcher_round);
             } else {
                 updateViewVisibitity(pb_image1, View.INVISIBLE);
                 iv_team1.setImageResource(R.mipmap.ic_launcher_round);
@@ -153,16 +144,14 @@ public class SoccerFixtureMatchAdapter extends AppBaseRecycleAdapter {
 
             TeamModel team2 = matchModel.getTeam2();
             if (team2 != null) {
-                tv_team2_name.setText(team2.getName());
-                /*((AppBaseActivity) context).loadImage(context, iv_team2, pb_image2, team2.getImage(),
-                        R.mipmap.ic_launcher_round);*/
-                ((AppBaseActivity) context).loadImageSDV(context, iv_team2, pb_image2, team2.getImage(), R.mipmap.ic_launcher_round);
+                tv_team2_name.setText(team2.getName(1));
+                ((AppBaseActivity) context).loadImage(context, iv_team2, pb_image2, team2.getImage(),
+                        R.mipmap.ic_launcher_round);
             } else {
                 updateViewVisibitity(pb_image2, View.INVISIBLE);
                 iv_team2.setImageResource(R.mipmap.ic_launcher_round);
                 tv_team2_name.setText("");
             }
-
 
         }
     }

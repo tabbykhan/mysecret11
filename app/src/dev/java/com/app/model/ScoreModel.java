@@ -27,4 +27,7 @@ public class ScoreModel extends AppBaseModel {
     public boolean isScoreAvailable() {
         return (getTeam1() != null && getTeam1().isScoreAvailable()) || (getTeam2() != null && getTeam2().isScoreAvailable());
     }
+    public boolean isSoccerScoreAvailable() {
+        return (getTeam1() != null && getTeam1().isSoccerScoreAvailable()) || (getTeam2() != null && getTeam2().isSoccerScoreAvailable());
+    }
 }

@@ -96,6 +96,7 @@ public class MyApplication extends AppBaseApplication {
     }
 
     public void setSelectedMatch(MatchModel selectedMatch) {
+
         this.selectedMatch = selectedMatch;
     }
 

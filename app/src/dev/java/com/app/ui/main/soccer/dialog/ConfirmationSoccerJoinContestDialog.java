@@ -214,7 +214,7 @@ public class ConfirmationSoccerJoinContestDialog extends AppBaseDialogFragment {
             if(privateContestRequestModel!=null && isValidString(getSelectedTeamId())){
                 privateContestRequestModel.pre_join="Y";
                 privateContestRequestModel.team_id=getSelectedTeamId();
-                getWebRequestHelper().createPrivateContest(privateContestRequestModel, this);
+                getWebRequestHelper().createSoccerPrivateContest(privateContestRequestModel, this);
                 return;
             }
             long matchContestId = getMatchContestId();
@@ -235,7 +235,7 @@ public class ConfirmationSoccerJoinContestDialog extends AppBaseDialogFragment {
 
     @Override
     public void onWebRequestResponse(WebRequest webRequest) {
-        if(webRequest.getWebRequestId()!=ID_CREATE_PRIVATE_CONTEST) {
+        if(webRequest.getWebRequestId()!=ID_CREATE_SOCCER__PRIVATE_CONTEST) {
             super.onWebRequestResponse(webRequest);
         }
         if (webRequest.getResponseCode() == 401 || webRequest.getResponseCode() == 412){
@@ -247,7 +247,7 @@ public class ConfirmationSoccerJoinContestDialog extends AppBaseDialogFragment {
                 handleCustomerPreJoinContestResponse(webRequest);
                 break;
 
-            case ID_CREATE_PRIVATE_CONTEST:
+            case ID_CREATE_SOCCER__PRIVATE_CONTEST:
                 handleCustomerPreJoinContestResponse(webRequest);
                 break;
         }

@@ -407,7 +407,7 @@ public class ChooseSoccerTeamActivity extends AppBaseActivity implements MatchTi
                 privateContestRequestModel.pre_join = "N";
                 privateContestRequestModel.team_id = selectedTeam;
                 displayProgressBar(false);
-                getWebRequestHelper().createPrivateContest(privateContestRequestModel, this);
+                getWebRequestHelper().createSoccerPrivateContest(privateContestRequestModel, this);
                 return;
             }
 
@@ -433,7 +433,7 @@ public class ChooseSoccerTeamActivity extends AppBaseActivity implements MatchTi
         if (ID_CUSTOMER_SOCCER_JOIN_CONTEST == webRequest.getWebRequestId()) {
             dismissProgressBar();
         }
-        if (ID_CREATE_PRIVATE_CONTEST == webRequest.getWebRequestId()) {
+        if (ID_CREATE_SOCCER__PRIVATE_CONTEST == webRequest.getWebRequestId()) {
             dismissProgressBar();
         }
         super.onWebRequestResponse(webRequest);
@@ -445,7 +445,7 @@ public class ChooseSoccerTeamActivity extends AppBaseActivity implements MatchTi
             case ID_CUSTOMER_SOCCER_JOIN_CONTEST:
                 handleCustomerJoinContestResponse(webRequest);
                 break;
-            case ID_CREATE_PRIVATE_CONTEST:
+            case ID_CREATE_SOCCER__PRIVATE_CONTEST:
                 handleCustomerJoinContestResponse(webRequest);
                 break;
         }

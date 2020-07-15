@@ -213,4 +213,15 @@ public final class WebServices {
     public static native String GetCustomerLiveMatchesSoccer();
     public static native String GetCustomerResultMatchesSoccer();
     public static native String GetCustomerSoccerMatchTeamDetail();
+    public static native String GetSoccerMatchPlayersStats();
+    public static native String GetSoccerPrivateContestSettings();
+    public static native String GetSoccerPrivateContestEntryFee();
+    public static native String GetSoccerPrivateContestWinningBreakUp();
+    public static native String GetSoccerAlreadyCreatedTeamCount();
+    public static native String CreateSoccerPrivateContest();
+    public static native String GetSoccerMatchPrivateContestDetail();
+    public static native String GetMatchSoccerContestPdf();
+    public static native String GetSoccerSeriesByPlayerStatistics();
+    public static native String GetSoccerMatchDreamTeamDetail();
+    public static native String GetSoccerSlider();
 }
