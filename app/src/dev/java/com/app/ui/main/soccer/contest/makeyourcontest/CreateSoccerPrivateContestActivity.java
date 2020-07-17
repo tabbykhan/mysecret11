@@ -150,7 +150,6 @@ public class CreateSoccerPrivateContestActivity extends AppBaseActivity implemen
             recycler_view = findViewById(R.id.recycler_view);
             ll_choose_wining_breakup = findViewById(R.id.ll_choose_wining_breakup);
             rl_choose_winner_type = findViewById(R.id.rl_choose_winner_type);
-
             rl_choose_winner_type.setOnClickListener(this);
             ll_choose_wining_breakup.setOnClickListener(this);
 

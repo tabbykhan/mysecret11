@@ -375,10 +375,7 @@ public class JoinSoccerPrivateContestActivity extends AppBaseActivity implements
             showInvalidContestDialog(responsePojo.getMessage());
 
         }
-
     }
-
-
     private void goToContestDetailActivity(Bundle bundle) {
         Intent intent = new Intent(this, SoccerContestDetailActivity.class);
         if (bundle != null) {
@@ -387,8 +384,6 @@ public class JoinSoccerPrivateContestActivity extends AppBaseActivity implements
         startActivity(intent);
        overridePendingTransition(R.anim.enter_alpha, R.anim.exit_alpha);
     }
-
-
     private void showInvalidContestDialog(String msg) {
         Bundle bundle = new Bundle();
         bundle.putString(MESSAGE, msg);

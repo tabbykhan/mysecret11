@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -279,6 +280,7 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
         if (getMatchModel() != null) {
             if (getMatchModel().isFixtureMatch()) {
                 updateViewVisibitity(ll_score_card, View.GONE);
+                Log.d("match ", "------");
             } else {
                 if (scoreModel != null) {
                     updateViewVisibitity(ll_score_card, View.VISIBLE);
@@ -297,14 +299,18 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
 
 
                     } else {
+                        Log.d("match 1", "--"+scoreModel.getTeam1().getTeam_goal());
                         updateViewVisibitity(ll_score_data, View.GONE);
                         updateViewVisibitity(tv_win, View.VISIBLE);
                         tv_win.setText("Match is not started yet");
                     }
                 } else {
+                    Log.d("match 2", "------");
                     updateViewVisibitity(ll_score_card, View.GONE);
                 }
             }
+        }else{
+            Log.d("match111 ", "------");
         }
     }
 
@@ -937,7 +943,6 @@ public class SoccerContestDetailActivity extends AppBaseActivity implements Matc
             if (isFinishing()) return;
             showErrorMsg(responsePojo.getMessage());
         }
-
     }
 
     private void handleContestPdfResponse(WebRequest webRequest) {

@@ -16,16 +16,17 @@ public class TeamModel extends AppBaseModel {
     String team_wicket;
     String team_overs;
 
-  public   int getTeam_goal() {
-        return this.team_goal;
+  public   String getTeam_goal() {
+
+      return (team_goal == null || team_goal.trim().length() == 0) ? "0" : getValidString(team_goal);
     }
 
-    void setTeam_goal(int team_goal) {
+    void setTeam_goal(String team_goal) {
        this.team_goal = team_goal;
 
     }
 
-    int team_goal;
+    String team_goal;
     public long getId() {
         return id;
     }
@@ -105,7 +106,7 @@ public class TeamModel extends AppBaseModel {
         return !getTeam_run().equals("0") || !getTeam_wicket().equals("0");
     }
     public boolean isSoccerScoreAvailable() {
-        return getTeam_goal()!=0 ;
+        return getTeam_goal().equals("0") ;
     }
 
     public String getScore() {

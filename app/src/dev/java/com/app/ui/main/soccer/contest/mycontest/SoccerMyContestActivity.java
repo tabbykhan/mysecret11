@@ -2,6 +2,7 @@ package com.app.ui.main.soccer.contest.mycontest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -183,6 +184,7 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
         if (getMatchModel() != null) {
             if (getMatchModel().isFixtureMatch()) {
                 updateViewVisibitity(ll_score_card, View.GONE);
+                Log.d("match ", "------");
             } else {
                 if (scoreModel != null) {
                     updateViewVisibitity(ll_score_card, View.VISIBLE);
@@ -197,20 +199,26 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
                         if(scoreModel.isValidString(scoreModel.getScore_board_notes())){
                             tv_win.setText(scoreModel.getScore_board_notes());
                             updateViewVisibitity(tv_win, View.VISIBLE);
+                            Log.d("match 1", "------"+scoreModel.getTeam1().getTeam_goal());
                         }else{
+                            Log.d("match 2", "------"+scoreModel.getTeam1().getTeam_goal());
                             updateViewVisibitity(tv_win, View.GONE);
                         }
 
 
                     } else {
+                        Log.d("match 3", "------");
                         updateViewVisibitity(ll_score_data, View.GONE);
                         updateViewVisibitity(tv_win, View.VISIBLE);
                         tv_win.setText("Match is not started yet");
                     }
                 } else {
+                    Log.d("match 4", "------");
                     updateViewVisibitity(ll_score_card, View.GONE);
                 }
             }
+        }else{
+            Log.d("match 5", "------");
         }
     }
 
