@@ -179,7 +179,6 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
             }
         }
     }
-
     private void setupScoreBoard() {
         if (getMatchModel() != null) {
             if (getMatchModel().isFixtureMatch()) {
@@ -193,9 +192,7 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
                         tv_team1_score.setText(scoreModel.getTeam1().getTeam_goal());
                         tv_team2.setText(scoreModel.getTeam2().getName(1));
                         tv_team2_score.setText(scoreModel.getTeam2().getTeam_goal());
-
                         updateViewVisibitity(ll_score_data, View.VISIBLE);
-
                         if(scoreModel.isValidString(scoreModel.getScore_board_notes())){
                             tv_win.setText(scoreModel.getScore_board_notes());
                             updateViewVisibitity(tv_win, View.VISIBLE);
@@ -207,7 +204,7 @@ public class SoccerMyContestActivity extends AppBaseActivity implements MatchTim
 
 
                     } else {
-                        Log.d("match 3", "------");
+                        Log.d("match3", "--match for Soccer Contest Activity 3----");
                         updateViewVisibitity(ll_score_data, View.GONE);
                         updateViewVisibitity(tv_win, View.VISIBLE);
                         tv_win.setText("Match is not started yet");

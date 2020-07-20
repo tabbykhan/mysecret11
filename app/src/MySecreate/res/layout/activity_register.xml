@@ -446,7 +446,7 @@
                             android:paddingStart="@dimen/dp10"
                             android:paddingEnd="@dimen/dp10"
                             android:text="Log In"
-                            android:textColor="@color/colorWhite"
+                            android:textColor="@color/color_sky"
                             android:textSize="?attr/app_text_size_normal"
                             app:custom_font="@string/app_font_regular" />
                     </LinearLayout>

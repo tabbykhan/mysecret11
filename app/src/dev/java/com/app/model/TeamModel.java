@@ -106,7 +106,7 @@ public class TeamModel extends AppBaseModel {
         return !getTeam_run().equals("0") || !getTeam_wicket().equals("0");
     }
     public boolean isSoccerScoreAvailable() {
-        return getTeam_goal().equals("0") ;
+        return getTeam_goal().equals("0") || !getTeam_goal().equals("0") ;
     }
 
     public String getScore() {

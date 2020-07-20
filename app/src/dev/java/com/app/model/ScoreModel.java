@@ -8,6 +8,16 @@ public class ScoreModel extends AppBaseModel {
     private TeamModel team2;
     private String score_board_notes;
 
+    String getWinner() {
+        return winner;
+    }
+
+    ScoreModel setWinner(String winner) {
+        this.winner = winner;
+        return this;
+    }
+
+    private String winner;
     public TeamModel getTeam1() {
         return team1;
     }
