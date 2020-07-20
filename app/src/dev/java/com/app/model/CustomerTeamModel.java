@@ -264,13 +264,45 @@ public class CustomerTeamModel extends AppBaseModel {
 
         return totalPoints;
     }
+    public float getSoccerTotalPoints() {
+        float totalPoints = 0.00f;
+        if (getGoalkeepers() != null) {
+            for (PlayerModel playerModel : getGoalkeepers()) {
+                totalPoints += playerModel.getPoints() * playerModel.getPlayer_multiplier();
+            }
+
+        }
+        if (getDefenders() != null) {
+            for (PlayerModel playerModel : getDefenders()) {
+                totalPoints += playerModel.getPoints() * playerModel.getPlayer_multiplier();
+            }
+
+        }
+        if (getMidfielders() != null) {
+            for (PlayerModel playerModel : getMidfielders()) {
+                totalPoints += playerModel.getPoints() * playerModel.getPlayer_multiplier();
+            }
+
+        }
+        if (getForwards() != null) {
+            for (PlayerModel playerModel : getForwards()) {
+                totalPoints += playerModel.getPoints() * playerModel.getPlayer_multiplier();
+            }
+
+        }
+
+        return totalPoints;
+    }
 
     public String getTotalPointsText() {
         String s = getValidDecimalFormat(getTotalPoints());
         return s.replaceAll("\\.00", "");
     }
 
-
+    public String getSoccerTotalPointsText() {
+        String s = getValidDecimalFormat(getSoccerTotalPoints());
+        return s.replaceAll("\\.00", "");
+    }
     // soccer getter setter method
     public List<PlayerModel> getGoalkeepers() {
         return Goalkeepers ;

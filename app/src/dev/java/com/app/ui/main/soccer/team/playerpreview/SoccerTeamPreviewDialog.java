@@ -240,13 +240,13 @@ public class SoccerTeamPreviewDialog extends AppBaseDialogFragment {
             if (customerTeamRank == -1) {
                 tv_team_rank.setText("");
                 if (getCustomerTeamId() == 0) {
-                    tv_total_points.setText("TOTAL POINTS = " + customerTeamModel.getTotalPointsText());
+                    tv_total_points.setText("TOTAL POINTS = " + customerTeamModel.getSoccerTotalPointsText());
                 } else {
                     tv_total_points.setText("");
                 }
             } else {
                 tv_team_rank.setText("Rank #" + String.valueOf(customerTeamRank));
-                tv_total_points.setText("TOTAL POINTS = " + customerTeamModel.getTotalPointsText());
+                tv_total_points.setText("TOTAL POINTS = " + customerTeamModel.getSoccerTotalPointsText());
             }
 
             setupGoalKeeper();
